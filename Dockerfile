@@ -7,6 +7,8 @@ WORKDIR /app
 # Copy the current directory contents into the container at /app
 COPY . /tmp
 
+# install graphviz
+RUN apk add --no-cache --update gcc libc-dev libstdc++ graphviz graphviz-dev ttf-freefont
 RUN pip install -r /tmp/requirements.txt
 
 # Run script when the container launches
