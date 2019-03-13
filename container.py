@@ -36,11 +36,14 @@ quantities = [
 # relations
 
 # The amount of inflow increases the volume
-inflow_volume  = Relationship(inflow,  volume, RelationType.INFLUENCE, Direction.POSITIVE)
+# inflow_volume  = Relationship(inflow,  volume, RelationType.INFLUENCE, Direction.POSITIVE)
+inflow_volume  = Influence(inflow,  volume, Direction.POSITIVE)
 # The amount of outflow decreases the volume
-outflow_volume = Relationship(outflow, volume, RelationType.INFLUENCE, Direction.NEGATIVE)
+# outflow_volume = Relationship(outflow, volume, RelationType.INFLUENCE, Direction.NEGATIVE)
+outflow_volume = Influence(outflow, volume, Direction.NEGATIVE)
 # Outflow changes are proportional to volume changes
-volume_outflow = Relationship(volume, outflow, RelationType.PROPORTIONAL, Direction.POSITIVE)
+# volume_outflow = Relationship(volume, outflow, RelationType.PROPORTIONAL, Direction.POSITIVE)
+volume_outflow = Proportional(volume, outflow, Direction.POSITIVE)
 # The outflow is at its highest value (max), when the volume is at its highest value (also max).
 vol_max = VC(Volume.MAX, Outflow.MAX)
 # There is no outflow, when there is no volume.

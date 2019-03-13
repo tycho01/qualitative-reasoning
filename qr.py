@@ -9,9 +9,9 @@ class Direction(Enum):
   NEUTRAL  = 2
   POSITIVE = 3
 
-class RelationType(Enum):
-  PROPORTIONAL = 1  # pos: d B pos if d A pos
-  INFLUENCE    = 2  # pos: d B pos if   A pos
+# class RelationType(Enum):
+#   PROPORTIONAL = 1  # pos: d B pos if d A pos
+#   INFLUENCE    = 2  # pos: d B pos if   A pos
 
 @dataclass
 class Quantity:
@@ -25,8 +25,15 @@ class Quantity:
 class Relationship:
   a: Quantity
   b: Quantity
-  relationType: RelationType
-  correlation: Direction
+  # ^ EnumMeta?
+
+@dataclass
+class Influence(Relationship):
+  correlation: Direction = Direction.POSITIVE
+
+@dataclass
+class Proportional(Relationship):
+  correlation: Direction = Direction.POSITIVE
 
 class EqualityRelation(Enum):
     LTE = 1
