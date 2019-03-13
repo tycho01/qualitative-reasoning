@@ -2,29 +2,32 @@
 
 from qr import *
 
-# quantity spaces
+# quantities + spaces
 
-class Volume(Enum):
+# Inflow (of water into the container)
+
+class Inflow(Enum):
   ZERO = 1
   PLUS = 2
-  MAX = 3
+
+inflow =  Quantity('inflow', Inflow)
+
+# Outflow (of waterout of the container)
 
 class Outflow(Enum):
   ZERO = 1
   PLUS = 2
   MAX = 3
 
-class Inflow(Enum):
+outflow = Quantity('outflow', Outflow)
+
+# Volume (of the water in the container)
+
+class Volume(Enum):
   ZERO = 1
   PLUS = 2
+  MAX = 3
 
-# quantities
-
-# Inflow (of water into the container)
-inflow =  Quantity('inflow', Inflow)
-# Outflow (of waterout of the container)
-outflow = Quantity('outflow', Outflow)
-# Volume (of the water in the container)
 volume =  Quantity('volume', Volume)
 
 quantities = [
@@ -32,6 +35,28 @@ quantities = [
   outflow,
   volume,
 ]
+
+# extra
+
+# Height (of the water column in of container)
+
+class Height(Enum):
+  ZERO = 1
+  PLUS = 2
+  MAX = 3
+
+height = Quantity('height', Height)
+
+# Pressure (of the water column at the bottom of container)
+
+class Pressure(Enum):
+  ZERO = 1
+  PLUS = 2
+  MAX = 3
+
+pressure = Quantity('pressure', Pressure)
+
+all_quantities = [*quantities, height, pressure]
 
 # relations
 
@@ -45,22 +70,100 @@ outflow_volume = Influence(outflow, volume, Direction.NEGATIVE)
 # volume_outflow = Relationship(volume, outflow, RelationType.PROPORTIONAL, Direction.POSITIVE)
 volume_outflow = Proportional(volume, outflow, Direction.POSITIVE)
 # The outflow is at its highest value (max), when the volume is at its highest value (also max).
-vol_max = VC(Volume.MAX, Outflow.MAX)
+vol_out_max = VC(Volume.MAX, Outflow.MAX)
 # There is no outflow, when there is no volume.
-vol_zero = VC(Volume.ZERO, Outflow.ZERO)
+vol_out_zero = VC(Volume.ZERO, Outflow.ZERO)
 # Volume, Outflow, 
 
 relations = [
   inflow_volume,
   outflow_volume,
   volume_outflow,
-  vol_max,
-  vol_zero,
+  vol_out_max,
+  vol_out_zero,
+]
+
+# extra relations
+
+# Height changes are proportional to volume changes
+volume_height =   Proportional(volume, height,   Direction.POSITIVE)
+# Pressure changes are proportional to height changes
+height_pressure = Proportional(height, pressure, Direction.POSITIVE)
+# Instead of volume, it is the pressure that determines the outflow
+pressure_outflow = Proportional(pressure, outflow, Direction.POSITIVE)
+# Particular values, such as 0 and max correspond for volume, height, pressure and outflow.
+
+vol_hi_max = VC(Volume.MAX, Height.MAX)
+vol_hi_zero = VC(Volume.ZERO, Height.ZERO)
+vol_prs_max = VC(Volume.MAX, Pressure.MAX)
+vol_prs_zero = VC(Volume.ZERO, Pressure.ZERO)
+
+hi_out_max = VC(Height.MAX, Outflow.MAX)
+hi_out_zero = VC(Height.ZERO, Outflow.ZERO)
+hi_vol_max = VC(Height.MAX, Volume.MAX)
+hi_vol_zero = VC(Height.ZERO, Volume.ZERO)
+hi_prs_max = VC(Height.MAX, Pressure.MAX)
+hi_prs_zero = VC(Height.ZERO, Pressure.ZERO)
+
+prs_out_max = VC(Pressure.MAX, Outflow.MAX)
+prs_out_zero = VC(Pressure.ZERO, Outflow.ZERO)
+prs_hi_max = VC(Pressure.MAX, Height.MAX)
+prs_hi_zero = VC(Pressure.ZERO, Height.ZERO)
+prs_vol_max = VC(Pressure.MAX, Volume.MAX)
+prs_vol_zero = VC(Pressure.ZERO, Volume.ZERO)
+
+out_vol_max = VC(Outflow.MAX, Volume.MAX)
+out_vol_zero = VC(Outflow.ZERO, Volume.ZERO)
+out_hi_max = VC(Outflow.MAX, Height.MAX)
+out_hi_zero = VC(Outflow.ZERO, Height.ZERO)
+out_prs_max = VC(Outflow.MAX, Pressure.MAX)
+out_prs_zero = VC(Outflow.ZERO, Pressure.ZERO)
+
+all_relations = [
+  inflow_volume,
+  outflow_volume,
+  # volume_outflow,  # Instead of volume, it is the pressure that determines the outflow
+
+  # Particular values, such as 0 and max correspond for volume, height, pressure and outflow.
+  vol_out_max,
+  vol_out_zero,
+  vol_hi_max,
+  vol_hi_zero,
+  vol_prs_max,
+  vol_prs_zero,
+
+  hi_out_max,
+  hi_out_zero,
+  hi_vol_max,
+  hi_vol_zero,
+  hi_prs_max,
+  hi_prs_zero,
+
+  prs_out_max,
+  prs_out_zero,
+  prs_hi_max,
+  prs_hi_zero,
+  prs_vol_max,
+  prs_vol_zero,
+
+  out_vol_max,
+  out_vol_zero,
+  out_hi_max,
+  out_hi_zero,
+  out_prs_max,
+  out_prs_zero,
+
+  # extra relations
+
+  volume_height,
+  height_pressure,
+  pressure_outflow,
 ]
 
 # entities
 
 container = Entity('container', quantities, relations)
+# extra_container = Entity('container', all_quantities, all_relations)
 
 # assumptions
 
