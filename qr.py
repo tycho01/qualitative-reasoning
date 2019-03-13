@@ -28,13 +28,31 @@ class Relationship:
   relationType: RelationType
   correlation: Direction
 
-# TODO: inequalities, subtraction
+class EqualityRelation(Enum):
+    LTE = 1
+    LT = 2
+    EQ = 3
+    GT = 4
+    GTE = 5
+
+@dataclass
+class Inequality(Relationship):
+    equality: EqualityRelation = EqualityRelation.EQ
 
 @dataclass
 class VC:
+    '''if a then b'''
     # TODO: idk wtf VC stands for. also do I need EnumMeta?
     a: Enum
     b: Enum
+
+@dataclass
+class Addition(Relationship):
+    c: Quantity
+
+@dataclass
+class Subtraction(Relationship):
+    c: Quantity
 
 @dataclass
 class Entity:

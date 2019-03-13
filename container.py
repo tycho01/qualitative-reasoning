@@ -59,6 +59,10 @@ relations = [
 
 container = Entity('container', quantities, relations)
 
+# assumptions
+
+# - How will the exogenously defined inflow behave? Choose assumptions at your discretion.
+
 # state-graph with https://en.wikipedia.org/wiki/DOT_(graph_description_language)
 
 # trace:
