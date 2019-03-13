@@ -64,13 +64,13 @@ class Subtraction(Relationship):
 @dataclass
 class Entity:
   name: str
-  quantities: List<Quantity>
-  relations: List<Relationship>
+  quantities: List[Quantity]
+  relations: List[Relationship]
 
 @dataclass
 class State:
-  entities: List<Entity>
+  entities: List[Entity]
 
 class StateGraph:
   # TODO: ???
-  states: List<State>
+  states: List[State]
