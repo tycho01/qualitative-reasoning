@@ -2,7 +2,7 @@
 
 from enum import Enum, EnumMeta
 from dataclasses import dataclass
-from typing import List
+from typing import List, Dict, Tuple
 
 class Direction(Enum):
   NEGATIVE = 1
@@ -29,48 +29,108 @@ class Relationship:
 
 @dataclass
 class Influence(Relationship):
-  correlation: Direction = Direction.POSITIVE
+  correlation: Direction = Direction.POSITIVE  # TODO: this shouldn't need Direction.NEUTRAL?
 
 @dataclass
 class Proportional(Relationship):
-  correlation: Direction = Direction.POSITIVE
+  correlation: Direction = Direction.POSITIVE  # TODO: this shouldn't need Direction.NEUTRAL?
 
-class EqualityRelation(Enum):
-    LTE = 1
-    LT = 2
-    EQ = 3
-    GT = 4
-    GTE = 5
+# class EqualityRelation(Enum):
+#     LTE = 1
+#     LT = 2
+#     EQ = 3
+#     GT = 4
+#     GTE = 5
+
+# @dataclass
+# class Inequality(Relationship):
+#     equality: EqualityRelation = EqualityRelation.EQ
 
 @dataclass
-class Inequality(Relationship):
-    equality: EqualityRelation = EqualityRelation.EQ
-
-@dataclass
-class VC:
+class ValueCorrespondence:
     '''if a then b'''
-    # TODO: idk wtf VC stands for. also do I need EnumMeta?
+    # TODO: do I need EnumMeta?
     a: Enum
     b: Enum
 
-@dataclass
-class Addition(Relationship):
-    c: Quantity
+# @dataclass
+# class Addition(Relationship):
+#     c: Quantity
 
-@dataclass
-class Subtraction(Relationship):
-    c: Quantity
+# @dataclass
+# class Subtraction(Relationship):
+#     c: Quantity
 
 @dataclass
 class Entity:
   name: str
   quantities: List[Quantity]
   relations: List[Relationship]
+  # TODO: ^ is this right, or could a relation be between quantities not part of the same entity? probably not relevant as I think we're only dealing with a single entity here.
+
+@dataclass
+class EntityState:
+  entity: Entity
+  state: Dict[str, Tuple[Enum, Direction]]
+
 
 @dataclass
 class State:
-  entities: List[Entity]
+  entities: Dict[str, EntityState]
 
+@dataclass
 class StateGraph:
-  # TODO: ???
-  states: List[State]
+  states: Dict[str, State]
+  edges: List[Tuple[str, str]]
+
+# functions
+
+def gen_state_graph(init_state):
+  i = 0
+  edges = []
+  states = {}
+  state = init_state
+  k = serialize_state(state)
+  states.update({ k: state })
+  handle_state(state)
+  sg = StateGraph(states, edges)
+  return sg
+
+# impure!
+def handle_state(state, states, edges):
+    for next_state in gen_states(state):
+        next_k = serialize_state(next_state)
+        edges.append((k, next_k))
+        if not state in states:
+            states.add(state)
+            handle_state(next_state)
+
+def serialize_state(state):
+    return str(state)
+
+def gen_states(state):
+  for k, entity_state in state.entities.items():
+      entity = entity_state.entity
+      state_ = entity_state.state
+      for qty_name, tpl in state_.items():
+          qty, change = tpl
+          #
+          print(qty_name, qty, change)
+      name = entity.name
+      quantities = entity.quantities
+      for qty in quantities:
+          #
+          print(qty)
+      relations = entity.relations
+      for relation in relations:
+        a = relation.a
+        b = relation.b
+        print(relation, a, b)
+        clz = type(relation)
+        if clz == ValueCorrespondence:
+        # elif clz == Influence:
+        # elif clz == Proportional:
+          pass
+        else:
+          # throw Error
+          correlation = relation.correlation

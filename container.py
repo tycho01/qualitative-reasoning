@@ -70,9 +70,9 @@ outflow_volume = Influence(outflow, volume, Direction.NEGATIVE)
 # volume_outflow = Relationship(volume, outflow, RelationType.PROPORTIONAL, Direction.POSITIVE)
 volume_outflow = Proportional(volume, outflow, Direction.POSITIVE)
 # The outflow is at its highest value (max), when the volume is at its highest value (also max).
-vol_out_max = VC(Volume.MAX, Outflow.MAX)
+vol_out_max = ValueCorrespondence(Volume.MAX, Outflow.MAX)
 # There is no outflow, when there is no volume.
-vol_out_zero = VC(Volume.ZERO, Outflow.ZERO)
+vol_out_zero = ValueCorrespondence(Volume.ZERO, Outflow.ZERO)
 # Volume, Outflow, 
 
 relations = [
@@ -93,36 +93,38 @@ height_pressure = Proportional(height, pressure, Direction.POSITIVE)
 pressure_outflow = Proportional(pressure, outflow, Direction.POSITIVE)
 # Particular values, such as 0 and max correspond for volume, height, pressure and outflow.
 
-vol_hi_max = VC(Volume.MAX, Height.MAX)
-vol_hi_zero = VC(Volume.ZERO, Height.ZERO)
-vol_prs_max = VC(Volume.MAX, Pressure.MAX)
-vol_prs_zero = VC(Volume.ZERO, Pressure.ZERO)
+vol_hi_max = ValueCorrespondence(Volume.MAX, Height.MAX)
+vol_hi_zero = ValueCorrespondence(Volume.ZERO, Height.ZERO)
+vol_prs_max = ValueCorrespondence(Volume.MAX, Pressure.MAX)
+vol_prs_zero = ValueCorrespondence(Volume.ZERO, Pressure.ZERO)
 
-hi_out_max = VC(Height.MAX, Outflow.MAX)
-hi_out_zero = VC(Height.ZERO, Outflow.ZERO)
-hi_vol_max = VC(Height.MAX, Volume.MAX)
-hi_vol_zero = VC(Height.ZERO, Volume.ZERO)
-hi_prs_max = VC(Height.MAX, Pressure.MAX)
-hi_prs_zero = VC(Height.ZERO, Pressure.ZERO)
+hi_out_max = ValueCorrespondence(Height.MAX, Outflow.MAX)
+hi_out_zero = ValueCorrespondence(Height.ZERO, Outflow.ZERO)
+hi_vol_max = ValueCorrespondence(Height.MAX, Volume.MAX)
+hi_vol_zero = ValueCorrespondence(Height.ZERO, Volume.ZERO)
+hi_prs_max = ValueCorrespondence(Height.MAX, Pressure.MAX)
+hi_prs_zero = ValueCorrespondence(Height.ZERO, Pressure.ZERO)
 
-prs_out_max = VC(Pressure.MAX, Outflow.MAX)
-prs_out_zero = VC(Pressure.ZERO, Outflow.ZERO)
-prs_hi_max = VC(Pressure.MAX, Height.MAX)
-prs_hi_zero = VC(Pressure.ZERO, Height.ZERO)
-prs_vol_max = VC(Pressure.MAX, Volume.MAX)
-prs_vol_zero = VC(Pressure.ZERO, Volume.ZERO)
+prs_out_max = ValueCorrespondence(Pressure.MAX, Outflow.MAX)
+prs_out_zero = ValueCorrespondence(Pressure.ZERO, Outflow.ZERO)
+prs_hi_max = ValueCorrespondence(Pressure.MAX, Height.MAX)
+prs_hi_zero = ValueCorrespondence(Pressure.ZERO, Height.ZERO)
+prs_vol_max = ValueCorrespondence(Pressure.MAX, Volume.MAX)
+prs_vol_zero = ValueCorrespondence(Pressure.ZERO, Volume.ZERO)
 
-out_vol_max = VC(Outflow.MAX, Volume.MAX)
-out_vol_zero = VC(Outflow.ZERO, Volume.ZERO)
-out_hi_max = VC(Outflow.MAX, Height.MAX)
-out_hi_zero = VC(Outflow.ZERO, Height.ZERO)
-out_prs_max = VC(Outflow.MAX, Pressure.MAX)
-out_prs_zero = VC(Outflow.ZERO, Pressure.ZERO)
+out_vol_max = ValueCorrespondence(Outflow.MAX, Volume.MAX)
+out_vol_zero = ValueCorrespondence(Outflow.ZERO, Volume.ZERO)
+out_hi_max = ValueCorrespondence(Outflow.MAX, Height.MAX)
+out_hi_zero = ValueCorrespondence(Outflow.ZERO, Height.ZERO)
+out_prs_max = ValueCorrespondence(Outflow.MAX, Pressure.MAX)
+out_prs_zero = ValueCorrespondence(Outflow.ZERO, Pressure.ZERO)
 
 all_relations = [
   inflow_volume,
   outflow_volume,
   # volume_outflow,  # Instead of volume, it is the pressure that determines the outflow
+
+  # TODO: figure out which of these are legit
 
   # Particular values, such as 0 and max correspond for volume, height, pressure and outflow.
   vol_out_max,
@@ -165,12 +167,4 @@ all_relations = [
 container = Entity('container', quantities, relations)
 # extra_container = Entity('container', all_quantities, all_relations)
 
-# assumptions
 
-# - How will the exogenously defined inflow behave? Choose assumptions at your discretion.
-
-# state-graph with https://en.wikipedia.org/wiki/DOT_(graph_description_language)
-
-# trace:
-# - intra-state
-# - inter-state

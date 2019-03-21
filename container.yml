@@ -1,0 +1,305 @@
+entities:
+
+  container:
+
+    quantities:
+
+      # Inflow (of water into the container)
+      inflow:
+      - '0'
+      - +
+
+      # Outflow (of waterout of the container)
+      outflow:
+      - '0'
+      - +
+      - max
+
+      # Volume (of the water in the container)
+      volume:
+      - '0'
+      - +
+      - max
+
+      # extra
+
+      # Height (of the water column in of container)
+      height:
+      - '0'
+      - +
+      - max
+
+      # Pressure (of the water column at the bottom of container)
+      pressure:
+      - '0'
+      - +
+      - max
+
+    relations:
+
+      # The amount of inflow increases the volume
+      inflow_volume:
+        type: influence
+        a: inflow
+        b: volume
+        direction: positive
+
+      # The amount of outflow decreases the volume
+      outflow_volume:
+        type: influence
+        a: outflow
+        b: volume
+        direction: negative
+
+      # # Instead of volume, it is the pressure that determines the outflow
+      # # Outflow changes are proportional to volume changes
+      # volume_outflow:
+      #   type: proportional
+      #   a: volume
+      #   b: outflow
+      #   direction: positive
+
+      # The outflow is at its highest value (max), when the volume is at its highest value (also max).
+      vol_out_max:
+        type: VC
+        a:
+          quantity: volume
+          value: max
+        b:
+          quantity: outflow
+          value: max
+
+      # There is no outflow, when there is no volume.
+      vol_out_zero:
+        type: VC
+        a:
+          quantity: volume
+          value: '0'
+        b:
+          quantity: outflow
+          value: '0'
+
+      # extra relations
+
+      # Height changes are proportional to volume changes
+      volume_height:
+        type: proportional
+        a: volume
+        b: height
+        direction: positive
+
+      # Pressure changes are proportional to height changes
+      height_pressure:
+        type: proportional
+        a: height
+        b: pressure
+        direction: positive
+
+      # Instead of volume, it is the pressure that determines the outflow
+      pressure_outflow:
+        type: proportional
+        a: pressure
+        b: outflow
+        direction: positive
+
+      # Particular values, such as 0 and max correspond for volume, height, pressure and outflow.
+
+      vol_hi_max:
+        type: VC
+        a:
+          quantity: volume
+          value: max
+        b:
+          quantity: height
+          value: max
+
+      vol_hi_zero:
+        type: VC
+        a:
+          quantity: volume
+          value: '0'
+        b:
+          quantity: height
+          value: '0'
+
+      vol_prs_max:
+        type: VC
+        a:
+          quantity: volume
+          value: max
+        b:
+          quantity: pressure
+          value: max
+
+      vol_prs_zero:
+        type: VC
+        a:
+          quantity: volume
+          value: '0'
+        b:
+          quantity: pressure
+          value: '0'
+
+      hi_out_max:
+        type: VC
+        a:
+          quantity: height
+          value: max
+        b:
+          quantity: outflow
+          value: max
+
+      hi_out_zero:
+        type: VC
+        a:
+          quantity: height
+          value: '0'
+        b:
+          quantity: outflow
+          value: '0'
+
+      hi_vol_max:
+        type: VC
+        a:
+          quantity: height
+          value: max
+        b:
+          quantity: volume
+          value: max
+
+      hi_vol_zero:
+        type: VC
+        a:
+          quantity: height
+          value: '0'
+        b:
+          quantity: volume
+          value: '0'
+
+      hi_prs_max:
+        type: VC
+        a:
+          quantity: height
+          value: max
+        b:
+          quantity: pressure
+          value: max
+
+      hi_prs_zero:
+        type: VC
+        a:
+          quantity: height
+          value: '0'
+        b:
+          quantity: pressure
+          value: '0'
+
+
+      prs_out_max:
+        type: VC
+        a:
+          quantity: pressure
+          value: max
+        b:
+          quantity: outflow
+          value: max
+
+      prs_out_zero:
+        type: VC
+        a:
+          quantity: pressure
+          value: '0'
+        b:
+          quantity: outflow
+          value: '0'
+
+      prs_hi_max:
+        type: VC
+        a:
+          quantity: pressure
+          value: max
+        b:
+          quantity: height
+          value: max
+
+      prs_hi_zero:
+        type: VC
+        a:
+          quantity: pressure
+          value: '0'
+        b:
+          quantity: height
+          value: '0'
+
+      prs_vol_max:
+        type: VC
+        a:
+          quantity: pressure
+          value: max
+        b:
+          quantity: volume
+          value: max
+
+      prs_vol_zero:
+        type: VC
+        a:
+          quantity: pressure
+          value: '0'
+        b:
+          quantity: volume
+          value: '0'
+
+
+      out_vol_max:
+        type: VC
+        a:
+          quantity: outflow
+          value: max
+        b:
+          quantity: volume
+          value: max
+
+      out_vol_zero:
+        type: VC
+        a:
+          quantity: outflow
+          value: '0'
+        b:
+          quantity: volume
+          value: '0'
+
+      out_hi_max:
+        type: VC
+        a:
+          quantity: outflow
+          value: max
+        b:
+          quantity: height
+          value: max
+
+      out_hi_zero:
+        type: VC
+        a:
+          quantity: outflow
+          value: '0'
+        b:
+          quantity: height
+          value: '0'
+
+      out_prs_max:
+        type: VC
+        a:
+          quantity: outflow
+          value: max
+        b:
+          quantity: pressure
+          value: max
+
+      out_prs_zero:
+        type: VC
+        a:
+          quantity: outflow
+          value: '0'
+        b:
+          quantity: pressure
+          value: '0'
