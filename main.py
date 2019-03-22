@@ -37,3 +37,8 @@ gen_states(state)
 # - generate states, see which lead to conflicts based on rules like VC,
 #   then generate edges using Influence/Proportional relationships (does this imply an initial state?)
 # - user interaction
+
+# for direction we need a question mark option to indicate changes in both directions causing an ambiguous change
+# for each quantity space we need to know:
+# - the order (in which to transition
+# - what is negative or positive (needed for influence relation?)
