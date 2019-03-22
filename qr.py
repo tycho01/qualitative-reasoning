@@ -108,6 +108,9 @@ def handle_state(state, states, edges):
 def serialize_state(state):
     return str(state)
 
+# TODO: adjust this, as we can generate without initial state by itertools.product,
+# then filter out invalid states/transitions, then plug in initial state to see
+# from where to where we'll go.
 def gen_states(state):
   for k, entity_state in state.entities.items():
       entity = entity_state.entity
