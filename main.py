@@ -42,3 +42,5 @@ gen_states(state)
 # for each quantity space we need to know:
 # - the order (in which to transition
 # - what is negative or positive (needed for influence relation?)
+
+# point (0, max?, delta 0) vs. range (+, delta -/+) values: points change first
