@@ -4,19 +4,23 @@ from enum import Enum, EnumMeta
 from dataclasses import dataclass
 from typing import List, Dict, Tuple
 
-# TODO: for direction we need a question mark option to indicate changes in both directions causing an ambiguous change
 class Direction(Enum):
+  QUESTION = 0  # question mark option to indicate changes in both directions causing an ambiguous change
   NEGATIVE = 1
   NEUTRAL  = 2
   POSITIVE = 3
+
+class RelationDirection(Enum):
+  NEGATIVE = 1
+  POSITIVE = 2
 
 # class RelationType(Enum):
 #   PROPORTIONAL = 1  # pos: d B pos if d A pos
 #   INFLUENCE    = 2  # pos: d B pos if   A pos
 
-# TODO: for each quantity space we need to know:
-# - the order (in which to transition)
-# - what is negative or positive (needed for influence relation?)
+# for each quantity space we need to know:
+# - the order (in which to transition), so ensure the enums are logically ordered!
+# - what is negative or positive (needed for influence relation?) - ensure underlying values reflect this!
 @dataclass
 class Quantity:
   name: str
@@ -34,11 +38,11 @@ class Relationship:
 
 @dataclass
 class Influence(Relationship):
-  correlation: Direction = Direction.POSITIVE  # TODO: this shouldn't need Direction.NEUTRAL?
+  correlation: RelationDirection = RelationDirection.POSITIVE
 
 @dataclass
 class Proportional(Relationship):
-  correlation: Direction = Direction.POSITIVE  # TODO: this shouldn't need Direction.NEUTRAL?
+  correlation: RelationDirection = RelationDirection.POSITIVE
 
 # class EqualityRelation(Enum):
 #     LTE = 1

@@ -7,26 +7,26 @@ from qr import *
 # Inflow (of water into the container)
 
 class Inflow(Enum):
-  ZERO = 1
-  PLUS = 2
+  ZERO = 0
+  PLUS = 1
 
 inflow =  Quantity('inflow', Inflow)
 
 # Outflow (of waterout of the container)
 
 class Outflow(Enum):
-  ZERO = 1
-  PLUS = 2
-  MAX = 3
+  ZERO = 0
+  PLUS = 1
+  MAX = 2
 
 outflow = Quantity('outflow', Outflow)
 
 # Volume (of the water in the container)
 
 class Volume(Enum):
-  ZERO = 1
-  PLUS = 2
-  MAX = 3
+  ZERO = 0
+  PLUS = 1
+  MAX = 2
 
 volume =  Quantity('volume', Volume)
 
@@ -41,18 +41,18 @@ quantities = [
 # Height (of the water column in of container)
 
 class Height(Enum):
-  ZERO = 1
-  PLUS = 2
-  MAX = 3
+  ZERO = 0
+  PLUS = 1
+  MAX = 2
 
 height = Quantity('height', Height)
 
 # Pressure (of the water column at the bottom of container)
 
 class Pressure(Enum):
-  ZERO = 1
-  PLUS = 2
-  MAX = 3
+  ZERO = 0
+  PLUS = 1
+  MAX = 2
 
 pressure = Quantity('pressure', Pressure)
 
@@ -61,14 +61,14 @@ all_quantities = [*quantities, height, pressure]
 # relations
 
 # The amount of inflow increases the volume
-# inflow_volume  = Relationship(inflow,  volume, RelationType.INFLUENCE, Direction.POSITIVE)
-inflow_volume  = Influence(inflow,  volume, Direction.POSITIVE)
+# inflow_volume  = Relationship(inflow,  volume, RelationType.INFLUENCE, RelationDirection.POSITIVE)
+inflow_volume  = Influence(inflow,  volume, RelationDirection.POSITIVE)
 # The amount of outflow decreases the volume
-# outflow_volume = Relationship(outflow, volume, RelationType.INFLUENCE, Direction.NEGATIVE)
-outflow_volume = Influence(outflow, volume, Direction.NEGATIVE)
+# outflow_volume = Relationship(outflow, volume, RelationType.INFLUENCE, RelationDirection.NEGATIVE)
+outflow_volume = Influence(outflow, volume, RelationDirection.NEGATIVE)
 # Outflow changes are proportional to volume changes
-# volume_outflow = Relationship(volume, outflow, RelationType.PROPORTIONAL, Direction.POSITIVE)
-volume_outflow = Proportional(volume, outflow, Direction.POSITIVE)
+# volume_outflow = Relationship(volume, outflow, RelationType.PROPORTIONAL, RelationDirection.POSITIVE)
+volume_outflow = Proportional(volume, outflow, RelationDirection.POSITIVE)
 # The outflow is at its highest value (max), when the volume is at its highest value (also max).
 vol_out_max = ValueCorrespondence(Volume.MAX, Outflow.MAX)
 # There is no outflow, when there is no volume.
@@ -86,11 +86,11 @@ relations = [
 # extra relations
 
 # Height changes are proportional to volume changes
-volume_height =   Proportional(volume, height,   Direction.POSITIVE)
+volume_height =   Proportional(volume, height,   RelationDirection.POSITIVE)
 # Pressure changes are proportional to height changes
-height_pressure = Proportional(height, pressure, Direction.POSITIVE)
+height_pressure = Proportional(height, pressure, RelationDirection.POSITIVE)
 # Instead of volume, it is the pressure that determines the outflow
-pressure_outflow = Proportional(pressure, outflow, Direction.POSITIVE)
+pressure_outflow = Proportional(pressure, outflow, RelationDirection.POSITIVE)
 # Particular values, such as 0 and max correspond for volume, height, pressure and outflow.
 
 vol_hi_max = ValueCorrespondence(Volume.MAX, Height.MAX)
