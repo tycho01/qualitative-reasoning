@@ -7,26 +7,26 @@ from qr import *
 # Inflow (of water into the container)
 
 class Inflow(Enum):
-  ZERO = 0
-  PLUS = 1
+  ZERO = 0  # POINT
+  PLUS = 1  # RANGE
 
 inflow =  Quantity('inflow', Inflow)
 
 # Outflow (of waterout of the container)
 
 class Outflow(Enum):
-  ZERO = 0
-  PLUS = 1
-  MAX = 2
+  ZERO = 0  # POINT
+  PLUS = 1  # RANGE
+  MAX = 2   # POINT
 
 outflow = Quantity('outflow', Outflow)
 
 # Volume (of the water in the container)
 
 class Volume(Enum):
-  ZERO = 0
-  PLUS = 1
-  MAX = 2
+  ZERO = 0  # POINT
+  PLUS = 1  # RANGE
+  MAX = 2   # POINT
 
 volume =  Quantity('volume', Volume)
 
@@ -41,18 +41,18 @@ quantities = [
 # Height (of the water column in of container)
 
 class Height(Enum):
-  ZERO = 0
-  PLUS = 1
-  MAX = 2
+  ZERO = 0  # POINT
+  PLUS = 1  # RANGE
+  MAX = 2   # POINT
 
 height = Quantity('height', Height)
 
 # Pressure (of the water column at the bottom of container)
 
 class Pressure(Enum):
-  ZERO = 0
-  PLUS = 1
-  MAX = 2
+  ZERO = 0  # POINT
+  PLUS = 1  # RANGE
+  MAX = 2   # POINT
 
 pressure = Quantity('pressure', Pressure)
 

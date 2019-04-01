@@ -21,10 +21,10 @@ class RelationDirection(Enum):
 # for each quantity space we need to know:
 # - the order (in which to transition), so ensure the enums are logically ordered!
 # - what is negative or positive (needed for influence relation?) - ensure underlying values reflect this!
+# - represent point values as even numbers (-> makes 0 a point), ranges as odd numbers.
 @dataclass
 class Quantity:
   name: str
-  # TODO: point (0, max?, delta 0) vs. range (+, delta -/+) values: points change first
   quantitySpace: EnumMeta
   # TODO: figure out how to factor above vs. below fields
   # qty: str
@@ -126,6 +126,7 @@ def serialize_state(state):
 # - see which lead to conflicts based on rules like VC
 # - see how they connect, generating edges using Influence/Proportional relationships
 #   - given multiple relationships, first see how these would interact, then apply the result on a state
+#   - point (0, max?, delta 0) vs. range (+, delta -/+) values: points change first.
 # - see which states you can reach from initial state
 
 def gen_states(state):
