@@ -16,31 +16,3 @@ state = State({ 'container': entity_state })
 # draw_state_graph(sg)
 print(state)
 gen_states(state)
-
-# assumptions
-# - continuous: will go through intermediate ordinal states
-
-# - How will the exogenously defined inflow behave? Choose assumptions at your discretion.
-
-# state-graph with https://en.wikipedia.org/wiki/DOT_(graph_description_language)
-
-# trace:
-# - intra-state
-# - inter-state
-
-# we list the assumptions on e.g. user inputs / starting states,
-# which in turn decide what will happen in the simulation
-
-# interpretations:
-# - go from initial state
-# - generate all possible states and see how they connect
-# - generate states, see which lead to conflicts based on rules like VC,
-#   then generate edges using Influence/Proportional relationships (does this imply an initial state?)
-# - user interaction
-
-# for direction we need a question mark option to indicate changes in both directions causing an ambiguous change
-# for each quantity space we need to know:
-# - the order (in which to transition
-# - what is negative or positive (needed for influence relation?)
-
-# point (0, max?, delta 0) vs. range (+, delta -/+) values: points change first

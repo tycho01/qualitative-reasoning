@@ -4,6 +4,7 @@ from enum import Enum, EnumMeta
 from dataclasses import dataclass
 from typing import List, Dict, Tuple
 
+# TODO: for direction we need a question mark option to indicate changes in both directions causing an ambiguous change
 class Direction(Enum):
   NEGATIVE = 1
   NEUTRAL  = 2
@@ -13,9 +14,13 @@ class Direction(Enum):
 #   PROPORTIONAL = 1  # pos: d B pos if d A pos
 #   INFLUENCE    = 2  # pos: d B pos if   A pos
 
+# TODO: for each quantity space we need to know:
+# - the order (in which to transition)
+# - what is negative or positive (needed for influence relation?)
 @dataclass
 class Quantity:
   name: str
+  # TODO: point (0, max?, delta 0) vs. range (+, delta -/+) values: points change first
   quantitySpace: EnumMeta
   # TODO: figure out how to factor above vs. below fields
   # qty: str
@@ -111,6 +116,14 @@ def serialize_state(state):
 # TODO: adjust this, as we can generate without initial state by itertools.product,
 # then filter out invalid states/transitions, then plug in initial state to see
 # from where to where we'll go.
+
+# TODO:
+# - generate states
+# - see which lead to conflicts based on rules like VC
+# - see how they connect, generating edges using Influence/Proportional relationships
+#   - given multiple relationships, first see how these would interact, then apply the result on a state
+# - see which states you can reach from initial state
+
 def gen_states(state):
   for k, entity_state in state.entities.items():
       entity = entity_state.entity
