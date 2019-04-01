@@ -26,9 +26,6 @@ class RelationDirection(Enum):
 class Quantity:
   name: str
   quantitySpace: EnumMeta
-  # TODO: figure out how to factor above vs. below fields
-  # qty: str
-  # change: Direction
 
 @dataclass
 class Relationship:
@@ -58,7 +55,6 @@ class Proportional(Relationship):
 @dataclass
 class ValueCorrespondence:
     '''if a then b'''
-    # TODO: do I need EnumMeta?
     a: Enum
     b: Enum
 
@@ -75,7 +71,7 @@ class Entity:
   name: str
   quantities: List[Quantity]
   relations: List[Relationship]
-  # TODO: ^ is this right, or could a relation be between quantities not part of the same entity? probably not relevant as I think we're only dealing with a single entity here.
+  # ^ out of scope: cross-entity relations
 
 @dataclass
 class EntityState:
