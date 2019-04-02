@@ -3,6 +3,7 @@
 from enum import Enum, EnumMeta
 from dataclasses import dataclass
 from typing import List, Dict, Tuple
+from itertools import product
 
 class Direction(Enum):
   QUESTION = 0  # question mark option to indicate changes in both directions causing an ambiguous change
@@ -79,53 +80,83 @@ class EntityState:
   state: Dict[str, Tuple[Enum, Direction]]
 
 
-@dataclass
-class State:
-  entities: Dict[str, EntityState]
+# @dataclass
+# class State:
+#   entities: Dict[str, EntityState]
 
 @dataclass
 class StateGraph:
-  states: Dict[str, State]
+  states: Dict[str, State] # EntityState
   edges: List[Tuple[str, str]]
 
 # functions
 
-def gen_state_graph(init_state):
+def gen_state_graph(init_state: State) -> StateGraph:
   i = 0
-  edges = []
   states = {}
+  edges = []
   state = init_state
   k = serialize_state(state)
   states.update({ k: state })
-  handle_state(state)
+  handle_state(state, states, edges)  # recursively mutate states/edges here
   sg = StateGraph(states, edges)
   return sg
 
-# impure!
-def handle_state(state, states, edges):
+def handle_state(
+    state: State,
+    states: Dict[str, State],
+    edges: List[Tuple[str, str]]) -> void:
+    ''' recursively handle a state. impure!
+        mutates states/edges to return. TODO: change this?
+    '''
     for next_state in gen_states(state):
         next_k = serialize_state(next_state)
         edges.append((k, next_k))
         if not state in states:
             states.add(state)
-            handle_state(next_state)
+            handle_state(next_state, states, edges)
 
-def serialize_state(state):
+def serialize_state(state: State) -> str:
     return str(state)
 
-# TODO: adjust this, as we can generate without initial state by itertools.product,
-# then filter out invalid states/transitions, then plug in initial state to see
-# from where to where we'll go.
+def make_state(state_comb: ???) -> State:
+    return State(stateDict)
+
+def gen_states(state: State) -> List[State]:
+    ''' generate all possible states by itertools.product
+    '''
+    entity_dict = {entity_state.entity for k, entity_state in state.entities.items()}
+    states = [make_state(state_comb) for state_comb in itertools.product(*iterables???)]  # List[State]
+    return states
+
+    stateDict = {}
+    for k, entity_state in state.entities.items():
+        entity = entity_state.entity
+        # name = entity.name  # == k
+        state = {}  # : Dict[str, Tuple[Enum, Direction]]
+        quantities = entity.quantities
+        for qty in quantities:
+            # TODO: these shouldn't be lists, use itertools here to make the combinations!
+            magnitude = [enumVal.value for enumVal in qty.quantitySpace]
+            derivative = [enumVal.value for enumVal in Direction]
+            tpl = (magnitude, derivative)  # (Enum, Direction)
+            state.APPEND(qty.name, tpl)
+            # qty.name  # : str
+            # qty.quantitySpace  # : EnumMeta
+            # for enumVal in qty.quantitySpace:
+            #   # enumVal.name
+            #   # enumVal.value
+        stateDict.APPEND(k, EntityState(entity, state))
 
 # TODO:
-# - generate states
-# - see which lead to conflicts based on rules like VC
+# - see which lead to conflicts based on rules like VC to filter out invalid states/transitions
 # - see how they connect, generating edges using Influence/Proportional relationships
 #   - given multiple relationships, first see how these would interact, then apply the result on a state
 #   - point (0, max?, delta 0) vs. range (+, delta -/+) values: points change first.
-# - see which states you can reach from initial state
+# - plug in initial state to see which states you can reach
 
-def gen_states(state):
+# obsolete:
+def gen_next_states(state: State) -> List[State]:
   for k, entity_state in state.entities.items():
       entity = entity_state.entity
       state_ = entity_state.state

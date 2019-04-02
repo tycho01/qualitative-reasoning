@@ -12,7 +12,8 @@ container_state = {
 
 entity_state = EntityState(container, container_state)
 state = State({ 'container': entity_state })
-# sg = gen_state_graph(state)
-# draw_state_graph(sg)
+# state = State(entity_state)
 print(state)
-gen_states(state)
+# gen_states(state)
+sg = gen_state_graph(state)
+draw_state_graph(sg)
