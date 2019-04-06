@@ -21,7 +21,7 @@ def gen_state_graph(entity: Entity) -> StateGraph:
 
     # TODO:
     # - see which lead to conflicts based on rules like VC to filter out invalid states/transitions
-    possible_states = all_states
+    possible_states = filter_states(all_states)
     # - see how they connect, generating edges using Influence/Proportional relationships
     #   - given multiple relationships, first see how these would interact, then apply the result on a state
     #   - point (0, max?, delta 0) vs. range (+, delta -/+) values: points change first.

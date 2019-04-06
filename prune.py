@@ -127,6 +127,6 @@ def check_continuous(stateA: EntityState, stateB: EntityState) -> bool:
             return False
     return True
 
-def check_validity(entity_states: List[EntityState]) -> bool:
-    # TODO
-    pass
+def filter_states(entity_states: List[EntityState]) -> List[EntityState]:
+    '''filter a list of entity states to those states deemed valid by valid correspondence'''
+    return list(filter(check_value_correspondence, entity_states))
