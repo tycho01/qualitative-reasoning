@@ -11,9 +11,9 @@ def test_make_entity_state():
     entity_state = make_entity_state(container, container_state)
     assert entity_state.state['volume'] == QuantityPair(Volume.ZERO, DerivativeDirection.NEUTRAL)
 
-def test_gen_state_graph():
-    sg = gen_state_graph(container)
-    # assert draw_state_graph(sg)
+# def test_gen_state_graph():
+#     sg = gen_state_graph(container)
+#     # assert draw_state_graph(sg)
 
 def test_serialize_state():
     assert serialize_state(entity_state) == "EntityState(entity=Entity(name='container', quantities={'inflow': Quantity(name='inflow', quantitySpace=<enum 'Inflow'>), 'outflow': Quantity(name='outflow', quantitySpace=<enum 'Outflow'>), 'volume': Quantity(name='volume', quantitySpace=<enum 'Volume'>)}, relations=[Influence(a=Quantity(name='inflow', quantitySpace=<enum 'Inflow'>), b=Quantity(name='volume', quantitySpace=<enum 'Volume'>), correlation=<RelationDirection.POSITIVE: 2>), Influence(a=Quantity(name='outflow', quantitySpace=<enum 'Outflow'>), b=Quantity(name='volume', quantitySpace=<enum 'Volume'>), correlation=<RelationDirection.NEGATIVE: 1>), Proportional(a=Quantity(name='volume', quantitySpace=<enum 'Volume'>), b=Quantity(name='outflow', quantitySpace=<enum 'Outflow'>), correlation=<RelationDirection.POSITIVE: 2>), ValueCorrespondence(a=('volume', <Volume.MAX: 2>), b=('outflow', <Outflow.MAX: 2>)), ValueCorrespondence(a=('volume', <Volume.ZERO: 0>), b=('outflow', <Outflow.ZERO: 0>))]), state={'volume': QuantityPair(magnitude=<Volume.ZERO: 0>, derivative=<DerivativeDirection.NEUTRAL: 2>), 'inflow': QuantityPair(magnitude=<Inflow.ZERO: 0>, derivative=<DerivativeDirection.NEUTRAL: 2>), 'outflow': QuantityPair(magnitude=<Outflow.ZERO: 0>, derivative=<DerivativeDirection.NEUTRAL: 2>)})"
