@@ -72,7 +72,7 @@ class StateGraph:
 
 # functions
 
-def gen_state_graph(entity: entity) -> StateGraph:
+def gen_state_graph(entity: Entity) -> StateGraph:
     # generate all possible states
     all_states = gen_states(entity)
 
