@@ -31,6 +31,12 @@ def test_check_influence_bad():
     entity_state_after = make_entity_state(container, container_state_after)
     assert check_influence(entity_state_before, entity_state_after) == False
 
+def test_combine_derivatives():
+    assert combine_derivatives(set()) == DerivativeDirection.NEUTRAL
+    assert combine_derivatives({DerivativeDirection.POSITIVE}) == DerivativeDirection.POSITIVE
+    assert combine_derivatives({DerivativeDirection.POSITIVE, DerivativeDirection.NEGATIVE}) == DerivativeDirection.QUESTION
+    assert combine_derivatives({DerivativeDirection.NEUTRAL, DerivativeDirection.NEGATIVE}) == DerivativeDirection.NEGATIVE
+
 def test_check_value_correspondence_good():
     assert check_value_correspondence(entity_state) == True
 
