@@ -15,4 +15,4 @@ container_state_bonus = {
     'pressure': (Volume.ZERO, Direction.NEUTRAL),
 }
 
-entity_state = EntityState(container, container_state)
+entity_state = make_entity_state(container, container_state)

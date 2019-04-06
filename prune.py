@@ -106,11 +106,10 @@ def check_value_correspondence(entity_state: EntityState) -> bool:
                 return False
     return True
 
-def qty_matches(state: Dict[str, Tuple[Enum, Direction]], qty_val: Tuple[str, Enum]) -> bool:
+def qty_matches(state: Dict[str, QuantityPair], qty_pair: Tuple[str, Enum]) -> bool:
     '''check if a state quantity matches a given value'''
-    (qty_name, val) = qty_val
-    (magnitude, derivative) = state[qty_name]
-    return val == magnitude
+    (qty_name, val) = qty_pair
+    return val == state[qty_name].magnitude
 
 def check_continuous(stateA: EntityState, stateB: EntityState) -> bool:
     # TODO
