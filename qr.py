@@ -22,33 +22,39 @@ def gen_state_graph(entity: Entity) -> StateGraph:
     # - see which lead to conflicts based on rules like VC to filter out invalid states/transitions
     possible_states = filter_states(all_states)
 
-    # TODO:
     # - see how they connect, generating edges using Influence/Proportional relationships
     #   - given multiple relationships, first see how these would interact, then apply the result on a state
     #   - point (0, max?, delta 0) vs. range (+, delta -/+) values: points change first.
+    all_combinations = itertools.product(possible_states, possible_states)
+    possible_combinations = list(filter(can_transition, all_combinations))
 
-    states = {}
-    edges = []
-    state = possible_states[0]
-    k = serialize_state(state)
-    states.update({ k: state })
-    handle_state(state, states, edges)  # recursively mutate states/edges here
-    sg = StateGraph(states, edges)
+    nodes = {serialize_state(state): state for state in possible_states}
+    edges = [(serialize_state(pair[0]), serialize_state(pair[1])) for pair in possible_combinations]
+
+    # nodes = {}
+    # edges = []
+    # state = possible_states[0]
+    # k = serialize_state(state)
+    # nodes.update({ k: state })
+    # handle_state(state, nodes, edges)  # recursively mutate nodes/edges here
+
+    sg = StateGraph(nodes, edges)
     return sg
 
-def handle_state(
-    state: EntityState,
-    states: Dict[str, EntityState],
-    edges: List[Tuple[str, str]]) -> None:
-    ''' recursively handle a state. impure!
-        mutates states/edges to return. TODO: change this?
-    '''
-    for next_state in next_states(state):
-        next_k = serialize_state(next_state)
-        edges.append((k, next_k))
-        if not state in states:
-            states.add(state)
-            handle_state(next_state, states, edges)
+# def handle_state(
+#     state: EntityState,
+#     states: Dict[str, EntityState],
+#     edges: List[Tuple[str, str]]) -> None:
+#     ''' recursively handle a state. impure!
+#         mutates states/edges to return. TODO: change this?
+#     '''
+#     for next_state in next_states(state):
+#         next_k = serialize_state(next_state)
+#         edges.append((k, next_k))
+#         if not state in states:
+#             states.add(state)
+#             handle_state(next_state, states, edges)
+
 def serialize_state(state: EntityState) -> str:
     '''simple serialization method for graph key purposes'''
     return str(state)
