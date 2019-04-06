@@ -7,8 +7,8 @@ from itertools import product
 
 class Direction(Enum):
   QUESTION = 0  # question mark option to indicate changes in both directions causing an ambiguous change
-  NEGATIVE = 1
-  NEUTRAL  = 2
+  NEGATIVE = 1  # TODO: should this be represented as negative?
+  NEUTRAL  = 2  # TODO: should this be represented as zero?
   POSITIVE = 3
 
 class RelationDirection(Enum):
@@ -91,21 +91,20 @@ class StateGraph:
 
 # functions
 
-def gen_state_graph(init_state: State) -> StateGraph:
+def gen_state_graph(entity: entity) -> StateGraph:
     # generate all possible states
-    entity_dict = {k: entity_state.entity for k, entity_state in state.entities.items()}
-    all_states = gen_states(entity_dict)
+    all_states = gen_states(entity)
 
     # TODO:
     # - see which lead to conflicts based on rules like VC to filter out invalid states/transitions
+    possible_states = all_states
     # - see how they connect, generating edges using Influence/Proportional relationships
     #   - given multiple relationships, first see how these would interact, then apply the result on a state
     #   - point (0, max?, delta 0) vs. range (+, delta -/+) values: points change first.
-    # - plug in initial state to see which states you can reach
 
     states = {}
     edges = []
-    state = init_state
+    state = possible_states[0]
     k = serialize_state(state)
     states.update({ k: state })
     handle_state(state, states, edges)  # recursively mutate states/edges here

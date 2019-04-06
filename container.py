@@ -166,5 +166,3 @@ all_relations = [
 
 container = Entity('container', quantities, relations)
 # extra_container = Entity('container', all_quantities, all_relations)
-
-
