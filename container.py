@@ -12,7 +12,7 @@ class Inflow(Enum):
 
 inflow =  Quantity('inflow', Inflow)
 
-# Outflow (of waterout of the container)
+# Outflow (of water out of the container)
 
 class Outflow(Enum):
   ZERO = 0  # POINT
