@@ -93,10 +93,10 @@ def gen_states(entity: Entity) -> List[EntityState]:
     # state_dict: Dict[str, QuantityPair]
     state_dicts = [
         {
-            k: QuantityPair(*tpl)
-            for k, tpl in map(wrap_enums, zip(entity.quantities.values(), to_pairs(pair)))
+            k: qty_pair
+            for k, qty_pair in map(wrap_enums, zip(entity.quantities.values(), to_pairs(pair)))
         }
         for pair in itertools.product(*iterables)
     ]
-    states = [make_entity_state(entity, state_dict) for state_dict in state_dicts]
+    states = [EntityState(entity, state_dict) for state_dict in state_dicts]
     return states

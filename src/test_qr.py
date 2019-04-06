@@ -29,5 +29,5 @@ def test_to_pairs():
 def test_wrap_enums():
     assert wrap_enums((Quantity('volume', Volume), (0, 2))) == ('volume', QuantityPair(Volume.ZERO, DerivativeDirection.NEUTRAL))
 
-# def test_gen_states():
-#     assert len(gen_states(container)) > 1
+def test_gen_states():
+    assert len(gen_states(container)) == 1152
