@@ -99,50 +99,42 @@ def handle_state(
             handle_state(next_state, states, edges)
 
 def inter_state_trace(a: EntityState, b: EntityState) -> str:
+    # here we can mention intra-state rules like value correspondence
     # TODO: implement
     pass
 
 def intra_state_trace(state: EntityState) -> str:
+    # here we can mention intra-state rules like value correspondence
     return str(state)
 
+def to_pairs(lst):
+    return list(zip(*[lst[x::2] for x in (0, 1)]))
+
+def wrap_enums(qty_val_speed: Tuple[Quantity, Tuple[int, int]]) -> Tuple[str, Tuple[Enum, Direction]]:
+    '''wraps enum values back into their enums'''
+    (qty, (val, speed)) = qty_val_speed
+    k = qty.name
+    magnitude = qty.quantitySpace(val)
+    derivative = Direction(speed)
+    tpl = (magnitude, derivative)
+    return (k, tpl)
+
 def gen_states(entity: Entity) -> List[EntityState]:
-    state_dict = {}  # Dict[str, EntityState]
-    # state: Dict[str, Tuple[Enum, Direction]]
-    for entity, state in entity_state_pairs:
-        state_dict[entity.name] = EntityState(entity, state)
-    return State(state_dict)
-
-def gen_states(entity_dict: Dict[str, Entity]) -> List[State]:
-    states = [make_state(entity_state_pairs) for entity_state_pairs in itertools.product(*ITERABLES)]
+    iterables = list(itertools.chain.from_iterable([
+        [
+            # magnitudes
+            [enumVal.value for enumVal in qty.quantitySpace],
+            # derivatives
+            [enumVal.value for enumVal in Direction]
+        ] for qty in entity.quantities
+    ]))
+    # state_dict: Dict[str, Tuple[Enum, Direction]]
+    state_dicts = [
+        {
+            k: tpl
+            for k, tpl in map(wrap_enums, zip(entity.quantities, to_pairs(pair)))
+        }
+        for pair in itertools.product(*iterables)
+    ]
+    states = [EntityState(entity, state_dict) for state_dict in state_dicts]
     return states
-
-    # for entity in entity_dict.values():
-    #     state = {}  # : Dict[str, Tuple[Enum, Direction]]
-    #     quantities = entity.quantities
-    #     for qty in quantities:
-# # obsolete:
-# def gen_next_states(state: EntityState) -> List[EntityState]:
-#     entity = entity_state.entity
-#     state_ = entity_state.state
-#     for qty_name, tpl in state_.items():
-#         qty, change = tpl
-#         #
-#         print(qty_name, qty, change)
-#     name = entity.name
-#     quantities = entity.quantities
-#     for qty in quantities:
-#         #
-#         print(qty)
-#     relations = entity.relations
-#     for relation in relations:
-#     a = relation.a
-#     b = relation.b
-#     print(relation, a, b)
-#     clz = type(relation)
-#     if clz == ValueCorrespondence:
-#     # elif clz == Influence:
-#     # elif clz == Proportional:
-#         pass
-#     else:
-#         # throw Error
-#         correlation = relation.correlation
