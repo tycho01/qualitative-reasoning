@@ -21,7 +21,7 @@ def check_influence(source_state: EntityState, target_state: EntityState) -> boo
             # Retrieving the names of the source and target quantities
             source_quantity_name = relation.a.name
             target_quantity_name = relation.b.name
-            source_quantity_magnitude = state1[source_quantity_name].magnitude
+            source_quantity_magnitude = state1[source_quantity_name].magnitude.value
             source_quantity_direction = state1[source_quantity_name].derivative
 
             # Create a list for the target quantity if not present in the dictionary
@@ -40,25 +40,25 @@ def check_influence(source_state: EntityState, target_state: EntityState) -> boo
         directions = target_quantities[target_quantity]
         if len(set(directions)) == 1:
             if directions[0] == DerivativeDirection.POSITIVE:
-                test_state[target_quantity][1] = DerivativeDirection.POSITIVE
+                test_state[target_quantity] = (test_state[target_quantity].magnitude, DerivativeDirection.POSITIVE)
             elif directions[0] == DerivativeDirection.NEGATIVE:
-                test_state[target_quantity][1] = DerivativeDirection.NEGATIVE
+                test_state[target_quantity] = (test_state[target_quantity].magnitude, DerivativeDirection.NEGATIVE)
             elif directions[0] == DerivativeDirection.QUESTION:
-                test_state[target_quantity][1] = DerivativeDirection.QUESTION
+                test_state[target_quantity] = (test_state[target_quantity].magnitude, DerivativeDirection.QUESTION)
             elif directions[0] == DerivativeDirection.NEUTRAL:
                 pass
         elif len(set(directions)) == 2:
             if DerivativeDirection.NEUTRAL in set(directions):
                 if DerivativeDirection.POSITIVE in set(directions):
-                    test_state[target_quantity][1] = DerivativeDirection.POSITIVE
+                    test_state[target_quantity] = (test_state[target_quantity].magnitude, DerivativeDirection.POSITIVE)
                 elif DerivativeDirection.NEGATIVE in set(directions):
-                    test_state[target_quantity][1] = DerivativeDirection.NEGATIVE
+                    test_state[target_quantity] = (test_state[target_quantity].magnitude, DerivativeDirection.NEGATIVE)
                 elif DerivativeDirection.QUESTION in set(directions):
-                    test_state[target_quantity][1] = DerivativeDirection.QUESTION
+                    test_state[target_quantity] = (test_state[target_quantity].magnitude, DerivativeDirection.QUESTION)
             else:
-                test_state[target_quantity][1] = DerivativeDirection.QUESTION
+                test_state[target_quantity] = (test_state[target_quantity].magnitude, DerivativeDirection.QUESTION)
         elif len(set(directions)) > 2:
-            test_state[target_quantity][1] = DerivativeDirection.QUESTION
+            test_state[target_quantity] = (test_state[target_quantity].magnitude, DerivativeDirection.QUESTION)
     
     # Returning if the destination state is valid or not
     return test_state == state2
@@ -77,13 +77,13 @@ def perform_direct_influence(direct_influence_type: int, source_quantity_magnitu
     type_sign = -1 if direct_influence_type == RelationDirection.NEGATIVE.value else 1
     source_quantity_magnitude_sign = 1 if source_quantity_magnitude > 0 else 0 if source_quantity_magnitude == 0 else -1
     resulting_sign = type_sign * source_quantity_magnitude_sign
-    return Direction.POSITIVE.value if resulting_sign == 1 else Direction.NEUTRAL.value if resulting_sign == 0 else Direction.NEGATIVE.value
+    return DerivativeDirection.POSITIVE.value if resulting_sign == 1 else DerivativeDirection.NEUTRAL.value if resulting_sign == 0 else DerivativeDirection.NEGATIVE.value
 
 def perform_indirect_influence(indirect_influence_type: int, source_quantity_direction: Enum) -> int:
     type_sign = -1 if indirect_influence_type == RelationDirection.NEGATIVE.value else 1
-    source_quantity_direction_sign = 1 if source_quantity_direction == Direction.POSITIVE else 0 if source_quantity_direction == Direction.NEUTRAL else -1 if source_quantity_direction == Direction.NEGATIVE else 2
+    source_quantity_direction_sign = 1 if source_quantity_direction == DerivativeDirection.POSITIVE else 0 if source_quantity_direction == DerivativeDirection.NEUTRAL else -1 if source_quantity_direction == DerivativeDirection.NEGATIVE else 2
     resulting_sign = type_sign * source_quantity_direction_sign
-    return Direction.POSITIVE.value if resulting_sign == 1 else Direction.NEUTRAL.value if resulting_sign == 0 else Direction.NEGATIVE.value if resulting_sign == -1 else Direction.QUESTION.value
+    return DerivativeDirection.POSITIVE.value if resulting_sign == 1 else DerivativeDirection.NEUTRAL.value if resulting_sign == 0 else DerivativeDirection.NEGATIVE.value if resulting_sign == -1 else DerivativeDirection.QUESTION.value
 
 def qty_matches(state: Dict[str, QuantityPair], qty_pair: Tuple[str, Enum]) -> bool:
     '''check if a state quantity matches a given value. function for internal use in check_value_correspondence.'''
