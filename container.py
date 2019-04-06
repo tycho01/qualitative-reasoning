@@ -7,33 +7,33 @@ from qr import *
 # Inflow (of water into the container)
 
 class Inflow(Enum):
-  ZERO = 0  # POINT
-  PLUS = 1  # RANGE
+    ZERO = 0  # POINT
+    PLUS = 1  # RANGE
 
 inflow =  Quantity('inflow', Inflow)
 
 # Outflow (of water out of the container)
 
 class Outflow(Enum):
-  ZERO = 0  # POINT
-  PLUS = 1  # RANGE
-  MAX = 2   # POINT
+    ZERO = 0  # POINT
+    PLUS = 1  # RANGE
+    MAX = 2   # POINT
 
 outflow = Quantity('outflow', Outflow)
 
 # Volume (of the water in the container)
 
 class Volume(Enum):
-  ZERO = 0  # POINT
-  PLUS = 1  # RANGE
-  MAX = 2   # POINT
+    ZERO = 0  # POINT
+    PLUS = 1  # RANGE
+    MAX = 2   # POINT
 
 volume =  Quantity('volume', Volume)
 
 quantities = [
-  inflow,
-  outflow,
-  volume,
+    inflow,
+    outflow,
+    volume,
 ]
 
 # extra
@@ -41,18 +41,18 @@ quantities = [
 # Height (of the water column in of container)
 
 class Height(Enum):
-  ZERO = 0  # POINT
-  PLUS = 1  # RANGE
-  MAX = 2   # POINT
+    ZERO = 0  # POINT
+    PLUS = 1  # RANGE
+    MAX = 2   # POINT
 
 height = Quantity('height', Height)
 
 # Pressure (of the water column at the bottom of container)
 
 class Pressure(Enum):
-  ZERO = 0  # POINT
-  PLUS = 1  # RANGE
-  MAX = 2   # POINT
+    ZERO = 0  # POINT
+    PLUS = 1  # RANGE
+    MAX = 2   # POINT
 
 pressure = Quantity('pressure', Pressure)
 
@@ -76,11 +76,11 @@ vol_out_zero = ValueCorrespondence(('volume', Volume.ZERO), ('outflow', Outflow.
 # Volume, Outflow, 
 
 relations = [
-  inflow_volume,
-  outflow_volume,
-  volume_outflow,
-  vol_out_max,
-  vol_out_zero,
+    inflow_volume,
+    outflow_volume,
+    volume_outflow,
+    vol_out_max,
+    vol_out_zero,
 ]
 
 # extra relations
@@ -120,46 +120,46 @@ out_prs_max = ValueCorrespondence(('outflow', Outflow.MAX), ('pressure', Pressur
 out_prs_zero = ValueCorrespondence(('outflow', Outflow.ZERO), ('pressure', Pressure.ZERO))
 
 all_relations = [
-  inflow_volume,
-  outflow_volume,
-  # volume_outflow,  # Instead of volume, it is the pressure that determines the outflow
+    inflow_volume,
+    outflow_volume,
+    # volume_outflow,  # Instead of volume, it is the pressure that determines the outflow
 
-  # TODO: figure out which of these are legit
+    # TODO: figure out which of these are legit
 
-  # Particular values, such as 0 and max correspond for volume, height, pressure and outflow.
-  vol_out_max,
-  vol_out_zero,
-  vol_hi_max,
-  vol_hi_zero,
-  vol_prs_max,
-  vol_prs_zero,
+    # Particular values, such as 0 and max correspond for volume, height, pressure and outflow.
+    vol_out_max,
+    vol_out_zero,
+    vol_hi_max,
+    vol_hi_zero,
+    vol_prs_max,
+    vol_prs_zero,
 
-  hi_out_max,
-  hi_out_zero,
-  hi_vol_max,
-  hi_vol_zero,
-  hi_prs_max,
-  hi_prs_zero,
+    hi_out_max,
+    hi_out_zero,
+    hi_vol_max,
+    hi_vol_zero,
+    hi_prs_max,
+    hi_prs_zero,
 
-  prs_out_max,
-  prs_out_zero,
-  prs_hi_max,
-  prs_hi_zero,
-  prs_vol_max,
-  prs_vol_zero,
+    prs_out_max,
+    prs_out_zero,
+    prs_hi_max,
+    prs_hi_zero,
+    prs_vol_max,
+    prs_vol_zero,
 
-  out_vol_max,
-  out_vol_zero,
-  out_hi_max,
-  out_hi_zero,
-  out_prs_max,
-  out_prs_zero,
+    out_vol_max,
+    out_vol_zero,
+    out_hi_max,
+    out_hi_zero,
+    out_prs_max,
+    out_prs_zero,
 
-  # extra relations
+    # extra relations
 
-  volume_height,
-  height_pressure,
-  pressure_outflow,
+    volume_height,
+    height_pressure,
+    pressure_outflow,
 ]
 
 # entities

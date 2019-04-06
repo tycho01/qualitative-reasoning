@@ -6,14 +6,14 @@ from typing import List, Dict, Tuple
 from itertools import product
 
 class Direction(Enum):
-  QUESTION = 0  # question mark option to indicate changes in both directions causing an ambiguous change
-  NEGATIVE = 1  # TODO: should this be represented as negative?
-  NEUTRAL  = 2  # TODO: should this be represented as zero?
-  POSITIVE = 3
+    QUESTION = 0  # question mark option to indicate changes in both directions causing an ambiguous change
+    NEGATIVE = 1  # TODO: should this be represented as negative?
+    NEUTRAL  = 2  # TODO: should this be represented as zero?
+    POSITIVE = 3
 
 class RelationDirection(Enum):
-  NEGATIVE = 1
-  POSITIVE = 2
+    NEGATIVE = 1
+    POSITIVE = 2
 
 # for each quantity space we need to know:
 # - the order (in which to transition), so ensure the enums are logically ordered!
@@ -21,22 +21,22 @@ class RelationDirection(Enum):
 # - represent point values as even numbers (-> makes 0 a point), ranges as odd numbers.
 @dataclass
 class Quantity:
-  name: str
-  quantitySpace: EnumMeta
+    name: str
+    quantitySpace: EnumMeta
 
 @dataclass
 class Relationship:
-  a: Quantity
-  b: Quantity
-  # ^ EnumMeta?
+    a: Quantity
+    b: Quantity
+    # ^ EnumMeta?
 
 @dataclass
 class Influence(Relationship):
-  correlation: RelationDirection = RelationDirection.POSITIVE
+     correlation: RelationDirection = RelationDirection.POSITIVE
 
 @dataclass
 class Proportional(Relationship):
-  correlation: RelationDirection = RelationDirection.POSITIVE
+    correlation: RelationDirection = RelationDirection.POSITIVE
 
 @dataclass
 class ValueCorrespondence:
@@ -46,21 +46,21 @@ class ValueCorrespondence:
 
 @dataclass
 class Entity:
-  name: str
-  quantities: Dict[str, Quantity]
-  relations: List[Relationship]
-  # ^ out of scope: cross-entity relations
+    name: str
+    quantities: Dict[str, Quantity]
+    relations: List[Relationship]
+    # ^ out of scope: cross-entity relations
 
 @dataclass
 class EntityState:
-  entity: Entity
-  state: Dict[str, Tuple[Enum, Direction]]
+    entity: Entity
+    state: Dict[str, Tuple[Enum, Direction]]
 
 
 @dataclass
 class StateGraph:
-  states: Dict[str, EntityState]
-  edges: List[Tuple[str, str]]
+    states: Dict[str, EntityState]
+    edges: List[Tuple[str, str]]
 
 # functions
 
