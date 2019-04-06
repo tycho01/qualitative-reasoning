@@ -40,14 +40,14 @@ class Proportional(Relationship):
 
 @dataclass
 class ValueCorrespondence:
-    '''if a then b'''
-    a: Enum
-    b: Enum
+    '''if a then b. a/b denote (quantity name, enum value)'''
+    a: Tuple[str, Enum]
+    b: Tuple[str, Enum]
 
 @dataclass
 class Entity:
   name: str
-  quantities: List[Quantity]
+  quantities: Dict[str, Quantity]
   relations: List[Relationship]
   # ^ out of scope: cross-entity relations
 
@@ -63,6 +63,11 @@ class StateGraph:
   edges: List[Tuple[str, str]]
 
 # functions
+
+def make_entity(name: str, quantities: List[Quantity], relations: List[Relationship]) -> Entity:
+    '''wrap the entity ctor to handle Quantity dict creation'''
+    qty_dict = {qty.name: qty for in quantities}
+    return Entity(name, qty_dict, relations)
 
 def gen_state_graph(entity: Entity) -> StateGraph:
     # generate all possible states
@@ -126,13 +131,13 @@ def gen_states(entity: Entity) -> List[EntityState]:
             [enumVal.value for enumVal in qty.quantitySpace],
             # derivatives
             [enumVal.value for enumVal in Direction]
-        ] for qty in entity.quantities
+        ] for qty in entity.quantities.values()
     ]))
     # state_dict: Dict[str, Tuple[Enum, Direction]]
     state_dicts = [
         {
             k: tpl
-            for k, tpl in map(wrap_enums, zip(entity.quantities, to_pairs(pair)))
+            for k, tpl in map(wrap_enums, zip(entity.quantities.values(), to_pairs(pair)))
         }
         for pair in itertools.product(*iterables)
     ]
