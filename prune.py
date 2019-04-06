@@ -12,10 +12,13 @@ def check_direct_influence(state, relations):
     outflow_mag_state, outflow_dir_state = outflow_state[0].value, outflow_state[1].value
 
 def check_proportional_influence(state, relations):
-    #TODO
+    # TODO
+    pass
 
 def check_value_correspondence(state, relations):
-    #TODO
+    # TODO
+    pass
 
 def check_validity(states, relations):
-    #TODO
+    # TODO
+    pass
