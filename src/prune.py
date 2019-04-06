@@ -1,6 +1,6 @@
 # Importing the Libraries
 import copy
-from typing import List, Dict, Tuple
+from typing import List, Dict, Tuple, Set
 from qr_types import *
 
 def check_influence(source_state: EntityState, target_state: EntityState) -> bool:
@@ -10,9 +10,6 @@ def check_influence(source_state: EntityState, target_state: EntityState) -> boo
     state1 = source_state.state
     state2 = target_state.state
     relations = source_state.entity.relations
-
-    # Test state for verification
-    test_state = copy.deepcopy(state1)
 
     # Dictionary to keep track of the derivative directions of dependant quantities
     target_quantities = {}
@@ -26,46 +23,28 @@ def check_influence(source_state: EntityState, target_state: EntityState) -> boo
 
             # Create a list for the target quantity if not present in the dictionary
             if target_quantity_name not in target_quantities:
-                target_quantities[target_quantity_name] = []
+                target_quantities[target_quantity_name] = set()
             
            # If it is a direct influence
             if type(relation) == Influence:
-                target_quantities[target_quantity_name].append(perform_direct_influence(relation.correlation.value, source_quantity_magnitude))
+                target_quantities[target_quantity_name].add(perform_direct_influence(relation.correlation.value, source_quantity_magnitude))
             # If it is a proportional influence
             elif type(relation) == Proportional:
-                target_quantities[target_quantity_name].append(perform_indirect_influence(relation.correlation.value, source_quantity_direction))
+                target_quantities[target_quantity_name].add(perform_indirect_influence(relation.correlation.value, source_quantity_direction))
             
     # Determining the overall derivative direction for the target quantities
-    for target_quantity in target_quantities:
-        directions = target_quantities[target_quantity]
-        target_quantity_magnitude = test_state[target_quantity].magnitude
-        target_quantity_direction = test_state[target_quantity].derivative
-        if len(set(directions)) == 1:
-            if directions[0] == DerivativeDirection.POSITIVE:
-                target_quantity_direction = DerivativeDirection.POSITIVE
-            elif directions[0] == DerivativeDirection.NEGATIVE:
-                target_quantity_direction = DerivativeDirection.NEGATIVE
-            elif directions[0] == DerivativeDirection.QUESTION:
-                target_quantity_direction = DerivativeDirection.QUESTION
-            elif directions[0] == DerivativeDirection.NEUTRAL:
-                pass
-        elif len(set(directions)) == 2:
-            if DerivativeDirection.NEUTRAL in set(directions):
-                if DerivativeDirection.POSITIVE in set(directions):
-                    target_quantity_direction = DerivativeDirection.POSITIVE
-                elif DerivativeDirection.NEGATIVE in set(directions):
-                    target_quantity_direction = DerivativeDirection.NEGATIVE
-                elif DerivativeDirection.QUESTION in set(directions):
-                    target_quantity_direction = DerivativeDirection.QUESTION
-            else:
-                target_quantity_direction = DerivativeDirection.QUESTION
-        elif len(set(directions)) > 2:
-            target_quantity_direction = DerivativeDirection.QUESTION
-
-        test_state[target_quantity] = (target_quantity_magnitude, target_quantity_direction)
+    qty_derivatives = {k: combine_derivatives(directions) for k, directions in target_quantities.items()}
     
     # Returning if the destination state is valid or not
-    return test_state == state2
+    # TODO: check if state2 derivatives are compatible with test_state derivatives
+    # TODO: check if magnitude changes from state1 to state2 match the state2 derivatives
+    return qty_derivatives == state2
+
+def combine_derivatives(directions_: Set[DerivativeDirection]) -> DerivativeDirection:
+    '''obtain a DerivativeDirection by combining a set of them. this may give DerivativeDirection.QUESTION.'''
+    directions = directions_ - {DerivativeDirection.NEUTRAL}
+    size = len(set(directions))
+    return DerivativeDirection.NEUTRAL if size == 0 else list(directions)[0] if size == 1 else DerivativeDirection.QUESTION
 
 def check_value_correspondence(entity_state: EntityState) -> bool:
     '''check if a state is deemed valid by its value correspondence rules'''
