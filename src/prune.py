@@ -64,9 +64,6 @@ def check_influence(source_state: EntityState, target_state: EntityState) -> boo
 
         test_state[target_quantity] = (target_quantity_magnitude, target_quantity_direction)
     
-    # Determining the overall magnitude for the target quantities
-
-
     # Returning if the destination state is valid or not
     return test_state == state2
 
@@ -86,16 +83,16 @@ def perform_direct_influence(direct_influence_type: int, source_quantity_magnitu
     resulting_sign = type_sign * source_quantity_magnitude_sign
     return DerivativeDirection.POSITIVE.value if resulting_sign == 1 else DerivativeDirection.NEUTRAL.value if resulting_sign == 0 else DerivativeDirection.NEGATIVE.value
 
+assert perform_direct_influence(2, 0) == 2
+
 def perform_indirect_influence(indirect_influence_type: int, source_quantity_direction: Enum) -> int:
     type_sign = -1 if indirect_influence_type == RelationDirection.NEGATIVE.value else 1
     source_quantity_direction_sign = 1 if source_quantity_direction == DerivativeDirection.POSITIVE else 0 if source_quantity_direction == DerivativeDirection.NEUTRAL else -1 if source_quantity_direction == DerivativeDirection.NEGATIVE else 2
     resulting_sign = type_sign * source_quantity_direction_sign
     return DerivativeDirection.POSITIVE.value if resulting_sign == 1 else DerivativeDirection.NEUTRAL.value if resulting_sign == 0 else DerivativeDirection.NEGATIVE.value if resulting_sign == -1 else DerivativeDirection.QUESTION.value
 
-# def perform_magnitude_change(test_state : Dict) -> Dict:
-#     for quantity in test_state:
-#         if test_state[quantity].derivative == DerivativeDirection.POSITIVE:
-#             if test_state[quantity].magnitude == 
+assert perform_indirect_influence(1, DerivativeDirection.POSITIVE) == 1
+ 
 def qty_matches(state: Dict[str, QuantityPair], qty_pair: Tuple[str, Enum]) -> bool:
     '''check if a state quantity matches a given value. function for internal use in check_value_correspondence.'''
     (qty_name, val) = qty_pair
