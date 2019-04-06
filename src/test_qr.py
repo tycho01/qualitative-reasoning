@@ -23,8 +23,8 @@ def test_state_key():
     assert state_key(entity_state) == "_volume_0_2_inflow_0_2_outflow_0_2_"
 
 def test_inter_state_trace():
-    # print(inter_state_trace(entity_state, entity_state))
-    assert inter_state_trace(entity_state, entity_state) == '''{'transition_valid': False, 'influence_valid': True, 'continuous_valid': True, 'point_range_valid': True, 'not_equal_valid': False, 'a': "{'type': 'container', 'valid': True, 'state': {'volume': ('ZERO', 'NEUTRAL'), 'inflow': ('ZERO', 'NEUTRAL'), 'outflow': ('ZERO', 'NEUTRAL')}}", 'b': "{'type': 'container', 'valid': True, 'state': {'volume': ('ZERO', 'NEUTRAL'), 'inflow': ('ZERO', 'NEUTRAL'), 'outflow': ('ZERO', 'NEUTRAL')}}"}'''
+    print(inter_state_trace(entity_state, entity_state))
+    assert inter_state_trace(entity_state, entity_state) == '''{'transition_valid': False, 'a': "{'type': 'container', 'valid': True, 'state': {'volume': ('ZERO', 'NEUTRAL'), 'inflow': ('ZERO', 'NEUTRAL'), 'outflow': ('ZERO', 'NEUTRAL')}}", 'b': "{'type': 'container', 'valid': True, 'state': {'volume': ('ZERO', 'NEUTRAL'), 'inflow': ('ZERO', 'NEUTRAL'), 'outflow': ('ZERO', 'NEUTRAL')}}"}'''
 
 def test_intra_state_trace():
     # print(intra_state_trace(entity_state))
