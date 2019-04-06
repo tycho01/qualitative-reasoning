@@ -3,8 +3,10 @@
 from enum import Enum, EnumMeta
 from typing import List, Dict, Tuple
 from qr_types import *
-from prune import *
+
+import re
 import itertools
+from prune import *
 
 def make_entity(name: str, quantities: List[Quantity], relations: List[Relationship]) -> Entity:
     '''wrap the entity ctor to handle Quantity dict creation'''
@@ -29,13 +31,13 @@ def gen_state_graph(entity: Entity) -> StateGraph:
     all_combinations = itertools.product(possible_states, possible_states)
     possible_combinations = list(filter(lambda tpl: can_transition(tpl[0], tpl[1]), all_combinations))
 
-    nodes = {serialize_state(state): state for state in possible_states}
-    edges = [(serialize_state(pair[0]), serialize_state(pair[1])) for pair in possible_combinations]
+    nodes = {state_key(state): state for state in possible_states}
+    edges = [(state_key(pair[0]), state_key(pair[1])) for pair in possible_combinations]
 
     # nodes = {}
     # edges = []
     # state = possible_states[0]
-    # k = serialize_state(state)
+    # k = state_key(state)
     # nodes.update({ k: state })
     # handle_state(state, nodes, edges)  # recursively mutate nodes/edges here
 
@@ -50,15 +52,19 @@ def gen_state_graph(entity: Entity) -> StateGraph:
 #         mutates states/edges to return. TODO: change this?
 #     '''
 #     for next_state in next_states(state):
-#         next_k = serialize_state(next_state)
+#         next_k = state_key(next_state)
 #         edges.append((k, next_k))
 #         if not state in states:
 #             states.add(state)
 #             handle_state(next_state, states, edges)
 
 def serialize_state(state: EntityState) -> str:
-    '''simple serialization method for graph key purposes'''
+    '''simple serialization method for EntityState'''
     return str({k: (pair.magnitude.value, pair.derivative.value) for k, pair in state.state.items()})
+
+def state_key(state: EntityState) -> str:
+    '''serialize state for graph key purposes'''
+    return re.sub(r"[^\w]+", '_', serialize_state(state))
 
 def inter_state_trace(a: EntityState, b: EntityState) -> str:
     # TODO: here we can mention intra-state validity like can_transition

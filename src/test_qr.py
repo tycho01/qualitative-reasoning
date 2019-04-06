@@ -18,6 +18,9 @@ def test_make_entity_state():
 def test_serialize_state():
     assert serialize_state(entity_state) == "{'volume': (0, 2), 'inflow': (0, 2), 'outflow': (0, 2)}"
 
+def test_state_key():
+    assert state_key(entity_state) == "_volume_0_2_inflow_0_2_outflow_0_2_"
+
 def test_inter_state_trace():
     assert inter_state_trace(entity_state, entity_state) == None
 
