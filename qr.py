@@ -5,7 +5,7 @@ from dataclasses import dataclass
 from typing import List, Dict, Tuple
 from itertools import product
 
-class Direction(Enum):
+class DerivativeDirection(Enum):
     QUESTION = 0  # question mark option to indicate changes in both directions causing an ambiguous change
     NEGATIVE = 1  # TODO: should this be represented as negative?
     NEUTRAL  = 2  # TODO: should this be represented as zero?
@@ -59,7 +59,7 @@ class EntityState:
 @dataclass
 class QuantityPair:
     magnitude: Enum
-    derivative: Direction
+    derivative: DerivativeDirection
 
 @dataclass
 class StateGraph:
@@ -73,7 +73,7 @@ def make_entity(name: str, quantities: List[Quantity], relations: List[Relations
     qty_dict = {qty.name: qty for in quantities}
     return Entity(name, qty_dict, relations)
 
-def make_entity_state(entity: Entity, state_dict: Dict[str, Tuple[Enum, Direction]]) -> EntityState:
+def make_entity_state(entity: Entity, state_dict: Dict[str, Tuple[Enum, DerivativeDirection]]) -> EntityState:
     pair_state = {k: QuantityPair(*tpl) for k, tpl in state_dict.items()}
     return EntityState(entity, pair_state)
 
@@ -128,7 +128,7 @@ def wrap_enums(qty_vals: Tuple[Quantity, Tuple[int, int]]) -> Tuple[str, Quantit
     (qty, (val, speed)) = qty_vals
     k = qty.name
     magnitude = qty.quantitySpace(val)
-    derivative = Direction(speed)
+    derivative = DerivativeDirection(speed)
     pair = QuantityPair(magnitude, derivative)
     return (k, pair)
 
@@ -138,7 +138,7 @@ def gen_states(entity: Entity) -> List[EntityState]:
             # magnitudes
             [enumVal.value for enumVal in qty.quantitySpace],
             # derivatives
-            [enumVal.value for enumVal in Direction]
+            [enumVal.value for enumVal in DerivativeDirection]
         ] for qty in entity.quantities.values()
     ]))
     # state_dict: Dict[str, QuantityPair]

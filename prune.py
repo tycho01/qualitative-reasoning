@@ -32,66 +32,66 @@ def check_influence(source_state: EntityState, target_state:EntityState) -> bool
             # If it is a positive direct influence
             if relation.correlation.value == RelationDirection.POSITIVE:
                 if source_quantity_magnitude > 0:
-                    target_quantities[target_quantity_name].append(Direction.POSITIVE)
+                    target_quantities[target_quantity_name].append(DerivativeDirection.POSITIVE)
                 elif source_quantity_magnitude == 0:
-                    target_quantities[target_quantity_name].append(Direction.NEUTRAL)
+                    target_quantities[target_quantity_name].append(DerivativeDirection.NEUTRAL)
                 elif source_quantity_magnitude < 0:
-                    target_quantities[target_quantity_name].append(Direction.NEGATIVE)
+                    target_quantities[target_quantity_name].append(DerivativeDirection.NEGATIVE)
             # If it is a negative direct influence
             elif relation.correlation.value == RelationDirection.NEGATIVE:
                 if source_quantity_magnitude > 0:
-                    target_quantities[target_quantity_name].append(Direction.NEGATIVE)
+                    target_quantities[target_quantity_name].append(DerivativeDirection.NEGATIVE)
                 elif source_quantity_magnitude == 0:
-                    target_quantities[target_quantity_name].append(Direction.NEUTRAL)
+                    target_quantities[target_quantity_name].append(DerivativeDirection.NEUTRAL)
                 elif source_quantity_magnitude < 0:
-                    target_quantities[target_quantity_name].append(Direction.POSITIVE)
+                    target_quantities[target_quantity_name].append(DerivativeDirection.POSITIVE)
         # If it is a proportional influence
         elif type(relation) == Proportional:
             # If it is a positive proportional influence
             if relation.correlation.value == RelationDirection.POSITIVE:
-                if source_quantity_direction == Direction.POSITIVE:
-                    target_quantities[target_quantity_name].append(Direction.POSITIVE)
-                elif source_quantity_direction == Direction.NEUTRAL:
-                    target_quantities[target_quantity_name].append(Direction.NEUTRAL)
-                elif source_quantity_direction == Direction.NEGATIVE:
-                    target_quantities[target_quantity_name].append(Direction.NEGATIVE)
-                elif source_quantity_direction == Direction.QUESTION:
-                    target_quantities[target_quantity_name].append(Direction.QUESTION)
+                if source_quantity_direction == DerivativeDirection.POSITIVE:
+                    target_quantities[target_quantity_name].append(DerivativeDirection.POSITIVE)
+                elif source_quantity_direction == DerivativeDirection.NEUTRAL:
+                    target_quantities[target_quantity_name].append(DerivativeDirection.NEUTRAL)
+                elif source_quantity_direction == DerivativeDirection.NEGATIVE:
+                    target_quantities[target_quantity_name].append(DerivativeDirection.NEGATIVE)
+                elif source_quantity_direction == DerivativeDirection.QUESTION:
+                    target_quantities[target_quantity_name].append(DerivativeDirection.QUESTION)
             # If it is a negative proportional influence
             elif relation.correlation.value == RelationDirection.NEGATIVE:
-                if source_quantity_direction == Direction.POSITIVE:
-                    target_quantities[target_quantity_name].append(Direction.NEGATIVE)
-                elif source_quantity_direction == Direction.NEUTRAL:
-                    target_quantities[target_quantity_name].append(Direction.NEUTRAL)
-                elif source_quantity_direction == Direction.NEGATIVE:
-                    target_quantities[target_quantity_name].append(Direction.POSITIVE)
-                elif source_quantity_direction == Direction.QUESTION:
-                    target_quantities[target_quantity_name].append(Direction.QUESTION)
+                if source_quantity_direction == DerivativeDirection.POSITIVE:
+                    target_quantities[target_quantity_name].append(DerivativeDirection.NEGATIVE)
+                elif source_quantity_direction == DerivativeDirection.NEUTRAL:
+                    target_quantities[target_quantity_name].append(DerivativeDirection.NEUTRAL)
+                elif source_quantity_direction == DerivativeDirection.NEGATIVE:
+                    target_quantities[target_quantity_name].append(DerivativeDirection.POSITIVE)
+                elif source_quantity_direction == DerivativeDirection.QUESTION:
+                    target_quantities[target_quantity_name].append(DerivativeDirection.QUESTION)
         
     # Determining the overall derivative direction for the target quantities
     for target_quantity in target_quantities:
         directions = target_quantities[target_quantity]
         if len(set(directions)) == 1:
-            if directions[0] == Direction.POSITIVE:
-                test_state[target_quantity][1] = Direction.POSITIVE
-            elif directions[0] == Direction.NEGATIVE:
-                test_state[target_quantity][1] = Direction.NEGATIVE
-            elif directions[0] == Direction.QUESTION:
-                test_state[target_quantity][1] = Direction.QUESTION
-            elif directions[0] == Direction.NEUTRAL:
+            if directions[0] == DerivativeDirection.POSITIVE:
+                test_state[target_quantity][1] = DerivativeDirection.POSITIVE
+            elif directions[0] == DerivativeDirection.NEGATIVE:
+                test_state[target_quantity][1] = DerivativeDirection.NEGATIVE
+            elif directions[0] == DerivativeDirection.QUESTION:
+                test_state[target_quantity][1] = DerivativeDirection.QUESTION
+            elif directions[0] == DerivativeDirection.NEUTRAL:
                 pass
         elif len(set(directions)) == 2:
-            if Direction.NEUTRAL in set(directions):
-                if Direction.POSITIVE in set(directions):
-                    test_state[target_quantity][1] = Direction.POSITIVE
-                elif Direction.NEGATIVE in set(directions):
-                    test_state[target_quantity][1] = Direction.NEGATIVE
-                elif Direction.QUESTION in set(directions):
-                    test_state[target_quantity][1] = Direction.QUESTION
+            if DerivativeDirection.NEUTRAL in set(directions):
+                if DerivativeDirection.POSITIVE in set(directions):
+                    test_state[target_quantity][1] = DerivativeDirection.POSITIVE
+                elif DerivativeDirection.NEGATIVE in set(directions):
+                    test_state[target_quantity][1] = DerivativeDirection.NEGATIVE
+                elif DerivativeDirection.QUESTION in set(directions):
+                    test_state[target_quantity][1] = DerivativeDirection.QUESTION
             else:
-                test_state[target_quantity][1] = Direction.QUESTION
+                test_state[target_quantity][1] = DerivativeDirection.QUESTION
         elif len(set(directions)) > 2:
-            test_state[target_quantity][1] = Direction.QUESTION
+            test_state[target_quantity][1] = DerivativeDirection.QUESTION
     
     # Returning if the destination state is valid or not
     return test_state == state2
