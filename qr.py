@@ -54,8 +54,12 @@ class Entity:
 @dataclass
 class EntityState:
     entity: Entity
-    state: Dict[str, Tuple[Enum, Direction]]
+    state: Dict[str, QuantityPair]
 
+@dataclass
+class QuantityPair:
+    magnitude: Enum
+    derivative: Direction
 
 @dataclass
 class StateGraph:
@@ -68,6 +72,10 @@ def make_entity(name: str, quantities: List[Quantity], relations: List[Relations
     '''wrap the entity ctor to handle Quantity dict creation'''
     qty_dict = {qty.name: qty for in quantities}
     return Entity(name, qty_dict, relations)
+
+def make_entity_state(entity: Entity, state_dict: Dict[str, Tuple[Enum, Direction]]) -> EntityState:
+    pair_state = {k: QuantityPair(*tpl) for k, tpl in state_dict.items()}
+    return EntityState(entity, pair_state)
 
 def gen_state_graph(entity: Entity) -> StateGraph:
     # generate all possible states
@@ -115,14 +123,14 @@ def intra_state_trace(state: EntityState) -> str:
 def to_pairs(lst):
     return list(zip(*[lst[x::2] for x in (0, 1)]))
 
-def wrap_enums(qty_val_speed: Tuple[Quantity, Tuple[int, int]]) -> Tuple[str, Tuple[Enum, Direction]]:
+def wrap_enums(qty_vals: Tuple[Quantity, Tuple[int, int]]) -> Tuple[str, QuantityPair]:
     '''wraps enum values back into their enums'''
-    (qty, (val, speed)) = qty_val_speed
+    (qty, (val, speed)) = qty_vals
     k = qty.name
     magnitude = qty.quantitySpace(val)
     derivative = Direction(speed)
-    tpl = (magnitude, derivative)
-    return (k, tpl)
+    pair = QuantityPair(magnitude, derivative)
+    return (k, pair)
 
 def gen_states(entity: Entity) -> List[EntityState]:
     iterables = list(itertools.chain.from_iterable([
@@ -133,13 +141,13 @@ def gen_states(entity: Entity) -> List[EntityState]:
             [enumVal.value for enumVal in Direction]
         ] for qty in entity.quantities.values()
     ]))
-    # state_dict: Dict[str, Tuple[Enum, Direction]]
+    # state_dict: Dict[str, QuantityPair]
     state_dicts = [
         {
-            k: tpl
+            k: QuantityPair(*tpl)
             for k, tpl in map(wrap_enums, zip(entity.quantities.values(), to_pairs(pair)))
         }
         for pair in itertools.product(*iterables)
     ]
-    states = [EntityState(entity, state_dict) for state_dict in state_dicts]
+    states = [make_entity_state(entity, state_dict) for state_dict in state_dicts]
     return states
