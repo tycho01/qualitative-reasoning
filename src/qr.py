@@ -67,19 +67,20 @@ def state_key(state: EntityState) -> str:
     return re.sub(r"[^\w]+", '_', serialize_state(state))
 
 def inter_state_trace(a: EntityState, b: EntityState) -> str:
-    '''intra-state trace, showing states and transition validity by the various rules'''
-    # TODO: if invalid, show why?
-    influence = check_influence(a, b)
-    continuous = check_continuous(a, b)
-    point_range = check_point_range(a, b)
-    not_equal = check_not_equal(a, b)
+    '''inter-state trace, showing states and transition validity by the various rules'''
+    # TODO: show why stuff changed
+    # out of scope: if invalid, show why.
+    # influence = check_influence(a, b)
+    # continuous = check_continuous(a, b)
+    # point_range = check_point_range(a, b)
+    # not_equal = check_not_equal(a, b)
     valid = can_transition(a, b)
     return str({
+        # 'influence_valid': influence,
+        # 'continuous_valid': continuous,
+        # 'point_range_valid': point_range,
+        # 'not_equal_valid': not_equal,
         'transition_valid': valid,
-        'influence_valid': influence,
-        'continuous_valid': continuous,
-        'point_range_valid': point_range,
-        'not_equal_valid': not_equal,
         'a': intra_state_trace(a),
         'b': intra_state_trace(b),
     })
@@ -87,7 +88,7 @@ def inter_state_trace(a: EntityState, b: EntityState) -> str:
 def intra_state_trace(entity_state: EntityState) -> str:
     '''intra-state trace, showing type, validity, and state'''
     # TODO: show how things will change (i.e. after adding in question marks as per check_influence?)
-    # TODO: if invalid, show why?
+    # out of scope: if invalid, show why.
     state = {k: (pair.magnitude.name, pair.derivative.name) for k, pair in entity_state.state.items()}
     valid = check_value_correspondence(entity_state)
     return str({ 'type': entity_state.entity.name, 'valid': valid, 'state': state })
