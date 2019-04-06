@@ -12,6 +12,11 @@ docker run -v $PWD:/app qr
 
 # or enter interactively
 docker run -it -v $PWD:/app --entrypoint /bin/sh qr
+
+# install python deps thru conda
+conda install pytest
+# run unit tests (also happens when building Docker image)
+pytest
 ```
 
 ### Design
