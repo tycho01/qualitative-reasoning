@@ -49,6 +49,9 @@ def handle_state(
         if not state in states:
             states.add(state)
             handle_state(next_state, states, edges)
+def serialize_state(state: EntityState) -> str:
+    '''simple serialization method for graph key purposes'''
+    return str(state)
 
 def inter_state_trace(a: EntityState, b: EntityState) -> str:
     # here we can mention intra-state rules like value correspondence
@@ -56,8 +59,8 @@ def inter_state_trace(a: EntityState, b: EntityState) -> str:
     pass
 
 def intra_state_trace(state: EntityState) -> str:
-    # here we can mention intra-state rules like value correspondence
-    return str(state)
+    # TODO: here we can mention intra-state rules like value correspondence
+    return serialize_state(state)
 
 def to_pairs(lst):
     return list(zip(*[lst[x::2] for x in (0, 1)]))
