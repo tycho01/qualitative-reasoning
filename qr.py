@@ -15,10 +15,6 @@ class RelationDirection(Enum):
   NEGATIVE = 1
   POSITIVE = 2
 
-# class RelationType(Enum):
-#   PROPORTIONAL = 1  # pos: d B pos if d A pos
-#   INFLUENCE    = 2  # pos: d B pos if   A pos
-
 # for each quantity space we need to know:
 # - the order (in which to transition), so ensure the enums are logically ordered!
 # - what is negative or positive (needed for influence relation?) - ensure underlying values reflect this!
@@ -62,12 +58,8 @@ class EntityState:
 
 
 @dataclass
-class State:
-  entities: Dict[str, EntityState]
-
-@dataclass
 class StateGraph:
-  states: Dict[str, State] # EntityState
+  states: Dict[str, EntityState]
   edges: List[Tuple[str, str]]
 
 # functions
@@ -93,8 +85,8 @@ def gen_state_graph(entity: Entity) -> StateGraph:
     return sg
 
 def handle_state(
-    state: State,
-    states: Dict[str, State],
+    state: EntityState,
+    states: Dict[str, EntityState],
     edges: List[Tuple[str, str]]) -> None:
     ''' recursively handle a state. impure!
         mutates states/edges to return. TODO: change this?
@@ -106,10 +98,14 @@ def handle_state(
             states.add(state)
             handle_state(next_state, states, edges)
 
-def serialize_state(state: State) -> str:
+def inter_state_trace(a: EntityState, b: EntityState) -> str:
+    # TODO: implement
+    pass
+
+def intra_state_trace(state: EntityState) -> str:
     return str(state)
 
-def make_state(entity_state_pairs: Tuple[Entity, Dict[str, Tuple[Enum, Direction]]], entity: Entity) -> State:
+def gen_states(entity: Entity) -> List[EntityState]:
     state_dict = {}  # Dict[str, EntityState]
     # state: Dict[str, Tuple[Enum, Direction]]
     for entity, state in entity_state_pairs:
@@ -124,37 +120,29 @@ def gen_states(entity_dict: Dict[str, Entity]) -> List[State]:
     #     state = {}  # : Dict[str, Tuple[Enum, Direction]]
     #     quantities = entity.quantities
     #     for qty in quantities:
-    #         # TODO: these shouldn't be lists, use itertools here to make the combinations!
-    #         magnitudes = [enumVal.value for enumVal in qty.quantitySpace]
-    #         derivatives = [enumVal.value for enumVal in Direction]
-    #         tpl = (magnitude, derivative)  # (Enum, Direction)
-    #         state[qty.name] = tpl
-    #     entity_state_pair = (entity, state)
-
 # # obsolete:
-# def gen_next_states(state: State) -> List[State]:
-#   for k, entity_state in state.entities.items():
-#       entity = entity_state.entity
-#       state_ = entity_state.state
-#       for qty_name, tpl in state_.items():
-#           qty, change = tpl
-#           #
-#           print(qty_name, qty, change)
-#       name = entity.name
-#       quantities = entity.quantities
-#       for qty in quantities:
-#           #
-#           print(qty)
-#       relations = entity.relations
-#       for relation in relations:
-#         a = relation.a
-#         b = relation.b
-#         print(relation, a, b)
-#         clz = type(relation)
-#         if clz == ValueCorrespondence:
-#         # elif clz == Influence:
-#         # elif clz == Proportional:
-#           pass
-#         else:
-#           # throw Error
-#           correlation = relation.correlation
+# def gen_next_states(state: EntityState) -> List[EntityState]:
+#     entity = entity_state.entity
+#     state_ = entity_state.state
+#     for qty_name, tpl in state_.items():
+#         qty, change = tpl
+#         #
+#         print(qty_name, qty, change)
+#     name = entity.name
+#     quantities = entity.quantities
+#     for qty in quantities:
+#         #
+#         print(qty)
+#     relations = entity.relations
+#     for relation in relations:
+#     a = relation.a
+#     b = relation.b
+#     print(relation, a, b)
+#     clz = type(relation)
+#     if clz == ValueCorrespondence:
+#     # elif clz == Influence:
+#     # elif clz == Proportional:
+#         pass
+#     else:
+#         # throw Error
+#         correlation = relation.correlation
