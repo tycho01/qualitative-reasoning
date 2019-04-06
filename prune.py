@@ -1,5 +1,9 @@
+from typing import List, Dict, Tuple
+
 # Function to check whether all the direct influences hold
-def check_direct_influence(state, relations):
+def check_direct_influence(entity_state: EntityState) -> bool:
+    state = entity_state.state
+    relations = entity_state.entity.relations
 
     # Retrieving the involved quantities
     inflow_state = state['inflow']
@@ -11,14 +15,18 @@ def check_direct_influence(state, relations):
     volume_mag_state, volume_dir_state = volume_state[0].value, volume_state[1].value
     outflow_mag_state, outflow_dir_state = outflow_state[0].value, outflow_state[1].value
 
-def check_proportional_influence(state, relations):
+def check_proportional_influence(entity_state: EntityState) -> bool:
     # TODO
     pass
 
-def check_value_correspondence(state, relations):
+def check_value_correspondence(entity_state: EntityState) -> bool:
     # TODO
     pass
 
-def check_validity(states, relations):
+def check_continuous(stateA: EntityState, stateB: EntityState) -> bool:
+    # TODO
+    pass
+
+def check_validity(entity_states: List[EntityState]) -> bool:
     # TODO
     pass
