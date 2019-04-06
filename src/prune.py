@@ -149,6 +149,10 @@ def filter_states(entity_states: List[EntityState]) -> List[EntityState]:
     '''filter a list of entity states to those states deemed valid by valid correspondence'''
     return list(filter(check_value_correspondence, entity_states))
 
+def check_not_equal(stateA: EntityState, stateB: EntityState) -> bool:
+    '''confirm two states are distinct'''
+    return stateA != stateB
+
 def can_transition(a: EntityState, b: EntityState) -> bool:
     '''confirm a source state can transition into a target state'''
-    return check_influence(a, b) and check_continuous(a, b) and check_point_range(a, b)
+    return check_influence(a, b) and check_continuous(a, b) and check_point_range(a, b) and check_not_equal(a, b)

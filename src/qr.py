@@ -12,6 +12,7 @@ def make_entity(name: str, quantities: List[Quantity], relations: List[Relations
     return Entity(name, qty_dict, relations)
 
 def make_entity_state(entity: Entity, state_dict: Dict[str, Tuple[Enum, DerivativeDirection]]) -> EntityState:
+    '''wrap the EntityState ctor to handle state dict creation'''
     pair_state = {k: QuantityPair(*tpl) for k, tpl in state_dict.items()}
     return EntityState(entity, pair_state)
 
