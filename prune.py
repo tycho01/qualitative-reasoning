@@ -4,7 +4,7 @@ from typing import List, Dict, Tuple
 from qr_types import *
 
 # Function to check whether all the influences hold
-def check_influence(source_state: EntityState, target_state:EntityState) -> bool:
+def check_influence(source_state: EntityState, target_state: EntityState) -> bool:
 
     # Obtaining the state and the relations for the system
     state1 = source_state.state
@@ -148,3 +148,7 @@ def check_point_range(stateA: EntityState, stateB: EntityState) -> bool:
 def filter_states(entity_states: List[EntityState]) -> List[EntityState]:
     '''filter a list of entity states to those states deemed valid by valid correspondence'''
     return list(filter(check_value_correspondence, entity_states))
+
+def can_transition(a: EntityState, b: EntityState) -> bool:
+    '''confirm a source state can transition into a target state'''
+    return check_influence(a, b) and check_continuous(a, b) and check_point_range(a, b)
