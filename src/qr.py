@@ -27,7 +27,7 @@ def gen_state_graph(entity: Entity) -> StateGraph:
     #   - given multiple relationships, first see how these would interact, then apply the result on a state
     #   - point (0, max?, delta 0) vs. range (+, delta -/+) values: points change first.
     all_combinations = itertools.product(possible_states, possible_states)
-    possible_combinations = list(filter(can_transition, all_combinations))
+    possible_combinations = list(filter(lambda tpl: can_transition(tpl[0], tpl[1]), all_combinations))
 
     nodes = {serialize_state(state): state for state in possible_states}
     edges = [(serialize_state(pair[0]), serialize_state(pair[1])) for pair in possible_combinations]
