@@ -102,11 +102,11 @@ def check_value_correspondence(entity_state: EntityState) -> bool:
     entity = entity_state.entity
     for relation in entity.relations:
         if type(relation) == ValueCorrespondence:
-            if not qty_matches(state, relation.a) == qty_matches(state, relation.b):
+            if not _qty_matches(state, relation.a) == _qty_matches(state, relation.b):
                 return False
     return True
 
-def qty_matches(state: Dict[str, QuantityPair], qty_pair: Tuple[str, Enum]) -> bool:
+def _qty_matches(state: Dict[str, QuantityPair], qty_pair: Tuple[str, Enum]) -> bool:
     '''check if a state quantity matches a given value'''
     (qty_name, val) = qty_pair
     return val == state[qty_name].magnitude
