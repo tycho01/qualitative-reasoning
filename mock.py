@@ -16,4 +16,3 @@ container_state_bonus = {
 }
 
 entity_state = EntityState(container, container_state)
-state = State({ 'container': entity_state })
