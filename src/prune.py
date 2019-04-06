@@ -38,6 +38,7 @@ def check_influence(source_state: EntityState, target_state: EntityState) -> boo
     # Determining the overall derivative direction for the target quantities
     for target_quantity in target_quantities:
         directions = target_quantities[target_quantity]
+        # TODO: note that over here we are stating magnitudes, while we might not know them here yet (these could change, or not yet if they are range transitions postponed by a point transition!)
         if len(set(directions)) == 1:
             if directions[0] == DerivativeDirection.POSITIVE:
                 test_state[target_quantity] = (test_state[target_quantity].magnitude, DerivativeDirection.POSITIVE)
@@ -61,6 +62,9 @@ def check_influence(source_state: EntityState, target_state: EntityState) -> boo
             test_state[target_quantity] = (test_state[target_quantity].magnitude, DerivativeDirection.QUESTION)
     
     # Returning if the destination state is valid or not
+    # TODO: take into account multiple potential next states
+    # TODO: check if state2 derivatives are compatible with test_state derivatives
+    # TODO: check if magnitude changes from state1 to state2 match the state2 derivatives
     return test_state == state2
 
 def check_value_correspondence(entity_state: EntityState) -> bool:
