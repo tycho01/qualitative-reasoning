@@ -1,3 +1,4 @@
+from qr_types import *
 from qr import *
 from container import *
 
