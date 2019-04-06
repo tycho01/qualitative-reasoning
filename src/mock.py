@@ -10,10 +10,11 @@ container_state = {
     'outflow': (Outflow.ZERO, DerivativeDirection.NEUTRAL),
 }
 
-container_state_bonus = {
+bonus_container_state = {
     **container_state,
     'height': (Height.ZERO, DerivativeDirection.NEUTRAL),
     'pressure': (Volume.ZERO, DerivativeDirection.NEUTRAL),
 }
 
 entity_state = make_entity_state(container, container_state)
+bonus_entity_state = make_entity_state(bonus_container, bonus_container_state)

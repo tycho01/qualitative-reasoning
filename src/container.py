@@ -165,4 +165,4 @@ all_relations = [
 # entities
 
 container = make_entity('container', quantities, relations)
-# bonus_container = make_entity('container', all_quantities, all_relations)
+bonus_container = make_entity('container', all_quantities, all_relations)
