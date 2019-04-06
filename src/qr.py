@@ -58,7 +58,7 @@ def gen_state_graph(entity: Entity) -> StateGraph:
 
 def serialize_state(state: EntityState) -> str:
     '''simple serialization method for graph key purposes'''
-    return str(state)
+    return str({k: (pair.magnitude.value, pair.derivative.value) for k, pair in state.state.items()})
 
 def inter_state_trace(a: EntityState, b: EntityState) -> str:
     # here we can mention intra-state rules like value correspondence
