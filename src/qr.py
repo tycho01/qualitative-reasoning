@@ -61,13 +61,14 @@ def serialize_state(state: EntityState) -> str:
     return str({k: (pair.magnitude.value, pair.derivative.value) for k, pair in state.state.items()})
 
 def inter_state_trace(a: EntityState, b: EntityState) -> str:
-    # here we can mention intra-state rules like value correspondence
+    # TODO: here we can mention intra-state validity like can_transition
     # TODO: implement
     pass
 
 def intra_state_trace(state: EntityState) -> str:
-    # TODO: here we can mention intra-state rules like value correspondence
-    return serialize_state(state)
+    # TODO: here we can mention intra-state validity like value correspondence
+    # TODO: show how things will change (i.e. after adding in question marks as per check_influence?)
+    return str({k: (pair.magnitude.name, pair.derivative.name) for k, pair in state.state.items()})
 
 def to_pairs(lst):
     return list(zip(*[lst[x::2] for x in (0, 1)]))

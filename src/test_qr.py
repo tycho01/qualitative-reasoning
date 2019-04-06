@@ -22,7 +22,7 @@ def test_inter_state_trace():
     assert inter_state_trace(entity_state, entity_state) == None
 
 def test_intra_state_trace():
-    assert intra_state_trace(entity_state) == "EntityState(entity=Entity(name='container', quantities={'inflow': Quantity(name='inflow', quantitySpace=<enum 'Inflow'>), 'outflow': Quantity(name='outflow', quantitySpace=<enum 'Outflow'>), 'volume': Quantity(name='volume', quantitySpace=<enum 'Volume'>)}, relations=[Influence(a=Quantity(name='inflow', quantitySpace=<enum 'Inflow'>), b=Quantity(name='volume', quantitySpace=<enum 'Volume'>), correlation=<RelationDirection.POSITIVE: 2>), Influence(a=Quantity(name='outflow', quantitySpace=<enum 'Outflow'>), b=Quantity(name='volume', quantitySpace=<enum 'Volume'>), correlation=<RelationDirection.NEGATIVE: 1>), Proportional(a=Quantity(name='volume', quantitySpace=<enum 'Volume'>), b=Quantity(name='outflow', quantitySpace=<enum 'Outflow'>), correlation=<RelationDirection.POSITIVE: 2>), ValueCorrespondence(a=('volume', <Volume.MAX: 2>), b=('outflow', <Outflow.MAX: 2>)), ValueCorrespondence(a=('volume', <Volume.ZERO: 0>), b=('outflow', <Outflow.ZERO: 0>))]), state={'volume': QuantityPair(magnitude=<Volume.ZERO: 0>, derivative=<DerivativeDirection.NEUTRAL: 2>), 'inflow': QuantityPair(magnitude=<Inflow.ZERO: 0>, derivative=<DerivativeDirection.NEUTRAL: 2>), 'outflow': QuantityPair(magnitude=<Outflow.ZERO: 0>, derivative=<DerivativeDirection.NEUTRAL: 2>)})"
+    assert intra_state_trace(entity_state) == "{'volume': ('ZERO', 'NEUTRAL'), 'inflow': ('ZERO', 'NEUTRAL'), 'outflow': ('ZERO', 'NEUTRAL')}"
 
 def test_to_pairs():
     assert to_pairs([1,2,3,4]) == [(1,2),(3,4)]
