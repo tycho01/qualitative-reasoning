@@ -42,30 +42,11 @@ class Influence(Relationship):
 class Proportional(Relationship):
   correlation: RelationDirection = RelationDirection.POSITIVE
 
-# class EqualityRelation(Enum):
-#     LTE = 1
-#     LT = 2
-#     EQ = 3
-#     GT = 4
-#     GTE = 5
-
-# @dataclass
-# class Inequality(Relationship):
-#     equality: EqualityRelation = EqualityRelation.EQ
-
 @dataclass
 class ValueCorrespondence:
     '''if a then b'''
     a: Enum
     b: Enum
-
-# @dataclass
-# class Addition(Relationship):
-#     c: Quantity
-
-# @dataclass
-# class Subtraction(Relationship):
-#     c: Quantity
 
 @dataclass
 class Entity:
