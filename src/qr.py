@@ -27,7 +27,7 @@ def gen_state_graph(entity: Entity) -> StateGraph:
     #   - given multiple relationships, first see how these would interact, then apply the result on a state
     #   - point (0, max?, delta 0) vs. range (+, delta -/+) values: points change first.
     all_combinations = itertools.product(possible_states, possible_states)
-    possible_combinations = list(filter(can_transition, all_combinations))
+    possible_combinations = list(filter(lambda tpl: can_transition(tpl[0], tpl[1]), all_combinations))
 
     nodes = {serialize_state(state): state for state in possible_states}
     edges = [(serialize_state(pair[0]), serialize_state(pair[1])) for pair in possible_combinations]
@@ -93,10 +93,10 @@ def gen_states(entity: Entity) -> List[EntityState]:
     # state_dict: Dict[str, QuantityPair]
     state_dicts = [
         {
-            k: QuantityPair(*tpl)
-            for k, tpl in map(wrap_enums, zip(entity.quantities.values(), to_pairs(pair)))
+            k: qty_pair
+            for k, qty_pair in map(wrap_enums, zip(entity.quantities.values(), to_pairs(pair)))
         }
         for pair in itertools.product(*iterables)
     ]
-    states = [make_entity_state(entity, state_dict) for state_dict in state_dicts]
+    states = [EntityState(entity, state_dict) for state_dict in state_dicts]
     return states
