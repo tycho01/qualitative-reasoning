@@ -3,8 +3,8 @@ import copy
 from typing import List, Dict, Tuple
 from qr_types import *
 
-# Function to check whether all the influences hold
 def check_influence(source_state: EntityState, target_state: EntityState) -> bool:
+    '''check whether all the influences hold'''
 
     # Obtaining the state and the relations for the system
     state1 = source_state.state
