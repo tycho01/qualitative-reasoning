@@ -1,7 +1,7 @@
-<<<<<<< HEAD
 # Importing the Libraries
 from qr import *
 import copy
+from typing import List, Dict, Tuple
 
 # Function to check whether all the direct influences hold
 def check_direct_influence(state1, state2, relations):
@@ -91,23 +91,6 @@ def check_direct_influence(state1, state2, relations):
     # Returning if the destination state is valid or not
     return test_state == state2
 
-            
-            
-
-
-    
-
-    
-        
-        
-
-    
-
-
-
-=======
-from typing import List, Dict, Tuple
-
 # Function to check whether all the direct influences hold
 def check_influence(stateA: EntityState, stateB: EntityState) -> bool:
     state = entity_state.state
@@ -122,7 +105,6 @@ def check_value_correspondence(entity_state: EntityState) -> bool:
             if not qty_matches(state, relation.a) == qty_matches(state, relation.b):
                 return False
     return True
->>>>>>> 2d536047ee3374483ef5867b7a62727d4b01ec2c
 
 def qty_matches(state: Dict[str, Tuple[Enum, Direction]], qty_val: Tuple[str, Enum]) -> bool:
     '''check if a state quantity matches a given value'''
