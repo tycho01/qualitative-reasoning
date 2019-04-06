@@ -28,46 +28,12 @@ def check_influence(source_state: EntityState, target_state: EntityState) -> boo
             if target_quantity_name not in target_quantities:
                 target_quantities[target_quantity_name] = []
             
-            # If it is a direct influence
+           # If it is a direct influence
             if type(relation) == Influence:
-                # If it is a positive direct influence
-                if relation.correlation.value == RelationDirection.POSITIVE:
-                    if source_quantity_magnitude > 0:
-                        target_quantities[target_quantity_name].append(DerivativeDirection.POSITIVE)
-                    elif source_quantity_magnitude == 0:
-                        target_quantities[target_quantity_name].append(DerivativeDirection.NEUTRAL)
-                    elif source_quantity_magnitude < 0:
-                        target_quantities[target_quantity_name].append(DerivativeDirection.NEGATIVE)
-                # If it is a negative direct influence
-                elif relation.correlation.value == RelationDirection.NEGATIVE:
-                    if source_quantity_magnitude > 0:
-                        target_quantities[target_quantity_name].append(DerivativeDirection.NEGATIVE)
-                    elif source_quantity_magnitude == 0:
-                        target_quantities[target_quantity_name].append(DerivativeDirection.NEUTRAL)
-                    elif source_quantity_magnitude < 0:
-                        target_quantities[target_quantity_name].append(DerivativeDirection.POSITIVE)
+                target_quantities[target_quantity_name].append(perform_direct_influence(relation.correlation.value, source_quantity_magnitude))
             # If it is a proportional influence
             elif type(relation) == Proportional:
-                # If it is a positive proportional influence
-                if relation.correlation.value == RelationDirection.POSITIVE:
-                    if source_quantity_direction == DerivativeDirection.POSITIVE:
-                        target_quantities[target_quantity_name].append(DerivativeDirection.POSITIVE)
-                    elif source_quantity_direction == DerivativeDirection.NEUTRAL:
-                        target_quantities[target_quantity_name].append(DerivativeDirection.NEUTRAL)
-                    elif source_quantity_direction == DerivativeDirection.NEGATIVE:
-                        target_quantities[target_quantity_name].append(DerivativeDirection.NEGATIVE)
-                    elif source_quantity_direction == DerivativeDirection.QUESTION:
-                        target_quantities[target_quantity_name].append(DerivativeDirection.QUESTION)
-                # If it is a negative proportional influence
-                elif relation.correlation.value == RelationDirection.NEGATIVE:
-                    if source_quantity_direction == DerivativeDirection.POSITIVE:
-                        target_quantities[target_quantity_name].append(DerivativeDirection.NEGATIVE)
-                    elif source_quantity_direction == DerivativeDirection.NEUTRAL:
-                        target_quantities[target_quantity_name].append(DerivativeDirection.NEUTRAL)
-                    elif source_quantity_direction == DerivativeDirection.NEGATIVE:
-                        target_quantities[target_quantity_name].append(DerivativeDirection.POSITIVE)
-                    elif source_quantity_direction == DerivativeDirection.QUESTION:
-                        target_quantities[target_quantity_name].append(DerivativeDirection.QUESTION)
+                target_quantities[target_quantity_name].append(perform_indirect_influence(relation.correlation.value, source_quantity_direction))
             
     # Determining the overall derivative direction for the target quantities
     for target_quantity in target_quantities:
@@ -106,6 +72,18 @@ def check_value_correspondence(entity_state: EntityState) -> bool:
             if not qty_matches(state, relation.a) == qty_matches(state, relation.b):
                 return False
     return True
+
+def perform_direct_influence(direct_influence_type: int, source_quantity_magnitude: int) -> int:
+    type_sign = -1 if direct_influence_type == RelationDirection.NEGATIVE.value else 1
+    source_quantity_magnitude_sign = 1 if source_quantity_magnitude > 0 else 0 if source_quantity_magnitude == 0 else -1
+    resulting_sign = type_sign * source_quantity_magnitude_sign
+    return Direction.POSITIVE.value if resulting_sign == 1 else Direction.NEUTRAL.value if resulting_sign == 0 else Direction.NEGATIVE.value
+
+def perform_indirect_influence(indirect_influence_type: int, source_quantity_direction: Enum) -> int:
+    type_sign = -1 if indirect_influence_type == RelationDirection.NEGATIVE.value else 1
+    source_quantity_direction_sign = 1 if source_quantity_direction == Direction.POSITIVE else 0 if source_quantity_direction == Direction.NEUTRAL else -1 if source_quantity_direction == Direction.NEGATIVE else 2
+    resulting_sign = type_sign * source_quantity_direction_sign
+    return Direction.POSITIVE.value if resulting_sign == 1 else Direction.NEUTRAL.value if resulting_sign == 0 else Direction.NEGATIVE.value if resulting_sign == -1 else Direction.QUESTION.value
 
 def qty_matches(state: Dict[str, QuantityPair], qty_pair: Tuple[str, Enum]) -> bool:
     '''check if a state quantity matches a given value. function for internal use in check_value_correspondence.'''
