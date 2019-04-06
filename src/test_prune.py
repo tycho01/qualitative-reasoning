@@ -16,20 +16,20 @@ from mock import *
 #     entity_state_after = make_entity_state(container, container_state_after)
 #     assert check_influence(entity_state_before, entity_state_after) == True
 
-def test_check_influence_bad():
-    container_state_before = {
-        'volume': (Volume.ZERO, DerivativeDirection.NEUTRAL),
-        'inflow': (Inflow.PLUS, DerivativeDirection.POSITIVE),
-        'outflow': (Outflow.ZERO, DerivativeDirection.NEUTRAL),
-    }
-    container_state_after = {
-        'volume': (Volume.ZERO, DerivativeDirection.NEUTRAL),
-        'inflow': (Inflow.ZERO, DerivativeDirection.POSITIVE),
-        'outflow': (Outflow.ZERO, DerivativeDirection.NEUTRAL),
-    }
-    entity_state_before = make_entity_state(container, container_state_before)
-    entity_state_after = make_entity_state(container, container_state_after)
-    assert check_influence(entity_state_before, entity_state_after) == False
+# def test_check_influence_bad():
+#     container_state_before = {
+#         'volume': (Volume.ZERO, DerivativeDirection.NEUTRAL),
+#         'inflow': (Inflow.PLUS, DerivativeDirection.POSITIVE),
+#         'outflow': (Outflow.ZERO, DerivativeDirection.NEUTRAL),
+#     }
+#     container_state_after = {
+#         'volume': (Volume.ZERO, DerivativeDirection.NEUTRAL),
+#         'inflow': (Inflow.ZERO, DerivativeDirection.POSITIVE),
+#         'outflow': (Outflow.ZERO, DerivativeDirection.NEUTRAL),
+#     }
+#     entity_state_before = make_entity_state(container, container_state_before)
+#     entity_state_after = make_entity_state(container, container_state_after)
+#     assert check_influence(entity_state_before, entity_state_after) == False
 
 def test_check_value_correspondence_good():
     assert check_value_correspondence(entity_state) == True
