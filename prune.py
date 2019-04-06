@@ -112,8 +112,20 @@ def qty_matches(state: Dict[str, QuantityPair], qty_pair: Tuple[str, Enum]) -> b
     return val == state[qty_name].magnitude
 
 def check_continuous(stateA: EntityState, stateB: EntityState) -> bool:
-    # TODO
-    pass
+    '''check that two states' magnitudes/derivatives aren't too far apart'''
+    quantities = stateA.entity.quantities
+    qty_keys = quantities.keys()
+    for k in qty_keys:
+        a_pair = stateA.state[k]
+        b_pair = stateB.state[k]
+        # derivatives are OK iff the same or either is neutral, leaving positive/negative the only bad combo
+        if {a_pair.derivative, b_pair.derivative} == {DerivativeDirection.NEGATIVE, DerivativeDirection.POSITIVE}:
+            return False
+        # magnitudes are OK if equal or subsequent (in either direction)
+        index = {v:k for k,v in enumerate(quantities[k].quantitySpace.__members__.values())}
+        if abs(index[a_pair.magnitude] - index[b_pair.magnitude]) > 1:
+            return False
+    return True
 
 def check_validity(entity_states: List[EntityState]) -> bool:
     # TODO
