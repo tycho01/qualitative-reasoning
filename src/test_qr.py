@@ -2,9 +2,9 @@ from qr import *
 from container import *
 from mock import *
 
-# def test_make_entity():
-#     entity = make_entity('container', quantities, relations)
-#     assert entity.quantities['volume'] == Volume
+def test_make_entity():
+    entity = make_entity('container', quantities, relations)
+    assert entity.quantities['volume'] == Quantity('volume', Volume)
 
 def test_make_entity_state():
     entity_state = make_entity_state(container, container_state)
@@ -26,8 +26,8 @@ def test_intra_state_trace():
 def test_to_pairs():
     assert to_pairs([1,2,3,4]) == [(1,2),(3,4)]
 
-# def test_wrap_enums():
-#     assert wrap_enums((Volume, (0, 0))) == ('volume', QuantityPair(Volume.ZERO, DerivativeDirection.NEUTRAL))
+def test_wrap_enums():
+    assert wrap_enums((Quantity('volume', Volume), (0, 2))) == ('volume', QuantityPair(Volume.ZERO, DerivativeDirection.NEUTRAL))
 
 # def test_gen_states():
 #     assert len(gen_states(container)) > 1
