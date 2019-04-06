@@ -2,10 +2,11 @@ from enum import Enum, EnumMeta
 from dataclasses import dataclass
 from typing import List, Dict, Tuple
 
+# values for DerivativeDirection don't follow semantic conventions of quantity spaces (see below)
 class DerivativeDirection(Enum):
     QUESTION = 0  # question mark option to indicate changes in both directions causing an ambiguous change
-    NEGATIVE = 1  # TODO: should this be represented as negative?
-    NEUTRAL  = 2  # TODO: should this be represented as zero?
+    NEGATIVE = 1
+    NEUTRAL  = 2
     POSITIVE = 3
 
 class RelationDirection(Enum):
