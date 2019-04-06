@@ -10,6 +10,12 @@ container_state = {
   'outflow': (Outflow.ZERO, Direction.NEUTRAL),
 }
 
+container_state_bonus = {
+  **container_state,
+  'height': (Height.ZERO, Direction.NEUTRAL),
+  'pressure': (Pressure.ZERO, Direction.NEUTRAL),
+}
+
 entity_state = EntityState(container, container_state)
 state = State({ 'container': entity_state })
 # state = State(entity_state)
