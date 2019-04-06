@@ -44,10 +44,10 @@ def test_check_value_correspondence_bad():
     entity_state_bad = make_entity_state(container, container_state_bad)
     assert check_value_correspondence(entity_state_bad) == False
 
-# def test_qty_matches():
-#     state = {'volume': QuantityPair(Volume.ZERO, DerivativeDirection.NEUTRAL)}
-#     qty_pair = ('volume', Volume.ZERO)
-#     assert _qty_matches(state, qty_pair) == True
+def test_qty_matches():
+    state = {'volume': QuantityPair(Volume.ZERO, DerivativeDirection.NEUTRAL)}
+    qty_pair = ('volume', Volume.ZERO)
+    assert qty_matches(state, qty_pair) == True
 
 def test_check_continuous():
     # good
