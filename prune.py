@@ -3,11 +3,16 @@ from qr import *
 import copy
 from typing import List, Dict, Tuple
 
-# Function to check whether all the direct influences hold
-def check_direct_influence(state1, state2, relations):
+# Function to check whether all the influences hold
+def check_influence(source_state: EntityState, target_state:EntityState) -> bool:
+
+    # Obtaining the state and the relations for the system
+    state1 = source_state.state
+    state2 = target_state.state
+    relations = source_state.entity.relations
 
     # Test state for verification
-    test_state = copy.deepcopy(state)
+    test_state = copy.deepcopy(state1)
 
     # Dictionary to keep track of the derivative directions of dependant quantities
     target_quantities = {}
@@ -90,11 +95,6 @@ def check_direct_influence(state1, state2, relations):
     
     # Returning if the destination state is valid or not
     return test_state == state2
-
-# Function to check whether all the direct influences hold
-def check_influence(stateA: EntityState, stateB: EntityState) -> bool:
-    state = entity_state.state
-    relations = entity_state.entity.relations
 
 def check_value_correspondence(entity_state: EntityState) -> bool:
     '''check if a state is deemed valid by its value correspondence rules'''
