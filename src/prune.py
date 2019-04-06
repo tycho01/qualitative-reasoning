@@ -17,57 +17,58 @@ def check_influence(source_state: EntityState, target_state: EntityState) -> boo
     # Dictionary to keep track of the derivative directions of dependant quantities
     target_quantities = {}
     for relation in relations:
-        # Retrieving the names of the source and target quantities
-        source_quantity_name = relation.a.name
-        target_quantity_name = relation.b.name
-        source_quantity_magnitude = state1[source_quantity_name][0].value
-        source_quantity_direction = state1[source_quantity_name][1].value
+        if type(relation) != ValueCorrespondence:  # skip ValueCorrespondence which are different
+            # Retrieving the names of the source and target quantities
+            source_quantity_name = relation.a.name
+            target_quantity_name = relation.b.name
+            source_quantity_magnitude = state1[source_quantity_name].magnitude
+            source_quantity_direction = state1[source_quantity_name].derivative
 
-        # Create a list for the target quantity if not present in the dictionary
-        if target_quantity_name not in target_quantities:
-            target_quantities[target_quantity_name] = []
-        
-        # If it is a direct influence
-        if type(relation) == Influence:
-            # If it is a positive direct influence
-            if relation.correlation.value == RelationDirection.POSITIVE:
-                if source_quantity_magnitude > 0:
-                    target_quantities[target_quantity_name].append(DerivativeDirection.POSITIVE)
-                elif source_quantity_magnitude == 0:
-                    target_quantities[target_quantity_name].append(DerivativeDirection.NEUTRAL)
-                elif source_quantity_magnitude < 0:
-                    target_quantities[target_quantity_name].append(DerivativeDirection.NEGATIVE)
-            # If it is a negative direct influence
-            elif relation.correlation.value == RelationDirection.NEGATIVE:
-                if source_quantity_magnitude > 0:
-                    target_quantities[target_quantity_name].append(DerivativeDirection.NEGATIVE)
-                elif source_quantity_magnitude == 0:
-                    target_quantities[target_quantity_name].append(DerivativeDirection.NEUTRAL)
-                elif source_quantity_magnitude < 0:
-                    target_quantities[target_quantity_name].append(DerivativeDirection.POSITIVE)
-        # If it is a proportional influence
-        elif type(relation) == Proportional:
-            # If it is a positive proportional influence
-            if relation.correlation.value == RelationDirection.POSITIVE:
-                if source_quantity_direction == DerivativeDirection.POSITIVE:
-                    target_quantities[target_quantity_name].append(DerivativeDirection.POSITIVE)
-                elif source_quantity_direction == DerivativeDirection.NEUTRAL:
-                    target_quantities[target_quantity_name].append(DerivativeDirection.NEUTRAL)
-                elif source_quantity_direction == DerivativeDirection.NEGATIVE:
-                    target_quantities[target_quantity_name].append(DerivativeDirection.NEGATIVE)
-                elif source_quantity_direction == DerivativeDirection.QUESTION:
-                    target_quantities[target_quantity_name].append(DerivativeDirection.QUESTION)
-            # If it is a negative proportional influence
-            elif relation.correlation.value == RelationDirection.NEGATIVE:
-                if source_quantity_direction == DerivativeDirection.POSITIVE:
-                    target_quantities[target_quantity_name].append(DerivativeDirection.NEGATIVE)
-                elif source_quantity_direction == DerivativeDirection.NEUTRAL:
-                    target_quantities[target_quantity_name].append(DerivativeDirection.NEUTRAL)
-                elif source_quantity_direction == DerivativeDirection.NEGATIVE:
-                    target_quantities[target_quantity_name].append(DerivativeDirection.POSITIVE)
-                elif source_quantity_direction == DerivativeDirection.QUESTION:
-                    target_quantities[target_quantity_name].append(DerivativeDirection.QUESTION)
-        
+            # Create a list for the target quantity if not present in the dictionary
+            if target_quantity_name not in target_quantities:
+                target_quantities[target_quantity_name] = []
+            
+            # If it is a direct influence
+            if type(relation) == Influence:
+                # If it is a positive direct influence
+                if relation.correlation.value == RelationDirection.POSITIVE:
+                    if source_quantity_magnitude > 0:
+                        target_quantities[target_quantity_name].append(DerivativeDirection.POSITIVE)
+                    elif source_quantity_magnitude == 0:
+                        target_quantities[target_quantity_name].append(DerivativeDirection.NEUTRAL)
+                    elif source_quantity_magnitude < 0:
+                        target_quantities[target_quantity_name].append(DerivativeDirection.NEGATIVE)
+                # If it is a negative direct influence
+                elif relation.correlation.value == RelationDirection.NEGATIVE:
+                    if source_quantity_magnitude > 0:
+                        target_quantities[target_quantity_name].append(DerivativeDirection.NEGATIVE)
+                    elif source_quantity_magnitude == 0:
+                        target_quantities[target_quantity_name].append(DerivativeDirection.NEUTRAL)
+                    elif source_quantity_magnitude < 0:
+                        target_quantities[target_quantity_name].append(DerivativeDirection.POSITIVE)
+            # If it is a proportional influence
+            elif type(relation) == Proportional:
+                # If it is a positive proportional influence
+                if relation.correlation.value == RelationDirection.POSITIVE:
+                    if source_quantity_direction == DerivativeDirection.POSITIVE:
+                        target_quantities[target_quantity_name].append(DerivativeDirection.POSITIVE)
+                    elif source_quantity_direction == DerivativeDirection.NEUTRAL:
+                        target_quantities[target_quantity_name].append(DerivativeDirection.NEUTRAL)
+                    elif source_quantity_direction == DerivativeDirection.NEGATIVE:
+                        target_quantities[target_quantity_name].append(DerivativeDirection.NEGATIVE)
+                    elif source_quantity_direction == DerivativeDirection.QUESTION:
+                        target_quantities[target_quantity_name].append(DerivativeDirection.QUESTION)
+                # If it is a negative proportional influence
+                elif relation.correlation.value == RelationDirection.NEGATIVE:
+                    if source_quantity_direction == DerivativeDirection.POSITIVE:
+                        target_quantities[target_quantity_name].append(DerivativeDirection.NEGATIVE)
+                    elif source_quantity_direction == DerivativeDirection.NEUTRAL:
+                        target_quantities[target_quantity_name].append(DerivativeDirection.NEUTRAL)
+                    elif source_quantity_direction == DerivativeDirection.NEGATIVE:
+                        target_quantities[target_quantity_name].append(DerivativeDirection.POSITIVE)
+                    elif source_quantity_direction == DerivativeDirection.QUESTION:
+                        target_quantities[target_quantity_name].append(DerivativeDirection.QUESTION)
+            
     # Determining the overall derivative direction for the target quantities
     for target_quantity in target_quantities:
         directions = target_quantities[target_quantity]

@@ -22,7 +22,11 @@ class Quantity:
     quantitySpace: EnumMeta
 
 @dataclass
-class Relationship:
+class Relation:
+    pass
+
+@dataclass
+class Relationship(Relation):
     a: Quantity
     b: Quantity
     # ^ EnumMeta?
@@ -36,7 +40,7 @@ class Proportional(Relationship):
     correlation: RelationDirection = RelationDirection.POSITIVE
 
 @dataclass
-class ValueCorrespondence:
+class ValueCorrespondence(Relation):
     '''if a then b. a/b denote (quantity name, enum value)'''
     a: Tuple[str, Enum]
     b: Tuple[str, Enum]
@@ -45,7 +49,7 @@ class ValueCorrespondence:
 class Entity:
     name: str
     quantities: Dict[str, Quantity]
-    relations: List[Relationship]
+    relations: List[Relation]
     # ^ out of scope: cross-entity relations
 
 @dataclass
