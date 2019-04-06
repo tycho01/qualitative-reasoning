@@ -127,6 +127,24 @@ def check_continuous(stateA: EntityState, stateB: EntityState) -> bool:
             return False
     return True
 
+def check_point_range(stateA: EntityState, stateB: EntityState) -> bool:
+    '''confirm that range magnitudes changed only if no point magnitudes changed'''
+    point_changed = False
+    range_changed = False
+    quantities = stateA.entity.quantities
+    qty_keys = quantities.keys()
+    for k in qty_keys:
+        a_val = stateA.state[k].magnitude
+        b_val = stateB.state[k].magnitude
+        changed = a_val != b_val
+        if changed:
+            was_point = a_val.value % 2 == 0  # point values are encoded as even numbers
+            if was_point:
+                point_changed = True
+            else:
+                range_changed = True
+    return not (point_changed and range_changed)
+
 def filter_states(entity_states: List[EntityState]) -> List[EntityState]:
     '''filter a list of entity states to those states deemed valid by valid correspondence'''
     return list(filter(check_value_correspondence, entity_states))
