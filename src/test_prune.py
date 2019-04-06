@@ -44,6 +44,12 @@ def test_check_value_correspondence_bad():
     entity_state_bad = make_entity_state(container, container_state_bad)
     assert check_value_correspondence(entity_state_bad) == False
 
+def test_check_perform_direct_influence():
+    assert perform_direct_influence(RelationDirection.POSITIVE.value, 0) == DerivativeDirection.NEUTRAL.value
+
+def test_check_perform_indirect_influence():
+    assert perform_indirect_influence(RelationDirection.NEGATIVE.value, DerivativeDirection.POSITIVE) == DerivativeDirection.NEGATIVE.value
+
 def test_qty_matches():
     state = {'volume': QuantityPair(Volume.ZERO, DerivativeDirection.NEUTRAL)}
     qty_pair = ('volume', Volume.ZERO)
