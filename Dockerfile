@@ -12,4 +12,4 @@ RUN apk add --no-cache --update gcc libc-dev libstdc++ graphviz graphviz-dev ttf
 RUN pip install -r /tmp/requirements.txt
 
 # Run script when the container launches
-ENTRYPOINT ["python", "./main.py"]
+ENTRYPOINT ["python", "./src/main.py"]

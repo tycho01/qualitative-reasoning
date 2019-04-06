@@ -4,7 +4,7 @@
 ```bash
 # local
 pip install -r requirements.txt
-python container.py
+python main.py
 
 # docker
 docker build -t qr .
