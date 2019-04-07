@@ -102,6 +102,11 @@ def test_check_magnitude_changes():
     entity_state_after = make_entity_state(container, container_state_after)
     assert check_magnitude_changes(entity_state_before.state, entity_state_after.state) == True
 
+def test_num_to_direction():
+    assert num_to_direction(0) == DerivativeDirection.NEUTRAL
+    assert num_to_direction(123) == DerivativeDirection.POSITIVE
+    assert num_to_direction(-123) == DerivativeDirection.NEGATIVE
+
 def test_check_continuous():
     # good
     container_state_good = {
