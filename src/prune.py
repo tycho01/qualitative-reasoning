@@ -73,6 +73,22 @@ def qty_matches(state: Dict[str, QuantityPair], qty_pair: Tuple[str, Enum]) -> b
     (qty_name, val) = qty_pair
     return val == state[qty_name].magnitude
 
+def check_magnitude_changes(state1 : Dict, state2 : Dict) -> bool:
+    test_derivatives = {}
+    orig_derivatives = {}
+    for quantity in state1:
+        state1_quantity_magnitude = state1[quantity].magnitude.value
+        state2_quantity_magnitude = state2[quantity].magnitude.value
+        orig_derivatives[quantity] = state2[quantity].derivative
+        if state2_quantity_magnitude - state1_quantity_magnitude == 1:
+            test_derivatives[quantity] = DerivativeDirection.POSITIVE
+        elif state2_quantity_magnitude - state1_quantity_magnitude == 0:
+            test_derivatives[quantity] = DerivativeDirection.NEUTRAL
+        elif state2_quantity_magnitude - state1_quantity_magnitude == -1:
+            test_derivatives[quantity] = DerivativeDirection.NEGATIVE
+    
+    return test_derivatives == orig_derivatives
+    
 def check_continuous(stateA: EntityState, stateB: EntityState) -> bool:
     '''check that two states' magnitudes/derivatives aren't too far apart'''
     quantities = stateA.entity.quantities
