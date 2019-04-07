@@ -3,15 +3,12 @@ import copy
 from typing import List, Dict, Tuple, Set
 from qr_types import *
 
-def check_influence(source_state: EntityState, target_state: EntityState) -> bool:
-    '''check whether all the influences hold for the destination state'''
-    state1 = source_state.state
-    state2 = target_state.state
-    return derivatives_match(state1, state2, source_state.entity.relations) and \
-            magnitudes_match(state1, state2)
-
-def derivatives_match(state1: Dict[str, QuantityPair], state2: Dict[str, QuantityPair], relations: List[Relation]) -> bool:
+def derivatives_match(a: EntityState, b: EntityState) -> bool:
     '''check derivative changes given the quantity relationships.'''
+    # state1: Dict[str, QuantityPair], state2: Dict[str, QuantityPair], relations: List[Relation]
+    state1 = a.state
+    state2 = b.state
+    relations = a.entity.relations
     derivatives1 = state_derivatives(state1)
     derivatives2 = state_derivatives(state2)
     # Dictionary to keep track of the derivative directions of dependant quantities
@@ -36,11 +33,11 @@ def compare_derivatives(old: Direction, new: Direction) -> Direction:
     '''return a relative Direction between Directions. if equal yields Neutral (rather than Question).'''
     return Direction.NEUTRAL if old == new else Direction.POSITIVE if new.value > old.value else Direction.NEGATIVE
 
-def magnitudes_match(state1: Dict[str, QuantityPair], state2: Dict[str, QuantityPair]) -> bool:
+def magnitudes_match(a: EntityState, b: EntityState) -> bool:
     '''check magnitude changes from state1 to state2 match the state2 derivatives'''
-    change_derivatives = check_magnitude_changes(state1, state2)
-    for k in state1:
-        pair1 = state1[k]
+    change_derivatives = check_magnitude_changes(a.state, b.state)
+    for k in a.state:
+        pair1 = a.state[k]
         mag1 = pair1.magnitude
         der1 = pair1.derivative
         change = change_derivatives[k]
@@ -198,4 +195,4 @@ def state_valid(entity_state: EntityState) -> bool:
 
 def can_transition(a: EntityState, b: EntityState) -> bool:
     '''confirm a source state can transition into a target state'''
-    return check_influence(a, b) and check_continuous(a, b) and check_point_range(a, b) and check_not_equal(a, b)
+    return derivatives_match(a, b) and magnitudes_match(a, b) and check_continuous(a, b) and check_point_range(a, b) and check_not_equal(a, b)

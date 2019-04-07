@@ -1,36 +1,6 @@
 from prune import *
 from mock import *
 
-def test_check_influence_good():
-    container_state_before = {
-        'volume': (Volume.ZERO, Direction.NEUTRAL),
-        'inflow': (Inflow.ZERO, Direction.POSITIVE),
-        'outflow': (Outflow.ZERO, Direction.NEUTRAL),
-    }
-    container_state_after = {
-        'volume': (Volume.ZERO, Direction.NEUTRAL),
-        'inflow': (Inflow.PLUS, Direction.POSITIVE),
-        'outflow': (Outflow.ZERO, Direction.NEUTRAL),
-    }
-    entity_state_before = make_entity_state(container, container_state_before)
-    entity_state_after = make_entity_state(container, container_state_after)
-    assert check_influence(entity_state_before, entity_state_after) == True
-
-def test_check_influence_bad():
-    container_state_before = {
-        'volume': (Volume.ZERO, Direction.NEUTRAL),
-        'inflow': (Inflow.PLUS, Direction.POSITIVE),
-        'outflow': (Outflow.ZERO, Direction.NEUTRAL),
-    }
-    container_state_after = {
-        'volume': (Volume.ZERO, Direction.NEUTRAL),
-        'inflow': (Inflow.ZERO, Direction.POSITIVE),
-        'outflow': (Outflow.ZERO, Direction.NEUTRAL),
-    }
-    entity_state_before = make_entity_state(container, container_state_before)
-    entity_state_after = make_entity_state(container, container_state_after)
-    assert check_influence(entity_state_before, entity_state_after) == False
-
 def test_derivatives_match_noop():
     container_state_before = {
         'volume': (Volume.ZERO, Direction.NEUTRAL),
@@ -107,7 +77,7 @@ def test_magnitudes_match_point_change():
     }
     entity_state_before = make_entity_state(container, container_state_before)
     entity_state_after = make_entity_state(container, container_state_after)
-    assert magnitudes_match(entity_state_before.state, entity_state_after.state) == True
+    assert magnitudes_match(entity_state_before, entity_state_after) == True
 
 def test_magnitudes_match_point_stay():
     container_state_before = {
@@ -122,7 +92,7 @@ def test_magnitudes_match_point_stay():
     }
     entity_state_before = make_entity_state(container, container_state_before)
     entity_state_after = make_entity_state(container, container_state_after)
-    assert magnitudes_match(entity_state_before.state, entity_state_after.state) == False
+    assert magnitudes_match(entity_state_before, entity_state_after) == False
 
 def test_magnitudes_match_range_change():
     container_state_before = {
@@ -137,7 +107,7 @@ def test_magnitudes_match_range_change():
     }
     entity_state_before = make_entity_state(container, container_state_before)
     entity_state_after = make_entity_state(container, container_state_after)
-    assert magnitudes_match(entity_state_before.state, entity_state_after.state) == True
+    assert magnitudes_match(entity_state_before, entity_state_after) == True
 
 def test_magnitudes_match_range_stay():
     container_state_before = {
@@ -152,7 +122,7 @@ def test_magnitudes_match_range_stay():
     }
     entity_state_before = make_entity_state(container, container_state_before)
     entity_state_after = make_entity_state(container, container_state_after)
-    assert magnitudes_match(entity_state_before.state, entity_state_after.state) == True
+    assert magnitudes_match(entity_state_before, entity_state_after) == True
 
 def test_magnitudes_match_range_bad():
     container_state_before = {
@@ -167,7 +137,7 @@ def test_magnitudes_match_range_bad():
     }
     entity_state_before = make_entity_state(container, container_state_before)
     entity_state_after = make_entity_state(container, container_state_after)
-    assert magnitudes_match(entity_state_before.state, entity_state_after.state) == False
+    assert magnitudes_match(entity_state_before, entity_state_after) == False
 
 def test_check_extremes_good():
     container_state_good = {

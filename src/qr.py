@@ -5,6 +5,7 @@ from typing import List, Dict, Tuple
 from qr_types import *
 
 import re
+import yaml
 import itertools
 from prune import *
 
@@ -62,7 +63,7 @@ def gen_state_graph(entity: Entity) -> StateGraph:
 
 def serialize_state(state: EntityState) -> str:
     '''simple serialization method for EntityState'''
-    return str({k: (pair.magnitude.value, pair.derivative.value) for k, pair in state.state.items()})
+    return yaml.dump({k: (pair.magnitude.value, pair.derivative.value) for k, pair in state.state.items()})
 
 def serialize_derivative(derivative: Direction) -> str:
     return {
@@ -107,29 +108,47 @@ def state_key(state: EntityState) -> str:
 def inter_state_trace(a: EntityState, b: EntityState) -> str:
     '''inter-state trace, showing states and transition validity by the various rules'''
     # TODO: show why stuff changed
-    # out of scope: if invalid, show why.
-    # influence = check_influence(a, b)
-    # continuous = check_continuous(a, b)
-    # point_range = check_point_range(a, b)
-    # not_equal = check_not_equal(a, b)
-    valid = can_transition(a, b)
-    return str({
-        # 'influence_valid': influence,
-        # 'continuous_valid': continuous,
-        # 'point_range_valid': point_range,
-        # 'not_equal_valid': not_equal,
-        'transition_valid': valid,
-        'a': intra_state_trace(a),
-        'b': intra_state_trace(b),
+    magnitude = magnitudes_match(a, b)
+    derivative = derivatives_match(a, b)
+    continuous = check_continuous(a, b)
+    point_range = check_point_range(a, b)
+    not_equal = check_not_equal(a, b)
+    # valid = can_transition(a, b)
+    return yaml.dump({
+        'magnitude_valid': magnitude,
+        'derivative_valid': derivative,
+        'continuous_valid': continuous,
+        'point_range_valid': point_range,
+        'not_equal_valid': not_equal,
+        # 'transition_valid': valid,
+        # 'a': intra_state_trace(a),
+        # 'b': intra_state_trace(b),
     })
+
+def serialize_change(derivative: Direction) -> str:
+    return {
+        Direction.NEUTRAL: 'stay at',
+        Direction.POSITIVE: 'go up from',
+        Direction.NEGATIVE: 'go down from',
+        Direction.QUESTION: 'go any way from',
+    }[derivative]
 
 def intra_state_trace(entity_state: EntityState) -> str:
     '''intra-state trace, showing type, validity, and state'''
-    # TODO: show how things will change (i.e. after adding in question marks as per check_influence?)
-    # out of scope: if invalid, show why.
-    state = {k: (pair.magnitude.name, pair.derivative.name) for k, pair in entity_state.state.items()}
-    valid = state_valid(entity_state)
-    return str({ 'type': entity_state.entity.name, 'valid': valid, 'state': state })
+    # TODO: show how things will change (i.e. after adding in question marks?)
+    # state = {k: (pair.magnitude.name, pair.derivative.name) for k, pair in entity_state.state.items()}
+    derivatives = [f"{serialize_quantity(k)} {'will' if is_point(pair.magnitude) or pair.derivative == Direction.NEUTRAL else 'may'} {serialize_change(pair.derivative)} {serialize_magnitude(pair.magnitude)}" for k, pair in entity_state.state.items()]
+    correspondence_valid = check_value_correspondence(entity_state)
+    extreme_valid = check_extremes(entity_state)
+    # valid = state_valid(entity_state)
+    return yaml.dump({
+        # 'type': entity_state.entity.name,
+        'correspondence_valid': correspondence_valid,
+        'extreme_valid': extreme_valid,
+        # 'valid': valid,
+        'derivatives': derivatives,
+        # 'state': state,
+    })
 
 def to_pairs(lst):
     return list(zip(*[lst[x::2] for x in (0, 1)]))
