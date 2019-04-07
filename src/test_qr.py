@@ -15,20 +15,21 @@ def test_make_entity_state():
 #     sg = gen_state_graph(container)
 #     # assert draw_state_graph(sg)
 
-# def test_serialize_state():
-#     # print(serialize_state(entity_state))
-#     assert serialize_state(entity_state) == ""
+def test_serialize_state():
+    # print(serialize_state(entity_state))
+    assert serialize_state(entity_state) == '''inflow: !!python/tuple\n- 0\n- 3\noutflow: !!python/tuple\n- 0\n- 2\nvolume: !!python/tuple\n- 0\n- 2\n'''
 
 # def test_state_key():
-#     assert state_key(entity_state) == ""
+#     print(state_key(entity_state))
+#     assert state_key(entity_state) == '''inflow_python_tuple_0_3_outflow_python_tuple_0_2_volume_python_tuple_0_2_\ncontinuous_valid: true\nnot_equal_valid: false\npoint_range_valid: true\n'''
 
-# def test_inter_state_trace():
-#     # print(inter_state_trace(entity_state, entity_state))
-#     assert inter_state_trace(entity_state, entity_state) == ""
+def test_inter_state_trace():
+    # print(inter_state_trace(entity_state, entity_state))
+    assert inter_state_trace(entity_state, entity_state) == '''continuous_valid: true\nnot_equal_valid: false\npoint_range_valid: true\n'''
 
-# def test_intra_state_trace():
-#     # print(intra_state_trace(entity_state))
-#     assert intra_state_trace(entity_state) == ""
+def test_intra_state_trace():
+    # print(intra_state_trace(entity_state))
+    assert intra_state_trace(entity_state) == '''correspondence_valid: true\nderivatives:\n- Vol will stay at 0\n- In will go up from 0\n- Out will stay at 0\n'''
 
 def test_to_pairs():
     assert to_pairs([1,2,3,4]) == [(1,2),(3,4)]

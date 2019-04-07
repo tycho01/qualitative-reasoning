@@ -28,12 +28,12 @@ def next_derivatives(entity_state: EntityState) -> List[Dict[str, Direction]]:
     # check if state2 derivatives are compatible with relation_derivatives:
     # k, derivative = list(derivatives.items())[0]
     next_derivatives = {k:
-            list(map(lambda x: (k, x), {derivative, move_derivative(derivative, relation_derivatives[k])}))
+            list(map(lambda x: (k, x), {derivative}.union(move_derivative(derivative, relation_derivatives[k]))))
         for k, derivative in derivatives.items()}
     derivative_combinations = list(map(dict, itertools.product(*next_derivatives.values())))
     return derivative_combinations
 
-def move_derivative(derivative: Direction, effect: Direction) -> Direction:
+def move_derivative(derivative: Direction, effect: Direction) -> Set[Direction]:
     return {Direction.NEUTRAL} if {derivative, effect} == {Direction.POSITIVE, Direction.NEGATIVE} else \
         set([derivative]).union(move_derivative(derivative, Direction.POSITIVE)).union(move_derivative(derivative, Direction.NEGATIVE)) if effect == Direction.QUESTION else \
         {effect} if derivative == Direction.NEUTRAL else {derivative}
