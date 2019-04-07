@@ -9,28 +9,35 @@ def check_influence(source_state: EntityState, target_state: EntityState) -> boo
     # Obtaining the state and the relations for the system
     state1 = source_state.state
     state2 = target_state.state
+    derivatives1 = state_derivatives(state1)
+    derivatives2 = state_derivatives(state2)
     relations = source_state.entity.relations
 
     # Dictionary to keep track of the derivative directions of dependant quantities
     target_quantities = relation_effects(state1, relations)
     # Determine the overall derivative direction for the target quantities
     relation_derivatives = {k: combine_derivatives(directions) for k, directions in target_quantities.items()}
-    
     # check if state2 derivatives are compatible with relation_derivatives
-    # i.e. ensure each relation_derivative equals state2's or is a QUESTION. maybe filter out QUESTIONs then check other vals match. 
+    # i.e. ensure each relation_derivative equals state2's or is a QUESTION: filter out QUESTIONs then check other vals match. 
+    known = [k for k, v in relation_derivatives.items() if v != DerivativeDirection.QUESTION]
+    derivatives_match = {k: derivatives2[k]         for k in known} == \
+                        {k: relation_derivatives[k] for k in known}
+    if not derivatives_match:
+        return False
 
-    # - calculate magnitude changes from state1 to state2
+    # - check magnitude changes from state1 to state2 match the state2 derivatives
     change_derivatives = check_magnitude_changes(state1, state2)
-
-    derivatives = {k: qty.derivative for k, qty in state2.items()}
-    test_derivatives == orig_derivatives
-
-    # - check if these match the state2 derivatives
+    magnitudes_match = change_derivatives == derivatives1
+    # TODO:
     #   - any point magnitudes *must* change a step according to the derivative (diff == derivative)
     #   - any range magnitudes *might* change a step according to the derivative.
     #     generate any combinations of changing range magnitudes by itertools.product to generate potential next states!
     # TODO: ensure derivatives are zero when the magnitudes are at an extreme
-    return relation_derivatives == state2
+    return magnitudes_match
+
+def state_derivatives(state: Dict[str, QuantityPair]) -> Dict[str, DerivativeDirection]:
+    '''return the derivatives of a state'''
+    return {k: qty.derivative for k, qty in state.items()}
 
 def relation_effects(state: Dict[str, QuantityPair], relations: List[Relation]) -> Dict[str, Set[DerivativeDirection]]:
     '''for each quantity in a state find the effects of the relationships working on that quantity'''

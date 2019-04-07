@@ -31,6 +31,10 @@ def test_check_influence_bad():
     entity_state_after = make_entity_state(container, container_state_after)
     assert check_influence(entity_state_before, entity_state_after) == False
 
+def test_state_derivatives():
+    state = {'volume': QuantityPair(Volume.ZERO, DerivativeDirection.POSITIVE)}
+    assert state_derivatives(state) == {'volume': DerivativeDirection.POSITIVE}
+
 def test_relation_effects():
     assert relation_effects(
         {
