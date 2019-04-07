@@ -64,6 +64,33 @@ def serialize_state(state: EntityState) -> str:
     '''simple serialization method for EntityState'''
     return str({k: (pair.magnitude.value, pair.derivative.value) for k, pair in state.state.items()})
 
+def serialize_derivative(derivative: Direction) -> str:
+    return {
+        Direction.POSITIVE: '+',
+        Direction.NEGATIVE: '-',
+        Direction.NEUTRAL: '0',
+        Direction.QUESTION: '?',
+    }[derivative]
+
+def serialize_magnitude(magnitude: Enum) -> str:
+    return {
+        'ZERO': '0',
+        'PLUS': '+',
+        'MAX': 'max',
+    }.get(magnitude.name, magnitude.name)
+
+def serialize_quantity(k: str) -> str:
+    return {
+        'volume': 'Vol',
+        'inflow': 'In',
+        'outflow': 'Out',
+        'pressure': 'Pres',
+        'height': 'Hi',
+    }.get(k, k)
+
+def pretty_print(entity_state: EntityState) -> str:
+    return '\n'.join([f"{serialize_quantity(k)}: ({serialize_magnitude(pair.magnitude)}, {serialize_derivative(pair.derivative)})" for k, pair in entity_state.state.items()])
+
 def state_key(state: EntityState) -> str:
     '''serialize state for graph key purposes'''
     return re.sub(r"[^\w]+", '_', serialize_state(state))
