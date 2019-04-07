@@ -25,7 +25,8 @@ def gen_state_graph(entity_state: EntityState) -> StateGraph:
     state = entity_state
     k = state_key(state)
     nodes.update({ k: state })
-    handle_state(state, nodes, edges, k)  # recursively mutate nodes/edges here
+    # print(k)
+    (nodes, edges) = handle_state(state, nodes, edges, k)  # recursively mutate nodes/edges here
 
     sg = StateGraph(nodes, edges)
     # TODO: handle exogenous state changes?
@@ -35,16 +36,18 @@ def handle_state(
     state: EntityState,
     nodes: Dict[str, EntityState],
     edges: List[Tuple[str, str]],
-    k: str) -> None:
+    k: str) -> Tuple[Dict[str, EntityState], List[Tuple[str, str]]]:
     ''' recursively handle a state. impure!
         mutates nodes/edges to return. TODO: change this?
     '''
     for next_state in next_states(state):
         next_k = state_key(next_state)
         edges.append((k, next_k))
-        if not k in nodes:
-            nodes.add(state)
-            handle_state(next_state, nodes, edges, next_k)
+        # print(edges)
+        if not next_k in nodes:
+            nodes.update({ k: state })
+            (nodes, edges) = handle_state(next_state, nodes, edges, next_k)
+    return (nodes, edges)
 
 def serialize_state(state: EntityState) -> str:
     '''simple serialization method for EntityState'''
