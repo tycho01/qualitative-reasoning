@@ -8,7 +8,7 @@ def test_next_magnitudes():
     assert len(next_magnitudes(entity_state))
 
 def test_zip_pair():
-    assert zip_pair({'volume': Volume.PLUS}, {'volume': Direction.POSITIVE}) == None
+    assert zip_pair(({'volume': Volume.PLUS}, {'volume': Direction.POSITIVE})) == {'volume': QuantityPair(Volume.PLUS, Direction.POSITIVE)}
 
 def test_next_derivatives():
     assert len(next_derivatives(entity_state))
