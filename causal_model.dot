@@ -1,0 +1,56 @@
+digraph SINK
+{
+    //Quantities
+    Inflow [style=filled fillcolor=red];
+    Volume;
+    Outflow;
+    Pressure;
+    Height;
+
+    // Magnitudes of Quantities
+    mag_i [shape=record, label="<f0> +|<f1> 0"];
+    mag_v [shape=record,label="<f0> Max|<f1> +|<f2> 0"];
+    mag_o [shape=record,label="<f0> Max|<f1> +|<f2> 0"];
+    mag_p [shape=record,label="<f0> Max|<f1> +|<f2> 0"];
+    mag_h [shape=record,label="<f0> Max|<f1> +|<f2> 0"];
+
+    // Derivatives of Quantities
+    // der_i [shape=circle label="+\n0\n-"];
+    // der_v [shape=circle label="+\n0\n-"];
+    // der_o [shape=circle label="+\n0\n-"];
+    // der_p [shape=circle label="+\n0\n-"];
+    // der_h [shape=circle label="+\n0\n-"];
+
+    // For Undirected Edges
+    subgraph SG1
+    {
+        edge [dir=none]
+
+        Inflow -> mag_i; 
+        Volume -> mag_v; 
+        Outflow -> mag_o; 
+        Pressure -> mag_p; 
+        Height -> mag_h;
+
+        // Inflow -> der_i;
+        // Volume -> der_v;
+        // Outflow -> der_o;
+        // Pressure -> der_p;
+        // Height -> der_h;
+    }
+
+    // For Directed Edges
+    subgraph SG2
+    {
+        Inflow -> Volume [label="I+"];
+        Outflow -> Volume [label="I-"];
+        // Volume -> Outflow [label="P+"];
+        Volume -> Height [label="P+"];
+        Height -> Pressure [label="P+"];
+        Pressure -> Outflow [label="P+"];
+    
+        mag_v: f0 -> mag_h : f0 [label="V"]; mag_v: f2 -> mag_h : f2 [label="V"];
+        mag_h: f0 -> mag_p : f0 [label="V"]; mag_h: f2 -> mag_p : f2 [label="V"];
+        mag_p: f0 -> mag_o : f0 [label="V"]; mag_p: f2 -> mag_o : f2 [label="V"];
+    }
+}
