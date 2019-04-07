@@ -11,8 +11,8 @@ COPY . /tmp
 RUN apk add --no-cache --update gcc libc-dev libstdc++ graphviz graphviz-dev ttf-freefont
 RUN pip install -r /tmp/requirements.txt
 
-# run tests
-RUN pytest
+# # run tests
+# RUN pytest
 
 # Run script when the container launches
 ENTRYPOINT ["python", "./src/main.py"]
