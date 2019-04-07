@@ -57,7 +57,7 @@ def test_relation_effects():
             'outflow': QuantityPair(Outflow.PLUS, Direction.POSITIVE)
         },
         [
-            Influence(Quantity('volume', Volume), Quantity('outflow', Outflow)),
+            Influence(   Quantity('volume', Volume), Quantity('outflow', Outflow)),
             Proportional(Quantity('volume', Volume), Quantity('outflow', Outflow), Direction.NEGATIVE)
         ]) == {'volume': set(), 'outflow': {Direction.POSITIVE, Direction.NEGATIVE}}
 
@@ -114,6 +114,11 @@ def test_num_to_direction():
     assert num_to_direction(0) == Direction.NEUTRAL
     assert num_to_direction(123) == Direction.POSITIVE
     assert num_to_direction(-123) == Direction.NEGATIVE
+
+def test_to_sign():
+    assert to_sign(Direction.NEUTRAL) == 0
+    assert to_sign(Direction.POSITIVE) == 1
+    assert to_sign(Direction.NEGATIVE) == -1
 
 def test_check_continuous():
     # good

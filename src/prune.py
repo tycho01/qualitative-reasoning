@@ -53,9 +53,9 @@ def relation_effects(state: Dict[str, QuantityPair], relations: List[Relation]) 
             correl = relation.correlation
             # add the derivative direction
             target_quantities[target_k].add(
-                perform_indirect_influence(correl, qty1.derivative)
+                indirect_influence(correl, qty1.derivative)
                 if type(relation) == Proportional else
-                perform_direct_influence(correl, qty1.magnitude.value))
+                direct_influence(correl, qty1.magnitude.value))
     return target_quantities
 
 def combine_derivatives(directions_: Set[Direction]) -> Direction:
@@ -74,17 +74,16 @@ def check_value_correspondence(entity_state: EntityState) -> bool:
                 return False
     return True
 
-def perform_direct_influence(direct_influence_type: RelationDirection, source_quantity_magnitude: int) -> DerivativeDirection:
-    type_sign = -1 if direct_influence_type == RelationDirection.NEGATIVE else 1
-    source_quantity_magnitude_sign = 1 if source_quantity_magnitude > 0 else 0 if source_quantity_magnitude == 0 else -1
-    resulting_sign = type_sign * source_quantity_magnitude_sign
-    return DerivativeDirection.POSITIVE if resulting_sign == 1 else DerivativeDirection.NEUTRAL if resulting_sign == 0 else DerivativeDirection.NEGATIVE
+def direct_influence(relation: Direction, magnitude: int) -> Direction:
+    '''calculate the effect of an influence relationship given a magnitude.
+       note that magnitudes are presumed to be encoded such that signs of
+       their values match, i.e. positive as positive, vice versa, 0 as 0.
+    '''
+    return num_to_direction(to_sign(relation) * magnitude)
 
-def perform_indirect_influence(indirect_influence_type: RelationDirection, source_quantity_direction: Enum) -> DerivativeDirection:
-    type_sign = -1 if indirect_influence_type == RelationDirection.NEGATIVE else 1
-    source_quantity_direction_sign = 1 if source_quantity_direction == DerivativeDirection.POSITIVE else 0 if source_quantity_direction == DerivativeDirection.NEUTRAL else -1 if source_quantity_direction == DerivativeDirection.NEGATIVE else 2
-    resulting_sign = type_sign * source_quantity_direction_sign
-    return DerivativeDirection.POSITIVE if resulting_sign == 1 else DerivativeDirection.NEUTRAL if resulting_sign == 0 else DerivativeDirection.NEGATIVE if resulting_sign == -1 else DerivativeDirection.QUESTION
+def indirect_influence(relation: Direction, derivative: Enum) -> Direction:
+    '''calculate the effect of a proportional relationship given a derivative.'''
+    return num_to_direction(to_sign(relation) * to_sign(derivative))
  
 def qty_matches(state: Dict[str, QuantityPair], qty_pair: Tuple[str, Enum]) -> bool:
     '''check if a state quantity matches a given value. function for internal use in check_value_correspondence.'''
@@ -105,6 +104,11 @@ def num_to_direction(num: int) -> Direction:
     return Direction.NEUTRAL if num == 0 else \
            Direction.POSITIVE if num > 0 else \
            Direction.NEGATIVE
+
+def to_sign(direction: Direction) -> int:
+    '''convert a Direction to a sign (1, 0, -1)'''
+    return 1 if direction == Direction.POSITIVE else \
+          -1 if direction == Direction.NEGATIVE else 0
 
 def check_continuous(stateA: EntityState, stateB: EntityState) -> bool:
     '''check that two states' magnitudes/derivatives aren't too far apart'''
