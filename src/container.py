@@ -71,7 +71,7 @@ outflow_volume = Influence(outflow, volume, Direction.NEGATIVE)
 volume_outflow = Proportional(volume, outflow, Direction.POSITIVE)
 # The outflow is at its highest value (max), when the volume is at its highest value (also max).
 vol_out_max = ValueCorrespondence(('volume', Volume.MAX), ('outflow', Outflow.MAX))
-# There is no outflow, when there is no ('volume', Volume.
+# There is no outflow, when there is no volume.
 vol_out_zero = ValueCorrespondence(('volume', Volume.ZERO), ('outflow', Outflow.ZERO))
 # Volume, Outflow, 
 

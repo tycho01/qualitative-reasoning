@@ -18,8 +18,8 @@ def gen_dot(states, edges):
         label = pretty_print(entity_state)
         if A.has_node(node):
             A.get_node(node).attr['label'] = label
-        # else:
-        #     A.add_node(node, label=label)
+        else:
+            A.add_node(node, label=label)
 
     A.node_attr['shape']='circle'
     return A
@@ -29,5 +29,5 @@ def gen_dot(states, edges):
 def draw_state_graph(sg: StateGraph):
     A = gen_dot(sg.states, sg.edges)
     A.write('../graph.dot')
-    A.draw('../circo.svg', prog='circo')
+    A.draw('../graph.svg', prog='circo')
     return A

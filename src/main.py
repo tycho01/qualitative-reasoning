@@ -5,3 +5,5 @@ from graph import *
 sg = gen_state_graph(container)
 # sg = gen_state_graph(bonus_container)
 draw_state_graph(sg)
+print(f"states: {len(sg.states)}")
+print(f"edges: {len(sg.edges)}")

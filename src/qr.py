@@ -140,7 +140,7 @@ def gen_states(entity: Entity) -> List[EntityState]:
             # magnitudes
             [enumVal.value for enumVal in qty.quantitySpace],
             # derivatives
-            [enumVal.value for enumVal in Direction]
+            [enumVal.value for enumVal in set(Direction) - {Direction.QUESTION}]
         ] for qty in entity.quantities.values()
     ]))
     # state_dict: Dict[str, QuantityPair]
