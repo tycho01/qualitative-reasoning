@@ -26,10 +26,9 @@ def derivatives_match(state1: Dict[str, QuantityPair], state2: Dict[str, Quantit
     # as in state1. note that while this may not filter out jumps from negative
     # to positive, these will be caught in the continuous check instead.
     for k in known:
-        old = derivatives1[k]
-        new = derivatives2[k]
         effect = relation_derivatives[k]
-        if not compare_derivatives(new, old) in {Direction.NEUTRAL, effect}:
+        change = compare_derivatives(derivatives1[k], derivatives2[k])
+        if not change in {Direction.NEUTRAL, effect}:
             return False
     return True
 
