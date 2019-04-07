@@ -89,7 +89,16 @@ def serialize_quantity(k: str) -> str:
     }.get(k, k)
 
 def pretty_print(entity_state: EntityState) -> str:
-    return '\n'.join([f"{serialize_quantity(k)}: ({serialize_magnitude(pair.magnitude)}, {serialize_derivative(pair.derivative)})" for k, pair in entity_state.state.items()])
+    state = entity_state.state
+    # keys = state
+    keys = [
+        'inflow',
+        'volume',
+        'outflow',
+        'pressure',
+        'height',
+    ]
+    return '\n'.join([f"{serialize_quantity(k)}: ({serialize_magnitude(state[k].magnitude)}, {serialize_derivative(state[k].derivative)})" for k in keys if k in state])
 
 def state_key(state: EntityState) -> str:
     '''serialize state for graph key purposes'''
