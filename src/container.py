@@ -61,14 +61,14 @@ all_quantities = [*quantities, height, pressure]
 # relations
 
 # The amount of inflow increases the volume
-# inflow_volume  = Relationship(inflow,  volume, RelationType.INFLUENCE, RelationDirection.POSITIVE)
-inflow_volume  = Influence(inflow,  volume, RelationDirection.POSITIVE)
+# inflow_volume  = Relationship(inflow,  volume, RelationType.INFLUENCE, Direction.POSITIVE)
+inflow_volume  = Influence(inflow,  volume, Direction.POSITIVE)
 # The amount of outflow decreases the volume
-# outflow_volume = Relationship(outflow, volume, RelationType.INFLUENCE, RelationDirection.NEGATIVE)
-outflow_volume = Influence(outflow, volume, RelationDirection.NEGATIVE)
+# outflow_volume = Relationship(outflow, volume, RelationType.INFLUENCE, Direction.NEGATIVE)
+outflow_volume = Influence(outflow, volume, Direction.NEGATIVE)
 # Outflow changes are proportional to volume changes
-# volume_outflow = Relationship(volume, outflow, RelationType.PROPORTIONAL, RelationDirection.POSITIVE)
-volume_outflow = Proportional(volume, outflow, RelationDirection.POSITIVE)
+# volume_outflow = Relationship(volume, outflow, RelationType.PROPORTIONAL, Direction.POSITIVE)
+volume_outflow = Proportional(volume, outflow, Direction.POSITIVE)
 # The outflow is at its highest value (max), when the volume is at its highest value (also max).
 vol_out_max = ValueCorrespondence(('volume', Volume.MAX), ('outflow', Outflow.MAX))
 # There is no outflow, when there is no ('volume', Volume.
@@ -86,11 +86,11 @@ relations = [
 # extra relations
 
 # Height changes are proportional to volume changes
-volume_height =   Proportional(volume, height,   RelationDirection.POSITIVE)
+volume_height =   Proportional(volume, height,   Direction.POSITIVE)
 # Pressure changes are proportional to height changes
-height_pressure = Proportional(height, pressure, RelationDirection.POSITIVE)
+height_pressure = Proportional(height, pressure, Direction.POSITIVE)
 # Instead of volume, it is the pressure that determines the outflow
-pressure_outflow = Proportional(pressure, outflow, RelationDirection.POSITIVE)
+pressure_outflow = Proportional(pressure, outflow, Direction.POSITIVE)
 # Particular values, such as 0 and max correspond for volume, height, pressure and outflow.
 
 vol_hi_max = ValueCorrespondence(('volume', Volume.MAX), ('height', Height.MAX))

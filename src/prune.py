@@ -19,7 +19,7 @@ def check_influence(source_state: EntityState, target_state: EntityState) -> boo
     relation_derivatives = {k: combine_derivatives(directions) for k, directions in target_quantities.items()}
     # check if state2 derivatives are compatible with relation_derivatives
     # i.e. ensure each relation_derivative equals state2's or is a QUESTION: filter out QUESTIONs then check other vals match. 
-    known = [k for k, v in relation_derivatives.items() if v != DerivativeDirection.QUESTION]
+    known = [k for k, v in relation_derivatives.items() if v != Direction.QUESTION]
     derivatives_match = {k: derivatives2[k]         for k in known} == \
                         {k: relation_derivatives[k] for k in known}
     if not derivatives_match:
@@ -35,11 +35,11 @@ def check_influence(source_state: EntityState, target_state: EntityState) -> boo
     # TODO: ensure derivatives are zero when the magnitudes are at an extreme
     return magnitudes_match
 
-def state_derivatives(state: Dict[str, QuantityPair]) -> Dict[str, DerivativeDirection]:
+def state_derivatives(state: Dict[str, QuantityPair]) -> Dict[str, Direction]:
     '''return the derivatives of a state'''
     return {k: qty.derivative for k, qty in state.items()}
 
-def relation_effects(state: Dict[str, QuantityPair], relations: List[Relation]) -> Dict[str, Set[DerivativeDirection]]:
+def relation_effects(state: Dict[str, QuantityPair], relations: List[Relation]) -> Dict[str, Set[Direction]]:
     '''for each quantity in a state find the effects of the relationships working on that quantity'''
     # TODO: figure out if the present derivatives should be included in these target_quantities.
     # if absent, we still need to reconcile these as well. if present, we might confuse
@@ -58,11 +58,11 @@ def relation_effects(state: Dict[str, QuantityPair], relations: List[Relation]) 
                 perform_direct_influence(correl, qty1.magnitude.value))
     return target_quantities
 
-def combine_derivatives(directions_: Set[DerivativeDirection]) -> DerivativeDirection:
-    '''obtain a DerivativeDirection by combining a set of them. this may give DerivativeDirection.QUESTION.'''
-    directions = directions_ - {DerivativeDirection.NEUTRAL}
+def combine_derivatives(directions_: Set[Direction]) -> Direction:
+    '''obtain a Direction by combining a set of them. this may give Direction.QUESTION.'''
+    directions = directions_ - {Direction.NEUTRAL}
     size = len(set(directions))
-    return DerivativeDirection.NEUTRAL if size == 0 else list(directions)[0] if size == 1 else DerivativeDirection.QUESTION
+    return Direction.NEUTRAL if size == 0 else list(directions)[0] if size == 1 else Direction.QUESTION
 
 def check_value_correspondence(entity_state: EntityState) -> bool:
     '''check if a state is deemed valid by its value correspondence rules'''
@@ -91,7 +91,7 @@ def qty_matches(state: Dict[str, QuantityPair], qty_pair: Tuple[str, Enum]) -> b
     (qty_name, val) = qty_pair
     return val == state[qty_name].magnitude
 
-def check_magnitude_changes(state1: Dict[str, QuantityPair], state2: Dict[str, QuantityPair]) -> Dict[str, DerivativeDirection]:
+def check_magnitude_changes(state1: Dict[str, QuantityPair], state2: Dict[str, QuantityPair]) -> Dict[str, Direction]:
     '''calculate magnitude changes from state1 to state2'''
     return {
         k: num_to_direction(
@@ -100,11 +100,11 @@ def check_magnitude_changes(state1: Dict[str, QuantityPair], state2: Dict[str, Q
         ) for k in state1
     }
 
-def num_to_direction(num: int) -> DerivativeDirection:
-    '''get a DerivativeDirection from a number's sign'''
-    return DerivativeDirection.NEUTRAL if num == 0 else \
-           DerivativeDirection.POSITIVE if num > 0 else \
-           DerivativeDirection.NEGATIVE
+def num_to_direction(num: int) -> Direction:
+    '''get a Direction from a number's sign'''
+    return Direction.NEUTRAL if num == 0 else \
+           Direction.POSITIVE if num > 0 else \
+           Direction.NEGATIVE
 
 def check_continuous(stateA: EntityState, stateB: EntityState) -> bool:
     '''check that two states' magnitudes/derivatives aren't too far apart'''
@@ -114,7 +114,7 @@ def check_continuous(stateA: EntityState, stateB: EntityState) -> bool:
         a_pair = stateA.state[k]
         b_pair = stateB.state[k]
         # derivatives are OK iff the same or either is neutral, leaving positive/negative the only bad combo
-        if {a_pair.derivative, b_pair.derivative} == {DerivativeDirection.NEGATIVE, DerivativeDirection.POSITIVE}:
+        if {a_pair.derivative, b_pair.derivative} == {Direction.NEGATIVE, Direction.POSITIVE}:
             return False
         # magnitudes are OK if equal or subsequent (in either direction)
         index = {v:k for k,v in enumerate(quantities[k].quantitySpace.__members__.values())}

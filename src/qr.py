@@ -13,7 +13,7 @@ def make_entity(name: str, quantities: List[Quantity], relations: List[Relations
     qty_dict = {qty.name: qty for qty in quantities}
     return Entity(name, qty_dict, relations)
 
-def make_entity_state(entity: Entity, state_dict: Dict[str, Tuple[Enum, DerivativeDirection]]) -> EntityState:
+def make_entity_state(entity: Entity, state_dict: Dict[str, Tuple[Enum, Direction]]) -> EntityState:
     '''wrap the EntityState ctor to handle state dict creation'''
     pair_state = {k: QuantityPair(*tpl) for k, tpl in state_dict.items()}
     return EntityState(entity, pair_state)
@@ -102,7 +102,7 @@ def wrap_enums(qty_vals: Tuple[Quantity, Tuple[int, int]]) -> Tuple[str, Quantit
     (qty, (val, speed)) = qty_vals
     k = qty.name
     magnitude = qty.quantitySpace(val)
-    derivative = DerivativeDirection(speed)
+    derivative = Direction(speed)
     pair = QuantityPair(magnitude, derivative)
     return (k, pair)
 
@@ -112,7 +112,7 @@ def gen_states(entity: Entity) -> List[EntityState]:
             # magnitudes
             [enumVal.value for enumVal in qty.quantitySpace],
             # derivatives
-            [enumVal.value for enumVal in DerivativeDirection]
+            [enumVal.value for enumVal in Direction]
         ] for qty in entity.quantities.values()
     ]))
     # state_dict: Dict[str, QuantityPair]

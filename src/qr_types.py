@@ -2,16 +2,12 @@ from enum import Enum, EnumMeta
 from dataclasses import dataclass
 from typing import List, Dict, Tuple
 
-# values for DerivativeDirection don't follow semantic conventions of quantity spaces (see below)
-class DerivativeDirection(Enum):
+# values for Direction don't follow semantic conventions of quantity spaces (see below)
+class Direction(Enum):
     QUESTION = 0  # question mark option to indicate changes in both directions causing an ambiguous change
     NEGATIVE = 1
     NEUTRAL  = 2
     POSITIVE = 3
-
-class RelationDirection(Enum):
-    NEGATIVE = 1
-    POSITIVE = 2
 
 # for each quantity space we need to know:
 # - the order (in which to transition), so ensure the enums are logically ordered!
@@ -34,11 +30,11 @@ class Relationship(Relation):
 
 @dataclass
 class Influence(Relationship):
-     correlation: RelationDirection = RelationDirection.POSITIVE
+     correlation: Direction = Direction.POSITIVE
 
 @dataclass
 class Proportional(Relationship):
-    correlation: RelationDirection = RelationDirection.POSITIVE
+    correlation: Direction = Direction.POSITIVE
 
 @dataclass
 class ValueCorrespondence(Relation):
@@ -56,7 +52,7 @@ class Entity:
 @dataclass
 class QuantityPair:
     magnitude: Enum
-    derivative: DerivativeDirection
+    derivative: Direction
 
 @dataclass
 class EntityState:

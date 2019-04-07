@@ -5,15 +5,15 @@ from container import *
 # initialize state as per example slide
 
 container_state = {
-    'volume': (Volume.ZERO, DerivativeDirection.NEUTRAL),
-    'inflow': (Inflow.ZERO, DerivativeDirection.NEUTRAL),
-    'outflow': (Outflow.ZERO, DerivativeDirection.NEUTRAL),
+    'volume': (Volume.ZERO, Direction.NEUTRAL),
+    'inflow': (Inflow.ZERO, Direction.NEUTRAL),
+    'outflow': (Outflow.ZERO, Direction.NEUTRAL),
 }
 
 bonus_container_state = {
     **container_state,
-    'height': (Height.ZERO, DerivativeDirection.NEUTRAL),
-    'pressure': (Volume.ZERO, DerivativeDirection.NEUTRAL),
+    'height': (Height.ZERO, Direction.NEUTRAL),
+    'pressure': (Volume.ZERO, Direction.NEUTRAL),
 }
 
 entity_state = make_entity_state(container, container_state)

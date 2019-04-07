@@ -9,7 +9,7 @@ def test_make_entity():
 
 def test_make_entity_state():
     entity_state = make_entity_state(container, container_state)
-    assert entity_state.state['volume'] == QuantityPair(Volume.ZERO, DerivativeDirection.NEUTRAL)
+    assert entity_state.state['volume'] == QuantityPair(Volume.ZERO, Direction.NEUTRAL)
 
 # def test_gen_state_graph():
 #     sg = gen_state_graph(container)
@@ -34,7 +34,7 @@ def test_to_pairs():
     assert to_pairs([1,2,3,4]) == [(1,2),(3,4)]
 
 def test_wrap_enums():
-    assert wrap_enums((Quantity('volume', Volume), (0, 2))) == ('volume', QuantityPair(Volume.ZERO, DerivativeDirection.NEUTRAL))
+    assert wrap_enums((Quantity('volume', Volume), (0, 2))) == ('volume', QuantityPair(Volume.ZERO, Direction.NEUTRAL))
 
 def test_gen_states():
     assert len(gen_states(container)) == 1152
