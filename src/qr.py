@@ -45,6 +45,7 @@ def gen_state_graph(entity: Entity) -> StateGraph:
     # TODO: handle exogenous state changes?
     return sg
 
+# TODO: in prune generate any combinations of changing range magnitudes by itertools.product to generate potential next states?
 # def handle_state(
 #     state: EntityState,
 #     states: Dict[str, EntityState],
