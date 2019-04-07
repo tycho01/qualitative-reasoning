@@ -42,6 +42,7 @@ def gen_state_graph(entity: Entity) -> StateGraph:
     # handle_state(state, nodes, edges)  # recursively mutate nodes/edges here
 
     sg = StateGraph(nodes, edges)
+    # TODO: handle exogenous state changes?
     return sg
 
 # def handle_state(
