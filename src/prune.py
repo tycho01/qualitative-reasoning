@@ -35,7 +35,7 @@ def next_derivatives(entity_state: EntityState) -> List[Dict[str, Direction]]:
 
 def move_derivative(derivative: Direction, effect: Direction) -> Direction:
     return {Direction.NEUTRAL} if {derivative, effect} == {Direction.POSITIVE, Direction.NEGATIVE} else \
-        set([effect]).union(move_derivative(derivative, Direction.POSITIVE)).union(move_derivative(derivative, Direction.NEGATIVE)) if effect == Direction.QUESTION else \
+        set([derivative]).union(move_derivative(derivative, Direction.POSITIVE)).union(move_derivative(derivative, Direction.NEGATIVE)) if effect == Direction.QUESTION else \
         {effect} if derivative == Direction.NEUTRAL else {derivative}
 
 # TODO: incorporate transformation based on check_value_correspondence

@@ -14,7 +14,7 @@ def test_next_derivatives():
     assert len(next_derivatives(entity_state))
 
 def test_move_derivative():
-    assert move_derivative(Direction.POSITIVE, Direction.QUESTION) == set([Direction.POSITIVE, Direction.NEUTRAL, Direction.NEGATIVE])
+    assert move_derivative(Direction.POSITIVE, Direction.QUESTION) == set([Direction.POSITIVE, Direction.NEUTRAL])
 
 def test_move_magnitude():
     k = 'volume'
