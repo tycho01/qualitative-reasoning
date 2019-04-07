@@ -5,14 +5,14 @@ from qr_types import *
 
 def check_influence(source_state: EntityState, target_state: EntityState) -> bool:
     '''check whether all the influences hold for the destination state'''
-
-    # Obtaining the state and the relations for the system
     state1 = source_state.state
     state2 = target_state.state
-    derivatives1 = state_derivatives(state1)
-    derivatives2 = state_derivatives(state2)
-    relations = source_state.entity.relations
+    return derivatives_match(state1, state2, source_state.entity.relations) and \
+            magnitudes_match(state1, state2)
 
+def derivatives_match(state1: Dict[str, QuantityPair], state2: Dict[str, QuantityPair], relations) -> bool:
+    '''check derivative changes given the quantity relationships.'''
+    derivatives2 = state_derivatives(state2)
     # Dictionary to keep track of the derivative directions of dependant quantities
     target_quantities = relation_effects(state1, relations)
     # Determine the overall derivative direction for the target quantities
@@ -20,20 +20,19 @@ def check_influence(source_state: EntityState, target_state: EntityState) -> boo
     # check if state2 derivatives are compatible with relation_derivatives
     # i.e. ensure each relation_derivative equals state2's or is a QUESTION: filter out QUESTIONs then check other vals match. 
     known = [k for k, v in relation_derivatives.items() if v != Direction.QUESTION]
-    derivatives_match = {k: derivatives2[k]         for k in known} == \
-                        {k: relation_derivatives[k] for k in known}
-    if not derivatives_match:
-        return False
+    return {k: derivatives2[k]         for k in known} == \
+           {k: relation_derivatives[k] for k in known}
 
-    # - check magnitude changes from state1 to state2 match the state2 derivatives
+def magnitudes_match(state1: Dict[str, QuantityPair], state2: Dict[str, QuantityPair]) -> bool:
+    '''check magnitude changes from state1 to state2 match the state2 derivatives'''
+    derivatives1 = state_derivatives(state1)
     change_derivatives = check_magnitude_changes(state1, state2)
-    magnitudes_match = change_derivatives == derivatives1
+    return change_derivatives == derivatives1
     # TODO:
     #   - any point magnitudes *must* change a step according to the derivative (diff == derivative)
     #   - any range magnitudes *might* change a step according to the derivative.
     #     generate any combinations of changing range magnitudes by itertools.product to generate potential next states!
     # TODO: ensure derivatives are zero when the magnitudes are at an extreme
-    return magnitudes_match
 
 def state_derivatives(state: Dict[str, QuantityPair]) -> Dict[str, Direction]:
     '''return the derivatives of a state'''
