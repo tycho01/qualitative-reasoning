@@ -12,33 +12,44 @@ def check_influence(source_state: EntityState, target_state: EntityState) -> boo
     relations = source_state.entity.relations
 
     # Dictionary to keep track of the derivative directions of dependant quantities
-    target_quantities = {}
-    for relation in relations:
-        if type(relation) != ValueCorrespondence:  # skip ValueCorrespondence which are different
-            # Retrieving the names of the source and target quantities
-            source_quantity_name = relation.a.name
-            target_quantity_name = relation.b.name
-            source_quantity_magnitude = state1[source_quantity_name].magnitude.value
-            source_quantity_direction = state1[source_quantity_name].derivative
-
-            # Create a list for the target quantity if not present in the dictionary
-            if target_quantity_name not in target_quantities:
-                target_quantities[target_quantity_name] = set()
-            
-           # If it is a direct influence
-            if type(relation) == Influence:
-                target_quantities[target_quantity_name].add(perform_direct_influence(relation.correlation.value, source_quantity_magnitude))
-            # If it is a proportional influence
-            elif type(relation) == Proportional:
-                target_quantities[target_quantity_name].add(perform_indirect_influence(relation.correlation.value, source_quantity_direction))
-            
+    target_quantities = relation_effects(state1, relations)
     # Determining the overall derivative direction for the target quantities
     qty_derivatives = {k: combine_derivatives(directions) for k, directions in target_quantities.items()}
     
     # Returning if the destination state is valid or not
-    # TODO: check if state2 derivatives are compatible with test_state derivatives
-    # TODO: check if magnitude changes from state1 to state2 match the state2 derivatives
+    # TODO: check if state2 derivatives are compatible with qty_derivatives
+    # i.e. ensure each qty_derivative equals state2's or is a QUESTION. maybe filter out QUESTIONs then check other vals match. 
+    # - calculate magnitude changes from state1 to state2: Dict[str, DerivativeDirection]
+    # - check if these match the state2 derivatives
+    #   - any point magnitudes *must* change a step according to the derivative (diff == derivative)
+    #   - any range magnitudes *might* change a step according to the derivative.
+    #     generate any combinations of changing range magnitudes by itertools.product to generate potential next states!
+    # TODO: ensure derivatives are zero when the magnitudes are at an extreme
     return qty_derivatives == state2
+
+def relation_effects(state: Dict[str, QuantityPair], relations: List[Relation]) -> Dict[str, Set[DerivativeDirection]]:
+    '''for each quantity in a state find the effects of the relationships working on that quantity'''
+    # TODO: figure out if the present derivatives should be included in these target_quantities.
+    # if absent, we still need to reconcile these as well. if present, we might confuse
+    # positive derivatives influenced down with vice versa, which are different as the former
+    # cannot end up as direction negative due to the contunuity rule (0 is in-between). 
+    target_quantities = {}
+    for relation in relations:
+        if type(relation) != ValueCorrespondence:  # skip ValueCorrespondence which are different
+            target_k = relation.b.name
+            qty1 = state[relation.a.name]
+            correl = relation.correlation
+
+            # Create a list for the target quantity if not present in the dictionary
+            if target_k not in target_quantities:
+                target_quantities[target_k] = set()
+
+            # add the derivative direction
+            target_quantities[target_k].add(
+                perform_indirect_influence(correl, qty1.derivative)
+                if type(relation) == Proportional else
+                perform_direct_influence(correl, qty1.magnitude.value))
+    return target_quantities
 
 def combine_derivatives(directions_: Set[DerivativeDirection]) -> DerivativeDirection:
     '''obtain a DerivativeDirection by combining a set of them. this may give DerivativeDirection.QUESTION.'''
@@ -56,17 +67,17 @@ def check_value_correspondence(entity_state: EntityState) -> bool:
                 return False
     return True
 
-def perform_direct_influence(direct_influence_type: int, source_quantity_magnitude: int) -> int:
-    type_sign = -1 if direct_influence_type == RelationDirection.NEGATIVE.value else 1
+def perform_direct_influence(direct_influence_type: RelationDirection, source_quantity_magnitude: int) -> DerivativeDirection:
+    type_sign = -1 if direct_influence_type == RelationDirection.NEGATIVE else 1
     source_quantity_magnitude_sign = 1 if source_quantity_magnitude > 0 else 0 if source_quantity_magnitude == 0 else -1
     resulting_sign = type_sign * source_quantity_magnitude_sign
-    return DerivativeDirection.POSITIVE.value if resulting_sign == 1 else DerivativeDirection.NEUTRAL.value if resulting_sign == 0 else DerivativeDirection.NEGATIVE.value
+    return DerivativeDirection.POSITIVE if resulting_sign == 1 else DerivativeDirection.NEUTRAL if resulting_sign == 0 else DerivativeDirection.NEGATIVE
 
-def perform_indirect_influence(indirect_influence_type: int, source_quantity_direction: Enum) -> int:
-    type_sign = -1 if indirect_influence_type == RelationDirection.NEGATIVE.value else 1
+def perform_indirect_influence(indirect_influence_type: RelationDirection, source_quantity_direction: Enum) -> DerivativeDirection:
+    type_sign = -1 if indirect_influence_type == RelationDirection.NEGATIVE else 1
     source_quantity_direction_sign = 1 if source_quantity_direction == DerivativeDirection.POSITIVE else 0 if source_quantity_direction == DerivativeDirection.NEUTRAL else -1 if source_quantity_direction == DerivativeDirection.NEGATIVE else 2
     resulting_sign = type_sign * source_quantity_direction_sign
-    return DerivativeDirection.POSITIVE.value if resulting_sign == 1 else DerivativeDirection.NEUTRAL.value if resulting_sign == 0 else DerivativeDirection.NEGATIVE.value if resulting_sign == -1 else DerivativeDirection.QUESTION.value
+    return DerivativeDirection.POSITIVE if resulting_sign == 1 else DerivativeDirection.NEUTRAL if resulting_sign == 0 else DerivativeDirection.NEGATIVE if resulting_sign == -1 else DerivativeDirection.QUESTION
  
 def qty_matches(state: Dict[str, QuantityPair], qty_pair: Tuple[str, Enum]) -> bool:
     '''check if a state quantity matches a given value. function for internal use in check_value_correspondence.'''

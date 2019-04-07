@@ -31,6 +31,32 @@ def test_check_influence_bad():
     entity_state_after = make_entity_state(container, container_state_after)
     assert check_influence(entity_state_before, entity_state_after) == False
 
+def test_relation_effects():
+    assert relation_effects(
+        {
+            'volume': QuantityPair(Volume.ZERO, DerivativeDirection.POSITIVE)
+        },
+        []
+    ) == {}
+    assert relation_effects(
+        {
+            'volume': QuantityPair(Volume.PLUS, DerivativeDirection.POSITIVE),
+            'outflow': QuantityPair(Outflow.PLUS, DerivativeDirection.POSITIVE)
+        },
+        [
+            Influence(Quantity('volume', Volume), Quantity('outflow', Outflow))
+        ]
+    ) == {'outflow': {DerivativeDirection.POSITIVE}}
+    assert relation_effects(
+        {
+            'volume': QuantityPair(Volume.PLUS, DerivativeDirection.POSITIVE),
+            'outflow': QuantityPair(Outflow.PLUS, DerivativeDirection.POSITIVE)
+        },
+        [
+            Influence(Quantity('volume', Volume), Quantity('outflow', Outflow)),
+            Proportional(Quantity('volume', Volume), Quantity('outflow', Outflow), RelationDirection.NEGATIVE)
+        ]) == {'outflow': {DerivativeDirection.POSITIVE, DerivativeDirection.NEGATIVE}}
+
 def test_combine_derivatives():
     assert combine_derivatives(set()) == DerivativeDirection.NEUTRAL
     assert combine_derivatives({DerivativeDirection.POSITIVE}) == DerivativeDirection.POSITIVE
@@ -51,10 +77,10 @@ def test_check_value_correspondence_bad():
     assert check_value_correspondence(entity_state_bad) == False
 
 def test_check_perform_direct_influence():
-    assert perform_direct_influence(RelationDirection.POSITIVE.value, 0) == DerivativeDirection.NEUTRAL.value
+    assert perform_direct_influence(RelationDirection.POSITIVE, 0) == DerivativeDirection.NEUTRAL
 
 def test_check_perform_indirect_influence():
-    assert perform_indirect_influence(RelationDirection.NEGATIVE.value, DerivativeDirection.POSITIVE) == DerivativeDirection.NEGATIVE.value
+    assert perform_indirect_influence(RelationDirection.NEGATIVE, DerivativeDirection.POSITIVE) == DerivativeDirection.NEGATIVE
 
 def test_qty_matches():
     state = {'volume': QuantityPair(Volume.ZERO, DerivativeDirection.NEUTRAL)}
