@@ -8,375 +8,1563 @@ strict digraph "" {
 	node [label="\N",
 		shape=circle
 	];
-	_inflow_0_3_outflow_0_3_volume_0_3_	 [label="In: (0, +)
+	inflow_python_tuple_0_2_outflow_python_tuple_0_3_volume_python_tuple_0_3_	 [label="In: (0, 0)
 Vol: (0, +)
-Out: (0, +)"];
-	_inflow_1_3_outflow_1_3_volume_1_3_	 [label="In: (+, +)
+Out: (0, +)",
+		tooltip="correspondence_valid: true
+derivatives:
+- In will stay at 0
+- Out will go up from 0
+- Vol will go up from 0
+extreme_valid: true
+"];
+	inflow_python_tuple_0_2_outflow_python_tuple_1_3_volume_python_tuple_1_3_	 [label="In: (0, 0)
 Vol: (+, +)
-Out: (+, +)"];
-	_inflow_0_3_outflow_0_3_volume_0_3_ -> _inflow_1_3_outflow_1_3_volume_1_3_;
-	_inflow_1_3_outflow_1_3_volume_1_2_	 [label="In: (+, +)
+Out: (+, +)",
+		tooltip="correspondence_valid: true
+derivatives:
+- In will stay at 0
+- Out may go up from +
+- Vol may go up from +
+extreme_valid: true
+"];
+	inflow_python_tuple_0_2_outflow_python_tuple_0_3_volume_python_tuple_0_3_ -> inflow_python_tuple_0_2_outflow_python_tuple_1_3_volume_python_tuple_1_3_	 [tooltip="continuous_valid: true
+derivative_valid: true
+magnitude_valid: true
+not_equal_valid: true
+point_range_valid: true
+"];
+	inflow_python_tuple_0_2_outflow_python_tuple_1_3_volume_python_tuple_1_2_	 [label="In: (0, 0)
 Vol: (+, 0)
-Out: (+, +)"];
-	_inflow_1_3_outflow_1_3_volume_1_3_ -> _inflow_1_3_outflow_1_3_volume_1_2_;
-	_inflow_0_3_outflow_0_2_volume_0_2_	 [label="In: (0, +)
+Out: (+, +)",
+		tooltip="correspondence_valid: true
+derivatives:
+- In will stay at 0
+- Out may go up from +
+- Vol will stay at +
+extreme_valid: true
+"];
+	inflow_python_tuple_0_2_outflow_python_tuple_1_3_volume_python_tuple_1_3_ -> inflow_python_tuple_0_2_outflow_python_tuple_1_3_volume_python_tuple_1_2_	 [tooltip="continuous_valid: true
+derivative_valid: true
+magnitude_valid: true
+not_equal_valid: true
+point_range_valid: true
+"];
+	inflow_python_tuple_0_2_outflow_python_tuple_1_1_volume_python_tuple_1_2_	 [label="In: (0, 0)
+Vol: (+, 0)
+Out: (+, -)",
+		tooltip="correspondence_valid: true
+derivatives:
+- In will stay at 0
+- Out may go down from +
+- Vol will stay at +
+extreme_valid: true
+"];
+	inflow_python_tuple_0_2_outflow_python_tuple_1_1_volume_python_tuple_1_1_	 [label="In: (0, 0)
+Vol: (+, -)
+Out: (+, -)",
+		tooltip="correspondence_valid: true
+derivatives:
+- In will stay at 0
+- Out may go down from +
+- Vol may go down from +
+extreme_valid: true
+"];
+	inflow_python_tuple_0_2_outflow_python_tuple_1_1_volume_python_tuple_1_2_ -> inflow_python_tuple_0_2_outflow_python_tuple_1_1_volume_python_tuple_1_1_	 [tooltip="continuous_valid: true
+derivative_valid: true
+magnitude_valid: true
+not_equal_valid: true
+point_range_valid: true
+"];
+	inflow_python_tuple_0_2_outflow_python_tuple_1_1_volume_python_tuple_1_3_	 [label="In: (0, 0)
+Vol: (+, +)
+Out: (+, -)",
+		tooltip="correspondence_valid: true
+derivatives:
+- In will stay at 0
+- Out may go down from +
+- Vol may go up from +
+extreme_valid: true
+"];
+	inflow_python_tuple_0_2_outflow_python_tuple_1_1_volume_python_tuple_1_3_ -> inflow_python_tuple_0_2_outflow_python_tuple_1_1_volume_python_tuple_1_2_	 [tooltip="continuous_valid: true
+derivative_valid: true
+magnitude_valid: true
+not_equal_valid: true
+point_range_valid: true
+"];
+	inflow_python_tuple_0_2_outflow_python_tuple_1_2_volume_python_tuple_1_2_	 [label="In: (0, 0)
+Vol: (+, 0)
+Out: (+, 0)",
+		tooltip="correspondence_valid: true
+derivatives:
+- In will stay at 0
+- Out will stay at +
+- Vol will stay at +
+extreme_valid: true
+"];
+	inflow_python_tuple_0_2_outflow_python_tuple_1_1_volume_python_tuple_1_3_ -> inflow_python_tuple_0_2_outflow_python_tuple_1_2_volume_python_tuple_1_2_	 [tooltip="continuous_valid: true
+derivative_valid: true
+magnitude_valid: true
+not_equal_valid: true
+point_range_valid: true
+"];
+	inflow_python_tuple_0_2_outflow_python_tuple_1_2_volume_python_tuple_1_3_	 [label="In: (0, 0)
+Vol: (+, +)
+Out: (+, 0)",
+		tooltip="correspondence_valid: true
+derivatives:
+- In will stay at 0
+- Out will stay at +
+- Vol may go up from +
+extreme_valid: true
+"];
+	inflow_python_tuple_0_2_outflow_python_tuple_1_1_volume_python_tuple_1_3_ -> inflow_python_tuple_0_2_outflow_python_tuple_1_2_volume_python_tuple_1_3_	 [tooltip="continuous_valid: true
+derivative_valid: true
+magnitude_valid: true
+not_equal_valid: true
+point_range_valid: true
+"];
+	inflow_python_tuple_0_2_outflow_python_tuple_1_2_volume_python_tuple_1_1_	 [label="In: (0, 0)
+Vol: (+, -)
+Out: (+, 0)",
+		tooltip="correspondence_valid: true
+derivatives:
+- In will stay at 0
+- Out will stay at +
+- Vol may go down from +
+extreme_valid: true
+"];
+	inflow_python_tuple_0_2_outflow_python_tuple_1_2_volume_python_tuple_1_2_ -> inflow_python_tuple_0_2_outflow_python_tuple_1_2_volume_python_tuple_1_1_	 [tooltip="continuous_valid: true
+derivative_valid: true
+magnitude_valid: true
+not_equal_valid: true
+point_range_valid: true
+"];
+	inflow_python_tuple_0_2_outflow_python_tuple_1_2_volume_python_tuple_1_3_ -> inflow_python_tuple_0_2_outflow_python_tuple_1_3_volume_python_tuple_1_3_	 [tooltip="continuous_valid: true
+derivative_valid: true
+magnitude_valid: true
+not_equal_valid: true
+point_range_valid: true
+"];
+	inflow_python_tuple_0_2_outflow_python_tuple_1_2_volume_python_tuple_1_3_ -> inflow_python_tuple_0_2_outflow_python_tuple_1_2_volume_python_tuple_1_2_	 [tooltip="continuous_valid: true
+derivative_valid: true
+magnitude_valid: true
+not_equal_valid: true
+point_range_valid: true
+"];
+	inflow_python_tuple_0_2_outflow_python_tuple_1_2_volume_python_tuple_1_3_ -> inflow_python_tuple_0_2_outflow_python_tuple_1_3_volume_python_tuple_1_2_	 [tooltip="continuous_valid: true
+derivative_valid: true
+magnitude_valid: true
+not_equal_valid: true
+point_range_valid: true
+"];
+	inflow_python_tuple_0_2_outflow_python_tuple_1_2_volume_python_tuple_1_1_ -> inflow_python_tuple_0_2_outflow_python_tuple_1_1_volume_python_tuple_1_1_	 [tooltip="continuous_valid: true
+derivative_valid: true
+magnitude_valid: true
+not_equal_valid: true
+point_range_valid: true
+"];
+	inflow_python_tuple_0_2_outflow_python_tuple_1_3_volume_python_tuple_1_1_	 [label="In: (0, 0)
+Vol: (+, -)
+Out: (+, +)",
+		tooltip="correspondence_valid: true
+derivatives:
+- In will stay at 0
+- Out may go up from +
+- Vol may go down from +
+extreme_valid: true
+"];
+	inflow_python_tuple_0_2_outflow_python_tuple_1_3_volume_python_tuple_1_2_ -> inflow_python_tuple_0_2_outflow_python_tuple_1_3_volume_python_tuple_1_1_	 [tooltip="continuous_valid: true
+derivative_valid: true
+magnitude_valid: true
+not_equal_valid: true
+point_range_valid: true
+"];
+	inflow_python_tuple_0_2_outflow_python_tuple_1_3_volume_python_tuple_1_1_ -> inflow_python_tuple_0_2_outflow_python_tuple_1_2_volume_python_tuple_1_1_	 [tooltip="continuous_valid: true
+derivative_valid: true
+magnitude_valid: true
+not_equal_valid: true
+point_range_valid: true
+"];
+	inflow_python_tuple_0_2_outflow_python_tuple_2_1_volume_python_tuple_2_1_	 [label="In: (0, 0)
+Vol: (max, -)
+Out: (max, -)",
+		tooltip="correspondence_valid: true
+derivatives:
+- In will stay at 0
+- Out will go down from max
+- Vol will go down from max
+extreme_valid: \
+true
+"];
+	inflow_python_tuple_0_2_outflow_python_tuple_2_1_volume_python_tuple_2_1_ -> inflow_python_tuple_0_2_outflow_python_tuple_1_1_volume_python_tuple_1_1_	 [tooltip="continuous_valid: true
+derivative_valid: true
+magnitude_valid: true
+not_equal_valid: true
+point_range_valid: true
+"];
+	inflow_python_tuple_0_2_outflow_python_tuple_2_2_volume_python_tuple_2_2_	 [label="In: (0, 0)
+Vol: (max, 0)
+Out: (max, 0)",
+		tooltip="correspondence_valid: true
+derivatives:
+- In will stay at 0
+- Out will stay at max
+- Vol will stay at max
+extreme_valid: true
+"];
+	inflow_python_tuple_0_2_outflow_python_tuple_2_2_volume_python_tuple_2_1_	 [label="In: (0, 0)
+Vol: (max, -)
+Out: (max, 0)",
+		tooltip="correspondence_valid: true
+derivatives:
+- In will stay at 0
+- Out will stay at max
+- Vol will go down from max
+extreme_valid: true
+"];
+	inflow_python_tuple_0_2_outflow_python_tuple_2_2_volume_python_tuple_2_2_ -> inflow_python_tuple_0_2_outflow_python_tuple_2_2_volume_python_tuple_2_1_	 [tooltip="continuous_valid: true
+derivative_valid: true
+magnitude_valid: true
+not_equal_valid: true
+point_range_valid: true
+"];
+	inflow_python_tuple_0_3_outflow_python_tuple_0_2_volume_python_tuple_0_2_	 [label="In: (0, +)
 Vol: (0, 0)
-Out: (0, 0)"];
-	_inflow_1_3_outflow_0_2_volume_0_2_	 [label="In: (+, +)
+Out: (0, 0)",
+		tooltip="correspondence_valid: true
+derivatives:
+- In will go up from 0
+- Out will stay at 0
+- Vol will stay at 0
+extreme_valid: true
+"];
+	inflow_python_tuple_1_3_outflow_python_tuple_0_2_volume_python_tuple_0_2_	 [label="In: (+, +)
 Vol: (0, 0)
-Out: (0, 0)"];
-	_inflow_0_3_outflow_0_2_volume_0_2_ -> _inflow_1_3_outflow_0_2_volume_0_2_;
-	_inflow_1_3_outflow_0_2_volume_0_3_	 [label="In: (+, +)
+Out: (0, 0)",
+		tooltip="correspondence_valid: true
+derivatives:
+- In may go up from +
+- Out will stay at 0
+- Vol will stay at 0
+extreme_valid: true
+"];
+	inflow_python_tuple_0_3_outflow_python_tuple_0_2_volume_python_tuple_0_2_ -> inflow_python_tuple_1_3_outflow_python_tuple_0_2_volume_python_tuple_0_2_	 [tooltip="continuous_valid: true
+derivative_valid: true
+magnitude_valid: true
+not_equal_valid: true
+point_range_valid: true
+"];
+	inflow_python_tuple_1_3_outflow_python_tuple_0_2_volume_python_tuple_0_3_	 [label="In: (+, +)
 Vol: (0, +)
-Out: (0, 0)"];
-	_inflow_1_3_outflow_0_2_volume_0_2_ -> _inflow_1_3_outflow_0_2_volume_0_3_;
-	_inflow_0_3_outflow_1_3_volume_1_3_	 [label="In: (0, +)
-Vol: (+, +)
-Out: (+, +)"];
-	_inflow_0_3_outflow_1_3_volume_1_3_ -> _inflow_1_3_outflow_1_3_volume_1_3_;
-	_inflow_0_3_outflow_1_3_volume_1_3_ -> _inflow_1_3_outflow_1_3_volume_1_2_;
-	_inflow_1_3_outflow_1_3_volume_1_2_ -> _inflow_1_3_outflow_1_3_volume_1_3_;
-	_inflow_1_3_outflow_1_3_volume_1_1_	 [label="In: (+, +)
-Vol: (+, -)
-Out: (+, +)"];
-	_inflow_1_3_outflow_1_3_volume_1_2_ -> _inflow_1_3_outflow_1_3_volume_1_1_;
-	_inflow_0_3_outflow_1_3_volume_1_2_	 [label="In: (0, +)
-Vol: (+, 0)
-Out: (+, +)"];
-	_inflow_0_3_outflow_1_3_volume_1_2_ -> _inflow_1_3_outflow_1_3_volume_1_2_;
-	_inflow_0_3_outflow_1_3_volume_1_2_ -> _inflow_1_3_outflow_1_3_volume_1_1_;
-	_inflow_1_3_outflow_1_3_volume_1_1_ -> _inflow_1_3_outflow_1_3_volume_1_2_;
-	_inflow_1_3_outflow_1_2_volume_1_1_	 [label="In: (+, +)
-Vol: (+, -)
-Out: (+, 0)"];
-	_inflow_1_3_outflow_1_3_volume_1_1_ -> _inflow_1_3_outflow_1_2_volume_1_1_;
-	_inflow_1_3_outflow_1_2_volume_1_2_	 [label="In: (+, +)
-Vol: (+, 0)
-Out: (+, 0)"];
-	_inflow_1_3_outflow_1_3_volume_1_1_ -> _inflow_1_3_outflow_1_2_volume_1_2_;
-	_inflow_0_3_outflow_1_3_volume_1_1_	 [label="In: (0, +)
-Vol: (+, -)
-Out: (+, +)"];
-	_inflow_0_3_outflow_1_3_volume_1_1_ -> _inflow_1_3_outflow_1_3_volume_1_1_;
-	_inflow_0_3_outflow_1_3_volume_1_1_ -> _inflow_1_3_outflow_1_2_volume_1_1_;
-	_inflow_1_3_outflow_1_2_volume_1_1_ -> _inflow_1_3_outflow_1_2_volume_1_2_;
-	_inflow_1_3_outflow_1_1_volume_1_1_	 [label="In: (+, +)
-Vol: (+, -)
-Out: (+, -)"];
-	_inflow_1_3_outflow_1_2_volume_1_1_ -> _inflow_1_3_outflow_1_1_volume_1_1_;
-	_inflow_1_3_outflow_1_1_volume_1_2_	 [label="In: (+, +)
-Vol: (+, 0)
-Out: (+, -)"];
-	_inflow_1_3_outflow_1_2_volume_1_1_ -> _inflow_1_3_outflow_1_1_volume_1_2_;
-	_inflow_0_3_outflow_1_2_volume_1_3_	 [label="In: (0, +)
-Vol: (+, +)
-Out: (+, 0)"];
-	_inflow_0_3_outflow_1_2_volume_1_3_ -> _inflow_1_3_outflow_1_3_volume_1_3_;
-	_inflow_0_3_outflow_1_2_volume_1_3_ -> _inflow_1_3_outflow_1_3_volume_1_2_;
-	_inflow_1_3_outflow_1_2_volume_1_3_	 [label="In: (+, +)
-Vol: (+, +)
-Out: (+, 0)"];
-	_inflow_0_3_outflow_1_2_volume_1_3_ -> _inflow_1_3_outflow_1_2_volume_1_3_;
-	_inflow_0_3_outflow_1_2_volume_1_3_ -> _inflow_1_3_outflow_1_2_volume_1_2_;
-	_inflow_1_3_outflow_1_2_volume_1_3_ -> _inflow_1_3_outflow_1_3_volume_1_3_;
-	_inflow_1_3_outflow_1_2_volume_1_3_ -> _inflow_1_3_outflow_1_3_volume_1_2_;
-	_inflow_1_3_outflow_1_2_volume_1_3_ -> _inflow_1_3_outflow_1_2_volume_1_2_;
-	_inflow_1_3_outflow_1_2_volume_1_2_ -> _inflow_1_3_outflow_1_2_volume_1_1_;
-	_inflow_1_3_outflow_1_2_volume_1_2_ -> _inflow_1_3_outflow_1_2_volume_1_3_;
-	_inflow_0_3_outflow_1_2_volume_1_2_	 [label="In: (0, +)
-Vol: (+, 0)
-Out: (+, 0)"];
-	_inflow_0_3_outflow_1_2_volume_1_2_ -> _inflow_1_3_outflow_1_2_volume_1_1_;
-	_inflow_0_3_outflow_1_2_volume_1_2_ -> _inflow_1_3_outflow_1_2_volume_1_2_;
-	_inflow_0_3_outflow_1_2_volume_1_1_	 [label="In: (0, +)
-Vol: (+, -)
-Out: (+, 0)"];
-	_inflow_0_3_outflow_1_2_volume_1_1_ -> _inflow_1_3_outflow_1_2_volume_1_1_;
-	_inflow_0_3_outflow_1_2_volume_1_1_ -> _inflow_1_3_outflow_1_1_volume_1_1_;
-	_inflow_1_3_outflow_1_1_volume_1_1_ -> _inflow_1_3_outflow_1_1_volume_1_2_;
-	_inflow_0_3_outflow_1_1_volume_1_3_	 [label="In: (0, +)
-Vol: (+, +)
-Out: (+, -)"];
-	_inflow_0_3_outflow_1_1_volume_1_3_ -> _inflow_1_3_outflow_1_2_volume_1_3_;
-	_inflow_0_3_outflow_1_1_volume_1_3_ -> _inflow_1_3_outflow_1_2_volume_1_2_;
-	_inflow_1_3_outflow_1_1_volume_1_3_	 [label="In: (+, +)
-Vol: (+, +)
-Out: (+, -)"];
-	_inflow_0_3_outflow_1_1_volume_1_3_ -> _inflow_1_3_outflow_1_1_volume_1_3_;
-	_inflow_0_3_outflow_1_1_volume_1_3_ -> _inflow_1_3_outflow_1_1_volume_1_2_;
-	_inflow_1_3_outflow_1_1_volume_1_3_ -> _inflow_1_3_outflow_1_2_volume_1_3_;
-	_inflow_1_3_outflow_1_1_volume_1_3_ -> _inflow_1_3_outflow_1_2_volume_1_2_;
-	_inflow_1_3_outflow_1_1_volume_1_3_ -> _inflow_1_3_outflow_1_1_volume_1_2_;
-	_inflow_1_3_outflow_1_1_volume_1_2_ -> _inflow_1_3_outflow_1_1_volume_1_1_;
-	_inflow_1_3_outflow_1_1_volume_1_2_ -> _inflow_1_3_outflow_1_1_volume_1_3_;
-	_inflow_0_3_outflow_1_1_volume_1_2_	 [label="In: (0, +)
-Vol: (+, 0)
-Out: (+, -)"];
-	_inflow_0_3_outflow_1_1_volume_1_2_ -> _inflow_1_3_outflow_1_1_volume_1_1_;
-	_inflow_0_3_outflow_1_1_volume_1_2_ -> _inflow_1_3_outflow_1_1_volume_1_2_;
-	_inflow_0_3_outflow_1_1_volume_1_1_	 [label="In: (0, +)
-Vol: (+, -)
-Out: (+, -)"];
-	_inflow_0_3_outflow_1_1_volume_1_1_ -> _inflow_1_3_outflow_1_1_volume_1_1_;
-	_inflow_0_3_outflow_2_2_volume_2_2_	 [label="In: (0, +)
-Vol: (max, 0)
-Out: (max, 0)"];
-	_inflow_1_3_outflow_2_2_volume_2_2_	 [label="In: (+, +)
-Vol: (max, 0)
-Out: (max, 0)"];
-	_inflow_0_3_outflow_2_2_volume_2_2_ -> _inflow_1_3_outflow_2_2_volume_2_2_;
-	_inflow_1_3_outflow_2_2_volume_2_1_	 [label="In: (+, +)
-Vol: (max, -)
-Out: (max, 0)"];
-	_inflow_0_3_outflow_2_2_volume_2_2_ -> _inflow_1_3_outflow_2_2_volume_2_1_;
-	_inflow_1_3_outflow_2_2_volume_2_2_ -> _inflow_1_3_outflow_2_2_volume_2_1_;
-	_inflow_0_3_outflow_2_1_volume_2_1_	 [label="In: (0, +)
-Vol: (max, -)
-Out: (max, -)"];
-	_inflow_0_3_outflow_2_1_volume_2_1_ -> _inflow_1_3_outflow_1_1_volume_1_1_;
-	_inflow_0_2_outflow_0_3_volume_0_3_	 [label="In: (0, 0)
+Out: (0, 0)",
+		tooltip="correspondence_valid: true
+derivatives:
+- In may go up from +
+- Out will stay at 0
+- Vol will go up from 0
+extreme_valid: true
+"];
+	inflow_python_tuple_1_3_outflow_python_tuple_0_2_volume_python_tuple_0_2_ -> inflow_python_tuple_1_3_outflow_python_tuple_0_2_volume_python_tuple_0_3_	 [tooltip="continuous_valid: true
+derivative_valid: true
+magnitude_valid: true
+not_equal_valid: true
+point_range_valid: true
+"];
+	inflow_python_tuple_0_3_outflow_python_tuple_0_3_volume_python_tuple_0_3_	 [label="In: (0, +)
 Vol: (0, +)
-Out: (0, +)"];
-	_inflow_0_2_outflow_1_3_volume_1_3_	 [label="In: (0, 0)
+Out: (0, +)",
+		tooltip="correspondence_valid: true
+derivatives:
+- In will go up from 0
+- Out will go up from 0
+- Vol will go up from 0
+extreme_valid: true
+"];
+	inflow_python_tuple_1_3_outflow_python_tuple_1_3_volume_python_tuple_1_3_	 [label="In: (+, +)
 Vol: (+, +)
-Out: (+, +)"];
-	_inflow_0_2_outflow_0_3_volume_0_3_ -> _inflow_0_2_outflow_1_3_volume_1_3_;
-	_inflow_0_2_outflow_1_3_volume_1_2_	 [label="In: (0, 0)
+Out: (+, +)",
+		tooltip="correspondence_valid: true
+derivatives:
+- In may go up from +
+- Out may go up from +
+- Vol may go up from +
+extreme_valid: true
+"];
+	inflow_python_tuple_0_3_outflow_python_tuple_0_3_volume_python_tuple_0_3_ -> inflow_python_tuple_1_3_outflow_python_tuple_1_3_volume_python_tuple_1_3_	 [tooltip="continuous_valid: true
+derivative_valid: true
+magnitude_valid: true
+not_equal_valid: true
+point_range_valid: true
+"];
+	inflow_python_tuple_1_3_outflow_python_tuple_1_3_volume_python_tuple_1_2_	 [label="In: (+, +)
 Vol: (+, 0)
-Out: (+, +)"];
-	_inflow_0_2_outflow_1_3_volume_1_3_ -> _inflow_0_2_outflow_1_3_volume_1_2_;
-	_inflow_0_2_outflow_1_3_volume_1_1_	 [label="In: (0, 0)
+Out: (+, +)",
+		tooltip="correspondence_valid: true
+derivatives:
+- In may go up from +
+- Out may go up from +
+- Vol will stay at +
+extreme_valid: true
+"];
+	inflow_python_tuple_1_3_outflow_python_tuple_1_3_volume_python_tuple_1_3_ -> inflow_python_tuple_1_3_outflow_python_tuple_1_3_volume_python_tuple_1_2_	 [tooltip="continuous_valid: true
+derivative_valid: true
+magnitude_valid: true
+not_equal_valid: true
+point_range_valid: true
+"];
+	inflow_python_tuple_0_3_outflow_python_tuple_1_1_volume_python_tuple_1_1_	 [label="In: (0, +)
 Vol: (+, -)
-Out: (+, +)"];
-	_inflow_0_2_outflow_1_3_volume_1_2_ -> _inflow_0_2_outflow_1_3_volume_1_1_;
-	_inflow_0_2_outflow_1_2_volume_1_1_	 [label="In: (0, 0)
+Out: (+, -)",
+		tooltip="correspondence_valid: true
+derivatives:
+- In will go up from 0
+- Out may go down from +
+- Vol may go down from +
+extreme_valid: \
+true
+"];
+	inflow_python_tuple_1_3_outflow_python_tuple_1_1_volume_python_tuple_1_1_	 [label="In: (+, +)
 Vol: (+, -)
-Out: (+, 0)"];
-	_inflow_0_2_outflow_1_3_volume_1_1_ -> _inflow_0_2_outflow_1_2_volume_1_1_;
-	_inflow_0_2_outflow_1_1_volume_1_1_	 [label="In: (0, 0)
-Vol: (+, -)
-Out: (+, -)"];
-	_inflow_0_2_outflow_1_2_volume_1_1_ -> _inflow_0_2_outflow_1_1_volume_1_1_;
-	_inflow_0_2_outflow_1_2_volume_1_3_	 [label="In: (0, 0)
+Out: (+, -)",
+		tooltip="correspondence_valid: true
+derivatives:
+- In may go up from +
+- Out may go down from +
+- Vol may go down from +
+extreme_valid: true
+"];
+	inflow_python_tuple_0_3_outflow_python_tuple_1_1_volume_python_tuple_1_1_ -> inflow_python_tuple_1_3_outflow_python_tuple_1_1_volume_python_tuple_1_1_	 [tooltip="continuous_valid: true
+derivative_valid: true
+magnitude_valid: true
+not_equal_valid: true
+point_range_valid: true
+"];
+	inflow_python_tuple_1_3_outflow_python_tuple_1_1_volume_python_tuple_1_2_	 [label="In: (+, +)
+Vol: (+, 0)
+Out: (+, -)",
+		tooltip="correspondence_valid: true
+derivatives:
+- In may go up from +
+- Out may go down from +
+- Vol will stay at +
+extreme_valid: true
+"];
+	inflow_python_tuple_1_3_outflow_python_tuple_1_1_volume_python_tuple_1_1_ -> inflow_python_tuple_1_3_outflow_python_tuple_1_1_volume_python_tuple_1_2_	 [tooltip="continuous_valid: true
+derivative_valid: true
+magnitude_valid: true
+not_equal_valid: true
+point_range_valid: true
+"];
+	inflow_python_tuple_0_3_outflow_python_tuple_1_1_volume_python_tuple_1_2_	 [label="In: (0, +)
+Vol: (+, 0)
+Out: (+, -)",
+		tooltip="correspondence_valid: true
+derivatives:
+- In will go up from 0
+- Out may go down from +
+- Vol will stay at +
+extreme_valid: true
+"];
+	inflow_python_tuple_0_3_outflow_python_tuple_1_1_volume_python_tuple_1_2_ -> inflow_python_tuple_1_3_outflow_python_tuple_1_1_volume_python_tuple_1_1_	 [tooltip="continuous_valid: true
+derivative_valid: true
+magnitude_valid: true
+not_equal_valid: true
+point_range_valid: true
+"];
+	inflow_python_tuple_0_3_outflow_python_tuple_1_1_volume_python_tuple_1_2_ -> inflow_python_tuple_1_3_outflow_python_tuple_1_1_volume_python_tuple_1_2_	 [tooltip="continuous_valid: true
+derivative_valid: true
+magnitude_valid: true
+not_equal_valid: true
+point_range_valid: true
+"];
+	inflow_python_tuple_1_3_outflow_python_tuple_1_1_volume_python_tuple_1_2_ -> inflow_python_tuple_1_3_outflow_python_tuple_1_1_volume_python_tuple_1_1_	 [tooltip="continuous_valid: true
+derivative_valid: true
+magnitude_valid: true
+not_equal_valid: true
+point_range_valid: true
+"];
+	inflow_python_tuple_1_3_outflow_python_tuple_1_1_volume_python_tuple_1_3_	 [label="In: (+, +)
 Vol: (+, +)
-Out: (+, 0)"];
-	_inflow_0_2_outflow_1_2_volume_1_3_ -> _inflow_0_2_outflow_1_3_volume_1_3_;
-	_inflow_0_2_outflow_1_2_volume_1_3_ -> _inflow_0_2_outflow_1_3_volume_1_2_;
-	_inflow_0_2_outflow_1_2_volume_1_2_	 [label="In: (0, 0)
-Vol: (+, 0)
-Out: (+, 0)"];
-	_inflow_0_2_outflow_1_2_volume_1_3_ -> _inflow_0_2_outflow_1_2_volume_1_2_;
-	_inflow_0_2_outflow_1_2_volume_1_2_ -> _inflow_0_2_outflow_1_2_volume_1_1_;
-	_inflow_0_2_outflow_1_1_volume_1_3_	 [label="In: (0, 0)
+Out: (+, -)",
+		tooltip="correspondence_valid: true
+derivatives:
+- In may go up from +
+- Out may go down from +
+- Vol may go up from +
+extreme_valid: true
+"];
+	inflow_python_tuple_1_3_outflow_python_tuple_1_1_volume_python_tuple_1_2_ -> inflow_python_tuple_1_3_outflow_python_tuple_1_1_volume_python_tuple_1_3_	 [tooltip="continuous_valid: true
+derivative_valid: true
+magnitude_valid: true
+not_equal_valid: true
+point_range_valid: true
+"];
+	inflow_python_tuple_0_3_outflow_python_tuple_1_1_volume_python_tuple_1_3_	 [label="In: (0, +)
 Vol: (+, +)
-Out: (+, -)"];
-	_inflow_0_2_outflow_1_1_volume_1_3_ -> _inflow_0_2_outflow_1_2_volume_1_3_;
-	_inflow_0_2_outflow_1_1_volume_1_3_ -> _inflow_0_2_outflow_1_2_volume_1_2_;
-	_inflow_0_2_outflow_1_1_volume_1_2_	 [label="In: (0, 0)
+Out: (+, -)",
+		tooltip="correspondence_valid: true
+derivatives:
+- In will go up from 0
+- Out may go down from +
+- Vol may go up from +
+extreme_valid: true
+"];
+	inflow_python_tuple_0_3_outflow_python_tuple_1_1_volume_python_tuple_1_3_ -> inflow_python_tuple_1_3_outflow_python_tuple_1_1_volume_python_tuple_1_2_	 [tooltip="continuous_valid: true
+derivative_valid: true
+magnitude_valid: true
+not_equal_valid: true
+point_range_valid: true
+"];
+	inflow_python_tuple_0_3_outflow_python_tuple_1_1_volume_python_tuple_1_3_ -> inflow_python_tuple_1_3_outflow_python_tuple_1_1_volume_python_tuple_1_3_	 [tooltip="continuous_valid: true
+derivative_valid: true
+magnitude_valid: true
+not_equal_valid: true
+point_range_valid: true
+"];
+	inflow_python_tuple_1_3_outflow_python_tuple_1_2_volume_python_tuple_1_2_	 [label="In: (+, +)
 Vol: (+, 0)
-Out: (+, -)"];
-	_inflow_0_2_outflow_1_1_volume_1_3_ -> _inflow_0_2_outflow_1_1_volume_1_2_;
-	_inflow_0_2_outflow_1_1_volume_1_2_ -> _inflow_0_2_outflow_1_1_volume_1_1_;
-	_inflow_0_2_outflow_2_2_volume_2_2_	 [label="In: (0, 0)
+Out: (+, 0)",
+		tooltip="correspondence_valid: true
+derivatives:
+- In may go up from +
+- Out will stay at +
+- Vol will stay at +
+extreme_valid: true
+"];
+	inflow_python_tuple_0_3_outflow_python_tuple_1_1_volume_python_tuple_1_3_ -> inflow_python_tuple_1_3_outflow_python_tuple_1_2_volume_python_tuple_1_2_	 [tooltip="continuous_valid: true
+derivative_valid: true
+magnitude_valid: true
+not_equal_valid: true
+point_range_valid: true
+"];
+	inflow_python_tuple_1_3_outflow_python_tuple_1_2_volume_python_tuple_1_3_	 [label="In: (+, +)
+Vol: (+, +)
+Out: (+, 0)",
+		tooltip="correspondence_valid: true
+derivatives:
+- In may go up from +
+- Out will stay at +
+- Vol may go up from +
+extreme_valid: true
+"];
+	inflow_python_tuple_0_3_outflow_python_tuple_1_1_volume_python_tuple_1_3_ -> inflow_python_tuple_1_3_outflow_python_tuple_1_2_volume_python_tuple_1_3_	 [tooltip="continuous_valid: true
+derivative_valid: true
+magnitude_valid: true
+not_equal_valid: true
+point_range_valid: true
+"];
+	inflow_python_tuple_1_3_outflow_python_tuple_1_1_volume_python_tuple_1_3_ -> inflow_python_tuple_1_3_outflow_python_tuple_1_1_volume_python_tuple_1_2_	 [tooltip="continuous_valid: true
+derivative_valid: true
+magnitude_valid: true
+not_equal_valid: true
+point_range_valid: true
+"];
+	inflow_python_tuple_1_3_outflow_python_tuple_1_1_volume_python_tuple_1_3_ -> inflow_python_tuple_1_3_outflow_python_tuple_1_2_volume_python_tuple_1_2_	 [tooltip="continuous_valid: true
+derivative_valid: true
+magnitude_valid: true
+not_equal_valid: true
+point_range_valid: true
+"];
+	inflow_python_tuple_1_3_outflow_python_tuple_1_1_volume_python_tuple_1_3_ -> inflow_python_tuple_1_3_outflow_python_tuple_1_2_volume_python_tuple_1_3_	 [tooltip="continuous_valid: true
+derivative_valid: true
+magnitude_valid: true
+not_equal_valid: true
+point_range_valid: true
+"];
+	inflow_python_tuple_1_3_outflow_python_tuple_1_2_volume_python_tuple_1_2_ -> inflow_python_tuple_1_3_outflow_python_tuple_1_2_volume_python_tuple_1_3_	 [tooltip="continuous_valid: true
+derivative_valid: true
+magnitude_valid: true
+not_equal_valid: true
+point_range_valid: true
+"];
+	inflow_python_tuple_1_3_outflow_python_tuple_1_2_volume_python_tuple_1_1_	 [label="In: (+, +)
+Vol: (+, -)
+Out: (+, 0)",
+		tooltip="correspondence_valid: true
+derivatives:
+- In may go up from +
+- Out will stay at +
+- Vol may go down from +
+extreme_valid: true
+"];
+	inflow_python_tuple_1_3_outflow_python_tuple_1_2_volume_python_tuple_1_2_ -> inflow_python_tuple_1_3_outflow_python_tuple_1_2_volume_python_tuple_1_1_	 [tooltip="continuous_valid: true
+derivative_valid: true
+magnitude_valid: true
+not_equal_valid: true
+point_range_valid: true
+"];
+	inflow_python_tuple_1_3_outflow_python_tuple_1_2_volume_python_tuple_1_3_ -> inflow_python_tuple_1_3_outflow_python_tuple_1_3_volume_python_tuple_1_3_	 [tooltip="continuous_valid: true
+derivative_valid: true
+magnitude_valid: true
+not_equal_valid: true
+point_range_valid: true
+"];
+	inflow_python_tuple_1_3_outflow_python_tuple_1_2_volume_python_tuple_1_3_ -> inflow_python_tuple_1_3_outflow_python_tuple_1_2_volume_python_tuple_1_2_	 [tooltip="continuous_valid: true
+derivative_valid: true
+magnitude_valid: true
+not_equal_valid: true
+point_range_valid: true
+"];
+	inflow_python_tuple_1_3_outflow_python_tuple_1_2_volume_python_tuple_1_3_ -> inflow_python_tuple_1_3_outflow_python_tuple_1_3_volume_python_tuple_1_2_	 [tooltip="continuous_valid: true
+derivative_valid: true
+magnitude_valid: true
+not_equal_valid: true
+point_range_valid: true
+"];
+	inflow_python_tuple_0_3_outflow_python_tuple_1_2_volume_python_tuple_1_1_	 [label="In: (0, +)
+Vol: (+, -)
+Out: (+, 0)",
+		tooltip="correspondence_valid: true
+derivatives:
+- In will go up from 0
+- Out will stay at +
+- Vol may go down from +
+extreme_valid: true
+"];
+	inflow_python_tuple_0_3_outflow_python_tuple_1_2_volume_python_tuple_1_1_ -> inflow_python_tuple_1_3_outflow_python_tuple_1_1_volume_python_tuple_1_1_	 [tooltip="continuous_valid: true
+derivative_valid: true
+magnitude_valid: true
+not_equal_valid: true
+point_range_valid: true
+"];
+	inflow_python_tuple_0_3_outflow_python_tuple_1_2_volume_python_tuple_1_1_ -> inflow_python_tuple_1_3_outflow_python_tuple_1_2_volume_python_tuple_1_1_	 [tooltip="continuous_valid: true
+derivative_valid: true
+magnitude_valid: true
+not_equal_valid: true
+point_range_valid: true
+"];
+	inflow_python_tuple_1_3_outflow_python_tuple_1_2_volume_python_tuple_1_1_ -> inflow_python_tuple_1_3_outflow_python_tuple_1_1_volume_python_tuple_1_1_	 [tooltip="continuous_valid: true
+derivative_valid: true
+magnitude_valid: true
+not_equal_valid: true
+point_range_valid: true
+"];
+	inflow_python_tuple_1_3_outflow_python_tuple_1_2_volume_python_tuple_1_1_ -> inflow_python_tuple_1_3_outflow_python_tuple_1_1_volume_python_tuple_1_2_	 [tooltip="continuous_valid: true
+derivative_valid: true
+magnitude_valid: true
+not_equal_valid: true
+point_range_valid: true
+"];
+	inflow_python_tuple_1_3_outflow_python_tuple_1_2_volume_python_tuple_1_1_ -> inflow_python_tuple_1_3_outflow_python_tuple_1_2_volume_python_tuple_1_2_	 [tooltip="continuous_valid: true
+derivative_valid: true
+magnitude_valid: true
+not_equal_valid: true
+point_range_valid: true
+"];
+	inflow_python_tuple_0_3_outflow_python_tuple_1_2_volume_python_tuple_1_2_	 [label="In: (0, +)
+Vol: (+, 0)
+Out: (+, 0)",
+		tooltip="correspondence_valid: true
+derivatives:
+- In will go up from 0
+- Out will stay at +
+- Vol will stay at +
+extreme_valid: true
+"];
+	inflow_python_tuple_0_3_outflow_python_tuple_1_2_volume_python_tuple_1_2_ -> inflow_python_tuple_1_3_outflow_python_tuple_1_2_volume_python_tuple_1_2_	 [tooltip="continuous_valid: true
+derivative_valid: true
+magnitude_valid: true
+not_equal_valid: true
+point_range_valid: true
+"];
+	inflow_python_tuple_0_3_outflow_python_tuple_1_2_volume_python_tuple_1_2_ -> inflow_python_tuple_1_3_outflow_python_tuple_1_2_volume_python_tuple_1_1_	 [tooltip="continuous_valid: true
+derivative_valid: true
+magnitude_valid: true
+not_equal_valid: true
+point_range_valid: true
+"];
+	inflow_python_tuple_0_3_outflow_python_tuple_1_2_volume_python_tuple_1_3_	 [label="In: (0, +)
+Vol: (+, +)
+Out: (+, 0)",
+		tooltip="correspondence_valid: true
+derivatives:
+- In will go up from 0
+- Out will stay at +
+- Vol may go up from +
+extreme_valid: true
+"];
+	inflow_python_tuple_0_3_outflow_python_tuple_1_2_volume_python_tuple_1_3_ -> inflow_python_tuple_1_3_outflow_python_tuple_1_3_volume_python_tuple_1_3_	 [tooltip="continuous_valid: true
+derivative_valid: true
+magnitude_valid: true
+not_equal_valid: true
+point_range_valid: true
+"];
+	inflow_python_tuple_0_3_outflow_python_tuple_1_2_volume_python_tuple_1_3_ -> inflow_python_tuple_1_3_outflow_python_tuple_1_2_volume_python_tuple_1_2_	 [tooltip="continuous_valid: true
+derivative_valid: true
+magnitude_valid: true
+not_equal_valid: true
+point_range_valid: true
+"];
+	inflow_python_tuple_0_3_outflow_python_tuple_1_2_volume_python_tuple_1_3_ -> inflow_python_tuple_1_3_outflow_python_tuple_1_2_volume_python_tuple_1_3_	 [tooltip="continuous_valid: true
+derivative_valid: true
+magnitude_valid: true
+not_equal_valid: true
+point_range_valid: true
+"];
+	inflow_python_tuple_0_3_outflow_python_tuple_1_2_volume_python_tuple_1_3_ -> inflow_python_tuple_1_3_outflow_python_tuple_1_3_volume_python_tuple_1_2_	 [tooltip="continuous_valid: true
+derivative_valid: true
+magnitude_valid: true
+not_equal_valid: true
+point_range_valid: true
+"];
+	inflow_python_tuple_1_3_outflow_python_tuple_1_3_volume_python_tuple_1_2_ -> inflow_python_tuple_1_3_outflow_python_tuple_1_3_volume_python_tuple_1_3_	 [tooltip="continuous_valid: true
+derivative_valid: true
+magnitude_valid: true
+not_equal_valid: true
+point_range_valid: true
+"];
+	inflow_python_tuple_1_3_outflow_python_tuple_1_3_volume_python_tuple_1_1_	 [label="In: (+, +)
+Vol: (+, -)
+Out: (+, +)",
+		tooltip="correspondence_valid: true
+derivatives:
+- In may go up from +
+- Out may go up from +
+- Vol may go down from +
+extreme_valid: true
+"];
+	inflow_python_tuple_1_3_outflow_python_tuple_1_3_volume_python_tuple_1_2_ -> inflow_python_tuple_1_3_outflow_python_tuple_1_3_volume_python_tuple_1_1_	 [tooltip="continuous_valid: true
+derivative_valid: true
+magnitude_valid: true
+not_equal_valid: true
+point_range_valid: true
+"];
+	inflow_python_tuple_0_3_outflow_python_tuple_1_3_volume_python_tuple_1_1_	 [label="In: (0, +)
+Vol: (+, -)
+Out: (+, +)",
+		tooltip="correspondence_valid: true
+derivatives:
+- In will go up from 0
+- Out may go up from +
+- Vol may go down from +
+extreme_valid: true
+"];
+	inflow_python_tuple_0_3_outflow_python_tuple_1_3_volume_python_tuple_1_1_ -> inflow_python_tuple_1_3_outflow_python_tuple_1_2_volume_python_tuple_1_1_	 [tooltip="continuous_valid: true
+derivative_valid: true
+magnitude_valid: true
+not_equal_valid: true
+point_range_valid: true
+"];
+	inflow_python_tuple_0_3_outflow_python_tuple_1_3_volume_python_tuple_1_1_ -> inflow_python_tuple_1_3_outflow_python_tuple_1_3_volume_python_tuple_1_1_	 [tooltip="continuous_valid: true
+derivative_valid: true
+magnitude_valid: true
+not_equal_valid: true
+point_range_valid: true
+"];
+	inflow_python_tuple_1_3_outflow_python_tuple_1_3_volume_python_tuple_1_1_ -> inflow_python_tuple_1_3_outflow_python_tuple_1_2_volume_python_tuple_1_2_	 [tooltip="continuous_valid: true
+derivative_valid: true
+magnitude_valid: true
+not_equal_valid: true
+point_range_valid: true
+"];
+	inflow_python_tuple_1_3_outflow_python_tuple_1_3_volume_python_tuple_1_1_ -> inflow_python_tuple_1_3_outflow_python_tuple_1_2_volume_python_tuple_1_1_	 [tooltip="continuous_valid: true
+derivative_valid: true
+magnitude_valid: true
+not_equal_valid: true
+point_range_valid: true
+"];
+	inflow_python_tuple_1_3_outflow_python_tuple_1_3_volume_python_tuple_1_1_ -> inflow_python_tuple_1_3_outflow_python_tuple_1_3_volume_python_tuple_1_2_	 [tooltip="continuous_valid: true
+derivative_valid: true
+magnitude_valid: true
+not_equal_valid: true
+point_range_valid: true
+"];
+	inflow_python_tuple_0_3_outflow_python_tuple_1_3_volume_python_tuple_1_2_	 [label="In: (0, +)
+Vol: (+, 0)
+Out: (+, +)",
+		tooltip="correspondence_valid: true
+derivatives:
+- In will go up from 0
+- Out may go up from +
+- Vol will stay at +
+extreme_valid: true
+"];
+	inflow_python_tuple_0_3_outflow_python_tuple_1_3_volume_python_tuple_1_2_ -> inflow_python_tuple_1_3_outflow_python_tuple_1_3_volume_python_tuple_1_2_	 [tooltip="continuous_valid: true
+derivative_valid: true
+magnitude_valid: true
+not_equal_valid: true
+point_range_valid: true
+"];
+	inflow_python_tuple_0_3_outflow_python_tuple_1_3_volume_python_tuple_1_2_ -> inflow_python_tuple_1_3_outflow_python_tuple_1_3_volume_python_tuple_1_1_	 [tooltip="continuous_valid: true
+derivative_valid: true
+magnitude_valid: true
+not_equal_valid: true
+point_range_valid: true
+"];
+	inflow_python_tuple_0_3_outflow_python_tuple_1_3_volume_python_tuple_1_3_	 [label="In: (0, +)
+Vol: (+, +)
+Out: (+, +)",
+		tooltip="correspondence_valid: true
+derivatives:
+- In will go up from 0
+- Out may go up from +
+- Vol may go up from +
+extreme_valid: true
+"];
+	inflow_python_tuple_0_3_outflow_python_tuple_1_3_volume_python_tuple_1_3_ -> inflow_python_tuple_1_3_outflow_python_tuple_1_3_volume_python_tuple_1_3_	 [tooltip="continuous_valid: true
+derivative_valid: true
+magnitude_valid: true
+not_equal_valid: true
+point_range_valid: true
+"];
+	inflow_python_tuple_0_3_outflow_python_tuple_1_3_volume_python_tuple_1_3_ -> inflow_python_tuple_1_3_outflow_python_tuple_1_3_volume_python_tuple_1_2_	 [tooltip="continuous_valid: true
+derivative_valid: true
+magnitude_valid: true
+not_equal_valid: true
+point_range_valid: true
+"];
+	inflow_python_tuple_0_3_outflow_python_tuple_2_1_volume_python_tuple_2_1_	 [label="In: (0, +)
+Vol: (max, -)
+Out: (max, -)",
+		tooltip="correspondence_valid: true
+derivatives:
+- In will go up from 0
+- Out will go down from max
+- Vol will go down from max
+extreme_valid: \
+true
+"];
+	inflow_python_tuple_0_3_outflow_python_tuple_2_1_volume_python_tuple_2_1_ -> inflow_python_tuple_1_3_outflow_python_tuple_1_1_volume_python_tuple_1_1_	 [tooltip="continuous_valid: true
+derivative_valid: true
+magnitude_valid: true
+not_equal_valid: true
+point_range_valid: true
+"];
+	inflow_python_tuple_0_3_outflow_python_tuple_2_2_volume_python_tuple_2_2_	 [label="In: (0, +)
 Vol: (max, 0)
-Out: (max, 0)"];
-	_inflow_0_2_outflow_2_2_volume_2_1_	 [label="In: (0, 0)
+Out: (max, 0)",
+		tooltip="correspondence_valid: true
+derivatives:
+- In will go up from 0
+- Out will stay at max
+- Vol will stay at max
+extreme_valid: true
+"];
+	inflow_python_tuple_1_3_outflow_python_tuple_2_2_volume_python_tuple_2_1_	 [label="In: (+, +)
 Vol: (max, -)
-Out: (max, 0)"];
-	_inflow_0_2_outflow_2_2_volume_2_2_ -> _inflow_0_2_outflow_2_2_volume_2_1_;
-	_inflow_0_2_outflow_2_1_volume_2_1_	 [label="In: (0, 0)
-Vol: (max, -)
-Out: (max, -)"];
-	_inflow_0_2_outflow_2_1_volume_2_1_ -> _inflow_0_2_outflow_1_1_volume_1_1_;
-	_inflow_1_3_outflow_0_3_volume_0_3_	 [label="In: (+, +)
+Out: (max, 0)",
+		tooltip="correspondence_valid: true
+derivatives:
+- In may go up from +
+- Out will stay at max
+- Vol will go down from max
+extreme_valid: \
+true
+"];
+	inflow_python_tuple_0_3_outflow_python_tuple_2_2_volume_python_tuple_2_2_ -> inflow_python_tuple_1_3_outflow_python_tuple_2_2_volume_python_tuple_2_1_	 [tooltip="continuous_valid: true
+derivative_valid: true
+magnitude_valid: true
+not_equal_valid: true
+point_range_valid: true
+"];
+	inflow_python_tuple_1_3_outflow_python_tuple_2_2_volume_python_tuple_2_2_	 [label="In: (+, +)
+Vol: (max, 0)
+Out: (max, 0)",
+		tooltip="correspondence_valid: true
+derivatives:
+- In may go up from +
+- Out will stay at max
+- Vol will stay at max
+extreme_valid: true
+"];
+	inflow_python_tuple_0_3_outflow_python_tuple_2_2_volume_python_tuple_2_2_ -> inflow_python_tuple_1_3_outflow_python_tuple_2_2_volume_python_tuple_2_2_	 [tooltip="continuous_valid: true
+derivative_valid: true
+magnitude_valid: true
+not_equal_valid: true
+point_range_valid: true
+"];
+	inflow_python_tuple_1_3_outflow_python_tuple_2_2_volume_python_tuple_2_2_ -> inflow_python_tuple_1_3_outflow_python_tuple_2_2_volume_python_tuple_2_1_	 [tooltip="continuous_valid: true
+derivative_valid: true
+magnitude_valid: true
+not_equal_valid: true
+point_range_valid: true
+"];
+	inflow_python_tuple_1_1_outflow_python_tuple_0_2_volume_python_tuple_0_2_	 [label="In: (+, -)
+Vol: (0, 0)
+Out: (0, 0)",
+		tooltip="correspondence_valid: true
+derivatives:
+- In may go down from +
+- Out will stay at 0
+- Vol will stay at 0
+extreme_valid: true
+"];
+	inflow_python_tuple_1_1_outflow_python_tuple_0_2_volume_python_tuple_0_3_	 [label="In: (+, -)
 Vol: (0, +)
-Out: (0, +)"];
-	_inflow_1_3_outflow_0_3_volume_0_3_ -> _inflow_1_3_outflow_1_3_volume_1_3_;
-	_inflow_1_3_outflow_2_1_volume_2_1_	 [label="In: (+, +)
-Vol: (max, -)
-Out: (max, -)"];
-	_inflow_1_3_outflow_2_1_volume_2_1_ -> _inflow_1_3_outflow_1_1_volume_1_1_;
-	_inflow_1_3_outflow_2_1_volume_2_1_ -> _inflow_1_3_outflow_1_1_volume_1_2_;
-	_inflow_1_2_outflow_0_3_volume_0_3_	 [label="In: (+, 0)
+Out: (0, 0)",
+		tooltip="correspondence_valid: true
+derivatives:
+- In may go down from +
+- Out will stay at 0
+- Vol will go up from 0
+extreme_valid: true
+"];
+	inflow_python_tuple_1_1_outflow_python_tuple_0_2_volume_python_tuple_0_2_ -> inflow_python_tuple_1_1_outflow_python_tuple_0_2_volume_python_tuple_0_3_	 [tooltip="continuous_valid: true
+derivative_valid: true
+magnitude_valid: true
+not_equal_valid: true
+point_range_valid: true
+"];
+	inflow_python_tuple_1_1_outflow_python_tuple_0_3_volume_python_tuple_0_3_	 [label="In: (+, -)
 Vol: (0, +)
-Out: (0, +)"];
-	_inflow_1_2_outflow_1_3_volume_1_3_	 [label="In: (+, 0)
+Out: (0, +)",
+		tooltip="correspondence_valid: true
+derivatives:
+- In may go down from +
+- Out will go up from 0
+- Vol will go up from 0
+extreme_valid: true
+"];
+	inflow_python_tuple_1_1_outflow_python_tuple_1_3_volume_python_tuple_1_3_	 [label="In: (+, -)
 Vol: (+, +)
-Out: (+, +)"];
-	_inflow_1_2_outflow_0_3_volume_0_3_ -> _inflow_1_2_outflow_1_3_volume_1_3_;
-	_inflow_1_2_outflow_1_3_volume_1_2_	 [label="In: (+, 0)
+Out: (+, +)",
+		tooltip="correspondence_valid: true
+derivatives:
+- In may go down from +
+- Out may go up from +
+- Vol may go up from +
+extreme_valid: true
+"];
+	inflow_python_tuple_1_1_outflow_python_tuple_0_3_volume_python_tuple_0_3_ -> inflow_python_tuple_1_1_outflow_python_tuple_1_3_volume_python_tuple_1_3_	 [tooltip="continuous_valid: true
+derivative_valid: true
+magnitude_valid: true
+not_equal_valid: true
+point_range_valid: true
+"];
+	inflow_python_tuple_1_1_outflow_python_tuple_1_3_volume_python_tuple_1_2_	 [label="In: (+, -)
 Vol: (+, 0)
-Out: (+, +)"];
-	_inflow_1_2_outflow_1_3_volume_1_3_ -> _inflow_1_2_outflow_1_3_volume_1_2_;
-	_inflow_1_2_outflow_0_2_volume_0_2_	 [label="In: (+, 0)
-Vol: (0, 0)
-Out: (0, 0)"];
-	_inflow_1_2_outflow_0_2_volume_0_3_	 [label="In: (+, 0)
-Vol: (0, +)
-Out: (0, 0)"];
-	_inflow_1_2_outflow_0_2_volume_0_2_ -> _inflow_1_2_outflow_0_2_volume_0_3_;
-	_inflow_1_2_outflow_1_3_volume_1_2_ -> _inflow_1_2_outflow_1_3_volume_1_3_;
-	_inflow_1_2_outflow_1_3_volume_1_1_	 [label="In: (+, 0)
+Out: (+, +)",
+		tooltip="correspondence_valid: true
+derivatives:
+- In may go down from +
+- Out may go up from +
+- Vol will stay at +
+extreme_valid: true
+"];
+	inflow_python_tuple_1_1_outflow_python_tuple_1_3_volume_python_tuple_1_3_ -> inflow_python_tuple_1_1_outflow_python_tuple_1_3_volume_python_tuple_1_2_	 [tooltip="continuous_valid: true
+derivative_valid: true
+magnitude_valid: true
+not_equal_valid: true
+point_range_valid: true
+"];
+	inflow_python_tuple_1_1_outflow_python_tuple_1_1_volume_python_tuple_1_1_	 [label="In: (+, -)
 Vol: (+, -)
-Out: (+, +)"];
-	_inflow_1_2_outflow_1_3_volume_1_2_ -> _inflow_1_2_outflow_1_3_volume_1_1_;
-	_inflow_1_2_outflow_1_3_volume_1_1_ -> _inflow_1_2_outflow_1_3_volume_1_2_;
-	_inflow_1_2_outflow_1_2_volume_1_2_	 [label="In: (+, 0)
+Out: (+, -)",
+		tooltip="correspondence_valid: true
+derivatives:
+- In may go down from +
+- Out may go down from +
+- Vol may go down from +
+extreme_valid: \
+true
+"];
+	inflow_python_tuple_1_1_outflow_python_tuple_1_1_volume_python_tuple_1_2_	 [label="In: (+, -)
 Vol: (+, 0)
-Out: (+, 0)"];
-	_inflow_1_2_outflow_1_3_volume_1_1_ -> _inflow_1_2_outflow_1_2_volume_1_2_;
-	_inflow_1_2_outflow_1_2_volume_1_1_	 [label="In: (+, 0)
-Vol: (+, -)
-Out: (+, 0)"];
-	_inflow_1_2_outflow_1_3_volume_1_1_ -> _inflow_1_2_outflow_1_2_volume_1_1_;
-	_inflow_1_2_outflow_1_2_volume_1_2_ -> _inflow_1_2_outflow_1_2_volume_1_1_;
-	_inflow_1_2_outflow_1_2_volume_1_3_	 [label="In: (+, 0)
+Out: (+, -)",
+		tooltip="correspondence_valid: true
+derivatives:
+- In may go down from +
+- Out may go down from +
+- Vol will stay at +
+extreme_valid: true
+"];
+	inflow_python_tuple_1_1_outflow_python_tuple_1_1_volume_python_tuple_1_1_ -> inflow_python_tuple_1_1_outflow_python_tuple_1_1_volume_python_tuple_1_2_	 [tooltip="continuous_valid: true
+derivative_valid: true
+magnitude_valid: true
+not_equal_valid: true
+point_range_valid: true
+"];
+	inflow_python_tuple_1_1_outflow_python_tuple_1_1_volume_python_tuple_1_2_ -> inflow_python_tuple_1_1_outflow_python_tuple_1_1_volume_python_tuple_1_1_	 [tooltip="continuous_valid: true
+derivative_valid: true
+magnitude_valid: true
+not_equal_valid: true
+point_range_valid: true
+"];
+	inflow_python_tuple_1_1_outflow_python_tuple_1_1_volume_python_tuple_1_3_	 [label="In: (+, -)
 Vol: (+, +)
-Out: (+, 0)"];
-	_inflow_1_2_outflow_1_2_volume_1_2_ -> _inflow_1_2_outflow_1_2_volume_1_3_;
-	_inflow_1_2_outflow_1_2_volume_1_1_ -> _inflow_1_2_outflow_1_2_volume_1_2_;
-	_inflow_1_2_outflow_1_1_volume_1_2_	 [label="In: (+, 0)
+Out: (+, -)",
+		tooltip="correspondence_valid: true
+derivatives:
+- In may go down from +
+- Out may go down from +
+- Vol may go up from +
+extreme_valid: true
+"];
+	inflow_python_tuple_1_1_outflow_python_tuple_1_1_volume_python_tuple_1_2_ -> inflow_python_tuple_1_1_outflow_python_tuple_1_1_volume_python_tuple_1_3_	 [tooltip="continuous_valid: true
+derivative_valid: true
+magnitude_valid: true
+not_equal_valid: true
+point_range_valid: true
+"];
+	inflow_python_tuple_1_1_outflow_python_tuple_1_1_volume_python_tuple_1_3_ -> inflow_python_tuple_1_1_outflow_python_tuple_1_1_volume_python_tuple_1_2_	 [tooltip="continuous_valid: true
+derivative_valid: true
+magnitude_valid: true
+not_equal_valid: true
+point_range_valid: true
+"];
+	inflow_python_tuple_1_1_outflow_python_tuple_1_2_volume_python_tuple_1_2_	 [label="In: (+, -)
 Vol: (+, 0)
-Out: (+, -)"];
-	_inflow_1_2_outflow_1_2_volume_1_1_ -> _inflow_1_2_outflow_1_1_volume_1_2_;
-	_inflow_1_2_outflow_1_1_volume_1_1_	 [label="In: (+, 0)
-Vol: (+, -)
-Out: (+, -)"];
-	_inflow_1_2_outflow_1_2_volume_1_1_ -> _inflow_1_2_outflow_1_1_volume_1_1_;
-	_inflow_1_2_outflow_1_2_volume_1_3_ -> _inflow_1_2_outflow_1_3_volume_1_3_;
-	_inflow_1_2_outflow_1_2_volume_1_3_ -> _inflow_1_2_outflow_1_3_volume_1_2_;
-	_inflow_1_2_outflow_1_2_volume_1_3_ -> _inflow_1_2_outflow_1_2_volume_1_2_;
-	_inflow_1_2_outflow_1_1_volume_1_2_ -> _inflow_1_2_outflow_1_1_volume_1_1_;
-	_inflow_1_2_outflow_1_1_volume_1_3_	 [label="In: (+, 0)
+Out: (+, 0)",
+		tooltip="correspondence_valid: true
+derivatives:
+- In may go down from +
+- Out will stay at +
+- Vol will stay at +
+extreme_valid: true
+"];
+	inflow_python_tuple_1_1_outflow_python_tuple_1_1_volume_python_tuple_1_3_ -> inflow_python_tuple_1_1_outflow_python_tuple_1_2_volume_python_tuple_1_2_	 [tooltip="continuous_valid: true
+derivative_valid: true
+magnitude_valid: true
+not_equal_valid: true
+point_range_valid: true
+"];
+	inflow_python_tuple_1_1_outflow_python_tuple_1_2_volume_python_tuple_1_3_	 [label="In: (+, -)
 Vol: (+, +)
-Out: (+, -)"];
-	_inflow_1_2_outflow_1_1_volume_1_2_ -> _inflow_1_2_outflow_1_1_volume_1_3_;
-	_inflow_1_2_outflow_1_1_volume_1_1_ -> _inflow_1_2_outflow_1_1_volume_1_2_;
-	_inflow_1_2_outflow_1_1_volume_1_3_ -> _inflow_1_2_outflow_1_2_volume_1_2_;
-	_inflow_1_2_outflow_1_1_volume_1_3_ -> _inflow_1_2_outflow_1_2_volume_1_3_;
-	_inflow_1_2_outflow_1_1_volume_1_3_ -> _inflow_1_2_outflow_1_1_volume_1_2_;
-	_inflow_1_2_outflow_2_2_volume_2_2_	 [label="In: (+, 0)
-Vol: (max, 0)
-Out: (max, 0)"];
-	_inflow_1_2_outflow_2_2_volume_2_1_	 [label="In: (+, 0)
+Out: (+, 0)",
+		tooltip="correspondence_valid: true
+derivatives:
+- In may go down from +
+- Out will stay at +
+- Vol may go up from +
+extreme_valid: true
+"];
+	inflow_python_tuple_1_1_outflow_python_tuple_1_1_volume_python_tuple_1_3_ -> inflow_python_tuple_1_1_outflow_python_tuple_1_2_volume_python_tuple_1_3_	 [tooltip="continuous_valid: true
+derivative_valid: true
+magnitude_valid: true
+not_equal_valid: true
+point_range_valid: true
+"];
+	inflow_python_tuple_1_1_outflow_python_tuple_1_2_volume_python_tuple_1_2_ -> inflow_python_tuple_1_1_outflow_python_tuple_1_2_volume_python_tuple_1_3_	 [tooltip="continuous_valid: true
+derivative_valid: true
+magnitude_valid: true
+not_equal_valid: true
+point_range_valid: true
+"];
+	inflow_python_tuple_1_1_outflow_python_tuple_1_2_volume_python_tuple_1_1_	 [label="In: (+, -)
+Vol: (+, -)
+Out: (+, 0)",
+		tooltip="correspondence_valid: true
+derivatives:
+- In may go down from +
+- Out will stay at +
+- Vol may go down from +
+extreme_valid: true
+"];
+	inflow_python_tuple_1_1_outflow_python_tuple_1_2_volume_python_tuple_1_2_ -> inflow_python_tuple_1_1_outflow_python_tuple_1_2_volume_python_tuple_1_1_	 [tooltip="continuous_valid: true
+derivative_valid: true
+magnitude_valid: true
+not_equal_valid: true
+point_range_valid: true
+"];
+	inflow_python_tuple_1_1_outflow_python_tuple_1_2_volume_python_tuple_1_3_ -> inflow_python_tuple_1_1_outflow_python_tuple_1_3_volume_python_tuple_1_3_	 [tooltip="continuous_valid: true
+derivative_valid: true
+magnitude_valid: true
+not_equal_valid: true
+point_range_valid: true
+"];
+	inflow_python_tuple_1_1_outflow_python_tuple_1_2_volume_python_tuple_1_3_ -> inflow_python_tuple_1_1_outflow_python_tuple_1_2_volume_python_tuple_1_2_	 [tooltip="continuous_valid: true
+derivative_valid: true
+magnitude_valid: true
+not_equal_valid: true
+point_range_valid: true
+"];
+	inflow_python_tuple_1_1_outflow_python_tuple_1_2_volume_python_tuple_1_3_ -> inflow_python_tuple_1_1_outflow_python_tuple_1_3_volume_python_tuple_1_2_	 [tooltip="continuous_valid: true
+derivative_valid: true
+magnitude_valid: true
+not_equal_valid: true
+point_range_valid: true
+"];
+	inflow_python_tuple_1_1_outflow_python_tuple_1_2_volume_python_tuple_1_1_ -> inflow_python_tuple_1_1_outflow_python_tuple_1_1_volume_python_tuple_1_1_	 [tooltip="continuous_valid: true
+derivative_valid: true
+magnitude_valid: true
+not_equal_valid: true
+point_range_valid: true
+"];
+	inflow_python_tuple_1_1_outflow_python_tuple_1_2_volume_python_tuple_1_1_ -> inflow_python_tuple_1_1_outflow_python_tuple_1_1_volume_python_tuple_1_2_	 [tooltip="continuous_valid: true
+derivative_valid: true
+magnitude_valid: true
+not_equal_valid: true
+point_range_valid: true
+"];
+	inflow_python_tuple_1_1_outflow_python_tuple_1_2_volume_python_tuple_1_1_ -> inflow_python_tuple_1_1_outflow_python_tuple_1_2_volume_python_tuple_1_2_	 [tooltip="continuous_valid: true
+derivative_valid: true
+magnitude_valid: true
+not_equal_valid: true
+point_range_valid: true
+"];
+	inflow_python_tuple_1_1_outflow_python_tuple_1_3_volume_python_tuple_1_2_ -> inflow_python_tuple_1_1_outflow_python_tuple_1_3_volume_python_tuple_1_3_	 [tooltip="continuous_valid: true
+derivative_valid: true
+magnitude_valid: true
+not_equal_valid: true
+point_range_valid: true
+"];
+	inflow_python_tuple_1_1_outflow_python_tuple_1_3_volume_python_tuple_1_1_	 [label="In: (+, -)
+Vol: (+, -)
+Out: (+, +)",
+		tooltip="correspondence_valid: true
+derivatives:
+- In may go down from +
+- Out may go up from +
+- Vol may go down from +
+extreme_valid: true
+"];
+	inflow_python_tuple_1_1_outflow_python_tuple_1_3_volume_python_tuple_1_2_ -> inflow_python_tuple_1_1_outflow_python_tuple_1_3_volume_python_tuple_1_1_	 [tooltip="continuous_valid: true
+derivative_valid: true
+magnitude_valid: true
+not_equal_valid: true
+point_range_valid: true
+"];
+	inflow_python_tuple_1_1_outflow_python_tuple_1_3_volume_python_tuple_1_1_ -> inflow_python_tuple_1_1_outflow_python_tuple_1_2_volume_python_tuple_1_2_	 [tooltip="continuous_valid: true
+derivative_valid: true
+magnitude_valid: true
+not_equal_valid: true
+point_range_valid: true
+"];
+	inflow_python_tuple_1_1_outflow_python_tuple_1_3_volume_python_tuple_1_1_ -> inflow_python_tuple_1_1_outflow_python_tuple_1_2_volume_python_tuple_1_1_	 [tooltip="continuous_valid: true
+derivative_valid: true
+magnitude_valid: true
+not_equal_valid: true
+point_range_valid: true
+"];
+	inflow_python_tuple_1_1_outflow_python_tuple_1_3_volume_python_tuple_1_1_ -> inflow_python_tuple_1_1_outflow_python_tuple_1_3_volume_python_tuple_1_2_	 [tooltip="continuous_valid: true
+derivative_valid: true
+magnitude_valid: true
+not_equal_valid: true
+point_range_valid: true
+"];
+	inflow_python_tuple_1_1_outflow_python_tuple_2_1_volume_python_tuple_2_1_	 [label="In: (+, -)
 Vol: (max, -)
-Out: (max, 0)"];
-	_inflow_1_2_outflow_2_2_volume_2_2_ -> _inflow_1_2_outflow_2_2_volume_2_1_;
-	_inflow_1_2_outflow_2_1_volume_2_1_	 [label="In: (+, 0)
+Out: (max, -)",
+		tooltip="correspondence_valid: true
+derivatives:
+- In may go down from +
+- Out will go down from max
+- Vol will go down from max
+extreme_\
+valid: true
+"];
+	inflow_python_tuple_1_1_outflow_python_tuple_2_1_volume_python_tuple_2_1_ -> inflow_python_tuple_1_1_outflow_python_tuple_1_1_volume_python_tuple_1_1_	 [tooltip="continuous_valid: true
+derivative_valid: true
+magnitude_valid: true
+not_equal_valid: true
+point_range_valid: true
+"];
+	inflow_python_tuple_1_1_outflow_python_tuple_2_1_volume_python_tuple_2_1_ -> inflow_python_tuple_1_1_outflow_python_tuple_1_1_volume_python_tuple_1_2_	 [tooltip="continuous_valid: true
+derivative_valid: true
+magnitude_valid: true
+not_equal_valid: true
+point_range_valid: true
+"];
+	inflow_python_tuple_1_1_outflow_python_tuple_2_2_volume_python_tuple_2_2_	 [label="In: (+, -)
+Vol: (max, 0)
+Out: (max, 0)",
+		tooltip="correspondence_valid: true
+derivatives:
+- In may go down from +
+- Out will stay at max
+- Vol will stay at max
+extreme_valid: true
+"];
+	inflow_python_tuple_1_1_outflow_python_tuple_2_2_volume_python_tuple_2_1_	 [label="In: (+, -)
 Vol: (max, -)
-Out: (max, -)"];
-	_inflow_1_2_outflow_2_1_volume_2_1_ -> _inflow_1_2_outflow_1_1_volume_1_2_;
-	_inflow_1_2_outflow_2_1_volume_2_1_ -> _inflow_1_2_outflow_1_1_volume_1_1_;
-	_inflow_1_1_outflow_0_3_volume_0_3_	 [label="In: (+, -)
+Out: (max, 0)",
+		tooltip="correspondence_valid: true
+derivatives:
+- In may go down from +
+- Out will stay at max
+- Vol will go down from max
+extreme_valid: \
+true
+"];
+	inflow_python_tuple_1_1_outflow_python_tuple_2_2_volume_python_tuple_2_2_ -> inflow_python_tuple_1_1_outflow_python_tuple_2_2_volume_python_tuple_2_1_	 [tooltip="continuous_valid: true
+derivative_valid: true
+magnitude_valid: true
+not_equal_valid: true
+point_range_valid: true
+"];
+	inflow_python_tuple_1_2_outflow_python_tuple_0_2_volume_python_tuple_0_2_	 [label="In: (+, 0)
+Vol: (0, 0)
+Out: (0, 0)",
+		tooltip="correspondence_valid: true
+derivatives:
+- In will stay at +
+- Out will stay at 0
+- Vol will stay at 0
+extreme_valid: true
+"];
+	inflow_python_tuple_1_2_outflow_python_tuple_0_2_volume_python_tuple_0_3_	 [label="In: (+, 0)
 Vol: (0, +)
-Out: (0, +)"];
-	_inflow_1_1_outflow_1_3_volume_1_3_	 [label="In: (+, -)
+Out: (0, 0)",
+		tooltip="correspondence_valid: true
+derivatives:
+- In will stay at +
+- Out will stay at 0
+- Vol will go up from 0
+extreme_valid: true
+"];
+	inflow_python_tuple_1_2_outflow_python_tuple_0_2_volume_python_tuple_0_2_ -> inflow_python_tuple_1_2_outflow_python_tuple_0_2_volume_python_tuple_0_3_	 [tooltip="continuous_valid: true
+derivative_valid: true
+magnitude_valid: true
+not_equal_valid: true
+point_range_valid: true
+"];
+	inflow_python_tuple_1_2_outflow_python_tuple_0_3_volume_python_tuple_0_3_	 [label="In: (+, 0)
+Vol: (0, +)
+Out: (0, +)",
+		tooltip="correspondence_valid: true
+derivatives:
+- In will stay at +
+- Out will go up from 0
+- Vol will go up from 0
+extreme_valid: true
+"];
+	inflow_python_tuple_1_2_outflow_python_tuple_1_3_volume_python_tuple_1_3_	 [label="In: (+, 0)
 Vol: (+, +)
-Out: (+, +)"];
-	_inflow_1_1_outflow_0_3_volume_0_3_ -> _inflow_1_1_outflow_1_3_volume_1_3_;
-	_inflow_1_1_outflow_1_3_volume_1_2_	 [label="In: (+, -)
+Out: (+, +)",
+		tooltip="correspondence_valid: true
+derivatives:
+- In will stay at +
+- Out may go up from +
+- Vol may go up from +
+extreme_valid: true
+"];
+	inflow_python_tuple_1_2_outflow_python_tuple_0_3_volume_python_tuple_0_3_ -> inflow_python_tuple_1_2_outflow_python_tuple_1_3_volume_python_tuple_1_3_	 [tooltip="continuous_valid: true
+derivative_valid: true
+magnitude_valid: true
+not_equal_valid: true
+point_range_valid: true
+"];
+	inflow_python_tuple_1_2_outflow_python_tuple_1_3_volume_python_tuple_1_2_	 [label="In: (+, 0)
 Vol: (+, 0)
-Out: (+, +)"];
-	_inflow_1_1_outflow_1_3_volume_1_3_ -> _inflow_1_1_outflow_1_3_volume_1_2_;
-	_inflow_1_1_outflow_0_2_volume_0_2_	 [label="In: (+, -)
-Vol: (0, 0)
-Out: (0, 0)"];
-	_inflow_1_1_outflow_0_2_volume_0_3_	 [label="In: (+, -)
-Vol: (0, +)
-Out: (0, 0)"];
-	_inflow_1_1_outflow_0_2_volume_0_2_ -> _inflow_1_1_outflow_0_2_volume_0_3_;
-	_inflow_1_1_outflow_1_3_volume_1_2_ -> _inflow_1_1_outflow_1_3_volume_1_3_;
-	_inflow_1_1_outflow_1_3_volume_1_1_	 [label="In: (+, -)
+Out: (+, +)",
+		tooltip="correspondence_valid: true
+derivatives:
+- In will stay at +
+- Out may go up from +
+- Vol will stay at +
+extreme_valid: true
+"];
+	inflow_python_tuple_1_2_outflow_python_tuple_1_3_volume_python_tuple_1_3_ -> inflow_python_tuple_1_2_outflow_python_tuple_1_3_volume_python_tuple_1_2_	 [tooltip="continuous_valid: true
+derivative_valid: true
+magnitude_valid: true
+not_equal_valid: true
+point_range_valid: true
+"];
+	inflow_python_tuple_1_2_outflow_python_tuple_1_1_volume_python_tuple_1_1_	 [label="In: (+, 0)
 Vol: (+, -)
-Out: (+, +)"];
-	_inflow_1_1_outflow_1_3_volume_1_2_ -> _inflow_1_1_outflow_1_3_volume_1_1_;
-	_inflow_1_1_outflow_1_3_volume_1_1_ -> _inflow_1_1_outflow_1_3_volume_1_2_;
-	_inflow_1_1_outflow_1_2_volume_1_2_	 [label="In: (+, -)
+Out: (+, -)",
+		tooltip="correspondence_valid: true
+derivatives:
+- In will stay at +
+- Out may go down from +
+- Vol may go down from +
+extreme_valid: true
+"];
+	inflow_python_tuple_1_2_outflow_python_tuple_1_1_volume_python_tuple_1_2_	 [label="In: (+, 0)
 Vol: (+, 0)
-Out: (+, 0)"];
-	_inflow_1_1_outflow_1_3_volume_1_1_ -> _inflow_1_1_outflow_1_2_volume_1_2_;
-	_inflow_1_1_outflow_1_2_volume_1_1_	 [label="In: (+, -)
-Vol: (+, -)
-Out: (+, 0)"];
-	_inflow_1_1_outflow_1_3_volume_1_1_ -> _inflow_1_1_outflow_1_2_volume_1_1_;
-	_inflow_1_1_outflow_1_2_volume_1_2_ -> _inflow_1_1_outflow_1_2_volume_1_1_;
-	_inflow_1_1_outflow_1_2_volume_1_3_	 [label="In: (+, -)
+Out: (+, -)",
+		tooltip="correspondence_valid: true
+derivatives:
+- In will stay at +
+- Out may go down from +
+- Vol will stay at +
+extreme_valid: true
+"];
+	inflow_python_tuple_1_2_outflow_python_tuple_1_1_volume_python_tuple_1_1_ -> inflow_python_tuple_1_2_outflow_python_tuple_1_1_volume_python_tuple_1_2_	 [tooltip="continuous_valid: true
+derivative_valid: true
+magnitude_valid: true
+not_equal_valid: true
+point_range_valid: true
+"];
+	inflow_python_tuple_1_2_outflow_python_tuple_1_1_volume_python_tuple_1_2_ -> inflow_python_tuple_1_2_outflow_python_tuple_1_1_volume_python_tuple_1_1_	 [tooltip="continuous_valid: true
+derivative_valid: true
+magnitude_valid: true
+not_equal_valid: true
+point_range_valid: true
+"];
+	inflow_python_tuple_1_2_outflow_python_tuple_1_1_volume_python_tuple_1_3_	 [label="In: (+, 0)
 Vol: (+, +)
-Out: (+, 0)"];
-	_inflow_1_1_outflow_1_2_volume_1_2_ -> _inflow_1_1_outflow_1_2_volume_1_3_;
-	_inflow_1_1_outflow_1_2_volume_1_1_ -> _inflow_1_1_outflow_1_2_volume_1_2_;
-	_inflow_1_1_outflow_1_1_volume_1_2_	 [label="In: (+, -)
+Out: (+, -)",
+		tooltip="correspondence_valid: true
+derivatives:
+- In will stay at +
+- Out may go down from +
+- Vol may go up from +
+extreme_valid: true
+"];
+	inflow_python_tuple_1_2_outflow_python_tuple_1_1_volume_python_tuple_1_2_ -> inflow_python_tuple_1_2_outflow_python_tuple_1_1_volume_python_tuple_1_3_	 [tooltip="continuous_valid: true
+derivative_valid: true
+magnitude_valid: true
+not_equal_valid: true
+point_range_valid: true
+"];
+	inflow_python_tuple_1_2_outflow_python_tuple_1_1_volume_python_tuple_1_3_ -> inflow_python_tuple_1_2_outflow_python_tuple_1_1_volume_python_tuple_1_2_	 [tooltip="continuous_valid: true
+derivative_valid: true
+magnitude_valid: true
+not_equal_valid: true
+point_range_valid: true
+"];
+	inflow_python_tuple_1_2_outflow_python_tuple_1_2_volume_python_tuple_1_2_	 [label="In: (+, 0)
 Vol: (+, 0)
-Out: (+, -)"];
-	_inflow_1_1_outflow_1_2_volume_1_1_ -> _inflow_1_1_outflow_1_1_volume_1_2_;
-	_inflow_1_1_outflow_1_1_volume_1_1_	 [label="In: (+, -)
-Vol: (+, -)
-Out: (+, -)"];
-	_inflow_1_1_outflow_1_2_volume_1_1_ -> _inflow_1_1_outflow_1_1_volume_1_1_;
-	_inflow_1_1_outflow_1_2_volume_1_3_ -> _inflow_1_1_outflow_1_3_volume_1_3_;
-	_inflow_1_1_outflow_1_2_volume_1_3_ -> _inflow_1_1_outflow_1_3_volume_1_2_;
-	_inflow_1_1_outflow_1_2_volume_1_3_ -> _inflow_1_1_outflow_1_2_volume_1_2_;
-	_inflow_1_1_outflow_1_1_volume_1_2_ -> _inflow_1_1_outflow_1_1_volume_1_1_;
-	_inflow_1_1_outflow_1_1_volume_1_3_	 [label="In: (+, -)
+Out: (+, 0)",
+		tooltip="correspondence_valid: true
+derivatives:
+- In will stay at +
+- Out will stay at +
+- Vol will stay at +
+extreme_valid: true
+"];
+	inflow_python_tuple_1_2_outflow_python_tuple_1_1_volume_python_tuple_1_3_ -> inflow_python_tuple_1_2_outflow_python_tuple_1_2_volume_python_tuple_1_2_	 [tooltip="continuous_valid: true
+derivative_valid: true
+magnitude_valid: true
+not_equal_valid: true
+point_range_valid: true
+"];
+	inflow_python_tuple_1_2_outflow_python_tuple_1_2_volume_python_tuple_1_3_	 [label="In: (+, 0)
 Vol: (+, +)
-Out: (+, -)"];
-	_inflow_1_1_outflow_1_1_volume_1_2_ -> _inflow_1_1_outflow_1_1_volume_1_3_;
-	_inflow_1_1_outflow_1_1_volume_1_1_ -> _inflow_1_1_outflow_1_1_volume_1_2_;
-	_inflow_1_1_outflow_1_1_volume_1_3_ -> _inflow_1_1_outflow_1_2_volume_1_2_;
-	_inflow_1_1_outflow_1_1_volume_1_3_ -> _inflow_1_1_outflow_1_2_volume_1_3_;
-	_inflow_1_1_outflow_1_1_volume_1_3_ -> _inflow_1_1_outflow_1_1_volume_1_2_;
-	_inflow_1_1_outflow_2_2_volume_2_2_	 [label="In: (+, -)
+Out: (+, 0)",
+		tooltip="correspondence_valid: true
+derivatives:
+- In will stay at +
+- Out will stay at +
+- Vol may go up from +
+extreme_valid: true
+"];
+	inflow_python_tuple_1_2_outflow_python_tuple_1_1_volume_python_tuple_1_3_ -> inflow_python_tuple_1_2_outflow_python_tuple_1_2_volume_python_tuple_1_3_	 [tooltip="continuous_valid: true
+derivative_valid: true
+magnitude_valid: true
+not_equal_valid: true
+point_range_valid: true
+"];
+	inflow_python_tuple_1_2_outflow_python_tuple_1_2_volume_python_tuple_1_2_ -> inflow_python_tuple_1_2_outflow_python_tuple_1_2_volume_python_tuple_1_3_	 [tooltip="continuous_valid: true
+derivative_valid: true
+magnitude_valid: true
+not_equal_valid: true
+point_range_valid: true
+"];
+	inflow_python_tuple_1_2_outflow_python_tuple_1_2_volume_python_tuple_1_1_	 [label="In: (+, 0)
+Vol: (+, -)
+Out: (+, 0)",
+		tooltip="correspondence_valid: true
+derivatives:
+- In will stay at +
+- Out will stay at +
+- Vol may go down from +
+extreme_valid: true
+"];
+	inflow_python_tuple_1_2_outflow_python_tuple_1_2_volume_python_tuple_1_2_ -> inflow_python_tuple_1_2_outflow_python_tuple_1_2_volume_python_tuple_1_1_	 [tooltip="continuous_valid: true
+derivative_valid: true
+magnitude_valid: true
+not_equal_valid: true
+point_range_valid: true
+"];
+	inflow_python_tuple_1_2_outflow_python_tuple_1_2_volume_python_tuple_1_3_ -> inflow_python_tuple_1_2_outflow_python_tuple_1_3_volume_python_tuple_1_3_	 [tooltip="continuous_valid: true
+derivative_valid: true
+magnitude_valid: true
+not_equal_valid: true
+point_range_valid: true
+"];
+	inflow_python_tuple_1_2_outflow_python_tuple_1_2_volume_python_tuple_1_3_ -> inflow_python_tuple_1_2_outflow_python_tuple_1_2_volume_python_tuple_1_2_	 [tooltip="continuous_valid: true
+derivative_valid: true
+magnitude_valid: true
+not_equal_valid: true
+point_range_valid: true
+"];
+	inflow_python_tuple_1_2_outflow_python_tuple_1_2_volume_python_tuple_1_3_ -> inflow_python_tuple_1_2_outflow_python_tuple_1_3_volume_python_tuple_1_2_	 [tooltip="continuous_valid: true
+derivative_valid: true
+magnitude_valid: true
+not_equal_valid: true
+point_range_valid: true
+"];
+	inflow_python_tuple_1_2_outflow_python_tuple_1_2_volume_python_tuple_1_1_ -> inflow_python_tuple_1_2_outflow_python_tuple_1_1_volume_python_tuple_1_1_	 [tooltip="continuous_valid: true
+derivative_valid: true
+magnitude_valid: true
+not_equal_valid: true
+point_range_valid: true
+"];
+	inflow_python_tuple_1_2_outflow_python_tuple_1_2_volume_python_tuple_1_1_ -> inflow_python_tuple_1_2_outflow_python_tuple_1_1_volume_python_tuple_1_2_	 [tooltip="continuous_valid: true
+derivative_valid: true
+magnitude_valid: true
+not_equal_valid: true
+point_range_valid: true
+"];
+	inflow_python_tuple_1_2_outflow_python_tuple_1_2_volume_python_tuple_1_1_ -> inflow_python_tuple_1_2_outflow_python_tuple_1_2_volume_python_tuple_1_2_	 [tooltip="continuous_valid: true
+derivative_valid: true
+magnitude_valid: true
+not_equal_valid: true
+point_range_valid: true
+"];
+	inflow_python_tuple_1_2_outflow_python_tuple_1_3_volume_python_tuple_1_2_ -> inflow_python_tuple_1_2_outflow_python_tuple_1_3_volume_python_tuple_1_3_	 [tooltip="continuous_valid: true
+derivative_valid: true
+magnitude_valid: true
+not_equal_valid: true
+point_range_valid: true
+"];
+	inflow_python_tuple_1_2_outflow_python_tuple_1_3_volume_python_tuple_1_1_	 [label="In: (+, 0)
+Vol: (+, -)
+Out: (+, +)",
+		tooltip="correspondence_valid: true
+derivatives:
+- In will stay at +
+- Out may go up from +
+- Vol may go down from +
+extreme_valid: true
+"];
+	inflow_python_tuple_1_2_outflow_python_tuple_1_3_volume_python_tuple_1_2_ -> inflow_python_tuple_1_2_outflow_python_tuple_1_3_volume_python_tuple_1_1_	 [tooltip="continuous_valid: true
+derivative_valid: true
+magnitude_valid: true
+not_equal_valid: true
+point_range_valid: true
+"];
+	inflow_python_tuple_1_2_outflow_python_tuple_1_3_volume_python_tuple_1_1_ -> inflow_python_tuple_1_2_outflow_python_tuple_1_2_volume_python_tuple_1_2_	 [tooltip="continuous_valid: true
+derivative_valid: true
+magnitude_valid: true
+not_equal_valid: true
+point_range_valid: true
+"];
+	inflow_python_tuple_1_2_outflow_python_tuple_1_3_volume_python_tuple_1_1_ -> inflow_python_tuple_1_2_outflow_python_tuple_1_2_volume_python_tuple_1_1_	 [tooltip="continuous_valid: true
+derivative_valid: true
+magnitude_valid: true
+not_equal_valid: true
+point_range_valid: true
+"];
+	inflow_python_tuple_1_2_outflow_python_tuple_1_3_volume_python_tuple_1_1_ -> inflow_python_tuple_1_2_outflow_python_tuple_1_3_volume_python_tuple_1_2_	 [tooltip="continuous_valid: true
+derivative_valid: true
+magnitude_valid: true
+not_equal_valid: true
+point_range_valid: true
+"];
+	inflow_python_tuple_1_2_outflow_python_tuple_2_1_volume_python_tuple_2_1_	 [label="In: (+, 0)
+Vol: (max, -)
+Out: (max, -)",
+		tooltip="correspondence_valid: true
+derivatives:
+- In will stay at +
+- Out will go down from max
+- Vol will go down from max
+extreme_valid: \
+true
+"];
+	inflow_python_tuple_1_2_outflow_python_tuple_2_1_volume_python_tuple_2_1_ -> inflow_python_tuple_1_2_outflow_python_tuple_1_1_volume_python_tuple_1_1_	 [tooltip="continuous_valid: true
+derivative_valid: true
+magnitude_valid: true
+not_equal_valid: true
+point_range_valid: true
+"];
+	inflow_python_tuple_1_2_outflow_python_tuple_2_1_volume_python_tuple_2_1_ -> inflow_python_tuple_1_2_outflow_python_tuple_1_1_volume_python_tuple_1_2_	 [tooltip="continuous_valid: true
+derivative_valid: true
+magnitude_valid: true
+not_equal_valid: true
+point_range_valid: true
+"];
+	inflow_python_tuple_1_2_outflow_python_tuple_2_2_volume_python_tuple_2_2_	 [label="In: (+, 0)
 Vol: (max, 0)
-Out: (max, 0)"];
-	_inflow_1_1_outflow_2_2_volume_2_1_	 [label="In: (+, -)
+Out: (max, 0)",
+		tooltip="correspondence_valid: true
+derivatives:
+- In will stay at +
+- Out will stay at max
+- Vol will stay at max
+extreme_valid: true
+"];
+	inflow_python_tuple_1_2_outflow_python_tuple_2_2_volume_python_tuple_2_1_	 [label="In: (+, 0)
 Vol: (max, -)
-Out: (max, 0)"];
-	_inflow_1_1_outflow_2_2_volume_2_2_ -> _inflow_1_1_outflow_2_2_volume_2_1_;
-	_inflow_1_1_outflow_2_1_volume_2_1_	 [label="In: (+, -)
-Vol: (max, -)
-Out: (max, -)"];
-	_inflow_1_1_outflow_2_1_volume_2_1_ -> _inflow_1_1_outflow_1_1_volume_1_2_;
-	_inflow_1_1_outflow_2_1_volume_2_1_ -> _inflow_1_1_outflow_1_1_volume_1_1_;
-	_inflow_0_3_outflow_0_3_volume_0_2_	 [label="In: (0, +)
-Vol: (0, 0)
-Out: (0, +)"];
-	_inflow_0_3_outflow_0_2_volume_0_3_	 [label="In: (0, +)
+Out: (max, 0)",
+		tooltip="correspondence_valid: true
+derivatives:
+- In will stay at +
+- Out will stay at max
+- Vol will go down from max
+extreme_valid: true
+"];
+	inflow_python_tuple_1_2_outflow_python_tuple_2_2_volume_python_tuple_2_2_ -> inflow_python_tuple_1_2_outflow_python_tuple_2_2_volume_python_tuple_2_1_	 [tooltip="continuous_valid: true
+derivative_valid: true
+magnitude_valid: true
+not_equal_valid: true
+point_range_valid: true
+"];
+	inflow_python_tuple_1_3_outflow_python_tuple_0_3_volume_python_tuple_0_3_	 [label="In: (+, +)
 Vol: (0, +)
-Out: (0, 0)"];
-	_inflow_0_3_outflow_2_2_volume_2_1_	 [label="In: (0, +)
+Out: (0, +)",
+		tooltip="correspondence_valid: true
+derivatives:
+- In may go up from +
+- Out will go up from 0
+- Vol will go up from 0
+extreme_valid: true
+"];
+	inflow_python_tuple_1_3_outflow_python_tuple_0_3_volume_python_tuple_0_3_ -> inflow_python_tuple_1_3_outflow_python_tuple_1_3_volume_python_tuple_1_3_	 [tooltip="continuous_valid: true
+derivative_valid: true
+magnitude_valid: true
+not_equal_valid: true
+point_range_valid: true
+"];
+	inflow_python_tuple_1_3_outflow_python_tuple_2_1_volume_python_tuple_2_1_	 [label="In: (+, +)
 Vol: (max, -)
-Out: (max, 0)"];
-	_inflow_0_3_outflow_2_1_volume_2_2_	 [label="In: (0, +)
-Vol: (max, 0)
-Out: (max, -)"];
-	_inflow_0_2_outflow_0_3_volume_0_2_	 [label="In: (0, 0)
+Out: (max, -)",
+		tooltip="correspondence_valid: true
+derivatives:
+- In may go up from +
+- Out will go down from max
+- Vol will go down from max
+extreme_valid: \
+true
+"];
+	inflow_python_tuple_1_3_outflow_python_tuple_2_1_volume_python_tuple_2_1_ -> inflow_python_tuple_1_3_outflow_python_tuple_1_1_volume_python_tuple_1_1_	 [tooltip="continuous_valid: true
+derivative_valid: true
+magnitude_valid: true
+not_equal_valid: true
+point_range_valid: true
+"];
+	inflow_python_tuple_1_3_outflow_python_tuple_2_1_volume_python_tuple_2_1_ -> inflow_python_tuple_1_3_outflow_python_tuple_1_1_volume_python_tuple_1_2_	 [tooltip="continuous_valid: true
+derivative_valid: true
+magnitude_valid: true
+not_equal_valid: true
+point_range_valid: true
+"];
+	inflow_python_tuple_0_2_outflow_python_tuple_0_2_volume_python_tuple_0_2_	 [label="In: (0, 0)
 Vol: (0, 0)
-Out: (0, +)"];
-	_inflow_0_2_outflow_0_2_volume_0_3_	 [label="In: (0, 0)
+Out: (0, 0)",
+		tooltip="correspondence_valid: true
+derivatives:
+- In will stay at 0
+- Out will stay at 0
+- Vol will stay at 0
+extreme_valid: true
+"];
+	inflow_python_tuple_0_2_outflow_python_tuple_0_2_volume_python_tuple_0_3_	 [label="In: (0, 0)
 Vol: (0, +)
-Out: (0, 0)"];
-	_inflow_0_2_outflow_0_2_volume_0_2_	 [label="In: (0, 0)
+Out: (0, 0)",
+		tooltip="correspondence_valid: true
+derivatives:
+- In will stay at 0
+- Out will stay at 0
+- Vol will go up from 0
+extreme_valid: true
+"];
+	inflow_python_tuple_0_2_outflow_python_tuple_0_3_volume_python_tuple_0_2_	 [label="In: (0, 0)
 Vol: (0, 0)
-Out: (0, 0)"];
-	_inflow_0_2_outflow_2_1_volume_2_2_	 [label="In: (0, 0)
+Out: (0, +)",
+		tooltip="correspondence_valid: true
+derivatives:
+- In will stay at 0
+- Out will go up from 0
+- Vol will stay at 0
+extreme_valid: true
+"];
+	inflow_python_tuple_0_2_outflow_python_tuple_2_1_volume_python_tuple_2_2_	 [label="In: (0, 0)
 Vol: (max, 0)
-Out: (max, -)"];
-	_inflow_1_3_outflow_0_3_volume_0_2_	 [label="In: (+, +)
+Out: (max, -)",
+		tooltip="correspondence_valid: true
+derivatives:
+- In will stay at 0
+- Out will go down from max
+- Vol will stay at max
+extreme_valid: true
+"];
+	inflow_python_tuple_0_3_outflow_python_tuple_0_2_volume_python_tuple_0_3_	 [label="In: (0, +)
+Vol: (0, +)
+Out: (0, 0)",
+		tooltip="correspondence_valid: true
+derivatives:
+- In will go up from 0
+- Out will stay at 0
+- Vol will go up from 0
+extreme_valid: true
+"];
+	inflow_python_tuple_0_3_outflow_python_tuple_0_3_volume_python_tuple_0_2_	 [label="In: (0, +)
 Vol: (0, 0)
-Out: (0, +)"];
-	_inflow_1_3_outflow_2_1_volume_2_2_	 [label="In: (+, +)
+Out: (0, +)",
+		tooltip="correspondence_valid: true
+derivatives:
+- In will go up from 0
+- Out will go up from 0
+- Vol will stay at 0
+extreme_valid: true
+"];
+	inflow_python_tuple_0_3_outflow_python_tuple_2_1_volume_python_tuple_2_2_	 [label="In: (0, +)
 Vol: (max, 0)
-Out: (max, -)"];
-	_inflow_1_2_outflow_0_3_volume_0_2_	 [label="In: (+, 0)
+Out: (max, -)",
+		tooltip="correspondence_valid: true
+derivatives:
+- In will go up from 0
+- Out will go down from max
+- Vol will stay at max
+extreme_valid: \
+true
+"];
+	inflow_python_tuple_0_3_outflow_python_tuple_2_2_volume_python_tuple_2_1_	 [label="In: (0, +)
+Vol: (max, -)
+Out: (max, 0)",
+		tooltip="correspondence_valid: true
+derivatives:
+- In will go up from 0
+- Out will stay at max
+- Vol will go down from max
+extreme_valid: \
+true
+"];
+	inflow_python_tuple_1_1_outflow_python_tuple_0_3_volume_python_tuple_0_2_	 [label="In: (+, -)
 Vol: (0, 0)
-Out: (0, +)"];
-	_inflow_1_2_outflow_2_1_volume_2_2_	 [label="In: (+, 0)
+Out: (0, +)",
+		tooltip="correspondence_valid: true
+derivatives:
+- In may go down from +
+- Out will go up from 0
+- Vol will stay at 0
+extreme_valid: true
+"];
+	inflow_python_tuple_1_1_outflow_python_tuple_2_1_volume_python_tuple_2_2_	 [label="In: (+, -)
 Vol: (max, 0)
-Out: (max, -)"];
-	_inflow_1_1_outflow_0_3_volume_0_2_	 [label="In: (+, -)
+Out: (max, -)",
+		tooltip="correspondence_valid: true
+derivatives:
+- In may go down from +
+- Out will go down from max
+- Vol will stay at max
+extreme_valid: \
+true
+"];
+	inflow_python_tuple_1_2_outflow_python_tuple_0_3_volume_python_tuple_0_2_	 [label="In: (+, 0)
 Vol: (0, 0)
-Out: (0, +)"];
-	_inflow_1_1_outflow_2_1_volume_2_2_	 [label="In: (+, -)
+Out: (0, +)",
+		tooltip="correspondence_valid: true
+derivatives:
+- In will stay at +
+- Out will go up from 0
+- Vol will stay at 0
+extreme_valid: true
+"];
+	inflow_python_tuple_1_2_outflow_python_tuple_2_1_volume_python_tuple_2_2_	 [label="In: (+, 0)
 Vol: (max, 0)
-Out: (max, -)"];
+Out: (max, -)",
+		tooltip="correspondence_valid: true
+derivatives:
+- In will stay at +
+- Out will go down from max
+- Vol will stay at max
+extreme_valid: true
+"];
+	inflow_python_tuple_1_3_outflow_python_tuple_0_3_volume_python_tuple_0_2_	 [label="In: (+, +)
+Vol: (0, 0)
+Out: (0, +)",
+		tooltip="correspondence_valid: true
+derivatives:
+- In may go up from +
+- Out will go up from 0
+- Vol will stay at 0
+extreme_valid: true
+"];
+	inflow_python_tuple_1_3_outflow_python_tuple_2_1_volume_python_tuple_2_2_	 [label="In: (+, +)
+Vol: (max, 0)
+Out: (max, -)",
+		tooltip="correspondence_valid: true
+derivatives:
+- In may go up from +
+- Out will go down from max
+- Vol will stay at max
+extreme_valid: \
+true
+"];
 }
