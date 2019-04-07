@@ -87,6 +87,21 @@ def test_qty_matches():
     qty_pair = ('volume', Volume.ZERO)
     assert qty_matches(state, qty_pair) == True
 
+def test_check_magnitude_changes():
+    container_state_before = {
+        'volume': (Volume.ZERO, DerivativeDirection.NEUTRAL),
+        'inflow': (Inflow.ZERO, DerivativeDirection.POSITIVE),
+        'outflow': (Outflow.ZERO, DerivativeDirection.NEUTRAL),
+    }
+    container_state_after = {
+        'volume': (Volume.ZERO, DerivativeDirection.NEUTRAL),
+        'inflow': (Inflow.PLUS, DerivativeDirection.POSITIVE),
+        'outflow': (Outflow.ZERO, DerivativeDirection.NEUTRAL),
+    }
+    entity_state_before = make_entity_state(container, container_state_before)
+    entity_state_after = make_entity_state(container, container_state_after)
+    assert check_magnitude_changes(entity_state_before.state, entity_state_after.state) == True
+
 def test_check_continuous():
     # good
     container_state_good = {
