@@ -6,7 +6,7 @@ from container import *
 
 container_state = {
     'volume': (Volume.ZERO, Direction.NEUTRAL),
-    'inflow': (Inflow.ZERO, Direction.NEUTRAL),
+    'inflow': (Inflow.ZERO, Direction.POSITIVE),
     'outflow': (Outflow.ZERO, Direction.NEUTRAL),
 }
 
