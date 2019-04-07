@@ -8,375 +8,777 @@ strict digraph "" {
 	node [label="\N",
 		shape=circle
 	];
-	_inflow_0_3_outflow_0_3_volume_0_3_	 [label="In: (0, +)
-Vol: (0, +)
-Out: (0, +)"];
-	_inflow_1_3_outflow_1_3_volume_1_3_	 [label="In: (+, +)
-Vol: (+, +)
-Out: (+, +)"];
-	_inflow_0_3_outflow_0_3_volume_0_3_ -> _inflow_1_3_outflow_1_3_volume_1_3_;
-	_inflow_1_3_outflow_1_3_volume_1_2_	 [label="In: (+, +)
-Vol: (+, 0)
-Out: (+, +)"];
-	_inflow_1_3_outflow_1_3_volume_1_3_ -> _inflow_1_3_outflow_1_3_volume_1_2_;
-	_inflow_0_3_outflow_0_2_volume_0_2_	 [label="In: (0, +)
-Vol: (0, 0)
-Out: (0, 0)"];
-	_inflow_1_3_outflow_0_2_volume_0_2_	 [label="In: (+, +)
-Vol: (0, 0)
-Out: (0, 0)"];
-	_inflow_0_3_outflow_0_2_volume_0_2_ -> _inflow_1_3_outflow_0_2_volume_0_2_;
-	_inflow_1_3_outflow_0_2_volume_0_3_	 [label="In: (+, +)
-Vol: (0, +)
-Out: (0, 0)"];
-	_inflow_1_3_outflow_0_2_volume_0_2_ -> _inflow_1_3_outflow_0_2_volume_0_3_;
-	_inflow_0_3_outflow_1_3_volume_1_3_	 [label="In: (0, +)
-Vol: (+, +)
-Out: (+, +)"];
-	_inflow_0_3_outflow_1_3_volume_1_3_ -> _inflow_1_3_outflow_1_3_volume_1_3_;
-	_inflow_0_3_outflow_1_3_volume_1_3_ -> _inflow_1_3_outflow_1_3_volume_1_2_;
-	_inflow_1_3_outflow_1_3_volume_1_2_ -> _inflow_1_3_outflow_1_3_volume_1_3_;
-	_inflow_1_3_outflow_1_3_volume_1_1_	 [label="In: (+, +)
-Vol: (+, -)
-Out: (+, +)"];
-	_inflow_1_3_outflow_1_3_volume_1_2_ -> _inflow_1_3_outflow_1_3_volume_1_1_;
-	_inflow_0_3_outflow_1_3_volume_1_2_	 [label="In: (0, +)
-Vol: (+, 0)
-Out: (+, +)"];
-	_inflow_0_3_outflow_1_3_volume_1_2_ -> _inflow_1_3_outflow_1_3_volume_1_2_;
-	_inflow_0_3_outflow_1_3_volume_1_2_ -> _inflow_1_3_outflow_1_3_volume_1_1_;
-	_inflow_1_3_outflow_1_3_volume_1_1_ -> _inflow_1_3_outflow_1_3_volume_1_2_;
-	_inflow_1_3_outflow_1_2_volume_1_1_	 [label="In: (+, +)
-Vol: (+, -)
-Out: (+, 0)"];
-	_inflow_1_3_outflow_1_3_volume_1_1_ -> _inflow_1_3_outflow_1_2_volume_1_1_;
-	_inflow_1_3_outflow_1_2_volume_1_2_	 [label="In: (+, +)
-Vol: (+, 0)
-Out: (+, 0)"];
-	_inflow_1_3_outflow_1_3_volume_1_1_ -> _inflow_1_3_outflow_1_2_volume_1_2_;
-	_inflow_0_3_outflow_1_3_volume_1_1_	 [label="In: (0, +)
-Vol: (+, -)
-Out: (+, +)"];
-	_inflow_0_3_outflow_1_3_volume_1_1_ -> _inflow_1_3_outflow_1_3_volume_1_1_;
-	_inflow_0_3_outflow_1_3_volume_1_1_ -> _inflow_1_3_outflow_1_2_volume_1_1_;
-	_inflow_1_3_outflow_1_2_volume_1_1_ -> _inflow_1_3_outflow_1_2_volume_1_2_;
-	_inflow_1_3_outflow_1_1_volume_1_1_	 [label="In: (+, +)
-Vol: (+, -)
-Out: (+, -)"];
-	_inflow_1_3_outflow_1_2_volume_1_1_ -> _inflow_1_3_outflow_1_1_volume_1_1_;
-	_inflow_1_3_outflow_1_1_volume_1_2_	 [label="In: (+, +)
-Vol: (+, 0)
-Out: (+, -)"];
-	_inflow_1_3_outflow_1_2_volume_1_1_ -> _inflow_1_3_outflow_1_1_volume_1_2_;
-	_inflow_0_3_outflow_1_2_volume_1_3_	 [label="In: (0, +)
-Vol: (+, +)
-Out: (+, 0)"];
-	_inflow_0_3_outflow_1_2_volume_1_3_ -> _inflow_1_3_outflow_1_3_volume_1_3_;
-	_inflow_0_3_outflow_1_2_volume_1_3_ -> _inflow_1_3_outflow_1_3_volume_1_2_;
-	_inflow_1_3_outflow_1_2_volume_1_3_	 [label="In: (+, +)
-Vol: (+, +)
-Out: (+, 0)"];
-	_inflow_0_3_outflow_1_2_volume_1_3_ -> _inflow_1_3_outflow_1_2_volume_1_3_;
-	_inflow_0_3_outflow_1_2_volume_1_3_ -> _inflow_1_3_outflow_1_2_volume_1_2_;
-	_inflow_1_3_outflow_1_2_volume_1_3_ -> _inflow_1_3_outflow_1_3_volume_1_3_;
-	_inflow_1_3_outflow_1_2_volume_1_3_ -> _inflow_1_3_outflow_1_3_volume_1_2_;
-	_inflow_1_3_outflow_1_2_volume_1_3_ -> _inflow_1_3_outflow_1_2_volume_1_2_;
-	_inflow_1_3_outflow_1_2_volume_1_2_ -> _inflow_1_3_outflow_1_2_volume_1_1_;
-	_inflow_1_3_outflow_1_2_volume_1_2_ -> _inflow_1_3_outflow_1_2_volume_1_3_;
-	_inflow_0_3_outflow_1_2_volume_1_2_	 [label="In: (0, +)
-Vol: (+, 0)
-Out: (+, 0)"];
-	_inflow_0_3_outflow_1_2_volume_1_2_ -> _inflow_1_3_outflow_1_2_volume_1_1_;
-	_inflow_0_3_outflow_1_2_volume_1_2_ -> _inflow_1_3_outflow_1_2_volume_1_2_;
-	_inflow_0_3_outflow_1_2_volume_1_1_	 [label="In: (0, +)
-Vol: (+, -)
-Out: (+, 0)"];
-	_inflow_0_3_outflow_1_2_volume_1_1_ -> _inflow_1_3_outflow_1_2_volume_1_1_;
-	_inflow_0_3_outflow_1_2_volume_1_1_ -> _inflow_1_3_outflow_1_1_volume_1_1_;
-	_inflow_1_3_outflow_1_1_volume_1_1_ -> _inflow_1_3_outflow_1_1_volume_1_2_;
-	_inflow_0_3_outflow_1_1_volume_1_3_	 [label="In: (0, +)
-Vol: (+, +)
-Out: (+, -)"];
-	_inflow_0_3_outflow_1_1_volume_1_3_ -> _inflow_1_3_outflow_1_2_volume_1_3_;
-	_inflow_0_3_outflow_1_1_volume_1_3_ -> _inflow_1_3_outflow_1_2_volume_1_2_;
-	_inflow_1_3_outflow_1_1_volume_1_3_	 [label="In: (+, +)
-Vol: (+, +)
-Out: (+, -)"];
-	_inflow_0_3_outflow_1_1_volume_1_3_ -> _inflow_1_3_outflow_1_1_volume_1_3_;
-	_inflow_0_3_outflow_1_1_volume_1_3_ -> _inflow_1_3_outflow_1_1_volume_1_2_;
-	_inflow_1_3_outflow_1_1_volume_1_3_ -> _inflow_1_3_outflow_1_2_volume_1_3_;
-	_inflow_1_3_outflow_1_1_volume_1_3_ -> _inflow_1_3_outflow_1_2_volume_1_2_;
-	_inflow_1_3_outflow_1_1_volume_1_3_ -> _inflow_1_3_outflow_1_1_volume_1_2_;
-	_inflow_1_3_outflow_1_1_volume_1_2_ -> _inflow_1_3_outflow_1_1_volume_1_1_;
-	_inflow_1_3_outflow_1_1_volume_1_2_ -> _inflow_1_3_outflow_1_1_volume_1_3_;
-	_inflow_0_3_outflow_1_1_volume_1_2_	 [label="In: (0, +)
-Vol: (+, 0)
-Out: (+, -)"];
-	_inflow_0_3_outflow_1_1_volume_1_2_ -> _inflow_1_3_outflow_1_1_volume_1_1_;
-	_inflow_0_3_outflow_1_1_volume_1_2_ -> _inflow_1_3_outflow_1_1_volume_1_2_;
-	_inflow_0_3_outflow_1_1_volume_1_1_	 [label="In: (0, +)
-Vol: (+, -)
-Out: (+, -)"];
-	_inflow_0_3_outflow_1_1_volume_1_1_ -> _inflow_1_3_outflow_1_1_volume_1_1_;
-	_inflow_0_3_outflow_2_2_volume_2_2_	 [label="In: (0, +)
-Vol: (max, 0)
-Out: (max, 0)"];
-	_inflow_1_3_outflow_2_2_volume_2_2_	 [label="In: (+, +)
-Vol: (max, 0)
-Out: (max, 0)"];
-	_inflow_0_3_outflow_2_2_volume_2_2_ -> _inflow_1_3_outflow_2_2_volume_2_2_;
-	_inflow_1_3_outflow_2_2_volume_2_1_	 [label="In: (+, +)
-Vol: (max, -)
-Out: (max, 0)"];
-	_inflow_0_3_outflow_2_2_volume_2_2_ -> _inflow_1_3_outflow_2_2_volume_2_1_;
-	_inflow_1_3_outflow_2_2_volume_2_2_ -> _inflow_1_3_outflow_2_2_volume_2_1_;
-	_inflow_0_3_outflow_2_1_volume_2_1_	 [label="In: (0, +)
-Vol: (max, -)
-Out: (max, -)"];
-	_inflow_0_3_outflow_2_1_volume_2_1_ -> _inflow_1_3_outflow_1_1_volume_1_1_;
 	_inflow_0_2_outflow_0_3_volume_0_3_	 [label="In: (0, 0)
 Vol: (0, +)
-Out: (0, +)"];
+Out: (0, +)",
+		tooltip="{'type': 'container', 'valid': True, 'state': {'inflow': ('ZERO', 'NEUTRAL'), 'outflow': ('ZERO', 'POSITIVE'), 'volume': ('ZERO', '\
+POSITIVE')}}"];
 	_inflow_0_2_outflow_1_3_volume_1_3_	 [label="In: (0, 0)
 Vol: (+, +)
-Out: (+, +)"];
-	_inflow_0_2_outflow_0_3_volume_0_3_ -> _inflow_0_2_outflow_1_3_volume_1_3_;
+Out: (+, +)",
+		tooltip="{'type': 'container', 'valid': True, 'state': {'inflow': ('ZERO', 'NEUTRAL'), 'outflow': ('PLUS', 'POSITIVE'), 'volume': ('PLUS', '\
+POSITIVE')}}"];
+	_inflow_0_2_outflow_0_3_volume_0_3_ -> _inflow_0_2_outflow_1_3_volume_1_3_	 [tooltip="{'transition_valid': True, 'a': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('ZERO', 'NEUTRAL'), 'outflow': ('ZERO', '\
+POSITIVE'), 'volume': ('ZERO', 'POSITIVE')}}\", 'b': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('ZERO', 'NEUTRAL'), '\
+outflow': ('PLUS', 'POSITIVE'), 'volume': ('PLUS', 'POSITIVE')}}\"}"];
 	_inflow_0_2_outflow_1_3_volume_1_2_	 [label="In: (0, 0)
 Vol: (+, 0)
-Out: (+, +)"];
-	_inflow_0_2_outflow_1_3_volume_1_3_ -> _inflow_0_2_outflow_1_3_volume_1_2_;
-	_inflow_0_2_outflow_1_3_volume_1_1_	 [label="In: (0, 0)
-Vol: (+, -)
-Out: (+, +)"];
-	_inflow_0_2_outflow_1_3_volume_1_2_ -> _inflow_0_2_outflow_1_3_volume_1_1_;
-	_inflow_0_2_outflow_1_2_volume_1_1_	 [label="In: (0, 0)
-Vol: (+, -)
-Out: (+, 0)"];
-	_inflow_0_2_outflow_1_3_volume_1_1_ -> _inflow_0_2_outflow_1_2_volume_1_1_;
-	_inflow_0_2_outflow_1_1_volume_1_1_	 [label="In: (0, 0)
-Vol: (+, -)
-Out: (+, -)"];
-	_inflow_0_2_outflow_1_2_volume_1_1_ -> _inflow_0_2_outflow_1_1_volume_1_1_;
-	_inflow_0_2_outflow_1_2_volume_1_3_	 [label="In: (0, 0)
-Vol: (+, +)
-Out: (+, 0)"];
-	_inflow_0_2_outflow_1_2_volume_1_3_ -> _inflow_0_2_outflow_1_3_volume_1_3_;
-	_inflow_0_2_outflow_1_2_volume_1_3_ -> _inflow_0_2_outflow_1_3_volume_1_2_;
+Out: (+, +)",
+		tooltip="{'type': 'container', 'valid': True, 'state': {'inflow': ('ZERO', 'NEUTRAL'), 'outflow': ('PLUS', 'POSITIVE'), 'volume': ('PLUS', '\
+NEUTRAL')}}"];
+	_inflow_0_2_outflow_1_3_volume_1_3_ -> _inflow_0_2_outflow_1_3_volume_1_2_	 [tooltip="{'transition_valid': True, 'a': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('ZERO', 'NEUTRAL'), 'outflow': ('PLUS', '\
+POSITIVE'), 'volume': ('PLUS', 'POSITIVE')}}\", 'b': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('ZERO', 'NEUTRAL'), '\
+outflow': ('PLUS', 'POSITIVE'), 'volume': ('PLUS', 'NEUTRAL')}}\"}"];
 	_inflow_0_2_outflow_1_2_volume_1_2_	 [label="In: (0, 0)
 Vol: (+, 0)
-Out: (+, 0)"];
-	_inflow_0_2_outflow_1_2_volume_1_3_ -> _inflow_0_2_outflow_1_2_volume_1_2_;
-	_inflow_0_2_outflow_1_2_volume_1_2_ -> _inflow_0_2_outflow_1_2_volume_1_1_;
-	_inflow_0_2_outflow_1_1_volume_1_3_	 [label="In: (0, 0)
+Out: (+, 0)",
+		tooltip="{'type': 'container', 'valid': True, 'state': {'inflow': ('ZERO', 'NEUTRAL'), 'outflow': ('PLUS', 'NEUTRAL'), 'volume': ('PLUS', '\
+NEUTRAL')}}"];
+	_inflow_0_2_outflow_1_2_volume_1_1_	 [label="In: (0, 0)
+Vol: (+, -)
+Out: (+, 0)",
+		tooltip="{'type': 'container', 'valid': True, 'state': {'inflow': ('ZERO', 'NEUTRAL'), 'outflow': ('PLUS', 'NEUTRAL'), 'volume': ('PLUS', '\
+NEGATIVE')}}"];
+	_inflow_0_2_outflow_1_2_volume_1_2_ -> _inflow_0_2_outflow_1_2_volume_1_1_	 [tooltip="{'transition_valid': True, 'a': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('ZERO', 'NEUTRAL'), 'outflow': ('PLUS', '\
+NEUTRAL'), 'volume': ('PLUS', 'NEUTRAL')}}\", 'b': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('ZERO', 'NEUTRAL'), '\
+outflow': ('PLUS', 'NEUTRAL'), 'volume': ('PLUS', 'NEGATIVE')}}\"}"];
+	_inflow_0_2_outflow_1_1_volume_1_1_	 [label="In: (0, 0)
+Vol: (+, -)
+Out: (+, -)",
+		tooltip="{'type': 'container', 'valid': True, 'state': {'inflow': ('ZERO', 'NEUTRAL'), 'outflow': ('PLUS', 'NEGATIVE'), 'volume': ('PLUS', '\
+NEGATIVE')}}"];
+	_inflow_0_2_outflow_1_2_volume_1_1_ -> _inflow_0_2_outflow_1_1_volume_1_1_	 [tooltip="{'transition_valid': True, 'a': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('ZERO', 'NEUTRAL'), 'outflow': ('PLUS', '\
+NEUTRAL'), 'volume': ('PLUS', 'NEGATIVE')}}\", 'b': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('ZERO', 'NEUTRAL'), '\
+outflow': ('PLUS', 'NEGATIVE'), 'volume': ('PLUS', 'NEGATIVE')}}\"}"];
+	_inflow_0_2_outflow_1_2_volume_1_3_	 [label="In: (0, 0)
 Vol: (+, +)
-Out: (+, -)"];
-	_inflow_0_2_outflow_1_1_volume_1_3_ -> _inflow_0_2_outflow_1_2_volume_1_3_;
-	_inflow_0_2_outflow_1_1_volume_1_3_ -> _inflow_0_2_outflow_1_2_volume_1_2_;
+Out: (+, 0)",
+		tooltip="{'type': 'container', 'valid': True, 'state': {'inflow': ('ZERO', 'NEUTRAL'), 'outflow': ('PLUS', 'NEUTRAL'), 'volume': ('PLUS', '\
+POSITIVE')}}"];
+	_inflow_0_2_outflow_1_2_volume_1_3_ -> _inflow_0_2_outflow_1_3_volume_1_3_	 [tooltip="{'transition_valid': True, 'a': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('ZERO', 'NEUTRAL'), 'outflow': ('PLUS', '\
+NEUTRAL'), 'volume': ('PLUS', 'POSITIVE')}}\", 'b': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('ZERO', 'NEUTRAL'), '\
+outflow': ('PLUS', 'POSITIVE'), 'volume': ('PLUS', 'POSITIVE')}}\"}"];
+	_inflow_0_2_outflow_1_2_volume_1_3_ -> _inflow_0_2_outflow_1_2_volume_1_2_	 [tooltip="{'transition_valid': True, 'a': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('ZERO', 'NEUTRAL'), 'outflow': ('PLUS', '\
+NEUTRAL'), 'volume': ('PLUS', 'POSITIVE')}}\", 'b': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('ZERO', 'NEUTRAL'), '\
+outflow': ('PLUS', 'NEUTRAL'), 'volume': ('PLUS', 'NEUTRAL')}}\"}"];
+	_inflow_0_2_outflow_1_2_volume_1_3_ -> _inflow_0_2_outflow_1_3_volume_1_2_	 [tooltip="{'transition_valid': True, 'a': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('ZERO', 'NEUTRAL'), 'outflow': ('PLUS', '\
+NEUTRAL'), 'volume': ('PLUS', 'POSITIVE')}}\", 'b': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('ZERO', 'NEUTRAL'), '\
+outflow': ('PLUS', 'POSITIVE'), 'volume': ('PLUS', 'NEUTRAL')}}\"}"];
+	_inflow_0_2_outflow_1_3_volume_1_1_	 [label="In: (0, 0)
+Vol: (+, -)
+Out: (+, +)",
+		tooltip="{'type': 'container', 'valid': True, 'state': {'inflow': ('ZERO', 'NEUTRAL'), 'outflow': ('PLUS', 'POSITIVE'), 'volume': ('PLUS', '\
+NEGATIVE')}}"];
+	_inflow_0_2_outflow_1_3_volume_1_2_ -> _inflow_0_2_outflow_1_3_volume_1_1_	 [tooltip="{'transition_valid': True, 'a': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('ZERO', 'NEUTRAL'), 'outflow': ('PLUS', '\
+POSITIVE'), 'volume': ('PLUS', 'NEUTRAL')}}\", 'b': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('ZERO', 'NEUTRAL'), '\
+outflow': ('PLUS', 'POSITIVE'), 'volume': ('PLUS', 'NEGATIVE')}}\"}"];
 	_inflow_0_2_outflow_1_1_volume_1_2_	 [label="In: (0, 0)
 Vol: (+, 0)
-Out: (+, -)"];
-	_inflow_0_2_outflow_1_1_volume_1_3_ -> _inflow_0_2_outflow_1_1_volume_1_2_;
-	_inflow_0_2_outflow_1_1_volume_1_2_ -> _inflow_0_2_outflow_1_1_volume_1_1_;
+Out: (+, -)",
+		tooltip="{'type': 'container', 'valid': True, 'state': {'inflow': ('ZERO', 'NEUTRAL'), 'outflow': ('PLUS', 'NEGATIVE'), 'volume': ('PLUS', '\
+NEUTRAL')}}"];
+	_inflow_0_2_outflow_1_1_volume_1_2_ -> _inflow_0_2_outflow_1_1_volume_1_1_	 [tooltip="{'transition_valid': True, 'a': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('ZERO', 'NEUTRAL'), 'outflow': ('PLUS', '\
+NEGATIVE'), 'volume': ('PLUS', 'NEUTRAL')}}\", 'b': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('ZERO', 'NEUTRAL'), '\
+outflow': ('PLUS', 'NEGATIVE'), 'volume': ('PLUS', 'NEGATIVE')}}\"}"];
+	_inflow_0_2_outflow_1_1_volume_1_3_	 [label="In: (0, 0)
+Vol: (+, +)
+Out: (+, -)",
+		tooltip="{'type': 'container', 'valid': True, 'state': {'inflow': ('ZERO', 'NEUTRAL'), 'outflow': ('PLUS', 'NEGATIVE'), 'volume': ('PLUS', '\
+POSITIVE')}}"];
+	_inflow_0_2_outflow_1_1_volume_1_3_ -> _inflow_0_2_outflow_1_2_volume_1_2_	 [tooltip="{'transition_valid': True, 'a': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('ZERO', 'NEUTRAL'), 'outflow': ('PLUS', '\
+NEGATIVE'), 'volume': ('PLUS', 'POSITIVE')}}\", 'b': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('ZERO', 'NEUTRAL'), '\
+outflow': ('PLUS', 'NEUTRAL'), 'volume': ('PLUS', 'NEUTRAL')}}\"}"];
+	_inflow_0_2_outflow_1_1_volume_1_3_ -> _inflow_0_2_outflow_1_2_volume_1_3_	 [tooltip="{'transition_valid': True, 'a': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('ZERO', 'NEUTRAL'), 'outflow': ('PLUS', '\
+NEGATIVE'), 'volume': ('PLUS', 'POSITIVE')}}\", 'b': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('ZERO', 'NEUTRAL'), '\
+outflow': ('PLUS', 'NEUTRAL'), 'volume': ('PLUS', 'POSITIVE')}}\"}"];
+	_inflow_0_2_outflow_1_1_volume_1_3_ -> _inflow_0_2_outflow_1_1_volume_1_2_	 [tooltip="{'transition_valid': True, 'a': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('ZERO', 'NEUTRAL'), 'outflow': ('PLUS', '\
+NEGATIVE'), 'volume': ('PLUS', 'POSITIVE')}}\", 'b': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('ZERO', 'NEUTRAL'), '\
+outflow': ('PLUS', 'NEGATIVE'), 'volume': ('PLUS', 'NEUTRAL')}}\"}"];
+	_inflow_0_2_outflow_1_3_volume_1_1_ -> _inflow_0_2_outflow_1_2_volume_1_1_	 [tooltip="{'transition_valid': True, 'a': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('ZERO', 'NEUTRAL'), 'outflow': ('PLUS', '\
+POSITIVE'), 'volume': ('PLUS', 'NEGATIVE')}}\", 'b': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('ZERO', 'NEUTRAL'), '\
+outflow': ('PLUS', 'NEUTRAL'), 'volume': ('PLUS', 'NEGATIVE')}}\"}"];
 	_inflow_0_2_outflow_2_2_volume_2_2_	 [label="In: (0, 0)
 Vol: (max, 0)
-Out: (max, 0)"];
+Out: (max, 0)",
+		tooltip="{'type': 'container', 'valid': True, 'state': {'inflow': ('ZERO', 'NEUTRAL'), 'outflow': ('MAX', 'NEUTRAL'), 'volume': ('MAX', '\
+NEUTRAL')}}"];
 	_inflow_0_2_outflow_2_2_volume_2_1_	 [label="In: (0, 0)
 Vol: (max, -)
-Out: (max, 0)"];
-	_inflow_0_2_outflow_2_2_volume_2_2_ -> _inflow_0_2_outflow_2_2_volume_2_1_;
+Out: (max, 0)",
+		tooltip="{'type': 'container', 'valid': True, 'state': {'inflow': ('ZERO', 'NEUTRAL'), 'outflow': ('MAX', 'NEUTRAL'), 'volume': ('MAX', '\
+NEGATIVE')}}"];
+	_inflow_0_2_outflow_2_2_volume_2_2_ -> _inflow_0_2_outflow_2_2_volume_2_1_	 [tooltip="{'transition_valid': True, 'a': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('ZERO', 'NEUTRAL'), 'outflow': ('MAX', '\
+NEUTRAL'), 'volume': ('MAX', 'NEUTRAL')}}\", 'b': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('ZERO', 'NEUTRAL'), '\
+outflow': ('MAX', 'NEUTRAL'), 'volume': ('MAX', 'NEGATIVE')}}\"}"];
 	_inflow_0_2_outflow_2_1_volume_2_1_	 [label="In: (0, 0)
 Vol: (max, -)
-Out: (max, -)"];
-	_inflow_0_2_outflow_2_1_volume_2_1_ -> _inflow_0_2_outflow_1_1_volume_1_1_;
-	_inflow_1_3_outflow_0_3_volume_0_3_	 [label="In: (+, +)
+Out: (max, -)",
+		tooltip="{'type': 'container', 'valid': True, 'state': {'inflow': ('ZERO', 'NEUTRAL'), 'outflow': ('MAX', 'NEGATIVE'), 'volume': ('MAX', '\
+NEGATIVE')}}"];
+	_inflow_0_2_outflow_2_1_volume_2_1_ -> _inflow_0_2_outflow_1_1_volume_1_1_	 [tooltip="{'transition_valid': True, 'a': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('ZERO', 'NEUTRAL'), 'outflow': ('MAX', '\
+NEGATIVE'), 'volume': ('MAX', 'NEGATIVE')}}\", 'b': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('ZERO', 'NEUTRAL'), '\
+outflow': ('PLUS', 'NEGATIVE'), 'volume': ('PLUS', 'NEGATIVE')}}\"}"];
+	_inflow_0_3_outflow_0_2_volume_0_2_	 [label="In: (0, +)
+Vol: (0, 0)
+Out: (0, 0)",
+		tooltip="{'type': 'container', 'valid': True, 'state': {'inflow': ('ZERO', 'POSITIVE'), 'outflow': ('ZERO', 'NEUTRAL'), 'volume': ('ZERO', '\
+NEUTRAL')}}"];
+	_inflow_1_3_outflow_0_2_volume_0_2_	 [label="In: (+, +)
+Vol: (0, 0)
+Out: (0, 0)",
+		tooltip="{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'POSITIVE'), 'outflow': ('ZERO', 'NEUTRAL'), 'volume': ('ZERO', '\
+NEUTRAL')}}"];
+	_inflow_0_3_outflow_0_2_volume_0_2_ -> _inflow_1_3_outflow_0_2_volume_0_2_	 [tooltip="{'transition_valid': True, 'a': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('ZERO', 'POSITIVE'), 'outflow': ('ZERO', '\
+NEUTRAL'), 'volume': ('ZERO', 'NEUTRAL')}}\", 'b': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'POSITIVE'), '\
+outflow': ('ZERO', 'NEUTRAL'), 'volume': ('ZERO', 'NEUTRAL')}}\"}"];
+	_inflow_1_3_outflow_0_2_volume_0_3_	 [label="In: (+, +)
 Vol: (0, +)
-Out: (0, +)"];
-	_inflow_1_3_outflow_0_3_volume_0_3_ -> _inflow_1_3_outflow_1_3_volume_1_3_;
-	_inflow_1_3_outflow_2_1_volume_2_1_	 [label="In: (+, +)
-Vol: (max, -)
-Out: (max, -)"];
-	_inflow_1_3_outflow_2_1_volume_2_1_ -> _inflow_1_3_outflow_1_1_volume_1_1_;
-	_inflow_1_3_outflow_2_1_volume_2_1_ -> _inflow_1_3_outflow_1_1_volume_1_2_;
-	_inflow_1_2_outflow_0_3_volume_0_3_	 [label="In: (+, 0)
+Out: (0, 0)",
+		tooltip="{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'POSITIVE'), 'outflow': ('ZERO', 'NEUTRAL'), 'volume': ('ZERO', '\
+POSITIVE')}}"];
+	_inflow_1_3_outflow_0_2_volume_0_2_ -> _inflow_1_3_outflow_0_2_volume_0_3_	 [tooltip="{'transition_valid': True, 'a': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'POSITIVE'), 'outflow': ('ZERO', '\
+NEUTRAL'), 'volume': ('ZERO', 'NEUTRAL')}}\", 'b': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'POSITIVE'), '\
+outflow': ('ZERO', 'NEUTRAL'), 'volume': ('ZERO', 'POSITIVE')}}\"}"];
+	_inflow_0_3_outflow_0_3_volume_0_3_	 [label="In: (0, +)
 Vol: (0, +)
-Out: (0, +)"];
-	_inflow_1_2_outflow_1_3_volume_1_3_	 [label="In: (+, 0)
+Out: (0, +)",
+		tooltip="{'type': 'container', 'valid': True, 'state': {'inflow': ('ZERO', 'POSITIVE'), 'outflow': ('ZERO', 'POSITIVE'), 'volume': ('ZERO', '\
+POSITIVE')}}"];
+	_inflow_1_3_outflow_1_3_volume_1_3_	 [label="In: (+, +)
 Vol: (+, +)
-Out: (+, +)"];
-	_inflow_1_2_outflow_0_3_volume_0_3_ -> _inflow_1_2_outflow_1_3_volume_1_3_;
-	_inflow_1_2_outflow_1_3_volume_1_2_	 [label="In: (+, 0)
+Out: (+, +)",
+		tooltip="{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'POSITIVE'), 'outflow': ('PLUS', 'POSITIVE'), 'volume': ('PLUS', '\
+POSITIVE')}}"];
+	_inflow_0_3_outflow_0_3_volume_0_3_ -> _inflow_1_3_outflow_1_3_volume_1_3_	 [tooltip="{'transition_valid': True, 'a': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('ZERO', 'POSITIVE'), 'outflow': ('ZERO', '\
+POSITIVE'), 'volume': ('ZERO', 'POSITIVE')}}\", 'b': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'POSITIVE'), '\
+outflow': ('PLUS', 'POSITIVE'), 'volume': ('PLUS', 'POSITIVE')}}\"}"];
+	_inflow_1_3_outflow_1_3_volume_1_2_	 [label="In: (+, +)
 Vol: (+, 0)
-Out: (+, +)"];
-	_inflow_1_2_outflow_1_3_volume_1_3_ -> _inflow_1_2_outflow_1_3_volume_1_2_;
+Out: (+, +)",
+		tooltip="{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'POSITIVE'), 'outflow': ('PLUS', 'POSITIVE'), 'volume': ('PLUS', '\
+NEUTRAL')}}"];
+	_inflow_1_3_outflow_1_3_volume_1_3_ -> _inflow_1_3_outflow_1_3_volume_1_2_	 [tooltip="{'transition_valid': True, 'a': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'POSITIVE'), 'outflow': ('PLUS', '\
+POSITIVE'), 'volume': ('PLUS', 'POSITIVE')}}\", 'b': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'POSITIVE'), '\
+outflow': ('PLUS', 'POSITIVE'), 'volume': ('PLUS', 'NEUTRAL')}}\"}"];
+	_inflow_0_3_outflow_1_2_volume_1_2_	 [label="In: (0, +)
+Vol: (+, 0)
+Out: (+, 0)",
+		tooltip="{'type': 'container', 'valid': True, 'state': {'inflow': ('ZERO', 'POSITIVE'), 'outflow': ('PLUS', 'NEUTRAL'), 'volume': ('PLUS', '\
+NEUTRAL')}}"];
+	_inflow_1_3_outflow_1_2_volume_1_2_	 [label="In: (+, +)
+Vol: (+, 0)
+Out: (+, 0)",
+		tooltip="{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'POSITIVE'), 'outflow': ('PLUS', 'NEUTRAL'), 'volume': ('PLUS', '\
+NEUTRAL')}}"];
+	_inflow_0_3_outflow_1_2_volume_1_2_ -> _inflow_1_3_outflow_1_2_volume_1_2_	 [tooltip="{'transition_valid': True, 'a': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('ZERO', 'POSITIVE'), 'outflow': ('PLUS', '\
+NEUTRAL'), 'volume': ('PLUS', 'NEUTRAL')}}\", 'b': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'POSITIVE'), '\
+outflow': ('PLUS', 'NEUTRAL'), 'volume': ('PLUS', 'NEUTRAL')}}\"}"];
+	_inflow_1_3_outflow_1_2_volume_1_1_	 [label="In: (+, +)
+Vol: (+, -)
+Out: (+, 0)",
+		tooltip="{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'POSITIVE'), 'outflow': ('PLUS', 'NEUTRAL'), 'volume': ('PLUS', '\
+NEGATIVE')}}"];
+	_inflow_0_3_outflow_1_2_volume_1_2_ -> _inflow_1_3_outflow_1_2_volume_1_1_	 [tooltip="{'transition_valid': True, 'a': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('ZERO', 'POSITIVE'), 'outflow': ('PLUS', '\
+NEUTRAL'), 'volume': ('PLUS', 'NEUTRAL')}}\", 'b': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'POSITIVE'), '\
+outflow': ('PLUS', 'NEUTRAL'), 'volume': ('PLUS', 'NEGATIVE')}}\"}"];
+	_inflow_1_3_outflow_1_2_volume_1_2_ -> _inflow_1_3_outflow_1_2_volume_1_1_	 [tooltip="{'transition_valid': True, 'a': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'POSITIVE'), 'outflow': ('PLUS', '\
+NEUTRAL'), 'volume': ('PLUS', 'NEUTRAL')}}\", 'b': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'POSITIVE'), '\
+outflow': ('PLUS', 'NEUTRAL'), 'volume': ('PLUS', 'NEGATIVE')}}\"}"];
+	_inflow_1_3_outflow_1_2_volume_1_3_	 [label="In: (+, +)
+Vol: (+, +)
+Out: (+, 0)",
+		tooltip="{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'POSITIVE'), 'outflow': ('PLUS', 'NEUTRAL'), 'volume': ('PLUS', '\
+POSITIVE')}}"];
+	_inflow_1_3_outflow_1_2_volume_1_2_ -> _inflow_1_3_outflow_1_2_volume_1_3_	 [tooltip="{'transition_valid': True, 'a': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'POSITIVE'), 'outflow': ('PLUS', '\
+NEUTRAL'), 'volume': ('PLUS', 'NEUTRAL')}}\", 'b': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'POSITIVE'), '\
+outflow': ('PLUS', 'NEUTRAL'), 'volume': ('PLUS', 'POSITIVE')}}\"}"];
+	_inflow_1_3_outflow_1_2_volume_1_1_ -> _inflow_1_3_outflow_1_2_volume_1_2_	 [tooltip="{'transition_valid': True, 'a': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'POSITIVE'), 'outflow': ('PLUS', '\
+NEUTRAL'), 'volume': ('PLUS', 'NEGATIVE')}}\", 'b': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'POSITIVE'), '\
+outflow': ('PLUS', 'NEUTRAL'), 'volume': ('PLUS', 'NEUTRAL')}}\"}"];
+	_inflow_1_3_outflow_1_1_volume_1_1_	 [label="In: (+, +)
+Vol: (+, -)
+Out: (+, -)",
+		tooltip="{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'POSITIVE'), 'outflow': ('PLUS', 'NEGATIVE'), 'volume': ('PLUS', '\
+NEGATIVE')}}"];
+	_inflow_1_3_outflow_1_2_volume_1_1_ -> _inflow_1_3_outflow_1_1_volume_1_1_	 [tooltip="{'transition_valid': True, 'a': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'POSITIVE'), 'outflow': ('PLUS', '\
+NEUTRAL'), 'volume': ('PLUS', 'NEGATIVE')}}\", 'b': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'POSITIVE'), '\
+outflow': ('PLUS', 'NEGATIVE'), 'volume': ('PLUS', 'NEGATIVE')}}\"}"];
+	_inflow_1_3_outflow_1_1_volume_1_2_	 [label="In: (+, +)
+Vol: (+, 0)
+Out: (+, -)",
+		tooltip="{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'POSITIVE'), 'outflow': ('PLUS', 'NEGATIVE'), 'volume': ('PLUS', '\
+NEUTRAL')}}"];
+	_inflow_1_3_outflow_1_2_volume_1_1_ -> _inflow_1_3_outflow_1_1_volume_1_2_	 [tooltip="{'transition_valid': True, 'a': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'POSITIVE'), 'outflow': ('PLUS', '\
+NEUTRAL'), 'volume': ('PLUS', 'NEGATIVE')}}\", 'b': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'POSITIVE'), '\
+outflow': ('PLUS', 'NEGATIVE'), 'volume': ('PLUS', 'NEUTRAL')}}\"}"];
+	_inflow_0_3_outflow_1_2_volume_1_1_	 [label="In: (0, +)
+Vol: (+, -)
+Out: (+, 0)",
+		tooltip="{'type': 'container', 'valid': True, 'state': {'inflow': ('ZERO', 'POSITIVE'), 'outflow': ('PLUS', 'NEUTRAL'), 'volume': ('PLUS', '\
+NEGATIVE')}}"];
+	_inflow_0_3_outflow_1_2_volume_1_1_ -> _inflow_1_3_outflow_1_2_volume_1_1_	 [tooltip="{'transition_valid': True, 'a': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('ZERO', 'POSITIVE'), 'outflow': ('PLUS', '\
+NEUTRAL'), 'volume': ('PLUS', 'NEGATIVE')}}\", 'b': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'POSITIVE'), '\
+outflow': ('PLUS', 'NEUTRAL'), 'volume': ('PLUS', 'NEGATIVE')}}\"}"];
+	_inflow_0_3_outflow_1_2_volume_1_1_ -> _inflow_1_3_outflow_1_1_volume_1_1_	 [tooltip="{'transition_valid': True, 'a': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('ZERO', 'POSITIVE'), 'outflow': ('PLUS', '\
+NEUTRAL'), 'volume': ('PLUS', 'NEGATIVE')}}\", 'b': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'POSITIVE'), '\
+outflow': ('PLUS', 'NEGATIVE'), 'volume': ('PLUS', 'NEGATIVE')}}\"}"];
+	_inflow_1_3_outflow_1_1_volume_1_1_ -> _inflow_1_3_outflow_1_1_volume_1_2_	 [tooltip="{'transition_valid': True, 'a': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'POSITIVE'), 'outflow': ('PLUS', '\
+NEGATIVE'), 'volume': ('PLUS', 'NEGATIVE')}}\", 'b': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'POSITIVE'), '\
+outflow': ('PLUS', 'NEGATIVE'), 'volume': ('PLUS', 'NEUTRAL')}}\"}"];
+	_inflow_0_3_outflow_1_2_volume_1_3_	 [label="In: (0, +)
+Vol: (+, +)
+Out: (+, 0)",
+		tooltip="{'type': 'container', 'valid': True, 'state': {'inflow': ('ZERO', 'POSITIVE'), 'outflow': ('PLUS', 'NEUTRAL'), 'volume': ('PLUS', '\
+POSITIVE')}}"];
+	_inflow_0_3_outflow_1_2_volume_1_3_ -> _inflow_1_3_outflow_1_3_volume_1_3_	 [tooltip="{'transition_valid': True, 'a': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('ZERO', 'POSITIVE'), 'outflow': ('PLUS', '\
+NEUTRAL'), 'volume': ('PLUS', 'POSITIVE')}}\", 'b': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'POSITIVE'), '\
+outflow': ('PLUS', 'POSITIVE'), 'volume': ('PLUS', 'POSITIVE')}}\"}"];
+	_inflow_0_3_outflow_1_2_volume_1_3_ -> _inflow_1_3_outflow_1_2_volume_1_2_	 [tooltip="{'transition_valid': True, 'a': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('ZERO', 'POSITIVE'), 'outflow': ('PLUS', '\
+NEUTRAL'), 'volume': ('PLUS', 'POSITIVE')}}\", 'b': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'POSITIVE'), '\
+outflow': ('PLUS', 'NEUTRAL'), 'volume': ('PLUS', 'NEUTRAL')}}\"}"];
+	_inflow_0_3_outflow_1_2_volume_1_3_ -> _inflow_1_3_outflow_1_2_volume_1_3_	 [tooltip="{'transition_valid': True, 'a': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('ZERO', 'POSITIVE'), 'outflow': ('PLUS', '\
+NEUTRAL'), 'volume': ('PLUS', 'POSITIVE')}}\", 'b': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'POSITIVE'), '\
+outflow': ('PLUS', 'NEUTRAL'), 'volume': ('PLUS', 'POSITIVE')}}\"}"];
+	_inflow_0_3_outflow_1_2_volume_1_3_ -> _inflow_1_3_outflow_1_3_volume_1_2_	 [tooltip="{'transition_valid': True, 'a': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('ZERO', 'POSITIVE'), 'outflow': ('PLUS', '\
+NEUTRAL'), 'volume': ('PLUS', 'POSITIVE')}}\", 'b': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'POSITIVE'), '\
+outflow': ('PLUS', 'POSITIVE'), 'volume': ('PLUS', 'NEUTRAL')}}\"}"];
+	_inflow_1_3_outflow_1_2_volume_1_3_ -> _inflow_1_3_outflow_1_3_volume_1_3_	 [tooltip="{'transition_valid': True, 'a': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'POSITIVE'), 'outflow': ('PLUS', '\
+NEUTRAL'), 'volume': ('PLUS', 'POSITIVE')}}\", 'b': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'POSITIVE'), '\
+outflow': ('PLUS', 'POSITIVE'), 'volume': ('PLUS', 'POSITIVE')}}\"}"];
+	_inflow_1_3_outflow_1_2_volume_1_3_ -> _inflow_1_3_outflow_1_2_volume_1_2_	 [tooltip="{'transition_valid': True, 'a': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'POSITIVE'), 'outflow': ('PLUS', '\
+NEUTRAL'), 'volume': ('PLUS', 'POSITIVE')}}\", 'b': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'POSITIVE'), '\
+outflow': ('PLUS', 'NEUTRAL'), 'volume': ('PLUS', 'NEUTRAL')}}\"}"];
+	_inflow_1_3_outflow_1_2_volume_1_3_ -> _inflow_1_3_outflow_1_3_volume_1_2_	 [tooltip="{'transition_valid': True, 'a': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'POSITIVE'), 'outflow': ('PLUS', '\
+NEUTRAL'), 'volume': ('PLUS', 'POSITIVE')}}\", 'b': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'POSITIVE'), '\
+outflow': ('PLUS', 'POSITIVE'), 'volume': ('PLUS', 'NEUTRAL')}}\"}"];
+	_inflow_1_3_outflow_1_3_volume_1_2_ -> _inflow_1_3_outflow_1_3_volume_1_3_	 [tooltip="{'transition_valid': True, 'a': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'POSITIVE'), 'outflow': ('PLUS', '\
+POSITIVE'), 'volume': ('PLUS', 'NEUTRAL')}}\", 'b': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'POSITIVE'), '\
+outflow': ('PLUS', 'POSITIVE'), 'volume': ('PLUS', 'POSITIVE')}}\"}"];
+	_inflow_1_3_outflow_1_3_volume_1_1_	 [label="In: (+, +)
+Vol: (+, -)
+Out: (+, +)",
+		tooltip="{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'POSITIVE'), 'outflow': ('PLUS', 'POSITIVE'), 'volume': ('PLUS', '\
+NEGATIVE')}}"];
+	_inflow_1_3_outflow_1_3_volume_1_2_ -> _inflow_1_3_outflow_1_3_volume_1_1_	 [tooltip="{'transition_valid': True, 'a': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'POSITIVE'), 'outflow': ('PLUS', '\
+POSITIVE'), 'volume': ('PLUS', 'NEUTRAL')}}\", 'b': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'POSITIVE'), '\
+outflow': ('PLUS', 'POSITIVE'), 'volume': ('PLUS', 'NEGATIVE')}}\"}"];
+	_inflow_0_3_outflow_1_1_volume_1_2_	 [label="In: (0, +)
+Vol: (+, 0)
+Out: (+, -)",
+		tooltip="{'type': 'container', 'valid': True, 'state': {'inflow': ('ZERO', 'POSITIVE'), 'outflow': ('PLUS', 'NEGATIVE'), 'volume': ('PLUS', '\
+NEUTRAL')}}"];
+	_inflow_0_3_outflow_1_1_volume_1_2_ -> _inflow_1_3_outflow_1_1_volume_1_1_	 [tooltip="{'transition_valid': True, 'a': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('ZERO', 'POSITIVE'), 'outflow': ('PLUS', '\
+NEGATIVE'), 'volume': ('PLUS', 'NEUTRAL')}}\", 'b': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'POSITIVE'), '\
+outflow': ('PLUS', 'NEGATIVE'), 'volume': ('PLUS', 'NEGATIVE')}}\"}"];
+	_inflow_0_3_outflow_1_1_volume_1_2_ -> _inflow_1_3_outflow_1_1_volume_1_2_	 [tooltip="{'transition_valid': True, 'a': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('ZERO', 'POSITIVE'), 'outflow': ('PLUS', '\
+NEGATIVE'), 'volume': ('PLUS', 'NEUTRAL')}}\", 'b': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'POSITIVE'), '\
+outflow': ('PLUS', 'NEGATIVE'), 'volume': ('PLUS', 'NEUTRAL')}}\"}"];
+	_inflow_1_3_outflow_1_1_volume_1_2_ -> _inflow_1_3_outflow_1_1_volume_1_1_	 [tooltip="{'transition_valid': True, 'a': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'POSITIVE'), 'outflow': ('PLUS', '\
+NEGATIVE'), 'volume': ('PLUS', 'NEUTRAL')}}\", 'b': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'POSITIVE'), '\
+outflow': ('PLUS', 'NEGATIVE'), 'volume': ('PLUS', 'NEGATIVE')}}\"}"];
+	_inflow_1_3_outflow_1_1_volume_1_3_	 [label="In: (+, +)
+Vol: (+, +)
+Out: (+, -)",
+		tooltip="{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'POSITIVE'), 'outflow': ('PLUS', 'NEGATIVE'), 'volume': ('PLUS', '\
+POSITIVE')}}"];
+	_inflow_1_3_outflow_1_1_volume_1_2_ -> _inflow_1_3_outflow_1_1_volume_1_3_	 [tooltip="{'transition_valid': True, 'a': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'POSITIVE'), 'outflow': ('PLUS', '\
+NEGATIVE'), 'volume': ('PLUS', 'NEUTRAL')}}\", 'b': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'POSITIVE'), '\
+outflow': ('PLUS', 'NEGATIVE'), 'volume': ('PLUS', 'POSITIVE')}}\"}"];
+	_inflow_0_3_outflow_1_1_volume_1_1_	 [label="In: (0, +)
+Vol: (+, -)
+Out: (+, -)",
+		tooltip="{'type': 'container', 'valid': True, 'state': {'inflow': ('ZERO', 'POSITIVE'), 'outflow': ('PLUS', 'NEGATIVE'), 'volume': ('PLUS', '\
+NEGATIVE')}}"];
+	_inflow_0_3_outflow_1_1_volume_1_1_ -> _inflow_1_3_outflow_1_1_volume_1_1_	 [tooltip="{'transition_valid': True, 'a': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('ZERO', 'POSITIVE'), 'outflow': ('PLUS', '\
+NEGATIVE'), 'volume': ('PLUS', 'NEGATIVE')}}\", 'b': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'POSITIVE'), '\
+outflow': ('PLUS', 'NEGATIVE'), 'volume': ('PLUS', 'NEGATIVE')}}\"}"];
+	_inflow_0_3_outflow_1_1_volume_1_3_	 [label="In: (0, +)
+Vol: (+, +)
+Out: (+, -)",
+		tooltip="{'type': 'container', 'valid': True, 'state': {'inflow': ('ZERO', 'POSITIVE'), 'outflow': ('PLUS', 'NEGATIVE'), 'volume': ('PLUS', '\
+POSITIVE')}}"];
+	_inflow_0_3_outflow_1_1_volume_1_3_ -> _inflow_1_3_outflow_1_2_volume_1_2_	 [tooltip="{'transition_valid': True, 'a': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('ZERO', 'POSITIVE'), 'outflow': ('PLUS', '\
+NEGATIVE'), 'volume': ('PLUS', 'POSITIVE')}}\", 'b': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'POSITIVE'), '\
+outflow': ('PLUS', 'NEUTRAL'), 'volume': ('PLUS', 'NEUTRAL')}}\"}"];
+	_inflow_0_3_outflow_1_1_volume_1_3_ -> _inflow_1_3_outflow_1_2_volume_1_3_	 [tooltip="{'transition_valid': True, 'a': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('ZERO', 'POSITIVE'), 'outflow': ('PLUS', '\
+NEGATIVE'), 'volume': ('PLUS', 'POSITIVE')}}\", 'b': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'POSITIVE'), '\
+outflow': ('PLUS', 'NEUTRAL'), 'volume': ('PLUS', 'POSITIVE')}}\"}"];
+	_inflow_0_3_outflow_1_1_volume_1_3_ -> _inflow_1_3_outflow_1_1_volume_1_2_	 [tooltip="{'transition_valid': True, 'a': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('ZERO', 'POSITIVE'), 'outflow': ('PLUS', '\
+NEGATIVE'), 'volume': ('PLUS', 'POSITIVE')}}\", 'b': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'POSITIVE'), '\
+outflow': ('PLUS', 'NEGATIVE'), 'volume': ('PLUS', 'NEUTRAL')}}\"}"];
+	_inflow_0_3_outflow_1_1_volume_1_3_ -> _inflow_1_3_outflow_1_1_volume_1_3_	 [tooltip="{'transition_valid': True, 'a': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('ZERO', 'POSITIVE'), 'outflow': ('PLUS', '\
+NEGATIVE'), 'volume': ('PLUS', 'POSITIVE')}}\", 'b': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'POSITIVE'), '\
+outflow': ('PLUS', 'NEGATIVE'), 'volume': ('PLUS', 'POSITIVE')}}\"}"];
+	_inflow_1_3_outflow_1_1_volume_1_3_ -> _inflow_1_3_outflow_1_2_volume_1_2_	 [tooltip="{'transition_valid': True, 'a': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'POSITIVE'), 'outflow': ('PLUS', '\
+NEGATIVE'), 'volume': ('PLUS', 'POSITIVE')}}\", 'b': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'POSITIVE'), '\
+outflow': ('PLUS', 'NEUTRAL'), 'volume': ('PLUS', 'NEUTRAL')}}\"}"];
+	_inflow_1_3_outflow_1_1_volume_1_3_ -> _inflow_1_3_outflow_1_2_volume_1_3_	 [tooltip="{'transition_valid': True, 'a': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'POSITIVE'), 'outflow': ('PLUS', '\
+NEGATIVE'), 'volume': ('PLUS', 'POSITIVE')}}\", 'b': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'POSITIVE'), '\
+outflow': ('PLUS', 'NEUTRAL'), 'volume': ('PLUS', 'POSITIVE')}}\"}"];
+	_inflow_1_3_outflow_1_1_volume_1_3_ -> _inflow_1_3_outflow_1_1_volume_1_2_	 [tooltip="{'transition_valid': True, 'a': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'POSITIVE'), 'outflow': ('PLUS', '\
+NEGATIVE'), 'volume': ('PLUS', 'POSITIVE')}}\", 'b': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'POSITIVE'), '\
+outflow': ('PLUS', 'NEGATIVE'), 'volume': ('PLUS', 'NEUTRAL')}}\"}"];
+	_inflow_0_3_outflow_1_3_volume_1_2_	 [label="In: (0, +)
+Vol: (+, 0)
+Out: (+, +)",
+		tooltip="{'type': 'container', 'valid': True, 'state': {'inflow': ('ZERO', 'POSITIVE'), 'outflow': ('PLUS', 'POSITIVE'), 'volume': ('PLUS', '\
+NEUTRAL')}}"];
+	_inflow_0_3_outflow_1_3_volume_1_2_ -> _inflow_1_3_outflow_1_3_volume_1_2_	 [tooltip="{'transition_valid': True, 'a': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('ZERO', 'POSITIVE'), 'outflow': ('PLUS', '\
+POSITIVE'), 'volume': ('PLUS', 'NEUTRAL')}}\", 'b': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'POSITIVE'), '\
+outflow': ('PLUS', 'POSITIVE'), 'volume': ('PLUS', 'NEUTRAL')}}\"}"];
+	_inflow_0_3_outflow_1_3_volume_1_2_ -> _inflow_1_3_outflow_1_3_volume_1_1_	 [tooltip="{'transition_valid': True, 'a': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('ZERO', 'POSITIVE'), 'outflow': ('PLUS', '\
+POSITIVE'), 'volume': ('PLUS', 'NEUTRAL')}}\", 'b': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'POSITIVE'), '\
+outflow': ('PLUS', 'POSITIVE'), 'volume': ('PLUS', 'NEGATIVE')}}\"}"];
+	_inflow_1_3_outflow_1_3_volume_1_1_ -> _inflow_1_3_outflow_1_2_volume_1_2_	 [tooltip="{'transition_valid': True, 'a': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'POSITIVE'), 'outflow': ('PLUS', '\
+POSITIVE'), 'volume': ('PLUS', 'NEGATIVE')}}\", 'b': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'POSITIVE'), '\
+outflow': ('PLUS', 'NEUTRAL'), 'volume': ('PLUS', 'NEUTRAL')}}\"}"];
+	_inflow_1_3_outflow_1_3_volume_1_1_ -> _inflow_1_3_outflow_1_2_volume_1_1_	 [tooltip="{'transition_valid': True, 'a': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'POSITIVE'), 'outflow': ('PLUS', '\
+POSITIVE'), 'volume': ('PLUS', 'NEGATIVE')}}\", 'b': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'POSITIVE'), '\
+outflow': ('PLUS', 'NEUTRAL'), 'volume': ('PLUS', 'NEGATIVE')}}\"}"];
+	_inflow_1_3_outflow_1_3_volume_1_1_ -> _inflow_1_3_outflow_1_3_volume_1_2_	 [tooltip="{'transition_valid': True, 'a': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'POSITIVE'), 'outflow': ('PLUS', '\
+POSITIVE'), 'volume': ('PLUS', 'NEGATIVE')}}\", 'b': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'POSITIVE'), '\
+outflow': ('PLUS', 'POSITIVE'), 'volume': ('PLUS', 'NEUTRAL')}}\"}"];
+	_inflow_0_3_outflow_1_3_volume_1_1_	 [label="In: (0, +)
+Vol: (+, -)
+Out: (+, +)",
+		tooltip="{'type': 'container', 'valid': True, 'state': {'inflow': ('ZERO', 'POSITIVE'), 'outflow': ('PLUS', 'POSITIVE'), 'volume': ('PLUS', '\
+NEGATIVE')}}"];
+	_inflow_0_3_outflow_1_3_volume_1_1_ -> _inflow_1_3_outflow_1_2_volume_1_1_	 [tooltip="{'transition_valid': True, 'a': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('ZERO', 'POSITIVE'), 'outflow': ('PLUS', '\
+POSITIVE'), 'volume': ('PLUS', 'NEGATIVE')}}\", 'b': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'POSITIVE'), '\
+outflow': ('PLUS', 'NEUTRAL'), 'volume': ('PLUS', 'NEGATIVE')}}\"}"];
+	_inflow_0_3_outflow_1_3_volume_1_1_ -> _inflow_1_3_outflow_1_3_volume_1_1_	 [tooltip="{'transition_valid': True, 'a': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('ZERO', 'POSITIVE'), 'outflow': ('PLUS', '\
+POSITIVE'), 'volume': ('PLUS', 'NEGATIVE')}}\", 'b': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'POSITIVE'), '\
+outflow': ('PLUS', 'POSITIVE'), 'volume': ('PLUS', 'NEGATIVE')}}\"}"];
+	_inflow_0_3_outflow_1_3_volume_1_3_	 [label="In: (0, +)
+Vol: (+, +)
+Out: (+, +)",
+		tooltip="{'type': 'container', 'valid': True, 'state': {'inflow': ('ZERO', 'POSITIVE'), 'outflow': ('PLUS', 'POSITIVE'), 'volume': ('PLUS', '\
+POSITIVE')}}"];
+	_inflow_0_3_outflow_1_3_volume_1_3_ -> _inflow_1_3_outflow_1_3_volume_1_3_	 [tooltip="{'transition_valid': True, 'a': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('ZERO', 'POSITIVE'), 'outflow': ('PLUS', '\
+POSITIVE'), 'volume': ('PLUS', 'POSITIVE')}}\", 'b': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'POSITIVE'), '\
+outflow': ('PLUS', 'POSITIVE'), 'volume': ('PLUS', 'POSITIVE')}}\"}"];
+	_inflow_0_3_outflow_1_3_volume_1_3_ -> _inflow_1_3_outflow_1_3_volume_1_2_	 [tooltip="{'transition_valid': True, 'a': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('ZERO', 'POSITIVE'), 'outflow': ('PLUS', '\
+POSITIVE'), 'volume': ('PLUS', 'POSITIVE')}}\", 'b': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'POSITIVE'), '\
+outflow': ('PLUS', 'POSITIVE'), 'volume': ('PLUS', 'NEUTRAL')}}\"}"];
+	_inflow_0_3_outflow_2_2_volume_2_2_	 [label="In: (0, +)
+Vol: (max, 0)
+Out: (max, 0)",
+		tooltip="{'type': 'container', 'valid': True, 'state': {'inflow': ('ZERO', 'POSITIVE'), 'outflow': ('MAX', 'NEUTRAL'), 'volume': ('MAX', '\
+NEUTRAL')}}"];
+	_inflow_1_3_outflow_2_2_volume_2_2_	 [label="In: (+, +)
+Vol: (max, 0)
+Out: (max, 0)",
+		tooltip="{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'POSITIVE'), 'outflow': ('MAX', 'NEUTRAL'), 'volume': ('MAX', '\
+NEUTRAL')}}"];
+	_inflow_0_3_outflow_2_2_volume_2_2_ -> _inflow_1_3_outflow_2_2_volume_2_2_	 [tooltip="{'transition_valid': True, 'a': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('ZERO', 'POSITIVE'), 'outflow': ('MAX', '\
+NEUTRAL'), 'volume': ('MAX', 'NEUTRAL')}}\", 'b': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'POSITIVE'), '\
+outflow': ('MAX', 'NEUTRAL'), 'volume': ('MAX', 'NEUTRAL')}}\"}"];
+	_inflow_1_3_outflow_2_2_volume_2_1_	 [label="In: (+, +)
+Vol: (max, -)
+Out: (max, 0)",
+		tooltip="{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'POSITIVE'), 'outflow': ('MAX', 'NEUTRAL'), 'volume': ('MAX', '\
+NEGATIVE')}}"];
+	_inflow_0_3_outflow_2_2_volume_2_2_ -> _inflow_1_3_outflow_2_2_volume_2_1_	 [tooltip="{'transition_valid': True, 'a': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('ZERO', 'POSITIVE'), 'outflow': ('MAX', '\
+NEUTRAL'), 'volume': ('MAX', 'NEUTRAL')}}\", 'b': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'POSITIVE'), '\
+outflow': ('MAX', 'NEUTRAL'), 'volume': ('MAX', 'NEGATIVE')}}\"}"];
+	_inflow_1_3_outflow_2_2_volume_2_2_ -> _inflow_1_3_outflow_2_2_volume_2_1_	 [tooltip="{'transition_valid': True, 'a': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'POSITIVE'), 'outflow': ('MAX', '\
+NEUTRAL'), 'volume': ('MAX', 'NEUTRAL')}}\", 'b': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'POSITIVE'), '\
+outflow': ('MAX', 'NEUTRAL'), 'volume': ('MAX', 'NEGATIVE')}}\"}"];
+	_inflow_0_3_outflow_2_1_volume_2_1_	 [label="In: (0, +)
+Vol: (max, -)
+Out: (max, -)",
+		tooltip="{'type': 'container', 'valid': True, 'state': {'inflow': ('ZERO', 'POSITIVE'), 'outflow': ('MAX', 'NEGATIVE'), 'volume': ('MAX', '\
+NEGATIVE')}}"];
+	_inflow_0_3_outflow_2_1_volume_2_1_ -> _inflow_1_3_outflow_1_1_volume_1_1_	 [tooltip="{'transition_valid': True, 'a': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('ZERO', 'POSITIVE'), 'outflow': ('MAX', '\
+NEGATIVE'), 'volume': ('MAX', 'NEGATIVE')}}\", 'b': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'POSITIVE'), '\
+outflow': ('PLUS', 'NEGATIVE'), 'volume': ('PLUS', 'NEGATIVE')}}\"}"];
 	_inflow_1_2_outflow_0_2_volume_0_2_	 [label="In: (+, 0)
 Vol: (0, 0)
-Out: (0, 0)"];
+Out: (0, 0)",
+		tooltip="{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'NEUTRAL'), 'outflow': ('ZERO', 'NEUTRAL'), 'volume': ('ZERO', '\
+NEUTRAL')}}"];
 	_inflow_1_2_outflow_0_2_volume_0_3_	 [label="In: (+, 0)
 Vol: (0, +)
-Out: (0, 0)"];
-	_inflow_1_2_outflow_0_2_volume_0_2_ -> _inflow_1_2_outflow_0_2_volume_0_3_;
-	_inflow_1_2_outflow_1_3_volume_1_2_ -> _inflow_1_2_outflow_1_3_volume_1_3_;
-	_inflow_1_2_outflow_1_3_volume_1_1_	 [label="In: (+, 0)
-Vol: (+, -)
-Out: (+, +)"];
-	_inflow_1_2_outflow_1_3_volume_1_2_ -> _inflow_1_2_outflow_1_3_volume_1_1_;
-	_inflow_1_2_outflow_1_3_volume_1_1_ -> _inflow_1_2_outflow_1_3_volume_1_2_;
+Out: (0, 0)",
+		tooltip="{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'NEUTRAL'), 'outflow': ('ZERO', 'NEUTRAL'), 'volume': ('ZERO', '\
+POSITIVE')}}"];
+	_inflow_1_2_outflow_0_2_volume_0_2_ -> _inflow_1_2_outflow_0_2_volume_0_3_	 [tooltip="{'transition_valid': True, 'a': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'NEUTRAL'), 'outflow': ('ZERO', '\
+NEUTRAL'), 'volume': ('ZERO', 'NEUTRAL')}}\", 'b': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'NEUTRAL'), '\
+outflow': ('ZERO', 'NEUTRAL'), 'volume': ('ZERO', 'POSITIVE')}}\"}"];
+	_inflow_1_2_outflow_0_3_volume_0_3_	 [label="In: (+, 0)
+Vol: (0, +)
+Out: (0, +)",
+		tooltip="{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'NEUTRAL'), 'outflow': ('ZERO', 'POSITIVE'), 'volume': ('ZERO', '\
+POSITIVE')}}"];
+	_inflow_1_2_outflow_1_3_volume_1_3_	 [label="In: (+, 0)
+Vol: (+, +)
+Out: (+, +)",
+		tooltip="{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'NEUTRAL'), 'outflow': ('PLUS', 'POSITIVE'), 'volume': ('PLUS', '\
+POSITIVE')}}"];
+	_inflow_1_2_outflow_0_3_volume_0_3_ -> _inflow_1_2_outflow_1_3_volume_1_3_	 [tooltip="{'transition_valid': True, 'a': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'NEUTRAL'), 'outflow': ('ZERO', '\
+POSITIVE'), 'volume': ('ZERO', 'POSITIVE')}}\", 'b': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'NEUTRAL'), '\
+outflow': ('PLUS', 'POSITIVE'), 'volume': ('PLUS', 'POSITIVE')}}\"}"];
+	_inflow_1_2_outflow_1_3_volume_1_2_	 [label="In: (+, 0)
+Vol: (+, 0)
+Out: (+, +)",
+		tooltip="{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'NEUTRAL'), 'outflow': ('PLUS', 'POSITIVE'), 'volume': ('PLUS', '\
+NEUTRAL')}}"];
+	_inflow_1_2_outflow_1_3_volume_1_3_ -> _inflow_1_2_outflow_1_3_volume_1_2_	 [tooltip="{'transition_valid': True, 'a': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'NEUTRAL'), 'outflow': ('PLUS', '\
+POSITIVE'), 'volume': ('PLUS', 'POSITIVE')}}\", 'b': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'NEUTRAL'), '\
+outflow': ('PLUS', 'POSITIVE'), 'volume': ('PLUS', 'NEUTRAL')}}\"}"];
 	_inflow_1_2_outflow_1_2_volume_1_2_	 [label="In: (+, 0)
 Vol: (+, 0)
-Out: (+, 0)"];
-	_inflow_1_2_outflow_1_3_volume_1_1_ -> _inflow_1_2_outflow_1_2_volume_1_2_;
+Out: (+, 0)",
+		tooltip="{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'NEUTRAL'), 'outflow': ('PLUS', 'NEUTRAL'), 'volume': ('PLUS', '\
+NEUTRAL')}}"];
 	_inflow_1_2_outflow_1_2_volume_1_1_	 [label="In: (+, 0)
 Vol: (+, -)
-Out: (+, 0)"];
-	_inflow_1_2_outflow_1_3_volume_1_1_ -> _inflow_1_2_outflow_1_2_volume_1_1_;
-	_inflow_1_2_outflow_1_2_volume_1_2_ -> _inflow_1_2_outflow_1_2_volume_1_1_;
+Out: (+, 0)",
+		tooltip="{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'NEUTRAL'), 'outflow': ('PLUS', 'NEUTRAL'), 'volume': ('PLUS', '\
+NEGATIVE')}}"];
+	_inflow_1_2_outflow_1_2_volume_1_2_ -> _inflow_1_2_outflow_1_2_volume_1_1_	 [tooltip="{'transition_valid': True, 'a': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'NEUTRAL'), 'outflow': ('PLUS', '\
+NEUTRAL'), 'volume': ('PLUS', 'NEUTRAL')}}\", 'b': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'NEUTRAL'), '\
+outflow': ('PLUS', 'NEUTRAL'), 'volume': ('PLUS', 'NEGATIVE')}}\"}"];
 	_inflow_1_2_outflow_1_2_volume_1_3_	 [label="In: (+, 0)
 Vol: (+, +)
-Out: (+, 0)"];
-	_inflow_1_2_outflow_1_2_volume_1_2_ -> _inflow_1_2_outflow_1_2_volume_1_3_;
-	_inflow_1_2_outflow_1_2_volume_1_1_ -> _inflow_1_2_outflow_1_2_volume_1_2_;
+Out: (+, 0)",
+		tooltip="{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'NEUTRAL'), 'outflow': ('PLUS', 'NEUTRAL'), 'volume': ('PLUS', '\
+POSITIVE')}}"];
+	_inflow_1_2_outflow_1_2_volume_1_2_ -> _inflow_1_2_outflow_1_2_volume_1_3_	 [tooltip="{'transition_valid': True, 'a': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'NEUTRAL'), 'outflow': ('PLUS', '\
+NEUTRAL'), 'volume': ('PLUS', 'NEUTRAL')}}\", 'b': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'NEUTRAL'), '\
+outflow': ('PLUS', 'NEUTRAL'), 'volume': ('PLUS', 'POSITIVE')}}\"}"];
+	_inflow_1_2_outflow_1_2_volume_1_1_ -> _inflow_1_2_outflow_1_2_volume_1_2_	 [tooltip="{'transition_valid': True, 'a': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'NEUTRAL'), 'outflow': ('PLUS', '\
+NEUTRAL'), 'volume': ('PLUS', 'NEGATIVE')}}\", 'b': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'NEUTRAL'), '\
+outflow': ('PLUS', 'NEUTRAL'), 'volume': ('PLUS', 'NEUTRAL')}}\"}"];
 	_inflow_1_2_outflow_1_1_volume_1_2_	 [label="In: (+, 0)
 Vol: (+, 0)
-Out: (+, -)"];
-	_inflow_1_2_outflow_1_2_volume_1_1_ -> _inflow_1_2_outflow_1_1_volume_1_2_;
+Out: (+, -)",
+		tooltip="{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'NEUTRAL'), 'outflow': ('PLUS', 'NEGATIVE'), 'volume': ('PLUS', '\
+NEUTRAL')}}"];
+	_inflow_1_2_outflow_1_2_volume_1_1_ -> _inflow_1_2_outflow_1_1_volume_1_2_	 [tooltip="{'transition_valid': True, 'a': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'NEUTRAL'), 'outflow': ('PLUS', '\
+NEUTRAL'), 'volume': ('PLUS', 'NEGATIVE')}}\", 'b': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'NEUTRAL'), '\
+outflow': ('PLUS', 'NEGATIVE'), 'volume': ('PLUS', 'NEUTRAL')}}\"}"];
 	_inflow_1_2_outflow_1_1_volume_1_1_	 [label="In: (+, 0)
 Vol: (+, -)
-Out: (+, -)"];
-	_inflow_1_2_outflow_1_2_volume_1_1_ -> _inflow_1_2_outflow_1_1_volume_1_1_;
-	_inflow_1_2_outflow_1_2_volume_1_3_ -> _inflow_1_2_outflow_1_3_volume_1_3_;
-	_inflow_1_2_outflow_1_2_volume_1_3_ -> _inflow_1_2_outflow_1_3_volume_1_2_;
-	_inflow_1_2_outflow_1_2_volume_1_3_ -> _inflow_1_2_outflow_1_2_volume_1_2_;
-	_inflow_1_2_outflow_1_1_volume_1_2_ -> _inflow_1_2_outflow_1_1_volume_1_1_;
+Out: (+, -)",
+		tooltip="{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'NEUTRAL'), 'outflow': ('PLUS', 'NEGATIVE'), 'volume': ('PLUS', '\
+NEGATIVE')}}"];
+	_inflow_1_2_outflow_1_2_volume_1_1_ -> _inflow_1_2_outflow_1_1_volume_1_1_	 [tooltip="{'transition_valid': True, 'a': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'NEUTRAL'), 'outflow': ('PLUS', '\
+NEUTRAL'), 'volume': ('PLUS', 'NEGATIVE')}}\", 'b': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'NEUTRAL'), '\
+outflow': ('PLUS', 'NEGATIVE'), 'volume': ('PLUS', 'NEGATIVE')}}\"}"];
+	_inflow_1_2_outflow_1_2_volume_1_3_ -> _inflow_1_2_outflow_1_3_volume_1_3_	 [tooltip="{'transition_valid': True, 'a': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'NEUTRAL'), 'outflow': ('PLUS', '\
+NEUTRAL'), 'volume': ('PLUS', 'POSITIVE')}}\", 'b': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'NEUTRAL'), '\
+outflow': ('PLUS', 'POSITIVE'), 'volume': ('PLUS', 'POSITIVE')}}\"}"];
+	_inflow_1_2_outflow_1_2_volume_1_3_ -> _inflow_1_2_outflow_1_2_volume_1_2_	 [tooltip="{'transition_valid': True, 'a': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'NEUTRAL'), 'outflow': ('PLUS', '\
+NEUTRAL'), 'volume': ('PLUS', 'POSITIVE')}}\", 'b': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'NEUTRAL'), '\
+outflow': ('PLUS', 'NEUTRAL'), 'volume': ('PLUS', 'NEUTRAL')}}\"}"];
+	_inflow_1_2_outflow_1_2_volume_1_3_ -> _inflow_1_2_outflow_1_3_volume_1_2_	 [tooltip="{'transition_valid': True, 'a': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'NEUTRAL'), 'outflow': ('PLUS', '\
+NEUTRAL'), 'volume': ('PLUS', 'POSITIVE')}}\", 'b': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'NEUTRAL'), '\
+outflow': ('PLUS', 'POSITIVE'), 'volume': ('PLUS', 'NEUTRAL')}}\"}"];
+	_inflow_1_2_outflow_1_1_volume_1_2_ -> _inflow_1_2_outflow_1_1_volume_1_1_	 [tooltip="{'transition_valid': True, 'a': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'NEUTRAL'), 'outflow': ('PLUS', '\
+NEGATIVE'), 'volume': ('PLUS', 'NEUTRAL')}}\", 'b': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'NEUTRAL'), '\
+outflow': ('PLUS', 'NEGATIVE'), 'volume': ('PLUS', 'NEGATIVE')}}\"}"];
 	_inflow_1_2_outflow_1_1_volume_1_3_	 [label="In: (+, 0)
 Vol: (+, +)
-Out: (+, -)"];
-	_inflow_1_2_outflow_1_1_volume_1_2_ -> _inflow_1_2_outflow_1_1_volume_1_3_;
-	_inflow_1_2_outflow_1_1_volume_1_1_ -> _inflow_1_2_outflow_1_1_volume_1_2_;
-	_inflow_1_2_outflow_1_1_volume_1_3_ -> _inflow_1_2_outflow_1_2_volume_1_2_;
-	_inflow_1_2_outflow_1_1_volume_1_3_ -> _inflow_1_2_outflow_1_2_volume_1_3_;
-	_inflow_1_2_outflow_1_1_volume_1_3_ -> _inflow_1_2_outflow_1_1_volume_1_2_;
+Out: (+, -)",
+		tooltip="{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'NEUTRAL'), 'outflow': ('PLUS', 'NEGATIVE'), 'volume': ('PLUS', '\
+POSITIVE')}}"];
+	_inflow_1_2_outflow_1_1_volume_1_2_ -> _inflow_1_2_outflow_1_1_volume_1_3_	 [tooltip="{'transition_valid': True, 'a': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'NEUTRAL'), 'outflow': ('PLUS', '\
+NEGATIVE'), 'volume': ('PLUS', 'NEUTRAL')}}\", 'b': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'NEUTRAL'), '\
+outflow': ('PLUS', 'NEGATIVE'), 'volume': ('PLUS', 'POSITIVE')}}\"}"];
+	_inflow_1_2_outflow_1_1_volume_1_1_ -> _inflow_1_2_outflow_1_1_volume_1_2_	 [tooltip="{'transition_valid': True, 'a': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'NEUTRAL'), 'outflow': ('PLUS', '\
+NEGATIVE'), 'volume': ('PLUS', 'NEGATIVE')}}\", 'b': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'NEUTRAL'), '\
+outflow': ('PLUS', 'NEGATIVE'), 'volume': ('PLUS', 'NEUTRAL')}}\"}"];
+	_inflow_1_2_outflow_1_3_volume_1_2_ -> _inflow_1_2_outflow_1_3_volume_1_3_	 [tooltip="{'transition_valid': True, 'a': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'NEUTRAL'), 'outflow': ('PLUS', '\
+POSITIVE'), 'volume': ('PLUS', 'NEUTRAL')}}\", 'b': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'NEUTRAL'), '\
+outflow': ('PLUS', 'POSITIVE'), 'volume': ('PLUS', 'POSITIVE')}}\"}"];
+	_inflow_1_2_outflow_1_3_volume_1_1_	 [label="In: (+, 0)
+Vol: (+, -)
+Out: (+, +)",
+		tooltip="{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'NEUTRAL'), 'outflow': ('PLUS', 'POSITIVE'), 'volume': ('PLUS', '\
+NEGATIVE')}}"];
+	_inflow_1_2_outflow_1_3_volume_1_2_ -> _inflow_1_2_outflow_1_3_volume_1_1_	 [tooltip="{'transition_valid': True, 'a': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'NEUTRAL'), 'outflow': ('PLUS', '\
+POSITIVE'), 'volume': ('PLUS', 'NEUTRAL')}}\", 'b': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'NEUTRAL'), '\
+outflow': ('PLUS', 'POSITIVE'), 'volume': ('PLUS', 'NEGATIVE')}}\"}"];
+	_inflow_1_2_outflow_1_1_volume_1_3_ -> _inflow_1_2_outflow_1_2_volume_1_2_	 [tooltip="{'transition_valid': True, 'a': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'NEUTRAL'), 'outflow': ('PLUS', '\
+NEGATIVE'), 'volume': ('PLUS', 'POSITIVE')}}\", 'b': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'NEUTRAL'), '\
+outflow': ('PLUS', 'NEUTRAL'), 'volume': ('PLUS', 'NEUTRAL')}}\"}"];
+	_inflow_1_2_outflow_1_1_volume_1_3_ -> _inflow_1_2_outflow_1_2_volume_1_3_	 [tooltip="{'transition_valid': True, 'a': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'NEUTRAL'), 'outflow': ('PLUS', '\
+NEGATIVE'), 'volume': ('PLUS', 'POSITIVE')}}\", 'b': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'NEUTRAL'), '\
+outflow': ('PLUS', 'NEUTRAL'), 'volume': ('PLUS', 'POSITIVE')}}\"}"];
+	_inflow_1_2_outflow_1_1_volume_1_3_ -> _inflow_1_2_outflow_1_1_volume_1_2_	 [tooltip="{'transition_valid': True, 'a': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'NEUTRAL'), 'outflow': ('PLUS', '\
+NEGATIVE'), 'volume': ('PLUS', 'POSITIVE')}}\", 'b': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'NEUTRAL'), '\
+outflow': ('PLUS', 'NEGATIVE'), 'volume': ('PLUS', 'NEUTRAL')}}\"}"];
+	_inflow_1_2_outflow_1_3_volume_1_1_ -> _inflow_1_2_outflow_1_2_volume_1_2_	 [tooltip="{'transition_valid': True, 'a': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'NEUTRAL'), 'outflow': ('PLUS', '\
+POSITIVE'), 'volume': ('PLUS', 'NEGATIVE')}}\", 'b': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'NEUTRAL'), '\
+outflow': ('PLUS', 'NEUTRAL'), 'volume': ('PLUS', 'NEUTRAL')}}\"}"];
+	_inflow_1_2_outflow_1_3_volume_1_1_ -> _inflow_1_2_outflow_1_2_volume_1_1_	 [tooltip="{'transition_valid': True, 'a': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'NEUTRAL'), 'outflow': ('PLUS', '\
+POSITIVE'), 'volume': ('PLUS', 'NEGATIVE')}}\", 'b': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'NEUTRAL'), '\
+outflow': ('PLUS', 'NEUTRAL'), 'volume': ('PLUS', 'NEGATIVE')}}\"}"];
+	_inflow_1_2_outflow_1_3_volume_1_1_ -> _inflow_1_2_outflow_1_3_volume_1_2_	 [tooltip="{'transition_valid': True, 'a': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'NEUTRAL'), 'outflow': ('PLUS', '\
+POSITIVE'), 'volume': ('PLUS', 'NEGATIVE')}}\", 'b': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'NEUTRAL'), '\
+outflow': ('PLUS', 'POSITIVE'), 'volume': ('PLUS', 'NEUTRAL')}}\"}"];
 	_inflow_1_2_outflow_2_2_volume_2_2_	 [label="In: (+, 0)
 Vol: (max, 0)
-Out: (max, 0)"];
+Out: (max, 0)",
+		tooltip="{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'NEUTRAL'), 'outflow': ('MAX', 'NEUTRAL'), 'volume': ('MAX', '\
+NEUTRAL')}}"];
 	_inflow_1_2_outflow_2_2_volume_2_1_	 [label="In: (+, 0)
 Vol: (max, -)
-Out: (max, 0)"];
-	_inflow_1_2_outflow_2_2_volume_2_2_ -> _inflow_1_2_outflow_2_2_volume_2_1_;
+Out: (max, 0)",
+		tooltip="{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'NEUTRAL'), 'outflow': ('MAX', 'NEUTRAL'), 'volume': ('MAX', '\
+NEGATIVE')}}"];
+	_inflow_1_2_outflow_2_2_volume_2_2_ -> _inflow_1_2_outflow_2_2_volume_2_1_	 [tooltip="{'transition_valid': True, 'a': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'NEUTRAL'), 'outflow': ('MAX', '\
+NEUTRAL'), 'volume': ('MAX', 'NEUTRAL')}}\", 'b': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'NEUTRAL'), '\
+outflow': ('MAX', 'NEUTRAL'), 'volume': ('MAX', 'NEGATIVE')}}\"}"];
 	_inflow_1_2_outflow_2_1_volume_2_1_	 [label="In: (+, 0)
 Vol: (max, -)
-Out: (max, -)"];
-	_inflow_1_2_outflow_2_1_volume_2_1_ -> _inflow_1_2_outflow_1_1_volume_1_2_;
-	_inflow_1_2_outflow_2_1_volume_2_1_ -> _inflow_1_2_outflow_1_1_volume_1_1_;
-	_inflow_1_1_outflow_0_3_volume_0_3_	 [label="In: (+, -)
-Vol: (0, +)
-Out: (0, +)"];
-	_inflow_1_1_outflow_1_3_volume_1_3_	 [label="In: (+, -)
-Vol: (+, +)
-Out: (+, +)"];
-	_inflow_1_1_outflow_0_3_volume_0_3_ -> _inflow_1_1_outflow_1_3_volume_1_3_;
-	_inflow_1_1_outflow_1_3_volume_1_2_	 [label="In: (+, -)
-Vol: (+, 0)
-Out: (+, +)"];
-	_inflow_1_1_outflow_1_3_volume_1_3_ -> _inflow_1_1_outflow_1_3_volume_1_2_;
+Out: (max, -)",
+		tooltip="{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'NEUTRAL'), 'outflow': ('MAX', 'NEGATIVE'), 'volume': ('MAX', '\
+NEGATIVE')}}"];
+	_inflow_1_2_outflow_2_1_volume_2_1_ -> _inflow_1_2_outflow_1_1_volume_1_2_	 [tooltip="{'transition_valid': True, 'a': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'NEUTRAL'), 'outflow': ('MAX', '\
+NEGATIVE'), 'volume': ('MAX', 'NEGATIVE')}}\", 'b': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'NEUTRAL'), '\
+outflow': ('PLUS', 'NEGATIVE'), 'volume': ('PLUS', 'NEUTRAL')}}\"}"];
+	_inflow_1_2_outflow_2_1_volume_2_1_ -> _inflow_1_2_outflow_1_1_volume_1_1_	 [tooltip="{'transition_valid': True, 'a': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'NEUTRAL'), 'outflow': ('MAX', '\
+NEGATIVE'), 'volume': ('MAX', 'NEGATIVE')}}\", 'b': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'NEUTRAL'), '\
+outflow': ('PLUS', 'NEGATIVE'), 'volume': ('PLUS', 'NEGATIVE')}}\"}"];
 	_inflow_1_1_outflow_0_2_volume_0_2_	 [label="In: (+, -)
 Vol: (0, 0)
-Out: (0, 0)"];
+Out: (0, 0)",
+		tooltip="{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'NEGATIVE'), 'outflow': ('ZERO', 'NEUTRAL'), 'volume': ('ZERO', '\
+NEUTRAL')}}"];
 	_inflow_1_1_outflow_0_2_volume_0_3_	 [label="In: (+, -)
 Vol: (0, +)
-Out: (0, 0)"];
-	_inflow_1_1_outflow_0_2_volume_0_2_ -> _inflow_1_1_outflow_0_2_volume_0_3_;
-	_inflow_1_1_outflow_1_3_volume_1_2_ -> _inflow_1_1_outflow_1_3_volume_1_3_;
-	_inflow_1_1_outflow_1_3_volume_1_1_	 [label="In: (+, -)
-Vol: (+, -)
-Out: (+, +)"];
-	_inflow_1_1_outflow_1_3_volume_1_2_ -> _inflow_1_1_outflow_1_3_volume_1_1_;
-	_inflow_1_1_outflow_1_3_volume_1_1_ -> _inflow_1_1_outflow_1_3_volume_1_2_;
+Out: (0, 0)",
+		tooltip="{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'NEGATIVE'), 'outflow': ('ZERO', 'NEUTRAL'), 'volume': ('ZERO', '\
+POSITIVE')}}"];
+	_inflow_1_1_outflow_0_2_volume_0_2_ -> _inflow_1_1_outflow_0_2_volume_0_3_	 [tooltip="{'transition_valid': True, 'a': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'NEGATIVE'), 'outflow': ('ZERO', '\
+NEUTRAL'), 'volume': ('ZERO', 'NEUTRAL')}}\", 'b': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'NEGATIVE'), '\
+outflow': ('ZERO', 'NEUTRAL'), 'volume': ('ZERO', 'POSITIVE')}}\"}"];
+	_inflow_1_1_outflow_0_3_volume_0_3_	 [label="In: (+, -)
+Vol: (0, +)
+Out: (0, +)",
+		tooltip="{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'NEGATIVE'), 'outflow': ('ZERO', 'POSITIVE'), 'volume': ('ZERO', '\
+POSITIVE')}}"];
+	_inflow_1_1_outflow_1_3_volume_1_3_	 [label="In: (+, -)
+Vol: (+, +)
+Out: (+, +)",
+		tooltip="{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'NEGATIVE'), 'outflow': ('PLUS', 'POSITIVE'), 'volume': ('PLUS', '\
+POSITIVE')}}"];
+	_inflow_1_1_outflow_0_3_volume_0_3_ -> _inflow_1_1_outflow_1_3_volume_1_3_	 [tooltip="{'transition_valid': True, 'a': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'NEGATIVE'), 'outflow': ('ZERO', '\
+POSITIVE'), 'volume': ('ZERO', 'POSITIVE')}}\", 'b': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'NEGATIVE'), '\
+outflow': ('PLUS', 'POSITIVE'), 'volume': ('PLUS', 'POSITIVE')}}\"}"];
+	_inflow_1_1_outflow_1_3_volume_1_2_	 [label="In: (+, -)
+Vol: (+, 0)
+Out: (+, +)",
+		tooltip="{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'NEGATIVE'), 'outflow': ('PLUS', 'POSITIVE'), 'volume': ('PLUS', '\
+NEUTRAL')}}"];
+	_inflow_1_1_outflow_1_3_volume_1_3_ -> _inflow_1_1_outflow_1_3_volume_1_2_	 [tooltip="{'transition_valid': True, 'a': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'NEGATIVE'), 'outflow': ('PLUS', '\
+POSITIVE'), 'volume': ('PLUS', 'POSITIVE')}}\", 'b': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'NEGATIVE'), '\
+outflow': ('PLUS', 'POSITIVE'), 'volume': ('PLUS', 'NEUTRAL')}}\"}"];
 	_inflow_1_1_outflow_1_2_volume_1_2_	 [label="In: (+, -)
 Vol: (+, 0)
-Out: (+, 0)"];
-	_inflow_1_1_outflow_1_3_volume_1_1_ -> _inflow_1_1_outflow_1_2_volume_1_2_;
+Out: (+, 0)",
+		tooltip="{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'NEGATIVE'), 'outflow': ('PLUS', 'NEUTRAL'), 'volume': ('PLUS', '\
+NEUTRAL')}}"];
 	_inflow_1_1_outflow_1_2_volume_1_1_	 [label="In: (+, -)
 Vol: (+, -)
-Out: (+, 0)"];
-	_inflow_1_1_outflow_1_3_volume_1_1_ -> _inflow_1_1_outflow_1_2_volume_1_1_;
-	_inflow_1_1_outflow_1_2_volume_1_2_ -> _inflow_1_1_outflow_1_2_volume_1_1_;
+Out: (+, 0)",
+		tooltip="{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'NEGATIVE'), 'outflow': ('PLUS', 'NEUTRAL'), 'volume': ('PLUS', '\
+NEGATIVE')}}"];
+	_inflow_1_1_outflow_1_2_volume_1_2_ -> _inflow_1_1_outflow_1_2_volume_1_1_	 [tooltip="{'transition_valid': True, 'a': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'NEGATIVE'), 'outflow': ('PLUS', '\
+NEUTRAL'), 'volume': ('PLUS', 'NEUTRAL')}}\", 'b': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'NEGATIVE'), '\
+outflow': ('PLUS', 'NEUTRAL'), 'volume': ('PLUS', 'NEGATIVE')}}\"}"];
 	_inflow_1_1_outflow_1_2_volume_1_3_	 [label="In: (+, -)
 Vol: (+, +)
-Out: (+, 0)"];
-	_inflow_1_1_outflow_1_2_volume_1_2_ -> _inflow_1_1_outflow_1_2_volume_1_3_;
-	_inflow_1_1_outflow_1_2_volume_1_1_ -> _inflow_1_1_outflow_1_2_volume_1_2_;
+Out: (+, 0)",
+		tooltip="{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'NEGATIVE'), 'outflow': ('PLUS', 'NEUTRAL'), 'volume': ('PLUS', '\
+POSITIVE')}}"];
+	_inflow_1_1_outflow_1_2_volume_1_2_ -> _inflow_1_1_outflow_1_2_volume_1_3_	 [tooltip="{'transition_valid': True, 'a': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'NEGATIVE'), 'outflow': ('PLUS', '\
+NEUTRAL'), 'volume': ('PLUS', 'NEUTRAL')}}\", 'b': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'NEGATIVE'), '\
+outflow': ('PLUS', 'NEUTRAL'), 'volume': ('PLUS', 'POSITIVE')}}\"}"];
+	_inflow_1_1_outflow_1_2_volume_1_1_ -> _inflow_1_1_outflow_1_2_volume_1_2_	 [tooltip="{'transition_valid': True, 'a': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'NEGATIVE'), 'outflow': ('PLUS', '\
+NEUTRAL'), 'volume': ('PLUS', 'NEGATIVE')}}\", 'b': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'NEGATIVE'), '\
+outflow': ('PLUS', 'NEUTRAL'), 'volume': ('PLUS', 'NEUTRAL')}}\"}"];
 	_inflow_1_1_outflow_1_1_volume_1_2_	 [label="In: (+, -)
 Vol: (+, 0)
-Out: (+, -)"];
-	_inflow_1_1_outflow_1_2_volume_1_1_ -> _inflow_1_1_outflow_1_1_volume_1_2_;
+Out: (+, -)",
+		tooltip="{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'NEGATIVE'), 'outflow': ('PLUS', 'NEGATIVE'), 'volume': ('PLUS', '\
+NEUTRAL')}}"];
+	_inflow_1_1_outflow_1_2_volume_1_1_ -> _inflow_1_1_outflow_1_1_volume_1_2_	 [tooltip="{'transition_valid': True, 'a': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'NEGATIVE'), 'outflow': ('PLUS', '\
+NEUTRAL'), 'volume': ('PLUS', 'NEGATIVE')}}\", 'b': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'NEGATIVE'), '\
+outflow': ('PLUS', 'NEGATIVE'), 'volume': ('PLUS', 'NEUTRAL')}}\"}"];
 	_inflow_1_1_outflow_1_1_volume_1_1_	 [label="In: (+, -)
 Vol: (+, -)
-Out: (+, -)"];
-	_inflow_1_1_outflow_1_2_volume_1_1_ -> _inflow_1_1_outflow_1_1_volume_1_1_;
-	_inflow_1_1_outflow_1_2_volume_1_3_ -> _inflow_1_1_outflow_1_3_volume_1_3_;
-	_inflow_1_1_outflow_1_2_volume_1_3_ -> _inflow_1_1_outflow_1_3_volume_1_2_;
-	_inflow_1_1_outflow_1_2_volume_1_3_ -> _inflow_1_1_outflow_1_2_volume_1_2_;
-	_inflow_1_1_outflow_1_1_volume_1_2_ -> _inflow_1_1_outflow_1_1_volume_1_1_;
+Out: (+, -)",
+		tooltip="{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'NEGATIVE'), 'outflow': ('PLUS', 'NEGATIVE'), 'volume': ('PLUS', '\
+NEGATIVE')}}"];
+	_inflow_1_1_outflow_1_2_volume_1_1_ -> _inflow_1_1_outflow_1_1_volume_1_1_	 [tooltip="{'transition_valid': True, 'a': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'NEGATIVE'), 'outflow': ('PLUS', '\
+NEUTRAL'), 'volume': ('PLUS', 'NEGATIVE')}}\", 'b': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'NEGATIVE'), '\
+outflow': ('PLUS', 'NEGATIVE'), 'volume': ('PLUS', 'NEGATIVE')}}\"}"];
+	_inflow_1_1_outflow_1_2_volume_1_3_ -> _inflow_1_1_outflow_1_3_volume_1_3_	 [tooltip="{'transition_valid': True, 'a': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'NEGATIVE'), 'outflow': ('PLUS', '\
+NEUTRAL'), 'volume': ('PLUS', 'POSITIVE')}}\", 'b': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'NEGATIVE'), '\
+outflow': ('PLUS', 'POSITIVE'), 'volume': ('PLUS', 'POSITIVE')}}\"}"];
+	_inflow_1_1_outflow_1_2_volume_1_3_ -> _inflow_1_1_outflow_1_2_volume_1_2_	 [tooltip="{'transition_valid': True, 'a': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'NEGATIVE'), 'outflow': ('PLUS', '\
+NEUTRAL'), 'volume': ('PLUS', 'POSITIVE')}}\", 'b': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'NEGATIVE'), '\
+outflow': ('PLUS', 'NEUTRAL'), 'volume': ('PLUS', 'NEUTRAL')}}\"}"];
+	_inflow_1_1_outflow_1_2_volume_1_3_ -> _inflow_1_1_outflow_1_3_volume_1_2_	 [tooltip="{'transition_valid': True, 'a': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'NEGATIVE'), 'outflow': ('PLUS', '\
+NEUTRAL'), 'volume': ('PLUS', 'POSITIVE')}}\", 'b': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'NEGATIVE'), '\
+outflow': ('PLUS', 'POSITIVE'), 'volume': ('PLUS', 'NEUTRAL')}}\"}"];
+	_inflow_1_1_outflow_1_1_volume_1_2_ -> _inflow_1_1_outflow_1_1_volume_1_1_	 [tooltip="{'transition_valid': True, 'a': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'NEGATIVE'), 'outflow': ('PLUS', '\
+NEGATIVE'), 'volume': ('PLUS', 'NEUTRAL')}}\", 'b': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'NEGATIVE'), '\
+outflow': ('PLUS', 'NEGATIVE'), 'volume': ('PLUS', 'NEGATIVE')}}\"}"];
 	_inflow_1_1_outflow_1_1_volume_1_3_	 [label="In: (+, -)
 Vol: (+, +)
-Out: (+, -)"];
-	_inflow_1_1_outflow_1_1_volume_1_2_ -> _inflow_1_1_outflow_1_1_volume_1_3_;
-	_inflow_1_1_outflow_1_1_volume_1_1_ -> _inflow_1_1_outflow_1_1_volume_1_2_;
-	_inflow_1_1_outflow_1_1_volume_1_3_ -> _inflow_1_1_outflow_1_2_volume_1_2_;
-	_inflow_1_1_outflow_1_1_volume_1_3_ -> _inflow_1_1_outflow_1_2_volume_1_3_;
-	_inflow_1_1_outflow_1_1_volume_1_3_ -> _inflow_1_1_outflow_1_1_volume_1_2_;
+Out: (+, -)",
+		tooltip="{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'NEGATIVE'), 'outflow': ('PLUS', 'NEGATIVE'), 'volume': ('PLUS', '\
+POSITIVE')}}"];
+	_inflow_1_1_outflow_1_1_volume_1_2_ -> _inflow_1_1_outflow_1_1_volume_1_3_	 [tooltip="{'transition_valid': True, 'a': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'NEGATIVE'), 'outflow': ('PLUS', '\
+NEGATIVE'), 'volume': ('PLUS', 'NEUTRAL')}}\", 'b': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'NEGATIVE'), '\
+outflow': ('PLUS', 'NEGATIVE'), 'volume': ('PLUS', 'POSITIVE')}}\"}"];
+	_inflow_1_1_outflow_1_1_volume_1_1_ -> _inflow_1_1_outflow_1_1_volume_1_2_	 [tooltip="{'transition_valid': True, 'a': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'NEGATIVE'), 'outflow': ('PLUS', '\
+NEGATIVE'), 'volume': ('PLUS', 'NEGATIVE')}}\", 'b': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'NEGATIVE'), '\
+outflow': ('PLUS', 'NEGATIVE'), 'volume': ('PLUS', 'NEUTRAL')}}\"}"];
+	_inflow_1_1_outflow_1_3_volume_1_2_ -> _inflow_1_1_outflow_1_3_volume_1_3_	 [tooltip="{'transition_valid': True, 'a': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'NEGATIVE'), 'outflow': ('PLUS', '\
+POSITIVE'), 'volume': ('PLUS', 'NEUTRAL')}}\", 'b': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'NEGATIVE'), '\
+outflow': ('PLUS', 'POSITIVE'), 'volume': ('PLUS', 'POSITIVE')}}\"}"];
+	_inflow_1_1_outflow_1_3_volume_1_1_	 [label="In: (+, -)
+Vol: (+, -)
+Out: (+, +)",
+		tooltip="{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'NEGATIVE'), 'outflow': ('PLUS', 'POSITIVE'), 'volume': ('PLUS', '\
+NEGATIVE')}}"];
+	_inflow_1_1_outflow_1_3_volume_1_2_ -> _inflow_1_1_outflow_1_3_volume_1_1_	 [tooltip="{'transition_valid': True, 'a': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'NEGATIVE'), 'outflow': ('PLUS', '\
+POSITIVE'), 'volume': ('PLUS', 'NEUTRAL')}}\", 'b': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'NEGATIVE'), '\
+outflow': ('PLUS', 'POSITIVE'), 'volume': ('PLUS', 'NEGATIVE')}}\"}"];
+	_inflow_1_1_outflow_1_1_volume_1_3_ -> _inflow_1_1_outflow_1_2_volume_1_2_	 [tooltip="{'transition_valid': True, 'a': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'NEGATIVE'), 'outflow': ('PLUS', '\
+NEGATIVE'), 'volume': ('PLUS', 'POSITIVE')}}\", 'b': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'NEGATIVE'), '\
+outflow': ('PLUS', 'NEUTRAL'), 'volume': ('PLUS', 'NEUTRAL')}}\"}"];
+	_inflow_1_1_outflow_1_1_volume_1_3_ -> _inflow_1_1_outflow_1_2_volume_1_3_	 [tooltip="{'transition_valid': True, 'a': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'NEGATIVE'), 'outflow': ('PLUS', '\
+NEGATIVE'), 'volume': ('PLUS', 'POSITIVE')}}\", 'b': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'NEGATIVE'), '\
+outflow': ('PLUS', 'NEUTRAL'), 'volume': ('PLUS', 'POSITIVE')}}\"}"];
+	_inflow_1_1_outflow_1_1_volume_1_3_ -> _inflow_1_1_outflow_1_1_volume_1_2_	 [tooltip="{'transition_valid': True, 'a': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'NEGATIVE'), 'outflow': ('PLUS', '\
+NEGATIVE'), 'volume': ('PLUS', 'POSITIVE')}}\", 'b': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'NEGATIVE'), '\
+outflow': ('PLUS', 'NEGATIVE'), 'volume': ('PLUS', 'NEUTRAL')}}\"}"];
+	_inflow_1_1_outflow_1_3_volume_1_1_ -> _inflow_1_1_outflow_1_2_volume_1_2_	 [tooltip="{'transition_valid': True, 'a': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'NEGATIVE'), 'outflow': ('PLUS', '\
+POSITIVE'), 'volume': ('PLUS', 'NEGATIVE')}}\", 'b': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'NEGATIVE'), '\
+outflow': ('PLUS', 'NEUTRAL'), 'volume': ('PLUS', 'NEUTRAL')}}\"}"];
+	_inflow_1_1_outflow_1_3_volume_1_1_ -> _inflow_1_1_outflow_1_2_volume_1_1_	 [tooltip="{'transition_valid': True, 'a': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'NEGATIVE'), 'outflow': ('PLUS', '\
+POSITIVE'), 'volume': ('PLUS', 'NEGATIVE')}}\", 'b': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'NEGATIVE'), '\
+outflow': ('PLUS', 'NEUTRAL'), 'volume': ('PLUS', 'NEGATIVE')}}\"}"];
+	_inflow_1_1_outflow_1_3_volume_1_1_ -> _inflow_1_1_outflow_1_3_volume_1_2_	 [tooltip="{'transition_valid': True, 'a': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'NEGATIVE'), 'outflow': ('PLUS', '\
+POSITIVE'), 'volume': ('PLUS', 'NEGATIVE')}}\", 'b': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'NEGATIVE'), '\
+outflow': ('PLUS', 'POSITIVE'), 'volume': ('PLUS', 'NEUTRAL')}}\"}"];
 	_inflow_1_1_outflow_2_2_volume_2_2_	 [label="In: (+, -)
 Vol: (max, 0)
-Out: (max, 0)"];
+Out: (max, 0)",
+		tooltip="{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'NEGATIVE'), 'outflow': ('MAX', 'NEUTRAL'), 'volume': ('MAX', '\
+NEUTRAL')}}"];
 	_inflow_1_1_outflow_2_2_volume_2_1_	 [label="In: (+, -)
 Vol: (max, -)
-Out: (max, 0)"];
-	_inflow_1_1_outflow_2_2_volume_2_2_ -> _inflow_1_1_outflow_2_2_volume_2_1_;
+Out: (max, 0)",
+		tooltip="{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'NEGATIVE'), 'outflow': ('MAX', 'NEUTRAL'), 'volume': ('MAX', '\
+NEGATIVE')}}"];
+	_inflow_1_1_outflow_2_2_volume_2_2_ -> _inflow_1_1_outflow_2_2_volume_2_1_	 [tooltip="{'transition_valid': True, 'a': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'NEGATIVE'), 'outflow': ('MAX', '\
+NEUTRAL'), 'volume': ('MAX', 'NEUTRAL')}}\", 'b': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'NEGATIVE'), '\
+outflow': ('MAX', 'NEUTRAL'), 'volume': ('MAX', 'NEGATIVE')}}\"}"];
 	_inflow_1_1_outflow_2_1_volume_2_1_	 [label="In: (+, -)
 Vol: (max, -)
-Out: (max, -)"];
-	_inflow_1_1_outflow_2_1_volume_2_1_ -> _inflow_1_1_outflow_1_1_volume_1_2_;
-	_inflow_1_1_outflow_2_1_volume_2_1_ -> _inflow_1_1_outflow_1_1_volume_1_1_;
-	_inflow_0_3_outflow_0_3_volume_0_2_	 [label="In: (0, +)
-Vol: (0, 0)
-Out: (0, +)"];
-	_inflow_0_3_outflow_0_2_volume_0_3_	 [label="In: (0, +)
+Out: (max, -)",
+		tooltip="{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'NEGATIVE'), 'outflow': ('MAX', 'NEGATIVE'), 'volume': ('MAX', '\
+NEGATIVE')}}"];
+	_inflow_1_1_outflow_2_1_volume_2_1_ -> _inflow_1_1_outflow_1_1_volume_1_2_	 [tooltip="{'transition_valid': True, 'a': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'NEGATIVE'), 'outflow': ('MAX', '\
+NEGATIVE'), 'volume': ('MAX', 'NEGATIVE')}}\", 'b': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'NEGATIVE'), '\
+outflow': ('PLUS', 'NEGATIVE'), 'volume': ('PLUS', 'NEUTRAL')}}\"}"];
+	_inflow_1_1_outflow_2_1_volume_2_1_ -> _inflow_1_1_outflow_1_1_volume_1_1_	 [tooltip="{'transition_valid': True, 'a': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'NEGATIVE'), 'outflow': ('MAX', '\
+NEGATIVE'), 'volume': ('MAX', 'NEGATIVE')}}\", 'b': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'NEGATIVE'), '\
+outflow': ('PLUS', 'NEGATIVE'), 'volume': ('PLUS', 'NEGATIVE')}}\"}"];
+	_inflow_1_3_outflow_0_3_volume_0_3_	 [label="In: (+, +)
 Vol: (0, +)
-Out: (0, 0)"];
-	_inflow_0_3_outflow_2_2_volume_2_1_	 [label="In: (0, +)
+Out: (0, +)",
+		tooltip="{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'POSITIVE'), 'outflow': ('ZERO', 'POSITIVE'), 'volume': ('ZERO', '\
+POSITIVE')}}"];
+	_inflow_1_3_outflow_0_3_volume_0_3_ -> _inflow_1_3_outflow_1_3_volume_1_3_	 [tooltip="{'transition_valid': True, 'a': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'POSITIVE'), 'outflow': ('ZERO', '\
+POSITIVE'), 'volume': ('ZERO', 'POSITIVE')}}\", 'b': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'POSITIVE'), '\
+outflow': ('PLUS', 'POSITIVE'), 'volume': ('PLUS', 'POSITIVE')}}\"}"];
+	_inflow_1_3_outflow_2_1_volume_2_1_	 [label="In: (+, +)
 Vol: (max, -)
-Out: (max, 0)"];
-	_inflow_0_3_outflow_2_1_volume_2_2_	 [label="In: (0, +)
-Vol: (max, 0)
-Out: (max, -)"];
-	_inflow_0_2_outflow_0_3_volume_0_2_	 [label="In: (0, 0)
-Vol: (0, 0)
-Out: (0, +)"];
-	_inflow_0_2_outflow_0_2_volume_0_3_	 [label="In: (0, 0)
-Vol: (0, +)
-Out: (0, 0)"];
+Out: (max, -)",
+		tooltip="{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'POSITIVE'), 'outflow': ('MAX', 'NEGATIVE'), 'volume': ('MAX', '\
+NEGATIVE')}}"];
+	_inflow_1_3_outflow_2_1_volume_2_1_ -> _inflow_1_3_outflow_1_1_volume_1_1_	 [tooltip="{'transition_valid': True, 'a': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'POSITIVE'), 'outflow': ('MAX', '\
+NEGATIVE'), 'volume': ('MAX', 'NEGATIVE')}}\", 'b': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'POSITIVE'), '\
+outflow': ('PLUS', 'NEGATIVE'), 'volume': ('PLUS', 'NEGATIVE')}}\"}"];
+	_inflow_1_3_outflow_2_1_volume_2_1_ -> _inflow_1_3_outflow_1_1_volume_1_2_	 [tooltip="{'transition_valid': True, 'a': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'POSITIVE'), 'outflow': ('MAX', '\
+NEGATIVE'), 'volume': ('MAX', 'NEGATIVE')}}\", 'b': \"{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'POSITIVE'), '\
+outflow': ('PLUS', 'NEGATIVE'), 'volume': ('PLUS', 'NEUTRAL')}}\"}"];
 	_inflow_0_2_outflow_0_2_volume_0_2_	 [label="In: (0, 0)
 Vol: (0, 0)
-Out: (0, 0)"];
+Out: (0, 0)",
+		tooltip="{'type': 'container', 'valid': True, 'state': {'inflow': ('ZERO', 'NEUTRAL'), 'outflow': ('ZERO', 'NEUTRAL'), 'volume': ('ZERO', '\
+NEUTRAL')}}"];
+	_inflow_0_2_outflow_0_2_volume_0_3_	 [label="In: (0, 0)
+Vol: (0, +)
+Out: (0, 0)",
+		tooltip="{'type': 'container', 'valid': True, 'state': {'inflow': ('ZERO', 'NEUTRAL'), 'outflow': ('ZERO', 'NEUTRAL'), 'volume': ('ZERO', '\
+POSITIVE')}}"];
+	_inflow_0_2_outflow_0_3_volume_0_2_	 [label="In: (0, 0)
+Vol: (0, 0)
+Out: (0, +)",
+		tooltip="{'type': 'container', 'valid': True, 'state': {'inflow': ('ZERO', 'NEUTRAL'), 'outflow': ('ZERO', 'POSITIVE'), 'volume': ('ZERO', '\
+NEUTRAL')}}"];
 	_inflow_0_2_outflow_2_1_volume_2_2_	 [label="In: (0, 0)
 Vol: (max, 0)
-Out: (max, -)"];
-	_inflow_1_3_outflow_0_3_volume_0_2_	 [label="In: (+, +)
+Out: (max, -)",
+		tooltip="{'type': 'container', 'valid': True, 'state': {'inflow': ('ZERO', 'NEUTRAL'), 'outflow': ('MAX', 'NEGATIVE'), 'volume': ('MAX', '\
+NEUTRAL')}}"];
+	_inflow_0_3_outflow_0_2_volume_0_3_	 [label="In: (0, +)
+Vol: (0, +)
+Out: (0, 0)",
+		tooltip="{'type': 'container', 'valid': True, 'state': {'inflow': ('ZERO', 'POSITIVE'), 'outflow': ('ZERO', 'NEUTRAL'), 'volume': ('ZERO', '\
+POSITIVE')}}"];
+	_inflow_0_3_outflow_0_3_volume_0_2_	 [label="In: (0, +)
 Vol: (0, 0)
-Out: (0, +)"];
-	_inflow_1_3_outflow_2_1_volume_2_2_	 [label="In: (+, +)
+Out: (0, +)",
+		tooltip="{'type': 'container', 'valid': True, 'state': {'inflow': ('ZERO', 'POSITIVE'), 'outflow': ('ZERO', 'POSITIVE'), 'volume': ('ZERO', '\
+NEUTRAL')}}"];
+	_inflow_0_3_outflow_2_2_volume_2_1_	 [label="In: (0, +)
+Vol: (max, -)
+Out: (max, 0)",
+		tooltip="{'type': 'container', 'valid': True, 'state': {'inflow': ('ZERO', 'POSITIVE'), 'outflow': ('MAX', 'NEUTRAL'), 'volume': ('MAX', '\
+NEGATIVE')}}"];
+	_inflow_0_3_outflow_2_1_volume_2_2_	 [label="In: (0, +)
 Vol: (max, 0)
-Out: (max, -)"];
+Out: (max, -)",
+		tooltip="{'type': 'container', 'valid': True, 'state': {'inflow': ('ZERO', 'POSITIVE'), 'outflow': ('MAX', 'NEGATIVE'), 'volume': ('MAX', '\
+NEUTRAL')}}"];
 	_inflow_1_2_outflow_0_3_volume_0_2_	 [label="In: (+, 0)
 Vol: (0, 0)
-Out: (0, +)"];
+Out: (0, +)",
+		tooltip="{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'NEUTRAL'), 'outflow': ('ZERO', 'POSITIVE'), 'volume': ('ZERO', '\
+NEUTRAL')}}"];
 	_inflow_1_2_outflow_2_1_volume_2_2_	 [label="In: (+, 0)
 Vol: (max, 0)
-Out: (max, -)"];
+Out: (max, -)",
+		tooltip="{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'NEUTRAL'), 'outflow': ('MAX', 'NEGATIVE'), 'volume': ('MAX', '\
+NEUTRAL')}}"];
 	_inflow_1_1_outflow_0_3_volume_0_2_	 [label="In: (+, -)
 Vol: (0, 0)
-Out: (0, +)"];
+Out: (0, +)",
+		tooltip="{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'NEGATIVE'), 'outflow': ('ZERO', 'POSITIVE'), 'volume': ('ZERO', '\
+NEUTRAL')}}"];
 	_inflow_1_1_outflow_2_1_volume_2_2_	 [label="In: (+, -)
 Vol: (max, 0)
-Out: (max, -)"];
+Out: (max, -)",
+		tooltip="{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'NEGATIVE'), 'outflow': ('MAX', 'NEGATIVE'), 'volume': ('MAX', '\
+NEUTRAL')}}"];
+	_inflow_1_3_outflow_0_3_volume_0_2_	 [label="In: (+, +)
+Vol: (0, 0)
+Out: (0, +)",
+		tooltip="{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'POSITIVE'), 'outflow': ('ZERO', 'POSITIVE'), 'volume': ('ZERO', '\
+NEUTRAL')}}"];
+	_inflow_1_3_outflow_2_1_volume_2_2_	 [label="In: (+, +)
+Vol: (max, 0)
+Out: (max, -)",
+		tooltip="{'type': 'container', 'valid': True, 'state': {'inflow': ('PLUS', 'POSITIVE'), 'outflow': ('MAX', 'NEGATIVE'), 'volume': ('MAX', '\
+NEUTRAL')}}"];
 }
