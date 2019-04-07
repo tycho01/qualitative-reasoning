@@ -10,18 +10,32 @@ def check_influence(source_state: EntityState, target_state: EntityState) -> boo
     return derivatives_match(state1, state2, source_state.entity.relations) and \
             magnitudes_match(state1, state2)
 
-def derivatives_match(state1: Dict[str, QuantityPair], state2: Dict[str, QuantityPair], relations) -> bool:
+def derivatives_match(state1: Dict[str, QuantityPair], state2: Dict[str, QuantityPair], relations: List[Relation]) -> bool:
     '''check derivative changes given the quantity relationships.'''
+    derivatives1 = state_derivatives(state1)
     derivatives2 = state_derivatives(state2)
     # Dictionary to keep track of the derivative directions of dependant quantities
-    target_quantities = relation_effects(state1, relations)
+    effect_sets = relation_effects(state1, relations)
     # Determine the overall derivative direction for the target quantities
-    relation_derivatives = {k: combine_derivatives(directions) for k, directions in target_quantities.items()}
-    # check if state2 derivatives are compatible with relation_derivatives
-    # i.e. ensure each relation_derivative equals state2's or is a QUESTION: filter out QUESTIONs then check other vals match. 
+    relation_derivatives = {k: combine_derivatives(directions) for k, directions in effect_sets.items()}
+    # check if state2 derivatives are compatible with relation_derivatives:
+    # filter out QUESTIONs
     known = [k for k, v in relation_derivatives.items() if v != Direction.QUESTION]
-    return {k: derivatives2[k]         for k in known} == \
-           {k: relation_derivatives[k] for k in known}
+
+    # check other vals add up, i.e. as close to the combined effect in state2 
+    # as in state1. note that while this may not filter out jumps from negative
+    # to positive, these will be caught in the continuous check instead.
+    for k in known:
+        old = derivatives1[k]
+        new = derivatives2[k]
+        effect = relation_derivatives[k]
+        if not compare_derivatives(new, old) in {Direction.NEUTRAL, effect}:
+            return False
+    return True
+
+def compare_derivatives(old: Direction, new: Direction) -> Direction:
+    '''return a relative Direction between Directions. if equal yields Neutral (rather than Question).'''
+    return Direction.NEUTRAL if old == new else Direction.POSITIVE if new.value > old.value else Direction.NEGATIVE
 
 def magnitudes_match(state1: Dict[str, QuantityPair], state2: Dict[str, QuantityPair]) -> bool:
     '''check magnitude changes from state1 to state2 match the state2 derivatives'''
@@ -40,10 +54,6 @@ def state_derivatives(state: Dict[str, QuantityPair]) -> Dict[str, Direction]:
 
 def relation_effects(state: Dict[str, QuantityPair], relations: List[Relation]) -> Dict[str, Set[Direction]]:
     '''for each quantity in a state find the effects of the relationships working on that quantity'''
-    # TODO: figure out if the present derivatives should be included in these target_quantities.
-    # if absent, we still need to reconcile these as well. if present, we might confuse
-    # positive derivatives influenced down with vice versa, which are different as the former
-    # cannot end up as direction negative due to the continuity rule (0 is in-between). 
     target_quantities = {k: set() for k in state}
     for relation in relations:
         if type(relation) != ValueCorrespondence:  # skip ValueCorrespondence which are different

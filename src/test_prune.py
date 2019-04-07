@@ -31,6 +31,33 @@ def test_check_influence_bad():
     entity_state_after = make_entity_state(container, container_state_after)
     assert check_influence(entity_state_before, entity_state_after) == False
 
+def test_derivatives_match_good():
+    container_state_before = {
+        'volume': (Volume.ZERO, Direction.NEUTRAL),
+        'inflow': (Inflow.ZERO, Direction.POSITIVE),
+        'outflow': (Outflow.ZERO, Direction.NEUTRAL),
+    }
+    container_state_after = {
+        'volume': (Volume.ZERO, Direction.NEUTRAL),
+        'inflow': (Inflow.PLUS, Direction.POSITIVE),
+        'outflow': (Outflow.ZERO, Direction.NEUTRAL),
+    }
+    relations = []
+    entity_state_before = make_entity_state(container, container_state_before)
+    entity_state_after = make_entity_state(container, container_state_after)
+    assert derivatives_match(entity_state_before.state, entity_state_after.state, relations) == True
+
+def test_compare_derivatives_good():
+    assert compare_derivatives(Direction.NEUTRAL, Direction.NEUTRAL) == Direction.NEUTRAL
+    assert compare_derivatives(Direction.POSITIVE, Direction.POSITIVE) == Direction.NEUTRAL
+    assert compare_derivatives(Direction.NEGATIVE, Direction.NEGATIVE) == Direction.NEUTRAL
+    assert compare_derivatives(Direction.NEGATIVE, Direction.NEUTRAL) == Direction.POSITIVE
+    assert compare_derivatives(Direction.NEUTRAL, Direction.POSITIVE) == Direction.POSITIVE
+    assert compare_derivatives(Direction.NEGATIVE, Direction.POSITIVE) == Direction.POSITIVE
+    assert compare_derivatives(Direction.POSITIVE, Direction.NEUTRAL) == Direction.NEGATIVE
+    assert compare_derivatives(Direction.NEUTRAL, Direction.NEGATIVE) == Direction.NEGATIVE
+    assert compare_derivatives(Direction.POSITIVE, Direction.NEGATIVE) == Direction.NEGATIVE
+
 def test_magnitudes_match_good():
     container_state_before = {
         'volume': (Volume.ZERO, Direction.NEUTRAL),

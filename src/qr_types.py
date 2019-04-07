@@ -3,6 +3,7 @@ from dataclasses import dataclass
 from typing import List, Dict, Tuple
 
 # values for Direction don't follow semantic conventions of quantity spaces (see below)
+# only the ordinal property is used, outside of QUESTION.
 class Direction(Enum):
     QUESTION = 0  # question mark option to indicate changes in both directions causing an ambiguous change
     NEGATIVE = 1
