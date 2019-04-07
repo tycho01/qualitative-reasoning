@@ -100,7 +100,11 @@ def test_check_magnitude_changes():
     }
     entity_state_before = make_entity_state(container, container_state_before)
     entity_state_after = make_entity_state(container, container_state_after)
-    assert check_magnitude_changes(entity_state_before.state, entity_state_after.state) == True
+    assert check_magnitude_changes(entity_state_before.state, entity_state_after.state) == {
+        'inflow': DerivativeDirection.POSITIVE,
+        'outflow': DerivativeDirection.NEUTRAL,
+        'volume': DerivativeDirection.NEUTRAL,
+    }
 
 def test_num_to_direction():
     assert num_to_direction(0) == DerivativeDirection.NEUTRAL
