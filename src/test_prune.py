@@ -37,7 +37,7 @@ def test_relation_effects():
             'volume': QuantityPair(Volume.ZERO, DerivativeDirection.POSITIVE)
         },
         []
-    ) == {}
+    ) == {'volume': set()}
     assert relation_effects(
         {
             'volume': QuantityPair(Volume.PLUS, DerivativeDirection.POSITIVE),
@@ -46,7 +46,7 @@ def test_relation_effects():
         [
             Influence(Quantity('volume', Volume), Quantity('outflow', Outflow))
         ]
-    ) == {'outflow': {DerivativeDirection.POSITIVE}}
+    ) == {'volume': set(), 'outflow': {DerivativeDirection.POSITIVE}}
     assert relation_effects(
         {
             'volume': QuantityPair(Volume.PLUS, DerivativeDirection.POSITIVE),
@@ -55,7 +55,7 @@ def test_relation_effects():
         [
             Influence(Quantity('volume', Volume), Quantity('outflow', Outflow)),
             Proportional(Quantity('volume', Volume), Quantity('outflow', Outflow), RelationDirection.NEGATIVE)
-        ]) == {'outflow': {DerivativeDirection.POSITIVE, DerivativeDirection.NEGATIVE}}
+        ]) == {'volume': set(), 'outflow': {DerivativeDirection.POSITIVE, DerivativeDirection.NEGATIVE}}
 
 def test_combine_derivatives():
     assert combine_derivatives(set()) == DerivativeDirection.NEUTRAL

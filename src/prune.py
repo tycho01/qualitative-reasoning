@@ -33,17 +33,12 @@ def relation_effects(state: Dict[str, QuantityPair], relations: List[Relation]) 
     # if absent, we still need to reconcile these as well. if present, we might confuse
     # positive derivatives influenced down with vice versa, which are different as the former
     # cannot end up as direction negative due to the contunuity rule (0 is in-between). 
-    target_quantities = {}
+    target_quantities = {k: set() for k in state}
     for relation in relations:
         if type(relation) != ValueCorrespondence:  # skip ValueCorrespondence which are different
             target_k = relation.b.name
             qty1 = state[relation.a.name]
             correl = relation.correlation
-
-            # Create a list for the target quantity if not present in the dictionary
-            if target_k not in target_quantities:
-                target_quantities[target_k] = set()
-
             # add the derivative direction
             target_quantities[target_k].add(
                 perform_indirect_influence(correl, qty1.derivative)
