@@ -94,7 +94,7 @@ def test_compare_derivatives_good():
     assert compare_derivatives(Direction.NEUTRAL, Direction.NEGATIVE) == Direction.NEGATIVE
     assert compare_derivatives(Direction.POSITIVE, Direction.NEGATIVE) == Direction.NEGATIVE
 
-def test_magnitudes_match_good():
+def test_magnitudes_match_point_change():
     container_state_before = {
         'volume': (Volume.ZERO, Direction.NEUTRAL),
         'inflow': (Inflow.ZERO, Direction.POSITIVE),
@@ -109,7 +109,52 @@ def test_magnitudes_match_good():
     entity_state_after = make_entity_state(container, container_state_after)
     assert magnitudes_match(entity_state_before.state, entity_state_after.state) == True
 
-def test_magnitudes_match_bad():
+def test_magnitudes_match_point_stay():
+    container_state_before = {
+        'volume': (Volume.ZERO, Direction.NEUTRAL),
+        'inflow': (Inflow.ZERO, Direction.POSITIVE),
+        'outflow': (Outflow.ZERO, Direction.NEUTRAL),
+    }
+    container_state_after = {
+        'volume': (Volume.ZERO, Direction.NEUTRAL),
+        'inflow': (Inflow.ZERO, Direction.POSITIVE),  # should have increased
+        'outflow': (Outflow.ZERO, Direction.NEUTRAL),
+    }
+    entity_state_before = make_entity_state(container, container_state_before)
+    entity_state_after = make_entity_state(container, container_state_after)
+    assert magnitudes_match(entity_state_before.state, entity_state_after.state) == False
+
+def test_magnitudes_match_range_change():
+    container_state_before = {
+        'volume': (Volume.PLUS, Direction.POSITIVE),
+        'inflow': (Inflow.ZERO, Direction.NEUTRAL),
+        'outflow': (Outflow.ZERO, Direction.NEUTRAL),
+    }
+    container_state_after = {
+        'volume': (Volume.MAX, Direction.POSITIVE),
+        'inflow': (Inflow.ZERO, Direction.NEUTRAL),
+        'outflow': (Outflow.ZERO, Direction.NEUTRAL),
+    }
+    entity_state_before = make_entity_state(container, container_state_before)
+    entity_state_after = make_entity_state(container, container_state_after)
+    assert magnitudes_match(entity_state_before.state, entity_state_after.state) == True
+
+def test_magnitudes_match_range_stay():
+    container_state_before = {
+        'volume': (Volume.ZERO, Direction.NEUTRAL),
+        'inflow': (Inflow.PLUS, Direction.POSITIVE),
+        'outflow': (Outflow.ZERO, Direction.NEUTRAL),
+    }
+    container_state_after = {
+        'volume': (Volume.ZERO, Direction.NEUTRAL),
+        'inflow': (Inflow.PLUS, Direction.POSITIVE),
+        'outflow': (Outflow.ZERO, Direction.NEUTRAL),
+    }
+    entity_state_before = make_entity_state(container, container_state_before)
+    entity_state_after = make_entity_state(container, container_state_after)
+    assert magnitudes_match(entity_state_before.state, entity_state_after.state) == True
+
+def test_magnitudes_match_range_bad():
     container_state_before = {
         'volume': (Volume.ZERO, Direction.NEUTRAL),
         'inflow': (Inflow.PLUS, Direction.POSITIVE),
@@ -248,6 +293,11 @@ def test_check_point_range_bad():
     }
     entity_state_bad = make_entity_state(container, container_state)
     assert check_point_range(entity_state_bad, entity_state) == False
+
+def test_is_point():
+    assert is_point(Volume.ZERO) == True
+    assert is_point(Volume.MAX) == True
+    assert is_point(Volume.PLUS) == False
 
 def test_check_not_equal():
     assert check_not_equal(entity_state, entity_state) == False

@@ -38,14 +38,21 @@ def compare_derivatives(old: Direction, new: Direction) -> Direction:
 
 def magnitudes_match(state1: Dict[str, QuantityPair], state2: Dict[str, QuantityPair]) -> bool:
     '''check magnitude changes from state1 to state2 match the state2 derivatives'''
-    derivatives1 = state_derivatives(state1)
     change_derivatives = check_magnitude_changes(state1, state2)
-    return change_derivatives == derivatives1
-    # TODO:
-    #   - any point magnitudes *must* change a step according to the derivative (diff == derivative)
-    #   - any range magnitudes *might* change a step according to the derivative.
-    #     generate any combinations of changing range magnitudes by itertools.product to generate potential next states!
-    # TODO: ensure derivatives are zero when the magnitudes are at an extreme
+    for k in state1:
+        pair1 = state1[k]
+        mag1 = pair1.magnitude
+        der1 = pair1.derivative
+        change = change_derivatives[k]
+        if is_point(mag1):
+            # point magnitudes *must* change a step according to the derivative (diff == derivative)
+            if change != der1:
+                return False
+        else:
+            # range magnitudes *might* change a step according to the derivative.
+            if not change in {Direction.NEUTRAL, der1}:
+                return False
+    return True
 
 def state_derivatives(state: Dict[str, QuantityPair]) -> Dict[str, Direction]:
     '''return the derivatives of a state'''
@@ -143,14 +150,16 @@ def check_point_range(stateA: EntityState, stateB: EntityState) -> bool:
     for k in qty_keys:
         a_val = stateA.state[k].magnitude
         b_val = stateB.state[k].magnitude
-        changed = a_val != b_val
-        if changed:
-            was_point = a_val.value % 2 == 0  # point values are encoded as even numbers
-            if was_point:
+        if a_val != b_val:
+            if is_point(a_val):
                 point_changed = True
             else:
                 range_changed = True
     return not (point_changed and range_changed)
+
+def is_point(magnitude: Enum) -> bool:
+    '''check if a magnitude is a point value. presumes point values are encoded as even, ranges as odd numbers.'''
+    return magnitude.value % 2 == 0
 
 def filter_states(entity_states: List[EntityState]) -> List[EntityState]:
     '''filter a list of entity states to those states deemed valid by valid correspondence'''
