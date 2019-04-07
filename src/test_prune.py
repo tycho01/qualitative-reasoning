@@ -1,166 +1,49 @@
 from prune import *
 from mock import *
 
-def test_derivatives_match_noop():
-    container_state_before = {
-        'volume': (Volume.ZERO, Direction.NEUTRAL),
-        'inflow': (Inflow.ZERO, Direction.POSITIVE),
-        'outflow': (Outflow.ZERO, Direction.NEUTRAL),
-    }
-    container_state_after = {
-        'volume': (Volume.ZERO, Direction.NEUTRAL),
-        'inflow': (Inflow.ZERO, Direction.POSITIVE),
-        'outflow': (Outflow.ZERO, Direction.NEUTRAL),
-    }
-    relations = []
-    entity_state_before = make_entity_state(container, container_state_before)
-    entity_state_after = make_entity_state(container, container_state_after)
-    assert derivatives_match(entity_state_before.state, entity_state_after.state, relations) == True
+def test_next_states():
+    assert len(next_states(entity_state))
 
-def test_derivatives_match_good():
-    container_state_before = {
-        'volume': (Volume.ZERO, Direction.NEUTRAL),
-        'inflow': (Inflow.PLUS, Direction.NEUTRAL),
-        'outflow': (Outflow.ZERO, Direction.NEUTRAL),
-    }
-    container_state_after = {
-        'volume': (Volume.ZERO, Direction.POSITIVE),
-        'inflow': (Inflow.PLUS, Direction.NEUTRAL),
-        'outflow': (Outflow.ZERO, Direction.NEUTRAL),
-    }
-    relations = [
-        Influence(Quantity('inflow', Inflow), Quantity('volume', Volume)),
-    ]
-    entity_state_before = make_entity_state(container, container_state_before)
-    entity_state_after = make_entity_state(container, container_state_after)
-    assert derivatives_match(entity_state_before.state, entity_state_after.state, relations) == True
+def test_next_magnitudes():
+    assert len(next_magnitudes(entity_state))
 
-def test_derivatives_match_bad():
-    container_state_before = {
-        'volume': (Volume.ZERO, Direction.NEUTRAL),
-        'inflow': (Inflow.PLUS, Direction.NEUTRAL),
-        'outflow': (Outflow.ZERO, Direction.NEUTRAL),
-    }
-    container_state_after = {
-        'volume': (Volume.ZERO, Direction.NEGATIVE),
-        'inflow': (Inflow.PLUS, Direction.NEUTRAL),
-        'outflow': (Outflow.ZERO, Direction.NEUTRAL),
-    }
-    relations = [
-        Influence(Quantity('inflow', Inflow), Quantity('volume', Volume)),
-    ]
-    entity_state_before = make_entity_state(container, container_state_before)
-    entity_state_after = make_entity_state(container, container_state_after)
-    assert derivatives_match(entity_state_before.state, entity_state_after.state, relations) == False
+def test_zip_pair():
+    assert zip_pair({'volume': Volume.PLUS}, {'volume': Direction.POSITIVE}) == None
 
-def test_compare_derivatives_good():
-    assert compare_derivatives(Direction.NEUTRAL, Direction.NEUTRAL) == Direction.NEUTRAL
-    assert compare_derivatives(Direction.POSITIVE, Direction.POSITIVE) == Direction.NEUTRAL
-    assert compare_derivatives(Direction.NEGATIVE, Direction.NEGATIVE) == Direction.NEUTRAL
-    assert compare_derivatives(Direction.NEGATIVE, Direction.NEUTRAL) == Direction.POSITIVE
-    assert compare_derivatives(Direction.NEUTRAL, Direction.POSITIVE) == Direction.POSITIVE
-    assert compare_derivatives(Direction.NEGATIVE, Direction.POSITIVE) == Direction.POSITIVE
-    assert compare_derivatives(Direction.POSITIVE, Direction.NEUTRAL) == Direction.NEGATIVE
-    assert compare_derivatives(Direction.NEUTRAL, Direction.NEGATIVE) == Direction.NEGATIVE
-    assert compare_derivatives(Direction.POSITIVE, Direction.NEGATIVE) == Direction.NEGATIVE
+def test_next_derivatives():
+    assert len(next_derivatives(entity_state))
 
-def test_magnitudes_match_point_change():
-    container_state_before = {
-        'volume': (Volume.ZERO, Direction.NEUTRAL),
-        'inflow': (Inflow.ZERO, Direction.POSITIVE),
-        'outflow': (Outflow.ZERO, Direction.NEUTRAL),
-    }
-    container_state_after = {
-        'volume': (Volume.ZERO, Direction.NEUTRAL),
-        'inflow': (Inflow.PLUS, Direction.POSITIVE),
-        'outflow': (Outflow.ZERO, Direction.NEUTRAL),
-    }
-    entity_state_before = make_entity_state(container, container_state_before)
-    entity_state_after = make_entity_state(container, container_state_after)
-    assert magnitudes_match(entity_state_before, entity_state_after) == True
+def test_move_derivative():
+    assert move_derivative(Direction.POSITIVE, Direction.QUESTION) == set([Direction.POSITIVE, Direction.NEUTRAL, Direction.NEGATIVE])
 
-def test_magnitudes_match_point_stay():
-    container_state_before = {
-        'volume': (Volume.ZERO, Direction.NEUTRAL),
-        'inflow': (Inflow.ZERO, Direction.POSITIVE),
-        'outflow': (Outflow.ZERO, Direction.NEUTRAL),
-    }
-    container_state_after = {
-        'volume': (Volume.ZERO, Direction.NEUTRAL),
-        'inflow': (Inflow.ZERO, Direction.POSITIVE),  # should have increased
-        'outflow': (Outflow.ZERO, Direction.NEUTRAL),
-    }
-    entity_state_before = make_entity_state(container, container_state_before)
-    entity_state_after = make_entity_state(container, container_state_after)
-    assert magnitudes_match(entity_state_before, entity_state_after) == False
+def test_move_magnitude():
+    k = 'volume'
+    space = entity_state.entity.quantities[k].quantitySpace
+    assert move_magnitude(QuantityPair(Volume.ZERO, Direction.NEUTRAL), space) == Volume.ZERO
+    assert move_magnitude(QuantityPair(Volume.ZERO, Direction.POSITIVE), space) == Volume.PLUS
 
-def test_magnitudes_match_range_change():
-    container_state_before = {
-        'volume': (Volume.PLUS, Direction.POSITIVE),
-        'inflow': (Inflow.ZERO, Direction.NEUTRAL),
-        'outflow': (Outflow.ZERO, Direction.NEUTRAL),
-    }
-    container_state_after = {
-        'volume': (Volume.MAX, Direction.POSITIVE),
-        'inflow': (Inflow.ZERO, Direction.NEUTRAL),
-        'outflow': (Outflow.ZERO, Direction.NEUTRAL),
-    }
-    entity_state_before = make_entity_state(container, container_state_before)
-    entity_state_after = make_entity_state(container, container_state_after)
-    assert magnitudes_match(entity_state_before, entity_state_after) == True
+# def test_check_extremes_good():
+#     container_state_good = {
+#         'volume': (Volume.MAX, Direction.NEUTRAL),
+#         'inflow': (Inflow.ZERO, Direction.POSITIVE),
+#         'outflow': (Outflow.ZERO, Direction.NEUTRAL),
+#     }
+#     entity_state_good = make_entity_state(container, container_state_good)
+#     assert check_extremes(entity_state_good) == True
 
-def test_magnitudes_match_range_stay():
-    container_state_before = {
-        'volume': (Volume.ZERO, Direction.NEUTRAL),
-        'inflow': (Inflow.PLUS, Direction.POSITIVE),
-        'outflow': (Outflow.ZERO, Direction.NEUTRAL),
-    }
-    container_state_after = {
-        'volume': (Volume.ZERO, Direction.NEUTRAL),
-        'inflow': (Inflow.PLUS, Direction.POSITIVE),
-        'outflow': (Outflow.ZERO, Direction.NEUTRAL),
-    }
-    entity_state_before = make_entity_state(container, container_state_before)
-    entity_state_after = make_entity_state(container, container_state_after)
-    assert magnitudes_match(entity_state_before, entity_state_after) == True
+# def test_check_extremes_bad():
+#     container_state_bad = {
+#         'volume': (Volume.MAX, Direction.POSITIVE),  # can't have direction positive
+#         'inflow': (Inflow.ZERO, Direction.NEUTRAL),
+#         'outflow': (Outflow.ZERO, Direction.NEUTRAL),
+#     }
+#     entity_state_bad = make_entity_state(container, container_state_bad)
+#     assert check_extremes(entity_state_bad) == False
 
-def test_magnitudes_match_range_bad():
-    container_state_before = {
-        'volume': (Volume.ZERO, Direction.NEUTRAL),
-        'inflow': (Inflow.PLUS, Direction.POSITIVE),
-        'outflow': (Outflow.ZERO, Direction.NEUTRAL),
-    }
-    container_state_after = {
-        'volume': (Volume.ZERO, Direction.NEUTRAL),
-        'inflow': (Inflow.ZERO, Direction.POSITIVE),
-        'outflow': (Outflow.ZERO, Direction.NEUTRAL),
-    }
-    entity_state_before = make_entity_state(container, container_state_before)
-    entity_state_after = make_entity_state(container, container_state_after)
-    assert magnitudes_match(entity_state_before, entity_state_after) == False
-
-def test_check_extremes_good():
-    container_state_good = {
-        'volume': (Volume.MAX, Direction.NEUTRAL),
-        'inflow': (Inflow.ZERO, Direction.POSITIVE),
-        'outflow': (Outflow.ZERO, Direction.NEUTRAL),
-    }
-    entity_state_good = make_entity_state(container, container_state_good)
-    assert check_extremes(entity_state_good) == True
-
-def test_check_extremes_bad():
-    container_state_bad = {
-        'volume': (Volume.MAX, Direction.POSITIVE),  # can't have direction positive
-        'inflow': (Inflow.ZERO, Direction.NEUTRAL),
-        'outflow': (Outflow.ZERO, Direction.NEUTRAL),
-    }
-    entity_state_bad = make_entity_state(container, container_state_bad)
-    assert check_extremes(entity_state_bad) == False
-
-def test_extreme_direction():
-    assert extreme_direction(Volume.ZERO, Volume) == Direction.NEGATIVE
-    assert extreme_direction(Volume.PLUS, Volume) == Direction.NEUTRAL
-    assert extreme_direction(Volume.MAX, Volume) == Direction.POSITIVE
+# def test_extreme_direction():
+#     assert extreme_direction(Volume.ZERO, Volume) == Direction.NEGATIVE
+#     assert extreme_direction(Volume.PLUS, Volume) == Direction.NEUTRAL
+#     assert extreme_direction(Volume.MAX, Volume) == Direction.POSITIVE
 
 def test_state_derivatives():
     state = {'volume': QuantityPair(Volume.ZERO, Direction.POSITIVE)}
@@ -296,7 +179,7 @@ def test_check_not_equal():
     assert check_not_equal(entity_state, entity_state) == False
     assert check_not_equal(entity_state, bonus_entity_state) == True
 
-def test_can_transition():
+def test_check_transition():
     container_state_before = {
         'volume': (Volume.ZERO, Direction.NEUTRAL),
         'inflow': (Inflow.ZERO, Direction.POSITIVE),
@@ -309,13 +192,4 @@ def test_can_transition():
     }
     entity_state_before = make_entity_state(container, container_state_before)
     entity_state_after = make_entity_state(container, container_state_after)
-    assert can_transition(entity_state_before, entity_state_after) == True
-
-def test_filter_states():
-    container_state_bad = {
-        'volume': (Volume.ZERO, Direction.NEGATIVE),
-        'inflow': (Inflow.ZERO, Direction.NEUTRAL),
-        'outflow': (Outflow.PLUS, Direction.NEUTRAL),
-    }
-    entity_state_bad = make_entity_state(container, container_state_bad)
-    assert len(filter_states([entity_state, entity_state_bad])) == 1
+    assert check_transition(entity_state_before, entity_state_after) == True

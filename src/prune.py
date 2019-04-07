@@ -1,78 +1,86 @@
 # Importing the Libraries
 import copy
 from typing import List, Dict, Tuple, Set
+import itertools
 from qr_types import *
 
-def derivatives_match(a: EntityState, b: EntityState) -> bool:
-    '''check derivative changes given the quantity relationships.'''
-    # state1: Dict[str, QuantityPair], state2: Dict[str, QuantityPair], relations: List[Relation]
-    state1 = a.state
-    state2 = b.state
-    relations = a.entity.relations
-    derivatives1 = state_derivatives(state1)
-    derivatives2 = state_derivatives(state2)
+def next_states(entity_state: EntityState) -> List[EntityState]:
+    a = entity_state
+    return list(filter(lambda b: check_transition(a, b), [EntityState(entity_state.entity, zip_pair(pair)) for pair in itertools.product(
+        next_magnitudes(entity_state),
+        next_derivatives(entity_state),
+    )]))
+
+def zip_pair(tpl: Tuple[Dict[str, Enum], Dict[str, Direction]]) -> Dict[str, QuantityPair]:
+    (magnitude_dict, derivative_dict) = tpl
+    return {k: QuantityPair(magnitude, derivative_dict[k]) for k, magnitude in magnitude_dict.items()}
+
+# TODO: incorporate transformation based on check_extremes
+def next_derivatives(entity_state: EntityState) -> List[Dict[str, Direction]]:
+    entity = entity_state.entity
+    relations = entity.relations
+    state = entity_state.state
+    derivatives = state_derivatives(state)
     # Dictionary to keep track of the derivative directions of dependant quantities
-    effect_sets = relation_effects(state1, relations)
+    effect_sets = relation_effects(state, relations)
     # Determine the overall derivative direction for the target quantities
     relation_derivatives = {k: combine_derivatives(directions) for k, directions in effect_sets.items()}
     # check if state2 derivatives are compatible with relation_derivatives:
-    # filter out QUESTIONs
-    known = [k for k, v in relation_derivatives.items() if v != Direction.QUESTION]
+    # k, derivative = list(derivatives.items())[0]
+    next_derivatives = {k:
+            list(map(lambda x: (k, x), {derivative, move_derivative(derivative, relation_derivatives[k])}))
+        for k, derivative in derivatives.items()}
+    derivative_combinations = list(map(dict, itertools.product(*next_derivatives.values())))
+    return derivative_combinations
 
-    # check other vals add up, i.e. as close to the combined effect in state2 
-    # as in state1. note that while this may not filter out jumps from negative
-    # to positive, these will be caught in the continuous check instead.
-    for k in known:
-        effect = relation_derivatives[k]
-        change = compare_derivatives(derivatives1[k], derivatives2[k])
-        if not change in {Direction.NEUTRAL, effect}:
-            return False
-    return True
+def move_derivative(derivative: Direction, effect: Direction) -> Direction:
+    return {Direction.NEUTRAL} if {derivative, effect} == {Direction.POSITIVE, Direction.NEGATIVE} else \
+        set([effect]).union(move_derivative(derivative, Direction.POSITIVE)).union(move_derivative(derivative, Direction.NEGATIVE)) if effect == Direction.QUESTION else \
+        {effect} if derivative == Direction.NEUTRAL else {derivative}
 
-def compare_derivatives(old: Direction, new: Direction) -> Direction:
-    '''return a relative Direction between Directions. if equal yields Neutral (rather than Question).'''
-    return Direction.NEUTRAL if old == new else Direction.POSITIVE if new.value > old.value else Direction.NEGATIVE
-
-def magnitudes_match(a: EntityState, b: EntityState) -> bool:
-    '''check magnitude changes from state1 to state2 match the state2 derivatives'''
-    change_derivatives = check_magnitude_changes(a.state, b.state)
-    for k in a.state:
-        pair1 = a.state[k]
-        mag1 = pair1.magnitude
-        der1 = pair1.derivative
-        change = change_derivatives[k]
-        if is_point(mag1):
-            # point magnitudes *must* change a step according to the derivative (diff == derivative)
-            if change != der1:
-                return False
-        else:
-            # range magnitudes *might* change a step according to the derivative.
-            if not change in {Direction.NEUTRAL, der1}:
-                return False
-    return True
-
-# TODO: change this from a filter to a transformation
-def check_extremes(entity_state: EntityState) -> bool:
-    '''ensure derivatives are clipped when the magnitudes are at an extreme point'''
+# TODO: incorporate transformation based on check_value_correspondence
+def next_magnitudes(entity_state: EntityState) -> List[Dict[str, Enum]]:
     state = entity_state.state
-    quantities = entity_state.entity.quantities
-    for k, pair in state.items():
-        mag = pair.magnitude
-        der = pair.derivative
-        enum = quantities[k].quantitySpace
-        side = extreme_direction(mag, enum)
-        if is_point(mag) and der == side and der != Direction.NEUTRAL:
-            return False
-    return True
+    entity = entity_state.entity
+    next_magnitudes = {k:
+        list(map(lambda x: (k, x),
+            {move_magnitude(pair, entity.quantities[k].quantitySpace)} \
+            .union(set() if is_point(pair.magnitude) else {pair.magnitude})
+        ))
+        for k, pair in state.items()
+    }
+    magnitude_combinations = list(map(dict, itertools.product(*next_magnitudes.values())))
+    return magnitude_combinations
 
-def extreme_direction(magnitude: Enum, enum: EnumMeta) -> Direction:
-    '''get a direction from a magnitude based on whether it is at the
-       high extreme (positive), low (negative), or in between (neutral).'''
-    val = magnitude.value
-    vals = [mag.value for mag in dict(enum.__members__).values()]
-    return Direction.NEGATIVE if val == min(vals) else \
-           Direction.POSITIVE if val == max(vals) else \
-           Direction.NEUTRAL
+def move_magnitude(pair: QuantityPair, space: EnumMeta) -> Enum:
+    '''move a magnitude based on its derivative'''
+    members = list(space.__members__)
+    idx = {k: i for i, k in list(enumerate(members))}[pair.magnitude.name]
+    new_idx = min(len(members)-1, max(0, idx + to_sign(pair.derivative)))
+    return space[members[new_idx]]
+
+# # TODO: change this from a filter to a transformation
+# def check_extremes(entity_state: EntityState) -> bool:
+#     '''ensure derivatives are clipped when the magnitudes are at an extreme point'''
+#     state = entity_state.state
+#     quantities = entity_state.entity.quantities
+#     for k, pair in state.items():
+#         mag = pair.magnitude
+#         der = pair.derivative
+#         enum = quantities[k].quantitySpace
+#         side = extreme_direction(mag, enum)
+#         if is_point(mag) and der == side and der != Direction.NEUTRAL:
+#             return False
+#     return True
+
+# def extreme_direction(magnitude: Enum, enum: EnumMeta) -> Direction:
+#     '''get a direction from a magnitude based on whether it is at the
+#        high extreme (positive), low (negative), or in between (neutral).'''
+#     val = magnitude.value
+#     vals = [mag.value for mag in dict(enum.__members__).values()]
+#     return Direction.NEGATIVE if val == min(vals) else \
+#            Direction.POSITIVE if val == max(vals) else \
+#            Direction.NEUTRAL
 
 def state_derivatives(state: Dict[str, QuantityPair]) -> Dict[str, Direction]:
     '''return the derivatives of a state'''
@@ -182,18 +190,10 @@ def is_point(magnitude: Enum) -> bool:
     '''check if a magnitude is a point value. presumes point values are encoded as even, ranges as odd numbers.'''
     return magnitude.value % 2 == 0
 
-def filter_states(entity_states: List[EntityState]) -> List[EntityState]:
-    '''filter a list of entity states to those states deemed valid by valid correspondence'''
-    return list(filter(state_valid, entity_states))
-
 def check_not_equal(stateA: EntityState, stateB: EntityState) -> bool:
     '''confirm two states are distinct'''
     return stateA != stateB
 
-def state_valid(entity_state: EntityState) -> bool:
-    '''confirm a state is valid based on value correspondence and extremity checks'''
-    return check_value_correspondence(entity_state) and check_extremes(entity_state)
-
-def can_transition(a: EntityState, b: EntityState) -> bool:
+def check_transition(a: EntityState, b: EntityState) -> bool:
     '''confirm a source state can transition into a target state'''
-    return derivatives_match(a, b) and magnitudes_match(a, b) and check_continuous(a, b) and check_point_range(a, b) and check_not_equal(a, b)
+    return check_continuous(a, b) and check_point_range(a, b) and check_not_equal(a, b)

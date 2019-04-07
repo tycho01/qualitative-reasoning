@@ -19,47 +19,31 @@ def make_entity_state(entity: Entity, state_dict: Dict[str, Tuple[Enum, Directio
     pair_state = {k: QuantityPair(*tpl) for k, tpl in state_dict.items()}
     return EntityState(entity, pair_state)
 
-def gen_state_graph(entity: Entity) -> StateGraph:
-    # generate all possible states
-    all_states = gen_states(entity)
-
-    # - see which lead to conflicts based on rules like VC to filter out invalid states/transitions
-    possible_states = filter_states(all_states)
-
-    # - see how they connect, generating edges using Influence/Proportional relationships
-    #   - given multiple relationships, first see how these would interact, then apply the result on a state
-    #   - point (0, max?, delta 0) vs. range (+, delta -/+) values: points change first.
-    all_combinations = itertools.product(possible_states, possible_states)
-    possible_combinations = list(filter(lambda tpl: can_transition(tpl[0], tpl[1]), all_combinations))
-
-    nodes = {state_key(state): state for state in possible_states}
-    edges = [(state_key(pair[0]), state_key(pair[1])) for pair in possible_combinations]
-
-    # nodes = {}
-    # edges = []
-    # state = possible_states[0]
-    # k = state_key(state)
-    # nodes.update({ k: state })
-    # handle_state(state, nodes, edges)  # recursively mutate nodes/edges here
+def gen_state_graph(entity_state: EntityState) -> StateGraph:
+    nodes = {}
+    edges = []
+    state = entity_state
+    k = state_key(state)
+    nodes.update({ k: state })
+    handle_state(state, nodes, edges)  # recursively mutate nodes/edges here
 
     sg = StateGraph(nodes, edges)
     # TODO: handle exogenous state changes?
     return sg
 
-# TODO: in prune generate any combinations of changing range magnitudes by itertools.product to generate potential next states?
-# def handle_state(
-#     state: EntityState,
-#     states: Dict[str, EntityState],
-#     edges: List[Tuple[str, str]]) -> None:
-#     ''' recursively handle a state. impure!
-#         mutates states/edges to return. TODO: change this?
-#     '''
-#     for next_state in next_states(state):
-#         next_k = state_key(next_state)
-#         edges.append((k, next_k))
-#         if not state in states:
-#             states.add(state)
-#             handle_state(next_state, states, edges)
+def handle_state(
+    state: EntityState,
+    nodes: Dict[str, EntityState],
+    edges: List[Tuple[str, str]]) -> None:
+    ''' recursively handle a state. impure!
+        mutates nodes/edges to return. TODO: change this?
+    '''
+    for next_state in next_states(state):
+        next_k = state_key(next_state)
+        edges.append((k, next_k))
+        if not state in nodes:
+            nodes.add(state)
+            handle_state(next_state, nodes, edges)
 
 def serialize_state(state: EntityState) -> str:
     '''simple serialization method for EntityState'''
@@ -108,15 +92,13 @@ def state_key(state: EntityState) -> str:
 def inter_state_trace(a: EntityState, b: EntityState) -> str:
     '''inter-state trace, showing states and transition validity by the various rules'''
     # potential improvement: show why stuff changed
-    magnitude = magnitudes_match(a, b)
-    derivative = derivatives_match(a, b)
     continuous = check_continuous(a, b)
     point_range = check_point_range(a, b)
     not_equal = check_not_equal(a, b)
-    # valid = can_transition(a, b)
+    # valid = check_transition(a, b)
     return yaml.dump({
-        'magnitude_valid': magnitude,
-        'derivative_valid': derivative,
+        # 'magnitude_valid': magnitude,
+        # 'derivative_valid': derivative,
         'continuous_valid': continuous,
         'point_range_valid': point_range,
         'not_equal_valid': not_equal,
@@ -139,12 +121,11 @@ def intra_state_trace(entity_state: EntityState) -> str:
     # state = {k: (pair.magnitude.name, pair.derivative.name) for k, pair in entity_state.state.items()}
     derivatives = [f"{serialize_quantity(k)} {'will' if is_point(pair.magnitude) or pair.derivative == Direction.NEUTRAL else 'may'} {serialize_change(pair.derivative)} {serialize_magnitude(pair.magnitude)}" for k, pair in entity_state.state.items()]
     correspondence_valid = check_value_correspondence(entity_state)
-    extreme_valid = check_extremes(entity_state)
-    # valid = state_valid(entity_state)
+    # extreme_valid = check_extremes(entity_state)
     return yaml.dump({
         # 'type': entity_state.entity.name,
         'correspondence_valid': correspondence_valid,
-        'extreme_valid': extreme_valid,
+        # 'extreme_valid': extreme_valid,
         # 'valid': valid,
         'derivatives': derivatives,
         # 'state': state,
@@ -161,23 +142,3 @@ def wrap_enums(qty_vals: Tuple[Quantity, Tuple[int, int]]) -> Tuple[str, Quantit
     derivative = Direction(speed)
     pair = QuantityPair(magnitude, derivative)
     return (k, pair)
-
-def gen_states(entity: Entity) -> List[EntityState]:
-    iterables = list(itertools.chain.from_iterable([
-        [
-            # magnitudes
-            [enumVal.value for enumVal in qty.quantitySpace],
-            # derivatives
-            [enumVal.value for enumVal in set(Direction) - {Direction.QUESTION}]
-        ] for qty in entity.quantities.values()
-    ]))
-    # state_dict: Dict[str, QuantityPair]
-    state_dicts = [
-        {
-            k: qty_pair
-            for k, qty_pair in map(wrap_enums, zip(entity.quantities.values(), to_pairs(pair)))
-        }
-        for pair in itertools.product(*iterables)
-    ]
-    states = [EntityState(entity, state_dict) for state_dict in state_dicts]
-    return states
