@@ -51,7 +51,7 @@ def magnitudes_match(a: EntityState, b: EntityState) -> bool:
                 return False
     return True
 
-# TODO: ensure this change will not get filtered out by other checks!
+# TODO: change this from a filter to a transformation
 def check_extremes(entity_state: EntityState) -> bool:
     '''ensure derivatives are clipped when the magnitudes are at an extreme point'''
     state = entity_state.state
@@ -99,6 +99,7 @@ def combine_derivatives(directions_: Set[Direction]) -> Direction:
     size = len(set(directions))
     return Direction.NEUTRAL if size == 0 else list(directions)[0] if size == 1 else Direction.QUESTION
 
+# TODO: change this from a filter to a transformation
 def check_value_correspondence(entity_state: EntityState) -> bool:
     '''check if a state is deemed valid by its value correspondence rules'''
     state = entity_state.state
