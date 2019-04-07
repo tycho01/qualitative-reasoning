@@ -17,11 +17,11 @@ def test_make_entity_state():
 
 def test_serialize_state():
     # print(serialize_state(entity_state))
-    assert serialize_state(entity_state) == '''inflow: !!python/tuple\n- 0\n- 3\noutflow: !!python/tuple\n- 0\n- 2\nvolume: !!python/tuple\n- 0\n- 2\n'''
+    assert serialize_state(entity_state) == '''inflow: (0, 3)\noutflow: (0, 2)\nvolume: (0, 2)\n'''
 
-# def test_state_key():
-#     print(state_key(entity_state))
-#     assert state_key(entity_state) == '''inflow_python_tuple_0_3_outflow_python_tuple_0_2_volume_python_tuple_0_2_\ncontinuous_valid: true\nnot_equal_valid: false\npoint_range_valid: true\n'''
+def test_state_key():
+    # print(state_key(entity_state))
+    assert state_key(entity_state) == 'inflow_0_3_outflow_0_2_volume_0_2_'
 
 def test_inter_state_trace():
     # print(inter_state_trace(entity_state, entity_state))

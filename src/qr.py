@@ -25,7 +25,7 @@ def gen_state_graph(entity_state: EntityState) -> StateGraph:
     state = entity_state
     k = state_key(state)
     nodes.update({ k: state })
-    handle_state(state, nodes, edges)  # recursively mutate nodes/edges here
+    handle_state(state, nodes, edges, k)  # recursively mutate nodes/edges here
 
     sg = StateGraph(nodes, edges)
     # TODO: handle exogenous state changes?
@@ -34,20 +34,21 @@ def gen_state_graph(entity_state: EntityState) -> StateGraph:
 def handle_state(
     state: EntityState,
     nodes: Dict[str, EntityState],
-    edges: List[Tuple[str, str]]) -> None:
+    edges: List[Tuple[str, str]],
+    k: str) -> None:
     ''' recursively handle a state. impure!
         mutates nodes/edges to return. TODO: change this?
     '''
     for next_state in next_states(state):
         next_k = state_key(next_state)
         edges.append((k, next_k))
-        if not state in nodes:
+        if not k in nodes:
             nodes.add(state)
-            handle_state(next_state, nodes, edges)
+            handle_state(next_state, nodes, edges, next_k)
 
 def serialize_state(state: EntityState) -> str:
     '''simple serialization method for EntityState'''
-    return yaml.dump({k: (pair.magnitude.value, pair.derivative.value) for k, pair in state.state.items()})
+    return yaml.dump({k: f"({pair.magnitude.value}, {pair.derivative.value})" for k, pair in state.state.items()})
 
 def serialize_derivative(derivative: Direction) -> str:
     return {
