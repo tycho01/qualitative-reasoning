@@ -95,8 +95,8 @@ def check_magnitude_changes(state1: Dict[str, QuantityPair], state2: Dict[str, Q
 
 def num_to_direction(num: int) -> DerivativeDirection:
     '''get a DerivativeDirection from a number's sign'''
-    return DerivativeDirection.NEUTRAL if num == 0 else
-           DerivativeDirection.POSITIVE if num > 0 else
+    return DerivativeDirection.NEUTRAL if num == 0 else \
+           DerivativeDirection.POSITIVE if num > 0 else \
            DerivativeDirection.NEGATIVE
 
 def check_continuous(stateA: EntityState, stateB: EntityState) -> bool:
