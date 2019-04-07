@@ -107,7 +107,7 @@ def state_key(state: EntityState) -> str:
 
 def inter_state_trace(a: EntityState, b: EntityState) -> str:
     '''inter-state trace, showing states and transition validity by the various rules'''
-    # TODO: show why stuff changed
+    # potential improvement: show why stuff changed
     magnitude = magnitudes_match(a, b)
     derivative = derivatives_match(a, b)
     continuous = check_continuous(a, b)
@@ -135,7 +135,7 @@ def serialize_change(derivative: Direction) -> str:
 
 def intra_state_trace(entity_state: EntityState) -> str:
     '''intra-state trace, showing type, validity, and state'''
-    # TODO: show how things will change (i.e. after adding in question marks?)
+    # potential improvement: show how things will change (i.e. after adding in question marks?)
     # state = {k: (pair.magnitude.name, pair.derivative.name) for k, pair in entity_state.state.items()}
     derivatives = [f"{serialize_quantity(k)} {'will' if is_point(pair.magnitude) or pair.derivative == Direction.NEUTRAL else 'may'} {serialize_change(pair.derivative)} {serialize_magnitude(pair.magnitude)}" for k, pair in entity_state.state.items()]
     correspondence_valid = check_value_correspondence(entity_state)
