@@ -253,20 +253,20 @@ def test_check_not_equal():
     assert check_not_equal(entity_state, entity_state) == False
     assert check_not_equal(entity_state, bonus_entity_state) == True
 
-# def test_can_transition():
-#     container_state_before = {
-#         'volume': (Volume.ZERO, Direction.NEUTRAL),
-#         'inflow': (Inflow.ZERO, Direction.POSITIVE),
-#         'outflow': (Outflow.ZERO, Direction.NEUTRAL),
-#     }
-#     container_state_after = {
-#         'volume': (Volume.ZERO, Direction.NEUTRAL),
-#         'inflow': (Inflow.PLUS, Direction.POSITIVE),
-#         'outflow': (Outflow.ZERO, Direction.NEUTRAL),
-#     }
-#     entity_state_before = make_entity_state(container, container_state_before)
-#     entity_state_after = make_entity_state(container, container_state_after)
-#     assert can_transition(entity_state_before, entity_state_after) == True
+def test_can_transition():
+    container_state_before = {
+        'volume': (Volume.ZERO, Direction.NEUTRAL),
+        'inflow': (Inflow.ZERO, Direction.POSITIVE),
+        'outflow': (Outflow.ZERO, Direction.NEUTRAL),
+    }
+    container_state_after = {
+        'volume': (Volume.ZERO, Direction.NEUTRAL),
+        'inflow': (Inflow.PLUS, Direction.POSITIVE),
+        'outflow': (Outflow.ZERO, Direction.NEUTRAL),
+    }
+    entity_state_before = make_entity_state(container, container_state_before)
+    entity_state_after = make_entity_state(container, container_state_after)
+    assert can_transition(entity_state_before, entity_state_after) == True
 
 def test_filter_states():
     container_state_bad = {
