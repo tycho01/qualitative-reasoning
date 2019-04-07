@@ -169,6 +169,29 @@ def test_magnitudes_match_range_bad():
     entity_state_after = make_entity_state(container, container_state_after)
     assert magnitudes_match(entity_state_before.state, entity_state_after.state) == False
 
+def test_check_extremes_good():
+    container_state_good = {
+        'volume': (Volume.MAX, Direction.NEUTRAL),
+        'inflow': (Inflow.ZERO, Direction.POSITIVE),
+        'outflow': (Outflow.ZERO, Direction.NEUTRAL),
+    }
+    entity_state_good = make_entity_state(container, container_state_good)
+    assert check_extremes(entity_state_good) == True
+
+def test_check_extremes_bad():
+    container_state_bad = {
+        'volume': (Volume.MAX, Direction.POSITIVE),  # can't have direction positive
+        'inflow': (Inflow.ZERO, Direction.NEUTRAL),
+        'outflow': (Outflow.ZERO, Direction.NEUTRAL),
+    }
+    entity_state_bad = make_entity_state(container, container_state_bad)
+    assert check_extremes(entity_state_bad) == False
+
+def test_extreme_direction():
+    assert extreme_direction(Volume.ZERO, Volume) == Direction.NEGATIVE
+    assert extreme_direction(Volume.PLUS, Volume) == Direction.NEUTRAL
+    assert extreme_direction(Volume.MAX, Volume) == Direction.POSITIVE
+
 def test_state_derivatives():
     state = {'volume': QuantityPair(Volume.ZERO, Direction.POSITIVE)}
     assert state_derivatives(state) == {'volume': Direction.POSITIVE}

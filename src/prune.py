@@ -54,6 +54,29 @@ def magnitudes_match(state1: Dict[str, QuantityPair], state2: Dict[str, Quantity
                 return False
     return True
 
+# TODO: ensure this change will not get filtered out by other checks!
+def check_extremes(entity_state: EntityState) -> bool:
+    '''ensure derivatives are clipped when the magnitudes are at an extreme point'''
+    state = entity_state.state
+    quantities = entity_state.entity.quantities
+    for k, pair in state.items():
+        mag = pair.magnitude
+        der = pair.derivative
+        enum = quantities[k].quantitySpace
+        side = extreme_direction(mag, enum)
+        if is_point(mag) and der == side and der != Direction.NEUTRAL:
+            return False
+    return True
+
+def extreme_direction(magnitude: Enum, enum: EnumMeta) -> Direction:
+    '''get a direction from a magnitude based on whether it is at the
+       high extreme (positive), low (negative), or in between (neutral).'''
+    val = magnitude.value
+    vals = [mag.value for mag in dict(enum.__members__).values()]
+    return Direction.NEGATIVE if val == min(vals) else \
+           Direction.POSITIVE if val == max(vals) else \
+           Direction.NEUTRAL
+
 def state_derivatives(state: Dict[str, QuantityPair]) -> Dict[str, Direction]:
     '''return the derivatives of a state'''
     return {k: qty.derivative for k, qty in state.items()}
@@ -163,11 +186,15 @@ def is_point(magnitude: Enum) -> bool:
 
 def filter_states(entity_states: List[EntityState]) -> List[EntityState]:
     '''filter a list of entity states to those states deemed valid by valid correspondence'''
-    return list(filter(check_value_correspondence, entity_states))
+    return list(filter(state_valid, entity_states))
 
 def check_not_equal(stateA: EntityState, stateB: EntityState) -> bool:
     '''confirm two states are distinct'''
     return stateA != stateB
+
+def state_valid(entity_state: EntityState) -> bool:
+    '''confirm a state is valid based on value correspondence and extremity checks'''
+    return check_value_correspondence(entity_state) and check_extremes(entity_state)
 
 def can_transition(a: EntityState, b: EntityState) -> bool:
     '''confirm a source state can transition into a target state'''

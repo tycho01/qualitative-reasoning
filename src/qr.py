@@ -91,7 +91,7 @@ def intra_state_trace(entity_state: EntityState) -> str:
     # TODO: show how things will change (i.e. after adding in question marks as per check_influence?)
     # out of scope: if invalid, show why.
     state = {k: (pair.magnitude.name, pair.derivative.name) for k, pair in entity_state.state.items()}
-    valid = check_value_correspondence(entity_state)
+    valid = state_valid(entity_state)
     return str({ 'type': entity_state.entity.name, 'valid': valid, 'state': state })
 
 def to_pairs(lst):
