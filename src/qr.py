@@ -122,13 +122,8 @@ def intra_state_trace(entity_state: EntityState) -> str:
     # potential improvement: show how things will change (i.e. after adding in question marks?)
     # state = {k: (pair.magnitude.name, pair.derivative.name) for k, pair in entity_state.state.items()}
     derivatives = [f"{serialize_quantity(k)} {'will' if is_point(pair.magnitude) or pair.derivative == Direction.NEUTRAL else 'may'} {serialize_change(pair.derivative)} {serialize_magnitude(pair.magnitude)}" for k, pair in entity_state.state.items()]
-    correspondence_valid = check_value_correspondence(entity_state)
-    # extreme_valid = check_extremes(entity_state)
     return yaml.dump({
         # 'type': entity_state.entity.name,
-        'correspondence_valid': correspondence_valid,
-        # 'extreme_valid': extreme_valid,
-        # 'valid': valid,
         'derivatives': derivatives,
         # 'state': state,
     })
