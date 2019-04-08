@@ -36,9 +36,7 @@ def handle_state(
     nodes: Dict[str, EntityState],
     edges: List[Tuple[str, str]],
     k: str) -> Tuple[Dict[str, EntityState], List[Tuple[str, str]]]:
-    ''' recursively handle a state. impure!
-        mutates nodes/edges to return. TODO: change this?
-    '''
+    ''' recursively handle a state. impure! mutates nodes/edges to return.'''
     for next_state in next_states(state):
         next_k = state_key(next_state)
         edges.append((k, next_k))
