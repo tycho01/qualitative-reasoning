@@ -60,7 +60,10 @@ def next_magnitudes(entity_state: EntityState) -> List[Dict[str, Enum]]:
 def derivative_options(reqs: Dict[str, Set[Enum]], pair: QuantityPair, space: EnumMeta) -> Set[Enum]:
     point_range = set() if is_point(pair.magnitude) else {pair.magnitude}
     rest = {move_magnitude(pair, space)}.union(point_range)
-    return rest.intersection(reqs) if reqs else rest
+    # filtering approach: no forcing values in a direction
+    # return rest.intersection(reqs) if reqs else rest
+    # forcing approach: force the quantity to the value in spite of its derivative and point/range priorities
+    return reqs if reqs else rest
 
 def correspondence_reqs(entity_state: EntityState) -> Dict[str, Set[Enum]]:
     '''get a dictionary of value correspondence requirements on quantities'''
