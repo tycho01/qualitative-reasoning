@@ -35,5 +35,7 @@ def gen_dot(states, edges):
 def draw_state_graph(sg: StateGraph):
     A = gen_dot(sg.states, sg.edges)
     A.write('../graph.dot')
-    A.draw('../graph.svg', prog='circo')
+    A.draw('../dot.svg', prog='dot')
+    A.draw('../neato.svg', prog='neato')
+    # A.draw('../circo.svg', prog='circo')
     return A
