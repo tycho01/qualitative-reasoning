@@ -15,7 +15,7 @@ def gen_dot(states, edges):
 
     for idx, tpl in enumerate(states.items()):
         node, entity_state = tpl
-        label = pretty_print(entity_state, idx)
+        label = pretty_print(entity_state, idx+1)
         tooltip = intra_state_trace(entity_state)
         if A.has_node(node):
             A.get_node(node).attr['label'] = label
