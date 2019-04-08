@@ -1,6 +1,4 @@
 import pygraphviz as pgv
-# http://pygraphviz.github.io/documentation/latest/reference/agraph.html
-# http://pygraphviz.github.io/documentation/pygraphviz-1.5/pygraphviz.pdf
 from qr import *
 
 def gen_dot(states, edges):

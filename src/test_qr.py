@@ -1,7 +1,7 @@
 from qr import *
 from container import *
 from mock import *
-# from graph import *
+from graph import *
 
 def test_make_entity():
     entity = make_entity('container', quantities, relations)
@@ -11,9 +11,9 @@ def test_make_entity_state():
     entity_state = make_entity_state(container, container_state)
     assert entity_state.state['volume'] == QuantityPair(Volume.ZERO, Direction.NEUTRAL)
 
-# def test_gen_state_graph():
-#     sg = gen_state_graph(container)
-#     # assert draw_state_graph(sg)
+def test_gen_state_graph():
+    sg = gen_state_graph(entity_state)
+    assert draw_state_graph(sg)
 
 def test_serialize_state():
     # print(serialize_state(entity_state))
