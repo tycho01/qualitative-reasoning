@@ -1,6 +1,4 @@
 import pygraphviz as pgv
-# http://pygraphviz.github.io/documentation/latest/reference/agraph.html
-# http://pygraphviz.github.io/documentation/pygraphviz-1.5/pygraphviz.pdf
 from qr import *
 
 def gen_dot(states, edges):
@@ -15,8 +13,9 @@ def gen_dot(states, edges):
 
     A.add_edges_from(edges)
 
-    for node, entity_state in states.items():
-        label = pretty_print(entity_state)
+    for idx, tpl in enumerate(states.items()):
+        node, entity_state = tpl
+        label = pretty_print(entity_state, idx+1)
         tooltip = intra_state_trace(entity_state)
         if A.has_node(node):
             A.get_node(node).attr['label'] = label
@@ -37,5 +36,7 @@ def gen_dot(states, edges):
 def draw_state_graph(sg: StateGraph):
     A = gen_dot(sg.states, sg.edges)
     A.write('../graph.dot')
-    A.draw('../graph.svg', prog='circo')
+    A.draw('../dot.svg', prog='dot')
+    A.draw('../neato.svg', prog='neato')
+    # A.draw('../circo.svg', prog='circo')
     return A

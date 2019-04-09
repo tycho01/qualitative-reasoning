@@ -21,6 +21,8 @@ class Quantity:
 
 @dataclass
 class Relation:
+    # a: any
+    # b: any
     pass
 
 @dataclass

@@ -81,19 +81,6 @@ def test_combine_derivatives():
     assert combine_derivatives({Direction.POSITIVE, Direction.NEGATIVE}) == Direction.QUESTION
     assert combine_derivatives({Direction.NEUTRAL, Direction.NEGATIVE}) == Direction.NEGATIVE
 
-def test_check_value_correspondence_good():
-    assert check_value_correspondence(entity_state) == True
-
-def test_check_value_correspondence_bad():
-    # volume/outflow are tied in zero/max
-    container_state_bad = {
-        'volume': (Volume.ZERO, Direction.NEGATIVE),
-        'inflow': (Inflow.ZERO, Direction.NEUTRAL),
-        'outflow': (Outflow.PLUS, Direction.NEUTRAL),
-    }
-    entity_state_bad = make_entity_state(container, container_state_bad)
-    assert check_value_correspondence(entity_state_bad) == False
-
 def test_check_perform_direct_influence():
     assert direct_influence(Direction.POSITIVE, 0) == Direction.NEUTRAL
 

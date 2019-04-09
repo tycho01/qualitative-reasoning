@@ -25,7 +25,6 @@ def gen_state_graph(entity_state: EntityState) -> StateGraph:
     state = entity_state
     k = state_key(state)
     nodes.update({ k: state })
-    # print(k)
     (nodes, edges) = handle_state(state, nodes, edges, k)  # recursively mutate nodes/edges here
 
     sg = StateGraph(nodes, edges)
@@ -37,15 +36,12 @@ def handle_state(
     nodes: Dict[str, EntityState],
     edges: List[Tuple[str, str]],
     k: str) -> Tuple[Dict[str, EntityState], List[Tuple[str, str]]]:
-    ''' recursively handle a state. impure!
-        mutates nodes/edges to return. TODO: change this?
-    '''
+    ''' recursively handle a state. impure! mutates nodes/edges to return.'''
     for next_state in next_states(state):
         next_k = state_key(next_state)
         edges.append((k, next_k))
-        # print(edges)
         if not next_k in nodes:
-            nodes.update({ k: state })
+            nodes.update({ next_k: state })
             (nodes, edges) = handle_state(next_state, nodes, edges, next_k)
     return (nodes, edges)
 
@@ -77,7 +73,7 @@ def serialize_quantity(k: str) -> str:
         'height': 'Hi',
     }.get(k, k)
 
-def pretty_print(entity_state: EntityState) -> str:
+def pretty_print(entity_state: EntityState, idx: int) -> str:
     state = entity_state.state
     # keys = state
     keys = [
@@ -87,7 +83,7 @@ def pretty_print(entity_state: EntityState) -> str:
         'pressure',
         'height',
     ]
-    return '\n'.join([f"{serialize_quantity(k)}: ({serialize_magnitude(state[k].magnitude)}, {serialize_derivative(state[k].derivative)})" for k in keys if k in state])
+    return f'State {idx}\n' + '\n'.join([f"{serialize_quantity(k)}: ({serialize_magnitude(state[k].magnitude)}, {serialize_derivative(state[k].derivative)})" for k in keys if k in state])
 
 def state_key(state: EntityState) -> str:
     '''serialize state for graph key purposes'''
@@ -124,13 +120,8 @@ def intra_state_trace(entity_state: EntityState) -> str:
     # potential improvement: show how things will change (i.e. after adding in question marks?)
     # state = {k: (pair.magnitude.name, pair.derivative.name) for k, pair in entity_state.state.items()}
     derivatives = [f"{serialize_quantity(k)} {'will' if is_point(pair.magnitude) or pair.derivative == Direction.NEUTRAL else 'may'} {serialize_change(pair.derivative)} {serialize_magnitude(pair.magnitude)}" for k, pair in entity_state.state.items()]
-    correspondence_valid = check_value_correspondence(entity_state)
-    # extreme_valid = check_extremes(entity_state)
     return yaml.dump({
         # 'type': entity_state.entity.name,
-        'correspondence_valid': correspondence_valid,
-        # 'extreme_valid': extreme_valid,
-        # 'valid': valid,
         'derivatives': derivatives,
         # 'state': state,
     })

@@ -27,10 +27,10 @@ def next_derivatives(entity_state: EntityState) -> List[Dict[str, Direction]]:
     relation_derivatives = {k: combine_derivatives(directions) for k, directions in effect_sets.items()}
     # check if state2 derivatives are compatible with relation_derivatives:
     # k, derivative = list(derivatives.items())[0]
-    next_derivatives = {k:
+    next_derivs = {k:
             list(map(lambda x: (k, x), {derivative}.union(move_derivative(derivative, relation_derivatives[k]))))
         for k, derivative in derivatives.items()}
-    derivative_combinations = list(map(dict, itertools.product(*next_derivatives.values())))
+    derivative_combinations = list(map(dict, itertools.product(*next_derivs.values())))
     return derivative_combinations
 
 def move_derivative(derivative: Direction, effect: Direction) -> Set[Direction]:
@@ -38,19 +38,43 @@ def move_derivative(derivative: Direction, effect: Direction) -> Set[Direction]:
         set([derivative]).union(move_derivative(derivative, Direction.POSITIVE)).union(move_derivative(derivative, Direction.NEGATIVE)) if effect == Direction.QUESTION else \
         {effect} if derivative == Direction.NEUTRAL else {derivative}
 
-# TODO: incorporate transformation based on check_value_correspondence
 def next_magnitudes(entity_state: EntityState) -> List[Dict[str, Enum]]:
     state = entity_state.state
     entity = entity_state.entity
-    next_magnitudes = {k:
-        list(map(lambda x: (k, x),
-            {move_magnitude(pair, entity.quantities[k].quantitySpace)} \
-            .union(set() if is_point(pair.magnitude) else {pair.magnitude})
-        ))
+
+    # get value correspondence requirements per quantity
+    reqs = correspondence_reqs(entity_state)
+    has_clashes = max(map(len, reqs.values())) > 1
+    if has_clashes:
+        return set()
+    # req_vals = {k: v for k, v in reqs.items() if v}
+    req_vals = dict(reqs)
+
+    magnitudes = {k:
+        list(map(lambda x: (k, x), derivative_options(req_vals[k], pair, entity.quantities[k].quantitySpace)))
         for k, pair in state.items()
     }
-    magnitude_combinations = list(map(dict, itertools.product(*next_magnitudes.values())))
+    magnitude_combinations = list(map(dict, itertools.product(*magnitudes.values())))
     return magnitude_combinations
+
+def derivative_options(reqs: Dict[str, Set[Enum]], pair: QuantityPair, space: EnumMeta) -> Set[Enum]:
+    point_range = set() if is_point(pair.magnitude) else {pair.magnitude}
+    rest = {move_magnitude(pair, space)}.union(point_range)
+    # filtering approach: no forcing values in a direction
+    # return rest.intersection(reqs) if reqs else rest
+    # forcing approach: force the quantity to the value in spite of its derivative and point/range priorities
+    return reqs if reqs else rest
+
+def correspondence_reqs(entity_state: EntityState) -> Dict[str, Set[Enum]]:
+    '''get a dictionary of value correspondence requirements on quantities'''
+    entity = entity_state.entity
+    state = entity_state.state
+    reqs = {k: set() for k in state}
+    for relation in entity.relations:
+        if type(relation) == ValueCorrespondence and qty_matches(state, relation.a):
+            (k, magnitude) = relation.b
+            reqs[k].add(magnitude)
+    return reqs
 
 def move_magnitude(pair: QuantityPair, space: EnumMeta) -> Enum:
     '''move a magnitude based on its derivative'''
@@ -107,17 +131,6 @@ def combine_derivatives(directions_: Set[Direction]) -> Direction:
     size = len(set(directions))
     return Direction.NEUTRAL if size == 0 else list(directions)[0] if size == 1 else Direction.QUESTION
 
-# TODO: change this from a filter to a transformation
-def check_value_correspondence(entity_state: EntityState) -> bool:
-    '''check if a state is deemed valid by its value correspondence rules'''
-    state = entity_state.state
-    entity = entity_state.entity
-    for relation in entity.relations:
-        if type(relation) == ValueCorrespondence:
-            if not qty_matches(state, relation.a) == qty_matches(state, relation.b):
-                return False
-    return True
-
 def direct_influence(relation: Direction, magnitude: int) -> Direction:
     '''calculate the effect of an influence relationship given a magnitude.
        note that magnitudes are presumed to be encoded such that signs of
@@ -149,7 +162,7 @@ def num_to_direction(num: int) -> Direction:
            Direction.POSITIVE if num > 0 else \
            Direction.NEGATIVE
 
-def to_sign(direction: Direction) -> int:
+def to_sign(direction: Enum) -> int:
     '''convert a Direction to a sign (1, 0, -1)'''
     return 1 if direction == Direction.POSITIVE else \
           -1 if direction == Direction.NEGATIVE else 0
