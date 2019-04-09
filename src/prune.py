@@ -20,7 +20,8 @@ def next_derivatives(entity_state: EntityState) -> List[Dict[str, Direction]]:
     entity = entity_state.entity
     relations = entity.relations
     state = entity_state.state
-    derivatives = state_derivatives(state)
+    quantities = entity_state.entity.quantities
+
     # Dictionary to keep track of the derivative directions of dependant quantities
     effect_sets = relation_effects(state, relations)
     # Determine the overall derivative direction for the target quantities
@@ -28,10 +29,32 @@ def next_derivatives(entity_state: EntityState) -> List[Dict[str, Direction]]:
     # check if state2 derivatives are compatible with relation_derivatives:
     # k, derivative = list(derivatives.items())[0]
     next_derivs = {k:
-            list(map(lambda x: (k, x), {derivative}.union(move_derivative(derivative, relation_derivatives[k]))))
-        for k, derivative in derivatives.items()}
+            list(map(lambda x: (k, x), derivative_options(relation_derivatives[k], quantities[k], pair)))
+        for k, pair in state.items()}
     derivative_combinations = list(map(dict, itertools.product(*next_derivs.values())))
     return derivative_combinations
+
+def derivative_options(relation_derivative: Direction, qty: Quantity, pair: QuantityPair) -> Set[Direction]:
+    '''check the next possible derivatives based on the extremity check and relationships'''
+    magnitude = pair.magnitude
+    deriv = pair.derivative
+    enum = qty.quantitySpace
+    side = extreme_direction(magnitude, enum)
+    # if the derivative would push us off the edge the derivative is now neutralized
+    if deriv == side and side != Direction.NEUTRAL and is_point(magnitude):
+        return {Direction.NEUTRAL}
+    else:
+        # otherwise return the derivative as altered by any relationships
+        return {deriv}.union(move_derivative(deriv, relation_derivative))
+
+def extreme_direction(magnitude: Enum, enum: EnumMeta) -> Direction:
+    '''get a direction from a magnitude based on whether it is at the
+       high extreme (positive), low (negative), or in between (neutral).'''
+    val = magnitude.value
+    vals = [mag.value for mag in dict(enum.__members__).values()]
+    return Direction.NEGATIVE if val == min(vals) else \
+           Direction.POSITIVE if val == max(vals) else \
+           Direction.NEUTRAL
 
 def move_derivative(derivative: Direction, effect: Direction) -> Set[Direction]:
     return {Direction.NEUTRAL} if {derivative, effect} == {Direction.POSITIVE, Direction.NEGATIVE} else \
@@ -51,13 +74,14 @@ def next_magnitudes(entity_state: EntityState) -> List[Dict[str, Enum]]:
     req_vals = dict(reqs)
 
     magnitudes = {k:
-        list(map(lambda x: (k, x), derivative_options(req_vals[k], pair, entity.quantities[k].quantitySpace)))
+        list(map(lambda x: (k, x), magnitude_options(req_vals[k], pair, entity.quantities[k].quantitySpace)))
         for k, pair in state.items()
     }
     magnitude_combinations = list(map(dict, itertools.product(*magnitudes.values())))
     return magnitude_combinations
 
-def derivative_options(reqs: Dict[str, Set[Enum]], pair: QuantityPair, space: EnumMeta) -> Set[Enum]:
+def magnitude_options(reqs: Dict[str, Set[Enum]], pair: QuantityPair, space: EnumMeta) -> Set[Enum]:
+    '''check the next possible magnitudes based on the point/interval check and current derivatives'''
     point_range = set() if is_point(pair.magnitude) else {pair.magnitude}
     rest = {move_magnitude(pair, space)}.union(point_range)
     # filtering approach: no forcing values in a direction
@@ -82,33 +106,6 @@ def move_magnitude(pair: QuantityPair, space: EnumMeta) -> Enum:
     idx = {k: i for i, k in list(enumerate(members))}[pair.magnitude.name]
     new_idx = min(len(members)-1, max(0, idx + to_sign(pair.derivative)))
     return space[members[new_idx]]
-
-# # TODO: change this from a filter to a transformation
-# def check_extremes(entity_state: EntityState) -> bool:
-#     '''ensure derivatives are clipped when the magnitudes are at an extreme point'''
-#     state = entity_state.state
-#     quantities = entity_state.entity.quantities
-#     for k, pair in state.items():
-#         mag = pair.magnitude
-#         der = pair.derivative
-#         enum = quantities[k].quantitySpace
-#         side = extreme_direction(mag, enum)
-#         if is_point(mag) and der == side and der != Direction.NEUTRAL:
-#             return False
-#     return True
-
-# def extreme_direction(magnitude: Enum, enum: EnumMeta) -> Direction:
-#     '''get a direction from a magnitude based on whether it is at the
-#        high extreme (positive), low (negative), or in between (neutral).'''
-#     val = magnitude.value
-#     vals = [mag.value for mag in dict(enum.__members__).values()]
-#     return Direction.NEGATIVE if val == min(vals) else \
-#            Direction.POSITIVE if val == max(vals) else \
-#            Direction.NEUTRAL
-
-def state_derivatives(state: Dict[str, QuantityPair]) -> Dict[str, Direction]:
-    '''return the derivatives of a state'''
-    return {k: qty.derivative for k, qty in state.items()}
 
 def relation_effects(state: Dict[str, QuantityPair], relations: List[Relation]) -> Dict[str, Set[Direction]]:
     '''for each quantity in a state find the effects of the relationships working on that quantity'''

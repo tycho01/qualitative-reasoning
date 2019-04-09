@@ -15,4 +15,4 @@ RUN pip install -r /tmp/requirements.txt
 # RUN pytest
 
 # Run script when the container launches
-ENTRYPOINT ["python", "./src/main.py"]
+CMD ["python", "./src/main.py"]
