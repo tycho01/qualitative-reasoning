@@ -14,977 +14,241 @@ In: (0, +)
 Vol: (0, 0)
 Out: (0, 0)",
 		tooltip="derivatives:
-- Vol will stay at 0
 - In will go up from 0
-- Out will stay at 0
-"];
-	inflow_1_3_outflow_0_2_volume_0_2_	 [label="State 2
-++0000
-In: (+, +)
-Vol: (0, 0)
-Out: (0, 0)",
-		tooltip="derivatives:
 - Vol will stay at 0
-- In may go up from +
 - Out will stay at 0
 "];
-	inflow_0_3_outflow_0_2_volume_0_2_ -> inflow_1_3_outflow_0_2_volume_0_2_	 [tooltip="continuous_valid: true
-not_equal_valid: true
-point_range_valid: true
-"];
-	inflow_1_3_outflow_0_2_volume_0_3_	 [label="State 3
+	inflow_1_3_outflow_0_2_volume_0_3_	 [label="State 2
 ++0+00
 In: (+, +)
 Vol: (0, +)
 Out: (0, 0)",
 		tooltip="derivatives:
+- In may go up from +
 - Vol will go up from 0
-- In may go up from +
 - Out will stay at 0
 "];
-	inflow_1_3_outflow_0_2_volume_0_2_ -> inflow_1_3_outflow_0_2_volume_0_3_	 [tooltip="continuous_valid: true
+	inflow_0_3_outflow_0_2_volume_0_2_ -> inflow_1_3_outflow_0_2_volume_0_3_	 [tooltip="continuous_valid: true
 not_equal_valid: true
 point_range_valid: true
 "];
-	inflow_1_3_outflow_0_2_volume_1_3_	 [label="State 4
-++++00
-In: (+, +)
-Vol: (+, +)
-Out: (0, 0)",
-		tooltip="derivatives:
-- Vol may go up from +
-- In may go up from +
-- Out will stay at 0
-"];
-	inflow_1_3_outflow_0_2_volume_0_3_ -> inflow_1_3_outflow_0_2_volume_1_3_	 [tooltip="continuous_valid: true
-not_equal_valid: true
-point_range_valid: true
-"];
-	inflow_1_3_outflow_0_3_volume_1_3_	 [label="State 7
+	inflow_1_3_outflow_0_3_volume_1_3_	 [label="State 3
 ++++0+
 In: (+, +)
 Vol: (+, +)
 Out: (0, +)",
 		tooltip="derivatives:
-- Vol may go up from +
 - In may go up from +
+- Vol may go up from +
 - Out will go up from 0
 "];
 	inflow_1_3_outflow_0_2_volume_0_3_ -> inflow_1_3_outflow_0_3_volume_1_3_	 [tooltip="continuous_valid: true
 not_equal_valid: true
 point_range_valid: true
 "];
-	inflow_1_3_outflow_0_2_volume_2_3_	 [label="State 5
-++max+00
-In: (+, +)
-Vol: (max, +)
-Out: (0, 0)",
-		tooltip="derivatives:
-- Vol will go up from max
-- In may go up from +
-- Out will stay at 0
-"];
-	inflow_1_3_outflow_0_2_volume_1_3_ -> inflow_1_3_outflow_0_2_volume_2_3_	 [tooltip="continuous_valid: true
-not_equal_valid: true
-point_range_valid: true
-"];
-	inflow_1_3_outflow_0_3_volume_2_3_	 [label="State 6
-++max+0+
-In: (+, +)
-Vol: (max, +)
-Out: (0, +)",
-		tooltip="derivatives:
-- Vol will go up from max
-- In may go up from +
-- Out will go up from 0
-"];
-	inflow_1_3_outflow_0_2_volume_1_3_ -> inflow_1_3_outflow_0_3_volume_2_3_	 [tooltip="continuous_valid: true
-not_equal_valid: true
-point_range_valid: true
-"];
-	inflow_1_3_outflow_0_2_volume_1_3_ -> inflow_1_3_outflow_0_3_volume_1_3_	 [tooltip="continuous_valid: true
-not_equal_valid: true
-point_range_valid: true
-"];
-	inflow_1_3_outflow_1_3_volume_1_3_	 [label="State 8
-++++++
-In: (+, +)
-Vol: (+, +)
-Out: (+, +)",
-		tooltip="derivatives:
-- Vol may go up from +
-- In may go up from +
-- Out may go up from +
-"];
-	inflow_1_3_outflow_0_3_volume_1_3_ -> inflow_1_3_outflow_1_3_volume_1_3_	 [tooltip="continuous_valid: true
-not_equal_valid: true
-point_range_valid: true
-"];
-	inflow_1_3_outflow_2_3_volume_2_2_	 [label="State 9
-++max0max+
-In: (+, +)
-Vol: (max, 0)
-Out: (max, +)",
-		tooltip="derivatives:
-- Vol will stay at max
-- In may go up from +
-- Out will go up from max
-"];
-	inflow_1_3_outflow_1_3_volume_1_3_ -> inflow_1_3_outflow_2_3_volume_2_2_	 [tooltip="continuous_valid: true
-not_equal_valid: true
-point_range_valid: true
-"];
-	inflow_1_3_outflow_1_3_volume_2_2_	 [label="State 49
-++max0++
-In: (+, +)
-Vol: (max, 0)
-Out: (+, +)",
-		tooltip="derivatives:
-- Vol will stay at max
-- In may go up from +
-- Out may go up from +
-"];
-	inflow_1_3_outflow_1_3_volume_1_3_ -> inflow_1_3_outflow_1_3_volume_2_2_	 [tooltip="continuous_valid: true
-not_equal_valid: true
-point_range_valid: true
-"];
-	inflow_1_3_outflow_2_3_volume_2_3_	 [label="State 53
-++max+max+
-In: (+, +)
-Vol: (max, +)
-Out: (max, +)",
-		tooltip="derivatives:
-- Vol will go up from max
-- In may go up from +
-- Out will go up from max
-"];
-	inflow_1_3_outflow_1_3_volume_1_3_ -> inflow_1_3_outflow_2_3_volume_2_3_	 [tooltip="continuous_valid: true
-not_equal_valid: true
-point_range_valid: true
-"];
-	inflow_1_3_outflow_2_3_volume_1_2_	 [label="State 54
-+++0max+
-In: (+, +)
-Vol: (+, 0)
-Out: (max, +)",
-		tooltip="derivatives:
-- Vol will stay at +
-- In may go up from +
-- Out will go up from max
-"];
-	inflow_1_3_outflow_1_3_volume_1_3_ -> inflow_1_3_outflow_2_3_volume_1_2_	 [tooltip="continuous_valid: true
-not_equal_valid: true
-point_range_valid: true
-"];
-	inflow_1_3_outflow_2_3_volume_1_3_	 [label="State 55
-++++max+
-In: (+, +)
-Vol: (+, +)
-Out: (max, +)",
-		tooltip="derivatives:
-- Vol may go up from +
-- In may go up from +
-- Out will go up from max
-"];
-	inflow_1_3_outflow_1_3_volume_1_3_ -> inflow_1_3_outflow_2_3_volume_1_3_	 [tooltip="continuous_valid: true
-not_equal_valid: true
-point_range_valid: true
-"];
-	inflow_1_3_outflow_1_3_volume_2_3_	 [label="State 56
-++max+++
-In: (+, +)
-Vol: (max, +)
-Out: (+, +)",
-		tooltip="derivatives:
-- Vol will go up from max
-- In may go up from +
-- Out may go up from +
-"];
-	inflow_1_3_outflow_1_3_volume_1_3_ -> inflow_1_3_outflow_1_3_volume_2_3_	 [tooltip="continuous_valid: true
-not_equal_valid: true
-point_range_valid: true
-"];
-	inflow_1_3_outflow_1_3_volume_1_2_	 [label="State 57
+	inflow_1_3_outflow_1_3_volume_1_2_	 [label="State 4
 +++0++
 In: (+, +)
 Vol: (+, 0)
 Out: (+, +)",
 		tooltip="derivatives:
-- Vol will stay at +
 - In may go up from +
+- Vol will stay at +
 - Out may go up from +
 "];
-	inflow_1_3_outflow_1_3_volume_1_3_ -> inflow_1_3_outflow_1_3_volume_1_2_	 [tooltip="continuous_valid: true
+	inflow_1_3_outflow_0_3_volume_1_3_ -> inflow_1_3_outflow_1_3_volume_1_2_	 [tooltip="continuous_valid: true
 not_equal_valid: true
 point_range_valid: true
 "];
-	inflow_1_3_outflow_2_2_volume_2_2_	 [label="State 10
-++max0max0
+	inflow_1_3_outflow_1_3_volume_2_2_	 [label="State 28
+++max0++
 In: (+, +)
 Vol: (max, 0)
-Out: (max, 0)",
+Out: (+, +)",
 		tooltip="derivatives:
+- In may go up from +
 - Vol will stay at max
-- In may go up from +
-- Out will stay at max
+- Out may go up from +
 "];
-	inflow_1_3_outflow_2_3_volume_2_2_ -> inflow_1_3_outflow_2_2_volume_2_2_	 [tooltip="continuous_valid: true
+	inflow_1_3_outflow_0_3_volume_1_3_ -> inflow_1_3_outflow_1_3_volume_2_2_	 [tooltip="continuous_valid: true
 not_equal_valid: true
-point_range_valid: true
+point_range_valid: false
 "];
-	inflow_1_3_outflow_2_2_volume_2_1_	 [label="State 11
-++max-max0
-In: (+, +)
-Vol: (max, -)
-Out: (max, 0)",
-		tooltip="derivatives:
-- Vol will go down from max
-- In may go up from +
-- Out will stay at max
-"];
-	inflow_1_3_outflow_2_3_volume_2_2_ -> inflow_1_3_outflow_2_2_volume_2_1_	 [tooltip="continuous_valid: true
-not_equal_valid: true
-point_range_valid: true
-"];
-	inflow_1_3_outflow_2_2_volume_2_3_	 [label="State 41
-++max+max0
-In: (+, +)
-Vol: (max, +)
-Out: (max, 0)",
-		tooltip="derivatives:
-- Vol will go up from max
-- In may go up from +
-- Out will stay at max
-"];
-	inflow_1_3_outflow_2_3_volume_2_2_ -> inflow_1_3_outflow_2_2_volume_2_3_	 [tooltip="continuous_valid: true
-not_equal_valid: true
-point_range_valid: true
-"];
-	inflow_1_3_outflow_2_2_volume_2_2_ -> inflow_1_3_outflow_2_2_volume_2_1_	 [tooltip="continuous_valid: true
-not_equal_valid: true
-point_range_valid: true
-"];
-	inflow_1_3_outflow_2_2_volume_2_2_ -> inflow_1_3_outflow_2_2_volume_2_3_	 [tooltip="continuous_valid: true
-not_equal_valid: true
-point_range_valid: true
-"];
-	inflow_1_3_outflow_2_2_volume_1_1_	 [label="State 12
-+++-max0
+	inflow_1_3_outflow_1_3_volume_1_1_	 [label="State 5
++++-++
 In: (+, +)
 Vol: (+, -)
-Out: (max, 0)",
+Out: (+, +)",
 		tooltip="derivatives:
+- In may go up from +
 - Vol may go down from +
-- In may go up from +
-- Out will stay at max
+- Out may go up from +
 "];
-	inflow_1_3_outflow_2_2_volume_2_1_ -> inflow_1_3_outflow_2_2_volume_1_1_	 [tooltip="continuous_valid: true
+	inflow_1_3_outflow_1_3_volume_1_2_ -> inflow_1_3_outflow_1_3_volume_1_1_	 [tooltip="continuous_valid: true
 not_equal_valid: true
 point_range_valid: true
 "];
-	inflow_1_3_outflow_2_1_volume_1_1_	 [label="State 17
-+++-max-
+	inflow_1_3_outflow_1_3_volume_1_3_	 [label="State 12
+++++++
 In: (+, +)
-Vol: (+, -)
-Out: (max, -)",
+Vol: (+, +)
+Out: (+, +)",
 		tooltip="derivatives:
-- Vol may go down from +
 - In may go up from +
-- Out will go down from max
+- Vol may go up from +
+- Out may go up from +
 "];
-	inflow_1_3_outflow_2_2_volume_2_1_ -> inflow_1_3_outflow_2_1_volume_1_1_	 [tooltip="continuous_valid: true
+	inflow_1_3_outflow_1_3_volume_1_2_ -> inflow_1_3_outflow_1_3_volume_1_3_	 [tooltip="continuous_valid: true
 not_equal_valid: true
 point_range_valid: true
 "];
-	inflow_1_3_outflow_2_1_volume_1_2_	 [label="State 38
-+++0max-
-In: (+, +)
-Vol: (+, 0)
-Out: (max, -)",
-		tooltip="derivatives:
-- Vol will stay at +
-- In may go up from +
-- Out will go down from max
-"];
-	inflow_1_3_outflow_2_2_volume_2_1_ -> inflow_1_3_outflow_2_1_volume_1_2_	 [tooltip="continuous_valid: true
-not_equal_valid: true
-point_range_valid: true
-"];
-	inflow_1_3_outflow_2_2_volume_1_2_	 [label="State 51
+	inflow_1_3_outflow_2_2_volume_1_2_	 [label="State 13
 +++0max0
 In: (+, +)
 Vol: (+, 0)
 Out: (max, 0)",
 		tooltip="derivatives:
-- Vol will stay at +
 - In may go up from +
+- Vol will stay at +
 - Out will stay at max
 "];
-	inflow_1_3_outflow_2_2_volume_2_1_ -> inflow_1_3_outflow_2_2_volume_1_2_	 [tooltip="continuous_valid: true
+	inflow_1_3_outflow_1_3_volume_1_2_ -> inflow_1_3_outflow_2_2_volume_1_2_	 [tooltip="continuous_valid: true
 not_equal_valid: true
 point_range_valid: true
 "];
-	inflow_1_3_outflow_2_2_volume_0_1_	 [label="State 13
-++0-max0
+	inflow_1_3_outflow_2_2_volume_1_1_	 [label="State 14
++++-max0
 In: (+, +)
-Vol: (0, -)
+Vol: (+, -)
 Out: (max, 0)",
 		tooltip="derivatives:
-- Vol will go down from 0
 - In may go up from +
+- Vol may go down from +
 - Out will stay at max
 "];
-	inflow_1_3_outflow_2_2_volume_1_1_ -> inflow_1_3_outflow_2_2_volume_0_1_	 [tooltip="continuous_valid: true
+	inflow_1_3_outflow_1_3_volume_1_2_ -> inflow_1_3_outflow_2_2_volume_1_1_	 [tooltip="continuous_valid: true
 not_equal_valid: true
 point_range_valid: true
 "];
-	inflow_1_3_outflow_2_1_volume_0_1_	 [label="State 14
-++0-max-
+	inflow_1_3_outflow_2_2_volume_1_3_	 [label="State 21
+++++max0
 In: (+, +)
-Vol: (0, -)
-Out: (max, -)",
-		tooltip="derivatives:
-- Vol will go down from 0
-- In may go up from +
-- Out will go down from max
-"];
-	inflow_1_3_outflow_2_2_volume_1_1_ -> inflow_1_3_outflow_2_1_volume_0_1_	 [tooltip="continuous_valid: true
-not_equal_valid: true
-point_range_valid: true
-"];
-	inflow_1_3_outflow_2_2_volume_0_2_	 [label="State 15
-++00max0
-In: (+, +)
-Vol: (0, 0)
+Vol: (+, +)
 Out: (max, 0)",
 		tooltip="derivatives:
-- Vol will stay at 0
 - In may go up from +
+- Vol may go up from +
 - Out will stay at max
 "];
-	inflow_1_3_outflow_2_2_volume_1_1_ -> inflow_1_3_outflow_2_2_volume_0_2_	 [tooltip="continuous_valid: true
+	inflow_1_3_outflow_1_3_volume_1_2_ -> inflow_1_3_outflow_2_2_volume_1_3_	 [tooltip="continuous_valid: true
 not_equal_valid: true
 point_range_valid: true
 "];
-	inflow_1_3_outflow_2_1_volume_0_2_	 [label="State 16
-++00max-
-In: (+, +)
-Vol: (0, 0)
-Out: (max, -)",
-		tooltip="derivatives:
-- Vol will stay at 0
-- In may go up from +
-- Out will go down from max
-"];
-	inflow_1_3_outflow_2_2_volume_1_1_ -> inflow_1_3_outflow_2_1_volume_0_2_	 [tooltip="continuous_valid: true
-not_equal_valid: true
-point_range_valid: true
-"];
-	inflow_1_3_outflow_2_2_volume_1_1_ -> inflow_1_3_outflow_2_1_volume_1_1_	 [tooltip="continuous_valid: true
-not_equal_valid: true
-point_range_valid: true
-"];
-	inflow_1_3_outflow_2_2_volume_1_1_ -> inflow_1_3_outflow_2_1_volume_1_2_	 [tooltip="continuous_valid: true
-not_equal_valid: true
-point_range_valid: true
-"];
-	inflow_1_3_outflow_2_2_volume_1_1_ -> inflow_1_3_outflow_2_2_volume_1_2_	 [tooltip="continuous_valid: true
-not_equal_valid: true
-point_range_valid: true
-"];
-	inflow_1_3_outflow_1_1_volume_1_1_	 [label="State 18
-+++-+-
-In: (+, +)
-Vol: (+, -)
-Out: (+, -)",
-		tooltip="derivatives:
-- Vol may go down from +
-- In may go up from +
-- Out may go down from +
-"];
-	inflow_1_3_outflow_2_1_volume_1_1_ -> inflow_1_3_outflow_1_1_volume_1_1_	 [tooltip="continuous_valid: true
-not_equal_valid: true
-point_range_valid: true
-"];
-	inflow_1_3_outflow_1_1_volume_1_2_	 [label="State 29
-+++0+-
-In: (+, +)
-Vol: (+, 0)
-Out: (+, -)",
-		tooltip="derivatives:
-- Vol will stay at +
-- In may go up from +
-- Out may go down from +
-"];
-	inflow_1_3_outflow_2_1_volume_1_1_ -> inflow_1_3_outflow_1_1_volume_1_2_	 [tooltip="continuous_valid: true
-not_equal_valid: true
-point_range_valid: true
-"];
-	inflow_1_3_outflow_0_1_volume_0_1_	 [label="State 19
-++0-0-
-In: (+, +)
-Vol: (0, -)
-Out: (0, -)",
-		tooltip="derivatives:
-- Vol will go down from 0
-- In may go up from +
-- Out will go down from 0
-"];
-	inflow_1_3_outflow_1_1_volume_1_1_ -> inflow_1_3_outflow_0_1_volume_0_1_	 [tooltip="continuous_valid: true
-not_equal_valid: true
-point_range_valid: true
-"];
-	inflow_1_3_outflow_0_1_volume_0_2_	 [label="State 20
-++000-
-In: (+, +)
-Vol: (0, 0)
-Out: (0, -)",
-		tooltip="derivatives:
-- Vol will stay at 0
-- In may go up from +
-- Out will go down from 0
-"];
-	inflow_1_3_outflow_1_1_volume_1_1_ -> inflow_1_3_outflow_0_1_volume_0_2_	 [tooltip="continuous_valid: true
-not_equal_valid: true
-point_range_valid: true
-"];
-	inflow_1_3_outflow_1_1_volume_0_1_	 [label="State 21
-++0-+-
-In: (+, +)
-Vol: (0, -)
-Out: (+, -)",
-		tooltip="derivatives:
-- Vol will go down from 0
-- In may go up from +
-- Out may go down from +
-"];
-	inflow_1_3_outflow_1_1_volume_1_1_ -> inflow_1_3_outflow_1_1_volume_0_1_	 [tooltip="continuous_valid: true
-not_equal_valid: true
-point_range_valid: true
-"];
-	inflow_1_3_outflow_1_1_volume_0_2_	 [label="State 22
-++00+-
-In: (+, +)
-Vol: (0, 0)
-Out: (+, -)",
-		tooltip="derivatives:
-- Vol will stay at 0
-- In may go up from +
-- Out may go down from +
-"];
-	inflow_1_3_outflow_1_1_volume_1_1_ -> inflow_1_3_outflow_1_1_volume_0_2_	 [tooltip="continuous_valid: true
-not_equal_valid: true
-point_range_valid: true
-"];
-	inflow_1_3_outflow_0_1_volume_1_1_	 [label="State 24
-+++-0-
-In: (+, +)
-Vol: (+, -)
-Out: (0, -)",
-		tooltip="derivatives:
-- Vol may go down from +
-- In may go up from +
-- Out will go down from 0
-"];
-	inflow_1_3_outflow_1_1_volume_1_1_ -> inflow_1_3_outflow_0_1_volume_1_1_	 [tooltip="continuous_valid: true
-not_equal_valid: true
-point_range_valid: true
-"];
-	inflow_1_3_outflow_0_1_volume_1_2_	 [label="State 28
-+++00-
-In: (+, +)
-Vol: (+, 0)
-Out: (0, -)",
-		tooltip="derivatives:
-- Vol will stay at +
-- In may go up from +
-- Out will go down from 0
-"];
-	inflow_1_3_outflow_1_1_volume_1_1_ -> inflow_1_3_outflow_0_1_volume_1_2_	 [tooltip="continuous_valid: true
-not_equal_valid: true
-point_range_valid: true
-"];
-	inflow_1_3_outflow_1_1_volume_1_1_ -> inflow_1_3_outflow_1_1_volume_1_2_	 [tooltip="continuous_valid: true
-not_equal_valid: true
-point_range_valid: true
-"];
-	inflow_1_3_outflow_0_1_volume_0_1_ -> inflow_1_3_outflow_0_2_volume_0_2_	 [tooltip="continuous_valid: true
-not_equal_valid: true
-point_range_valid: true
-"];
-	inflow_1_3_outflow_0_1_volume_0_2_ -> inflow_1_3_outflow_0_2_volume_0_2_	 [tooltip="continuous_valid: true
-not_equal_valid: true
-point_range_valid: true
-"];
-	inflow_1_3_outflow_0_1_volume_0_2_ -> inflow_1_3_outflow_0_2_volume_0_3_	 [tooltip="continuous_valid: true
-not_equal_valid: true
-point_range_valid: true
-"];
-	inflow_1_3_outflow_1_1_volume_0_1_ -> inflow_1_3_outflow_0_1_volume_0_2_	 [tooltip="continuous_valid: true
-not_equal_valid: true
-point_range_valid: true
-"];
-	inflow_1_3_outflow_1_1_volume_0_2_ -> inflow_1_3_outflow_0_1_volume_0_1_	 [tooltip="continuous_valid: true
-not_equal_valid: true
-point_range_valid: true
-"];
-	inflow_1_3_outflow_1_1_volume_0_2_ -> inflow_1_3_outflow_0_1_volume_0_2_	 [tooltip="continuous_valid: true
-not_equal_valid: true
-point_range_valid: true
-"];
-	inflow_1_3_outflow_0_1_volume_0_3_	 [label="State 23
-++0+0-
-In: (+, +)
-Vol: (0, +)
-Out: (0, -)",
-		tooltip="derivatives:
-- Vol will go up from 0
-- In may go up from +
-- Out will go down from 0
-"];
-	inflow_1_3_outflow_1_1_volume_0_2_ -> inflow_1_3_outflow_0_1_volume_0_3_	 [tooltip="continuous_valid: true
-not_equal_valid: true
-point_range_valid: true
-"];
-	inflow_1_3_outflow_0_1_volume_0_3_ -> inflow_1_3_outflow_0_2_volume_1_3_	 [tooltip="continuous_valid: true
-not_equal_valid: true
-point_range_valid: true
-"];
-	inflow_1_3_outflow_0_1_volume_1_1_ -> inflow_1_3_outflow_0_2_volume_0_2_	 [tooltip="continuous_valid: true
-not_equal_valid: true
-point_range_valid: true
-"];
-	inflow_1_3_outflow_0_2_volume_0_1_	 [label="State 25
-++0-00
-In: (+, +)
-Vol: (0, -)
-Out: (0, 0)",
-		tooltip="derivatives:
-- Vol will go down from 0
-- In may go up from +
-- Out will stay at 0
-"];
-	inflow_1_3_outflow_0_1_volume_1_1_ -> inflow_1_3_outflow_0_2_volume_0_1_	 [tooltip="continuous_valid: true
-not_equal_valid: true
-point_range_valid: true
-"];
-	inflow_1_3_outflow_0_2_volume_1_1_	 [label="State 26
-+++-00
-In: (+, +)
-Vol: (+, -)
-Out: (0, 0)",
-		tooltip="derivatives:
-- Vol may go down from +
-- In may go up from +
-- Out will stay at 0
-"];
-	inflow_1_3_outflow_0_1_volume_1_1_ -> inflow_1_3_outflow_0_2_volume_1_1_	 [tooltip="continuous_valid: true
-not_equal_valid: true
-point_range_valid: true
-"];
-	inflow_1_3_outflow_0_2_volume_1_2_	 [label="State 27
-+++000
-In: (+, +)
-Vol: (+, 0)
-Out: (0, 0)",
-		tooltip="derivatives:
-- Vol will stay at +
-- In may go up from +
-- Out will stay at 0
-"];
-	inflow_1_3_outflow_0_1_volume_1_1_ -> inflow_1_3_outflow_0_2_volume_1_2_	 [tooltip="continuous_valid: true
-not_equal_valid: true
-point_range_valid: true
-"];
-	inflow_1_3_outflow_0_2_volume_0_1_ -> inflow_1_3_outflow_0_2_volume_0_2_	 [tooltip="continuous_valid: true
-not_equal_valid: true
-point_range_valid: true
-"];
-	inflow_1_3_outflow_0_2_volume_0_1_ -> inflow_1_3_outflow_0_1_volume_0_2_	 [tooltip="continuous_valid: true
-not_equal_valid: true
-point_range_valid: true
-"];
-	inflow_1_3_outflow_0_2_volume_1_1_ -> inflow_1_3_outflow_0_2_volume_0_2_	 [tooltip="continuous_valid: true
-not_equal_valid: true
-point_range_valid: true
-"];
-	inflow_1_3_outflow_0_2_volume_1_1_ -> inflow_1_3_outflow_0_1_volume_0_1_	 [tooltip="continuous_valid: true
-not_equal_valid: true
-point_range_valid: true
-"];
-	inflow_1_3_outflow_0_2_volume_1_1_ -> inflow_1_3_outflow_0_1_volume_0_2_	 [tooltip="continuous_valid: true
-not_equal_valid: true
-point_range_valid: true
-"];
-	inflow_1_3_outflow_0_2_volume_1_1_ -> inflow_1_3_outflow_0_1_volume_1_1_	 [tooltip="continuous_valid: true
-not_equal_valid: true
-point_range_valid: true
-"];
-	inflow_1_3_outflow_0_2_volume_1_1_ -> inflow_1_3_outflow_0_2_volume_0_1_	 [tooltip="continuous_valid: true
-not_equal_valid: true
-point_range_valid: true
-"];
-	inflow_1_3_outflow_0_2_volume_1_1_ -> inflow_1_3_outflow_0_2_volume_1_2_	 [tooltip="continuous_valid: true
-not_equal_valid: true
-point_range_valid: true
-"];
-	inflow_1_3_outflow_0_2_volume_1_1_ -> inflow_1_3_outflow_0_1_volume_1_2_	 [tooltip="continuous_valid: true
-not_equal_valid: true
-point_range_valid: true
-"];
-	inflow_1_3_outflow_0_2_volume_1_2_ -> inflow_1_3_outflow_0_2_volume_1_3_	 [tooltip="continuous_valid: true
-not_equal_valid: true
-point_range_valid: true
-"];
-	inflow_1_3_outflow_0_1_volume_1_2_ -> inflow_1_3_outflow_0_2_volume_1_3_	 [tooltip="continuous_valid: true
-not_equal_valid: true
-point_range_valid: true
-"];
-	inflow_1_3_outflow_0_1_volume_1_2_ -> inflow_1_3_outflow_0_2_volume_1_2_	 [tooltip="continuous_valid: true
-not_equal_valid: true
-point_range_valid: true
-"];
-	inflow_1_3_outflow_1_1_volume_1_2_ -> inflow_1_3_outflow_1_1_volume_1_1_	 [tooltip="continuous_valid: true
-not_equal_valid: true
-point_range_valid: true
-"];
-	inflow_1_3_outflow_1_1_volume_1_2_ -> inflow_1_3_outflow_0_1_volume_1_1_	 [tooltip="continuous_valid: true
-not_equal_valid: true
-point_range_valid: true
-"];
-	inflow_1_3_outflow_1_1_volume_1_2_ -> inflow_1_3_outflow_0_1_volume_1_2_	 [tooltip="continuous_valid: true
-not_equal_valid: true
-point_range_valid: true
-"];
-	inflow_1_3_outflow_0_1_volume_1_3_	 [label="State 30
-++++0-
-In: (+, +)
-Vol: (+, +)
-Out: (0, -)",
-		tooltip="derivatives:
-- Vol may go up from +
-- In may go up from +
-- Out will go down from 0
-"];
-	inflow_1_3_outflow_1_1_volume_1_2_ -> inflow_1_3_outflow_0_1_volume_1_3_	 [tooltip="continuous_valid: true
-not_equal_valid: true
-point_range_valid: true
-"];
-	inflow_1_3_outflow_1_1_volume_1_3_	 [label="State 31
-+++++-
-In: (+, +)
-Vol: (+, +)
-Out: (+, -)",
-		tooltip="derivatives:
-- Vol may go up from +
-- In may go up from +
-- Out may go down from +
-"];
-	inflow_1_3_outflow_1_1_volume_1_2_ -> inflow_1_3_outflow_1_1_volume_1_3_	 [tooltip="continuous_valid: true
-not_equal_valid: true
-point_range_valid: true
-"];
-	inflow_1_3_outflow_0_1_volume_1_3_ -> inflow_1_3_outflow_0_2_volume_1_3_	 [tooltip="continuous_valid: true
-not_equal_valid: true
-point_range_valid: true
-"];
-	inflow_1_3_outflow_0_1_volume_1_3_ -> inflow_1_3_outflow_0_2_volume_2_3_	 [tooltip="continuous_valid: true
-not_equal_valid: true
-point_range_valid: true
-"];
-	inflow_1_3_outflow_1_1_volume_1_3_ -> inflow_1_3_outflow_0_2_volume_1_3_	 [tooltip="continuous_valid: true
-not_equal_valid: true
-point_range_valid: true
-"];
-	inflow_1_3_outflow_1_1_volume_1_3_ -> inflow_1_3_outflow_0_2_volume_2_3_	 [tooltip="continuous_valid: true
-not_equal_valid: true
-point_range_valid: true
-"];
-	inflow_1_3_outflow_1_1_volume_1_3_ -> inflow_1_3_outflow_0_2_volume_1_2_	 [tooltip="continuous_valid: true
-not_equal_valid: true
-point_range_valid: true
-"];
-	inflow_1_3_outflow_1_1_volume_1_3_ -> inflow_1_3_outflow_0_1_volume_1_2_	 [tooltip="continuous_valid: true
-not_equal_valid: true
-point_range_valid: true
-"];
-	inflow_1_3_outflow_1_1_volume_1_3_ -> inflow_1_3_outflow_1_1_volume_1_2_	 [tooltip="continuous_valid: true
-not_equal_valid: true
-point_range_valid: true
-"];
-	inflow_1_3_outflow_1_1_volume_1_3_ -> inflow_1_3_outflow_0_1_volume_1_3_	 [tooltip="continuous_valid: true
-not_equal_valid: true
-point_range_valid: true
-"];
-	inflow_1_3_outflow_0_1_volume_2_2_	 [label="State 32
-++max00-
-In: (+, +)
-Vol: (max, 0)
-Out: (0, -)",
-		tooltip="derivatives:
-- Vol will stay at max
-- In may go up from +
-- Out will go down from 0
-"];
-	inflow_1_3_outflow_1_1_volume_1_3_ -> inflow_1_3_outflow_0_1_volume_2_2_	 [tooltip="continuous_valid: true
-not_equal_valid: true
-point_range_valid: true
-"];
-	inflow_1_3_outflow_0_2_volume_2_2_	 [label="State 33
-++max000
-In: (+, +)
-Vol: (max, 0)
-Out: (0, 0)",
-		tooltip="derivatives:
-- Vol will stay at max
-- In may go up from +
-- Out will stay at 0
-"];
-	inflow_1_3_outflow_1_1_volume_1_3_ -> inflow_1_3_outflow_0_2_volume_2_2_	 [tooltip="continuous_valid: true
-not_equal_valid: true
-point_range_valid: true
-"];
-	inflow_1_3_outflow_0_1_volume_2_3_	 [label="State 34
-++max+0-
-In: (+, +)
-Vol: (max, +)
-Out: (0, -)",
-		tooltip="derivatives:
-- Vol will go up from max
-- In may go up from +
-- Out will go down from 0
-"];
-	inflow_1_3_outflow_1_1_volume_1_3_ -> inflow_1_3_outflow_0_1_volume_2_3_	 [tooltip="continuous_valid: true
-not_equal_valid: true
-point_range_valid: true
-"];
-	inflow_1_3_outflow_1_1_volume_2_2_	 [label="State 35
-++max0+-
-In: (+, +)
-Vol: (max, 0)
-Out: (+, -)",
-		tooltip="derivatives:
-- Vol will stay at max
-- In may go up from +
-- Out may go down from +
-"];
-	inflow_1_3_outflow_1_1_volume_1_3_ -> inflow_1_3_outflow_1_1_volume_2_2_	 [tooltip="continuous_valid: true
-not_equal_valid: true
-point_range_valid: true
-"];
-	inflow_1_3_outflow_1_2_volume_2_2_	 [label="State 40
-++max0+0
-In: (+, +)
-Vol: (max, 0)
-Out: (+, 0)",
-		tooltip="derivatives:
-- Vol will stay at max
-- In may go up from +
-- Out will stay at +
-"];
-	inflow_1_3_outflow_1_1_volume_1_3_ -> inflow_1_3_outflow_1_2_volume_2_2_	 [tooltip="continuous_valid: true
-not_equal_valid: true
-point_range_valid: true
-"];
-	inflow_1_3_outflow_1_1_volume_2_3_	 [label="State 42
-++max++-
-In: (+, +)
-Vol: (max, +)
-Out: (+, -)",
-		tooltip="derivatives:
-- Vol will go up from max
-- In may go up from +
-- Out may go down from +
-"];
-	inflow_1_3_outflow_1_1_volume_1_3_ -> inflow_1_3_outflow_1_1_volume_2_3_	 [tooltip="continuous_valid: true
-not_equal_valid: true
-point_range_valid: true
-"];
-	inflow_1_3_outflow_1_2_volume_2_3_	 [label="State 43
-++max++0
-In: (+, +)
-Vol: (max, +)
-Out: (+, 0)",
-		tooltip="derivatives:
-- Vol will go up from max
-- In may go up from +
-- Out will stay at +
-"];
-	inflow_1_3_outflow_1_1_volume_1_3_ -> inflow_1_3_outflow_1_2_volume_2_3_	 [tooltip="continuous_valid: true
-not_equal_valid: true
-point_range_valid: true
-"];
-	inflow_1_3_outflow_1_2_volume_1_2_	 [label="State 44
-+++0+0
-In: (+, +)
-Vol: (+, 0)
-Out: (+, 0)",
-		tooltip="derivatives:
-- Vol will stay at +
-- In may go up from +
-- Out will stay at +
-"];
-	inflow_1_3_outflow_1_1_volume_1_3_ -> inflow_1_3_outflow_1_2_volume_1_2_	 [tooltip="continuous_valid: true
-not_equal_valid: true
-point_range_valid: true
-"];
-	inflow_1_3_outflow_1_2_volume_1_3_	 [label="State 48
-+++++0
-In: (+, +)
-Vol: (+, +)
-Out: (+, 0)",
-		tooltip="derivatives:
-- Vol may go up from +
-- In may go up from +
-- Out will stay at +
-"];
-	inflow_1_3_outflow_1_1_volume_1_3_ -> inflow_1_3_outflow_1_2_volume_1_3_	 [tooltip="continuous_valid: true
-not_equal_valid: true
-point_range_valid: true
-"];
-	inflow_1_3_outflow_2_1_volume_2_2_	 [label="State 36
-++max0max-
-In: (+, +)
-Vol: (max, 0)
-Out: (max, -)",
-		tooltip="derivatives:
-- Vol will stay at max
-- In may go up from +
-- Out will go down from max
-"];
-	inflow_1_3_outflow_1_1_volume_2_2_ -> inflow_1_3_outflow_2_1_volume_2_2_	 [tooltip="continuous_valid: true
-not_equal_valid: true
-point_range_valid: true
-"];
-	inflow_1_3_outflow_2_1_volume_2_1_	 [label="State 37
-++max-max-
-In: (+, +)
-Vol: (max, -)
-Out: (max, -)",
-		tooltip="derivatives:
-- Vol will go down from max
-- In may go up from +
-- Out will go down from max
-"];
-	inflow_1_3_outflow_1_1_volume_2_2_ -> inflow_1_3_outflow_2_1_volume_2_1_	 [tooltip="continuous_valid: true
-not_equal_valid: true
-point_range_valid: true
-"];
-	inflow_1_3_outflow_2_1_volume_2_3_	 [label="State 39
-++max+max-
-In: (+, +)
-Vol: (max, +)
-Out: (max, -)",
-		tooltip="derivatives:
-- Vol will go up from max
-- In may go up from +
-- Out will go down from max
-"];
-	inflow_1_3_outflow_1_1_volume_2_2_ -> inflow_1_3_outflow_2_1_volume_2_3_	 [tooltip="continuous_valid: true
-not_equal_valid: true
-point_range_valid: true
-"];
-	inflow_1_3_outflow_2_1_volume_2_2_ -> inflow_1_3_outflow_2_1_volume_2_1_	 [tooltip="continuous_valid: true
-not_equal_valid: true
-point_range_valid: true
-"];
-	inflow_1_3_outflow_2_1_volume_2_2_ -> inflow_1_3_outflow_2_1_volume_2_3_	 [tooltip="continuous_valid: true
-not_equal_valid: true
-point_range_valid: true
-"];
-	inflow_1_3_outflow_2_1_volume_2_1_ -> inflow_1_3_outflow_2_1_volume_1_1_	 [tooltip="continuous_valid: true
-not_equal_valid: true
-point_range_valid: true
-"];
-	inflow_1_3_outflow_2_1_volume_2_1_ -> inflow_1_3_outflow_2_1_volume_1_2_	 [tooltip="continuous_valid: true
-not_equal_valid: true
-point_range_valid: true
-"];
-	inflow_1_3_outflow_2_1_volume_1_2_ -> inflow_1_3_outflow_1_1_volume_1_1_	 [tooltip="continuous_valid: true
-not_equal_valid: true
-point_range_valid: true
-"];
-	inflow_1_3_outflow_2_1_volume_1_2_ -> inflow_1_3_outflow_1_1_volume_1_2_	 [tooltip="continuous_valid: true
-not_equal_valid: true
-point_range_valid: true
-"];
-	inflow_1_3_outflow_2_1_volume_1_2_ -> inflow_1_3_outflow_1_1_volume_1_3_	 [tooltip="continuous_valid: true
-not_equal_valid: true
-point_range_valid: true
-"];
-	inflow_1_3_outflow_2_1_volume_2_3_ -> inflow_1_3_outflow_2_2_volume_2_2_	 [tooltip="continuous_valid: true
-not_equal_valid: true
-point_range_valid: true
-"];
-	inflow_1_3_outflow_2_1_volume_2_3_ -> inflow_1_3_outflow_2_1_volume_2_2_	 [tooltip="continuous_valid: true
-not_equal_valid: true
-point_range_valid: true
-"];
-	inflow_1_3_outflow_1_2_volume_2_2_ -> inflow_1_3_outflow_2_2_volume_2_2_	 [tooltip="continuous_valid: true
-not_equal_valid: true
-point_range_valid: true
-"];
-	inflow_1_3_outflow_1_2_volume_2_2_ -> inflow_1_3_outflow_2_2_volume_2_1_	 [tooltip="continuous_valid: true
-not_equal_valid: true
-point_range_valid: true
-"];
-	inflow_1_3_outflow_1_2_volume_2_2_ -> inflow_1_3_outflow_2_2_volume_2_3_	 [tooltip="continuous_valid: true
-not_equal_valid: true
-point_range_valid: true
-"];
-	inflow_1_3_outflow_2_2_volume_2_3_ -> inflow_1_3_outflow_2_3_volume_2_2_	 [tooltip="continuous_valid: true
-not_equal_valid: true
-point_range_valid: true
-"];
-	inflow_1_3_outflow_2_2_volume_2_3_ -> inflow_1_3_outflow_2_2_volume_2_2_	 [tooltip="continuous_valid: true
-not_equal_valid: true
-point_range_valid: true
-"];
-	inflow_1_3_outflow_1_1_volume_2_3_ -> inflow_1_3_outflow_2_2_volume_2_2_	 [tooltip="continuous_valid: true
-not_equal_valid: true
-point_range_valid: true
-"];
-	inflow_1_3_outflow_1_1_volume_2_3_ -> inflow_1_3_outflow_2_1_volume_2_2_	 [tooltip="continuous_valid: true
-not_equal_valid: true
-point_range_valid: true
-"];
-	inflow_1_3_outflow_1_2_volume_2_3_ -> inflow_1_3_outflow_2_3_volume_2_2_	 [tooltip="continuous_valid: true
-not_equal_valid: true
-point_range_valid: true
-"];
-	inflow_1_3_outflow_1_2_volume_2_3_ -> inflow_1_3_outflow_2_2_volume_2_2_	 [tooltip="continuous_valid: true
+	inflow_1_3_outflow_1_3_volume_1_1_ -> inflow_1_3_outflow_1_3_volume_1_2_	 [tooltip="continuous_valid: true
 not_equal_valid: true
 point_range_valid: true
 "];
-	inflow_1_3_outflow_1_2_volume_1_1_	 [label="State 45
+	inflow_1_3_outflow_1_2_volume_1_1_	 [label="State 6
 +++-+0
 In: (+, +)
 Vol: (+, -)
 Out: (+, 0)",
 		tooltip="derivatives:
-- Vol may go down from +
 - In may go up from +
+- Vol may go down from +
 - Out will stay at +
 "];
-	inflow_1_3_outflow_1_2_volume_1_2_ -> inflow_1_3_outflow_1_2_volume_1_1_	 [tooltip="continuous_valid: true
+	inflow_1_3_outflow_1_3_volume_1_1_ -> inflow_1_3_outflow_1_2_volume_1_1_	 [tooltip="continuous_valid: true
 not_equal_valid: true
 point_range_valid: true
 "];
-	inflow_1_3_outflow_1_2_volume_1_2_ -> inflow_1_3_outflow_1_2_volume_1_3_	 [tooltip="continuous_valid: true
+	inflow_1_3_outflow_1_2_volume_1_2_	 [label="State 10
++++0+0
+In: (+, +)
+Vol: (+, 0)
+Out: (+, 0)",
+		tooltip="derivatives:
+- In may go up from +
+- Vol will stay at +
+- Out will stay at +
+"];
+	inflow_1_3_outflow_1_3_volume_1_1_ -> inflow_1_3_outflow_1_2_volume_1_2_	 [tooltip="continuous_valid: true
 not_equal_valid: true
 point_range_valid: true
+"];
+	inflow_1_3_outflow_1_3_volume_1_1_ -> inflow_1_3_outflow_2_2_volume_1_2_	 [tooltip="continuous_valid: true
+not_equal_valid: true
+point_range_valid: true
+"];
+	inflow_1_3_outflow_1_3_volume_1_1_ -> inflow_1_3_outflow_2_2_volume_1_1_	 [tooltip="continuous_valid: true
+not_equal_valid: true
+point_range_valid: true
+"];
+	inflow_1_3_outflow_2_2_volume_0_2_	 [label="State 20
+++00max0
+In: (+, +)
+Vol: (0, 0)
+Out: (max, 0)",
+		tooltip="derivatives:
+- In may go up from +
+- Vol will stay at 0
+- Out will stay at max
+"];
+	inflow_1_3_outflow_1_3_volume_1_1_ -> inflow_1_3_outflow_2_2_volume_0_2_	 [tooltip="continuous_valid: true
+not_equal_valid: true
+point_range_valid: true
+"];
+	inflow_1_3_outflow_1_2_volume_0_2_	 [label="State 42
+++00+0
+In: (+, +)
+Vol: (0, 0)
+Out: (+, 0)",
+		tooltip="derivatives:
+- In may go up from +
+- Vol will stay at 0
+- Out will stay at +
+"];
+	inflow_1_3_outflow_1_3_volume_1_1_ -> inflow_1_3_outflow_1_2_volume_0_2_	 [tooltip="continuous_valid: true
+not_equal_valid: true
+point_range_valid: true
+"];
+	inflow_1_3_outflow_1_3_volume_0_2_	 [label="State 43
+++00++
+In: (+, +)
+Vol: (0, 0)
+Out: (+, +)",
+		tooltip="derivatives:
+- In may go up from +
+- Vol will stay at 0
+- Out may go up from +
+"];
+	inflow_1_3_outflow_1_3_volume_1_1_ -> inflow_1_3_outflow_1_3_volume_0_2_	 [tooltip="continuous_valid: true
+not_equal_valid: true
+point_range_valid: true
+"];
+	inflow_1_3_outflow_1_1_volume_1_1_	 [label="State 7
++++-+-
+In: (+, +)
+Vol: (+, -)
+Out: (+, -)",
+		tooltip="derivatives:
+- In may go up from +
+- Vol may go down from +
+- Out may go down from +
 "];
 	inflow_1_3_outflow_1_2_volume_1_1_ -> inflow_1_3_outflow_1_1_volume_1_1_	 [tooltip="continuous_valid: true
 not_equal_valid: true
 point_range_valid: true
 "];
-	inflow_1_3_outflow_1_2_volume_1_1_ -> inflow_1_3_outflow_1_1_volume_0_1_	 [tooltip="continuous_valid: true
-not_equal_valid: true
-point_range_valid: true
-"];
-	inflow_1_3_outflow_1_2_volume_1_1_ -> inflow_1_3_outflow_1_1_volume_0_2_	 [tooltip="continuous_valid: true
-not_equal_valid: true
-point_range_valid: true
+	inflow_1_3_outflow_1_1_volume_1_2_	 [label="State 8
++++0+-
+In: (+, +)
+Vol: (+, 0)
+Out: (+, -)",
+		tooltip="derivatives:
+- In may go up from +
+- Vol will stay at +
+- Out may go down from +
 "];
 	inflow_1_3_outflow_1_2_volume_1_1_ -> inflow_1_3_outflow_1_1_volume_1_2_	 [tooltip="continuous_valid: true
 not_equal_valid: true
@@ -994,75 +258,183 @@ point_range_valid: true
 not_equal_valid: true
 point_range_valid: true
 "];
-	inflow_1_3_outflow_1_2_volume_0_1_	 [label="State 46
-++0-+0
-In: (+, +)
-Vol: (0, -)
-Out: (+, 0)",
-		tooltip="derivatives:
-- Vol will go down from 0
-- In may go up from +
-- Out will stay at +
-"];
-	inflow_1_3_outflow_1_2_volume_1_1_ -> inflow_1_3_outflow_1_2_volume_0_1_	 [tooltip="continuous_valid: true
-not_equal_valid: true
-point_range_valid: true
-"];
-	inflow_1_3_outflow_1_2_volume_0_2_	 [label="State 47
-++00+0
+	inflow_1_3_outflow_1_1_volume_0_2_	 [label="State 16
+++00+-
 In: (+, +)
 Vol: (0, 0)
-Out: (+, 0)",
+Out: (+, -)",
 		tooltip="derivatives:
-- Vol will stay at 0
 - In may go up from +
-- Out will stay at +
+- Vol will stay at 0
+- Out may go down from +
+"];
+	inflow_1_3_outflow_1_2_volume_1_1_ -> inflow_1_3_outflow_1_1_volume_0_2_	 [tooltip="continuous_valid: true
+not_equal_valid: true
+point_range_valid: true
 "];
 	inflow_1_3_outflow_1_2_volume_1_1_ -> inflow_1_3_outflow_1_2_volume_0_2_	 [tooltip="continuous_valid: true
 not_equal_valid: true
 point_range_valid: true
 "];
-	inflow_1_3_outflow_1_2_volume_0_1_ -> inflow_1_3_outflow_0_2_volume_0_2_	 [tooltip="continuous_valid: true
+	inflow_1_3_outflow_1_1_volume_1_1_ -> inflow_1_3_outflow_1_1_volume_1_2_	 [tooltip="continuous_valid: true
 not_equal_valid: true
 point_range_valid: true
 "];
-	inflow_1_3_outflow_1_2_volume_0_1_ -> inflow_1_3_outflow_0_1_volume_0_2_	 [tooltip="continuous_valid: true
+	inflow_1_3_outflow_1_1_volume_1_1_ -> inflow_1_3_outflow_1_1_volume_0_2_	 [tooltip="continuous_valid: true
 not_equal_valid: true
 point_range_valid: true
 "];
-	inflow_1_3_outflow_1_2_volume_0_2_ -> inflow_1_3_outflow_0_2_volume_0_2_	 [tooltip="continuous_valid: true
+	inflow_1_3_outflow_0_2_volume_0_2_	 [label="State 17
+++0000
+In: (+, +)
+Vol: (0, 0)
+Out: (0, 0)",
+		tooltip="derivatives:
+- In may go up from +
+- Vol will stay at 0
+- Out will stay at 0
+"];
+	inflow_1_3_outflow_1_1_volume_1_1_ -> inflow_1_3_outflow_0_2_volume_0_2_	 [tooltip="continuous_valid: true
 not_equal_valid: true
 point_range_valid: true
 "];
-	inflow_1_3_outflow_1_2_volume_0_2_ -> inflow_1_3_outflow_0_2_volume_0_3_	 [tooltip="continuous_valid: true
+	inflow_1_3_outflow_0_2_volume_1_2_	 [label="State 37
++++000
+In: (+, +)
+Vol: (+, 0)
+Out: (0, 0)",
+		tooltip="derivatives:
+- In may go up from +
+- Vol will stay at +
+- Out will stay at 0
+"];
+	inflow_1_3_outflow_1_1_volume_1_1_ -> inflow_1_3_outflow_0_2_volume_1_2_	 [tooltip="continuous_valid: true
 not_equal_valid: true
 point_range_valid: true
 "];
-	inflow_1_3_outflow_1_2_volume_0_2_ -> inflow_1_3_outflow_0_2_volume_0_1_	 [tooltip="continuous_valid: true
+	inflow_1_3_outflow_0_2_volume_1_1_	 [label="State 38
++++-00
+In: (+, +)
+Vol: (+, -)
+Out: (0, 0)",
+		tooltip="derivatives:
+- In may go up from +
+- Vol may go down from +
+- Out will stay at 0
+"];
+	inflow_1_3_outflow_1_1_volume_1_1_ -> inflow_1_3_outflow_0_2_volume_1_1_	 [tooltip="continuous_valid: true
 not_equal_valid: true
 point_range_valid: true
 "];
-	inflow_1_3_outflow_1_2_volume_1_3_ -> inflow_1_3_outflow_1_3_volume_1_3_	 [tooltip="continuous_valid: true
+	inflow_1_3_outflow_1_1_volume_1_2_ -> inflow_1_3_outflow_1_1_volume_1_1_	 [tooltip="continuous_valid: true
 not_equal_valid: true
 point_range_valid: true
 "];
-	inflow_1_3_outflow_1_2_volume_1_3_ -> inflow_1_3_outflow_1_2_volume_2_2_	 [tooltip="continuous_valid: true
+	inflow_1_3_outflow_1_1_volume_1_3_	 [label="State 9
++++++-
+In: (+, +)
+Vol: (+, +)
+Out: (+, -)",
+		tooltip="derivatives:
+- In may go up from +
+- Vol may go up from +
+- Out may go down from +
+"];
+	inflow_1_3_outflow_1_1_volume_1_2_ -> inflow_1_3_outflow_1_1_volume_1_3_	 [tooltip="continuous_valid: true
 not_equal_valid: true
 point_range_valid: true
 "];
-	inflow_1_3_outflow_1_2_volume_1_3_ -> inflow_1_3_outflow_1_2_volume_2_3_	 [tooltip="continuous_valid: true
+	inflow_1_3_outflow_0_2_volume_1_3_	 [label="State 30
+++++00
+In: (+, +)
+Vol: (+, +)
+Out: (0, 0)",
+		tooltip="derivatives:
+- In may go up from +
+- Vol may go up from +
+- Out will stay at 0
+"];
+	inflow_1_3_outflow_1_1_volume_1_2_ -> inflow_1_3_outflow_0_2_volume_1_3_	 [tooltip="continuous_valid: true
 not_equal_valid: true
 point_range_valid: true
 "];
-	inflow_1_3_outflow_1_2_volume_1_3_ -> inflow_1_3_outflow_1_2_volume_1_2_	 [tooltip="continuous_valid: true
+	inflow_1_3_outflow_1_1_volume_1_2_ -> inflow_1_3_outflow_0_2_volume_1_2_	 [tooltip="continuous_valid: true
 not_equal_valid: true
 point_range_valid: true
 "];
-	inflow_1_3_outflow_1_2_volume_1_3_ -> inflow_1_3_outflow_1_3_volume_2_2_	 [tooltip="continuous_valid: true
+	inflow_1_3_outflow_1_1_volume_1_3_ -> inflow_1_3_outflow_1_1_volume_1_2_	 [tooltip="continuous_valid: true
 not_equal_valid: true
 point_range_valid: true
 "];
-	inflow_1_3_outflow_1_2_volume_1_3_ -> inflow_1_3_outflow_1_3_volume_2_3_	 [tooltip="continuous_valid: true
+	inflow_1_3_outflow_1_1_volume_1_3_ -> inflow_1_3_outflow_1_2_volume_1_2_	 [tooltip="continuous_valid: true
+not_equal_valid: true
+point_range_valid: true
+"];
+	inflow_1_3_outflow_1_2_volume_1_3_	 [label="State 11
++++++0
+In: (+, +)
+Vol: (+, +)
+Out: (+, 0)",
+		tooltip="derivatives:
+- In may go up from +
+- Vol may go up from +
+- Out will stay at +
+"];
+	inflow_1_3_outflow_1_1_volume_1_3_ -> inflow_1_3_outflow_1_2_volume_1_3_	 [tooltip="continuous_valid: true
+not_equal_valid: true
+point_range_valid: true
+"];
+	inflow_1_3_outflow_1_2_volume_2_2_	 [label="State 29
+++max0+0
+In: (+, +)
+Vol: (max, 0)
+Out: (+, 0)",
+		tooltip="derivatives:
+- In may go up from +
+- Vol will stay at max
+- Out will stay at +
+"];
+	inflow_1_3_outflow_1_1_volume_1_3_ -> inflow_1_3_outflow_1_2_volume_2_2_	 [tooltip="continuous_valid: true
+not_equal_valid: true
+point_range_valid: true
+"];
+	inflow_1_3_outflow_1_1_volume_1_3_ -> inflow_1_3_outflow_0_2_volume_1_3_	 [tooltip="continuous_valid: true
+not_equal_valid: true
+point_range_valid: true
+"];
+	inflow_1_3_outflow_0_2_volume_2_2_	 [label="State 31
+++max000
+In: (+, +)
+Vol: (max, 0)
+Out: (0, 0)",
+		tooltip="derivatives:
+- In may go up from +
+- Vol will stay at max
+- Out will stay at 0
+"];
+	inflow_1_3_outflow_1_1_volume_1_3_ -> inflow_1_3_outflow_0_2_volume_2_2_	 [tooltip="continuous_valid: true
+not_equal_valid: true
+point_range_valid: true
+"];
+	inflow_1_3_outflow_1_1_volume_2_2_	 [label="State 33
+++max0+-
+In: (+, +)
+Vol: (max, 0)
+Out: (+, -)",
+		tooltip="derivatives:
+- In may go up from +
+- Vol will stay at max
+- Out may go down from +
+"];
+	inflow_1_3_outflow_1_1_volume_1_3_ -> inflow_1_3_outflow_1_1_volume_2_2_	 [tooltip="continuous_valid: true
+not_equal_valid: true
+point_range_valid: true
+"];
+	inflow_1_3_outflow_1_2_volume_1_2_ -> inflow_1_3_outflow_1_2_volume_1_1_	 [tooltip="continuous_valid: true
+not_equal_valid: true
+point_range_valid: true
+"];
+	inflow_1_3_outflow_1_2_volume_1_2_ -> inflow_1_3_outflow_1_2_volume_1_3_	 [tooltip="continuous_valid: true
 not_equal_valid: true
 point_range_valid: true
 "];
@@ -1070,33 +442,49 @@ point_range_valid: true
 not_equal_valid: true
 point_range_valid: true
 "];
-	inflow_1_3_outflow_1_3_volume_2_2_ -> inflow_1_3_outflow_2_3_volume_2_2_	 [tooltip="continuous_valid: true
+	inflow_1_3_outflow_1_2_volume_1_3_ -> inflow_1_3_outflow_1_2_volume_1_2_	 [tooltip="continuous_valid: true
 not_equal_valid: true
 point_range_valid: true
 "];
-	inflow_1_3_outflow_2_3_volume_2_1_	 [label="State 50
-++max-max+
+	inflow_1_3_outflow_1_2_volume_1_3_ -> inflow_1_3_outflow_1_3_volume_1_3_	 [tooltip="continuous_valid: true
+not_equal_valid: true
+point_range_valid: true
+"];
+	inflow_1_3_outflow_1_2_volume_1_3_ -> inflow_1_3_outflow_1_3_volume_2_2_	 [tooltip="continuous_valid: true
+not_equal_valid: true
+point_range_valid: true
+"];
+	inflow_1_3_outflow_1_2_volume_1_3_ -> inflow_1_3_outflow_1_2_volume_2_2_	 [tooltip="continuous_valid: true
+not_equal_valid: true
+point_range_valid: true
+"];
+	inflow_1_3_outflow_1_3_volume_1_3_ -> inflow_1_3_outflow_1_3_volume_1_2_	 [tooltip="continuous_valid: true
+not_equal_valid: true
+point_range_valid: true
+"];
+	inflow_1_3_outflow_1_3_volume_1_3_ -> inflow_1_3_outflow_2_2_volume_1_2_	 [tooltip="continuous_valid: true
+not_equal_valid: true
+point_range_valid: true
+"];
+	inflow_1_3_outflow_1_3_volume_1_3_ -> inflow_1_3_outflow_2_2_volume_1_3_	 [tooltip="continuous_valid: true
+not_equal_valid: true
+point_range_valid: true
+"];
+	inflow_1_3_outflow_2_2_volume_2_2_	 [label="State 24
+++max0max0
 In: (+, +)
-Vol: (max, -)
-Out: (max, +)",
+Vol: (max, 0)
+Out: (max, 0)",
 		tooltip="derivatives:
-- Vol will go down from max
 - In may go up from +
-- Out will go up from max
+- Vol will stay at max
+- Out will stay at max
 "];
-	inflow_1_3_outflow_1_3_volume_2_2_ -> inflow_1_3_outflow_2_3_volume_2_1_	 [tooltip="continuous_valid: true
+	inflow_1_3_outflow_1_3_volume_1_3_ -> inflow_1_3_outflow_2_2_volume_2_2_	 [tooltip="continuous_valid: true
 not_equal_valid: true
 point_range_valid: true
 "];
-	inflow_1_3_outflow_1_3_volume_2_2_ -> inflow_1_3_outflow_2_3_volume_2_3_	 [tooltip="continuous_valid: true
-not_equal_valid: true
-point_range_valid: true
-"];
-	inflow_1_3_outflow_2_3_volume_2_1_ -> inflow_1_3_outflow_2_2_volume_1_1_	 [tooltip="continuous_valid: true
-not_equal_valid: true
-point_range_valid: true
-"];
-	inflow_1_3_outflow_2_3_volume_2_1_ -> inflow_1_3_outflow_2_2_volume_1_2_	 [tooltip="continuous_valid: true
+	inflow_1_3_outflow_1_3_volume_1_3_ -> inflow_1_3_outflow_1_3_volume_2_2_	 [tooltip="continuous_valid: true
 not_equal_valid: true
 point_range_valid: true
 "];
@@ -1104,29 +492,97 @@ point_range_valid: true
 not_equal_valid: true
 point_range_valid: true
 "];
-	inflow_1_3_outflow_2_2_volume_1_3_	 [label="State 52
-++++max0
-In: (+, +)
-Vol: (+, +)
-Out: (max, 0)",
-		tooltip="derivatives:
-- Vol may go up from +
-- In may go up from +
-- Out will stay at max
-"];
 	inflow_1_3_outflow_2_2_volume_1_2_ -> inflow_1_3_outflow_2_2_volume_1_3_	 [tooltip="continuous_valid: true
 not_equal_valid: true
 point_range_valid: true
 "];
-	inflow_1_3_outflow_2_2_volume_1_3_ -> inflow_1_3_outflow_2_3_volume_2_2_	 [tooltip="continuous_valid: true
+	inflow_1_3_outflow_2_2_volume_1_1_ -> inflow_1_3_outflow_2_2_volume_1_2_	 [tooltip="continuous_valid: true
 not_equal_valid: true
 point_range_valid: true
 "];
-	inflow_1_3_outflow_2_2_volume_1_3_ -> inflow_1_3_outflow_2_2_volume_2_2_	 [tooltip="continuous_valid: true
+	inflow_1_3_outflow_2_1_volume_1_1_	 [label="State 15
++++-max-
+In: (+, +)
+Vol: (+, -)
+Out: (max, -)",
+		tooltip="derivatives:
+- In may go up from +
+- Vol may go down from +
+- Out will go down from max
+"];
+	inflow_1_3_outflow_2_2_volume_1_1_ -> inflow_1_3_outflow_2_1_volume_1_1_	 [tooltip="continuous_valid: true
 not_equal_valid: true
 point_range_valid: true
 "];
-	inflow_1_3_outflow_2_2_volume_1_3_ -> inflow_1_3_outflow_2_2_volume_2_3_	 [tooltip="continuous_valid: true
+	inflow_1_3_outflow_2_1_volume_1_2_	 [label="State 18
++++0max-
+In: (+, +)
+Vol: (+, 0)
+Out: (max, -)",
+		tooltip="derivatives:
+- In may go up from +
+- Vol will stay at +
+- Out will go down from max
+"];
+	inflow_1_3_outflow_2_2_volume_1_1_ -> inflow_1_3_outflow_2_1_volume_1_2_	 [tooltip="continuous_valid: true
+not_equal_valid: true
+point_range_valid: true
+"];
+	inflow_1_3_outflow_2_1_volume_0_2_	 [label="State 19
+++00max-
+In: (+, +)
+Vol: (0, 0)
+Out: (max, -)",
+		tooltip="derivatives:
+- In may go up from +
+- Vol will stay at 0
+- Out will go down from max
+"];
+	inflow_1_3_outflow_2_2_volume_1_1_ -> inflow_1_3_outflow_2_1_volume_0_2_	 [tooltip="continuous_valid: true
+not_equal_valid: true
+point_range_valid: true
+"];
+	inflow_1_3_outflow_2_2_volume_1_1_ -> inflow_1_3_outflow_2_2_volume_0_2_	 [tooltip="continuous_valid: true
+not_equal_valid: true
+point_range_valid: true
+"];
+	inflow_1_3_outflow_2_1_volume_1_1_ -> inflow_1_3_outflow_1_1_volume_1_2_	 [tooltip="continuous_valid: true
+not_equal_valid: true
+point_range_valid: true
+"];
+	inflow_1_3_outflow_2_1_volume_1_1_ -> inflow_1_3_outflow_1_1_volume_0_2_	 [tooltip="continuous_valid: true
+not_equal_valid: true
+point_range_valid: false
+"];
+	inflow_1_3_outflow_1_1_volume_0_2_ -> inflow_1_3_outflow_0_2_volume_0_3_	 [tooltip="continuous_valid: true
+not_equal_valid: true
+point_range_valid: true
+"];
+	inflow_1_3_outflow_1_1_volume_0_2_ -> inflow_1_3_outflow_0_2_volume_0_2_	 [tooltip="continuous_valid: true
+not_equal_valid: true
+point_range_valid: true
+"];
+	inflow_1_3_outflow_0_2_volume_0_2_ -> inflow_1_3_outflow_0_2_volume_0_3_	 [tooltip="continuous_valid: true
+not_equal_valid: true
+point_range_valid: true
+"];
+	inflow_1_3_outflow_2_1_volume_1_2_ -> inflow_1_3_outflow_1_1_volume_1_1_	 [tooltip="continuous_valid: true
+not_equal_valid: true
+point_range_valid: true
+"];
+	inflow_1_3_outflow_2_1_volume_1_2_ -> inflow_1_3_outflow_1_1_volume_1_3_	 [tooltip="continuous_valid: true
+not_equal_valid: true
+point_range_valid: true
+"];
+	inflow_1_3_outflow_2_1_volume_0_2_ -> inflow_1_3_outflow_0_2_volume_0_3_	 [tooltip="continuous_valid: false
+not_equal_valid: true
+point_range_valid: true
+"];
+	inflow_1_3_outflow_2_1_volume_0_2_ -> inflow_1_3_outflow_0_2_volume_0_2_	 [tooltip="continuous_valid: false
+not_equal_valid: true
+point_range_valid: true
+"];
+	inflow_1_3_outflow_2_2_volume_0_2_ -> inflow_1_3_outflow_0_2_volume_0_3_	 [tooltip="continuous_valid: false
 not_equal_valid: true
 point_range_valid: true
 "];
@@ -1134,23 +590,49 @@ point_range_valid: true
 not_equal_valid: true
 point_range_valid: true
 "];
-	inflow_1_3_outflow_2_2_volume_1_3_ -> inflow_1_3_outflow_2_3_volume_2_3_	 [tooltip="continuous_valid: true
-not_equal_valid: true
-point_range_valid: true
+	inflow_1_3_outflow_2_3_volume_1_2_	 [label="State 22
++++0max+
+In: (+, +)
+Vol: (+, 0)
+Out: (max, +)",
+		tooltip="derivatives:
+- In may go up from +
+- Vol will stay at +
+- Out will go up from max
 "];
 	inflow_1_3_outflow_2_2_volume_1_3_ -> inflow_1_3_outflow_2_3_volume_1_2_	 [tooltip="continuous_valid: true
 not_equal_valid: true
 point_range_valid: true
 "];
+	inflow_1_3_outflow_2_3_volume_1_3_	 [label="State 23
+++++max+
+In: (+, +)
+Vol: (+, +)
+Out: (max, +)",
+		tooltip="derivatives:
+- In may go up from +
+- Vol may go up from +
+- Out will go up from max
+"];
 	inflow_1_3_outflow_2_2_volume_1_3_ -> inflow_1_3_outflow_2_3_volume_1_3_	 [tooltip="continuous_valid: true
 not_equal_valid: true
 point_range_valid: true
 "];
-	inflow_1_3_outflow_2_3_volume_2_3_ -> inflow_1_3_outflow_2_2_volume_2_2_	 [tooltip="continuous_valid: true
+	inflow_1_3_outflow_2_2_volume_1_3_ -> inflow_1_3_outflow_2_2_volume_2_2_	 [tooltip="continuous_valid: true
 not_equal_valid: true
 point_range_valid: true
 "];
-	inflow_1_3_outflow_2_3_volume_1_2_ -> inflow_1_3_outflow_2_2_volume_1_1_	 [tooltip="continuous_valid: true
+	inflow_1_3_outflow_2_3_volume_2_2_	 [label="State 27
+++max0max+
+In: (+, +)
+Vol: (max, 0)
+Out: (max, +)",
+		tooltip="derivatives:
+- In may go up from +
+- Vol will stay at max
+- Out will go up from max
+"];
+	inflow_1_3_outflow_2_2_volume_1_3_ -> inflow_1_3_outflow_2_3_volume_2_2_	 [tooltip="continuous_valid: true
 not_equal_valid: true
 point_range_valid: true
 "];
@@ -1158,15 +640,11 @@ point_range_valid: true
 not_equal_valid: true
 point_range_valid: true
 "];
+	inflow_1_3_outflow_2_3_volume_1_2_ -> inflow_1_3_outflow_2_2_volume_1_1_	 [tooltip="continuous_valid: true
+not_equal_valid: true
+point_range_valid: true
+"];
 	inflow_1_3_outflow_2_3_volume_1_2_ -> inflow_1_3_outflow_2_2_volume_1_3_	 [tooltip="continuous_valid: true
-not_equal_valid: true
-point_range_valid: true
-"];
-	inflow_1_3_outflow_2_3_volume_1_3_ -> inflow_1_3_outflow_2_2_volume_2_2_	 [tooltip="continuous_valid: true
-not_equal_valid: true
-point_range_valid: true
-"];
-	inflow_1_3_outflow_2_3_volume_1_3_ -> inflow_1_3_outflow_2_2_volume_2_3_	 [tooltip="continuous_valid: true
 not_equal_valid: true
 point_range_valid: true
 "];
@@ -1178,229 +656,287 @@ point_range_valid: true
 not_equal_valid: true
 point_range_valid: true
 "];
-	inflow_1_3_outflow_1_3_volume_2_3_ -> inflow_1_3_outflow_2_3_volume_2_2_	 [tooltip="continuous_valid: true
+	inflow_1_3_outflow_2_3_volume_1_3_ -> inflow_1_3_outflow_2_2_volume_2_2_	 [tooltip="continuous_valid: true
 not_equal_valid: true
 point_range_valid: true
 "];
-	inflow_1_3_outflow_1_3_volume_1_2_ -> inflow_1_3_outflow_1_3_volume_1_3_	 [tooltip="continuous_valid: true
-not_equal_valid: true
-point_range_valid: true
-"];
-	inflow_1_3_outflow_1_3_volume_1_2_ -> inflow_1_3_outflow_2_3_volume_1_2_	 [tooltip="continuous_valid: true
-not_equal_valid: true
-point_range_valid: true
-"];
-	inflow_1_3_outflow_1_3_volume_1_2_ -> inflow_1_3_outflow_2_3_volume_1_3_	 [tooltip="continuous_valid: true
-not_equal_valid: true
-point_range_valid: true
-"];
-	inflow_1_3_outflow_2_3_volume_1_1_	 [label="State 58
-+++-max+
+	inflow_1_3_outflow_2_2_volume_2_1_	 [label="State 25
+++max-max0
 In: (+, +)
-Vol: (+, -)
-Out: (max, +)",
+Vol: (max, -)
+Out: (max, 0)",
 		tooltip="derivatives:
-- Vol may go down from +
 - In may go up from +
-- Out will go up from max
+- Vol will go down from max
+- Out will stay at max
 "];
-	inflow_1_3_outflow_1_3_volume_1_2_ -> inflow_1_3_outflow_2_3_volume_1_1_	 [tooltip="continuous_valid: true
+	inflow_1_3_outflow_2_2_volume_2_2_ -> inflow_1_3_outflow_2_2_volume_2_1_	 [tooltip="continuous_valid: true
 not_equal_valid: true
 point_range_valid: true
 "];
-	inflow_1_3_outflow_1_3_volume_1_1_	 [label="State 59
-+++-++
+	inflow_1_3_outflow_2_2_volume_2_3_	 [label="State 26
+++max+max0
 In: (+, +)
-Vol: (+, -)
-Out: (+, +)",
+Vol: (max, +)
+Out: (max, 0)",
 		tooltip="derivatives:
-- Vol may go down from +
 - In may go up from +
-- Out may go up from +
+- Vol will go up from max
+- Out will stay at max
 "];
-	inflow_1_3_outflow_1_3_volume_1_2_ -> inflow_1_3_outflow_1_3_volume_1_1_	 [tooltip="continuous_valid: true
+	inflow_1_3_outflow_2_2_volume_2_2_ -> inflow_1_3_outflow_2_2_volume_2_3_	 [tooltip="continuous_valid: true
 not_equal_valid: true
 point_range_valid: true
 "];
-	inflow_1_3_outflow_2_3_volume_1_1_ -> inflow_1_3_outflow_2_2_volume_1_1_	 [tooltip="continuous_valid: true
+	inflow_1_3_outflow_2_2_volume_2_1_ -> inflow_1_3_outflow_2_2_volume_1_2_	 [tooltip="continuous_valid: true
 not_equal_valid: true
 point_range_valid: true
 "];
-	inflow_1_3_outflow_2_3_volume_1_1_ -> inflow_1_3_outflow_2_2_volume_0_1_	 [tooltip="continuous_valid: true
+	inflow_1_3_outflow_2_2_volume_2_1_ -> inflow_1_3_outflow_2_1_volume_1_1_	 [tooltip="continuous_valid: true
 not_equal_valid: true
 point_range_valid: true
 "];
-	inflow_1_3_outflow_2_3_volume_1_1_ -> inflow_1_3_outflow_2_2_volume_0_2_	 [tooltip="continuous_valid: true
+	inflow_1_3_outflow_2_2_volume_2_1_ -> inflow_1_3_outflow_2_1_volume_1_2_	 [tooltip="continuous_valid: true
 not_equal_valid: true
 point_range_valid: true
 "];
-	inflow_1_3_outflow_2_3_volume_1_1_ -> inflow_1_3_outflow_2_2_volume_1_2_	 [tooltip="continuous_valid: true
+	inflow_1_3_outflow_2_2_volume_2_3_ -> inflow_1_3_outflow_2_2_volume_2_2_	 [tooltip="continuous_valid: true
 not_equal_valid: true
 point_range_valid: true
 "];
-	inflow_1_3_outflow_1_3_volume_1_1_ -> inflow_1_3_outflow_2_2_volume_1_1_	 [tooltip="continuous_valid: true
+	inflow_1_3_outflow_2_2_volume_2_3_ -> inflow_1_3_outflow_2_3_volume_2_2_	 [tooltip="continuous_valid: true
 not_equal_valid: true
 point_range_valid: true
 "];
-	inflow_1_3_outflow_1_3_volume_1_1_ -> inflow_1_3_outflow_2_2_volume_0_1_	 [tooltip="continuous_valid: true
+	inflow_1_3_outflow_2_3_volume_2_2_ -> inflow_1_3_outflow_2_2_volume_2_2_	 [tooltip="continuous_valid: true
 not_equal_valid: true
 point_range_valid: true
 "];
-	inflow_1_3_outflow_1_3_volume_1_1_ -> inflow_1_3_outflow_2_2_volume_0_2_	 [tooltip="continuous_valid: true
+	inflow_1_3_outflow_2_3_volume_2_2_ -> inflow_1_3_outflow_2_2_volume_2_1_	 [tooltip="continuous_valid: true
 not_equal_valid: true
 point_range_valid: true
 "];
-	inflow_1_3_outflow_1_3_volume_1_1_ -> inflow_1_3_outflow_1_2_volume_1_2_	 [tooltip="continuous_valid: true
+	inflow_1_3_outflow_2_3_volume_2_2_ -> inflow_1_3_outflow_2_2_volume_2_3_	 [tooltip="continuous_valid: true
 not_equal_valid: true
 point_range_valid: true
 "];
-	inflow_1_3_outflow_1_3_volume_1_1_ -> inflow_1_3_outflow_1_2_volume_1_1_	 [tooltip="continuous_valid: true
+	inflow_1_3_outflow_1_3_volume_2_2_ -> inflow_1_3_outflow_2_2_volume_2_2_	 [tooltip="continuous_valid: true
 not_equal_valid: true
 point_range_valid: true
 "];
-	inflow_1_3_outflow_1_3_volume_1_1_ -> inflow_1_3_outflow_1_2_volume_0_1_	 [tooltip="continuous_valid: true
+	inflow_1_3_outflow_1_3_volume_2_2_ -> inflow_1_3_outflow_2_2_volume_2_1_	 [tooltip="continuous_valid: true
 not_equal_valid: true
 point_range_valid: true
 "];
-	inflow_1_3_outflow_1_3_volume_1_1_ -> inflow_1_3_outflow_1_2_volume_0_2_	 [tooltip="continuous_valid: true
+	inflow_1_3_outflow_1_3_volume_2_2_ -> inflow_1_3_outflow_2_2_volume_2_3_	 [tooltip="continuous_valid: true
 not_equal_valid: true
 point_range_valid: true
 "];
-	inflow_1_3_outflow_1_3_volume_1_1_ -> inflow_1_3_outflow_2_2_volume_1_2_	 [tooltip="continuous_valid: true
+	inflow_1_3_outflow_1_2_volume_2_2_ -> inflow_1_3_outflow_2_2_volume_2_1_	 [tooltip="continuous_valid: true
 not_equal_valid: true
 point_range_valid: true
 "];
-	inflow_1_3_outflow_1_3_volume_1_1_ -> inflow_1_3_outflow_2_3_volume_1_2_	 [tooltip="continuous_valid: true
+	inflow_1_3_outflow_1_2_volume_2_2_ -> inflow_1_3_outflow_2_2_volume_2_3_	 [tooltip="continuous_valid: true
 not_equal_valid: true
 point_range_valid: true
 "];
-	inflow_1_3_outflow_1_3_volume_1_1_ -> inflow_1_3_outflow_1_3_volume_1_2_	 [tooltip="continuous_valid: true
+	inflow_1_3_outflow_0_2_volume_1_3_ -> inflow_1_3_outflow_0_3_volume_1_3_	 [tooltip="continuous_valid: true
 not_equal_valid: true
 point_range_valid: true
 "];
-	inflow_1_3_outflow_1_3_volume_1_1_ -> inflow_1_3_outflow_2_3_volume_1_1_	 [tooltip="continuous_valid: true
+	inflow_1_3_outflow_0_2_volume_1_3_ -> inflow_1_3_outflow_0_2_volume_2_2_	 [tooltip="continuous_valid: true
 not_equal_valid: true
 point_range_valid: true
 "];
-	inflow_1_3_outflow_2_3_volume_0_1_	 [label="State 60
-++0-max+
+	inflow_1_3_outflow_0_3_volume_2_2_	 [label="State 32
+++max00+
 In: (+, +)
-Vol: (0, -)
-Out: (max, +)",
-		tooltip="derivatives:
-- Vol will go down from 0
-- In may go up from +
-- Out will go up from max
-"];
-	inflow_1_3_outflow_1_3_volume_1_1_ -> inflow_1_3_outflow_2_3_volume_0_1_	 [tooltip="continuous_valid: true
-not_equal_valid: true
-point_range_valid: true
-"];
-	inflow_1_3_outflow_2_3_volume_0_2_	 [label="State 61
-++00max+
-In: (+, +)
-Vol: (0, 0)
-Out: (max, +)",
-		tooltip="derivatives:
-- Vol will stay at 0
-- In may go up from +
-- Out will go up from max
-"];
-	inflow_1_3_outflow_1_3_volume_1_1_ -> inflow_1_3_outflow_2_3_volume_0_2_	 [tooltip="continuous_valid: true
-not_equal_valid: true
-point_range_valid: true
-"];
-	inflow_1_3_outflow_1_3_volume_0_1_	 [label="State 62
-++0-++
-In: (+, +)
-Vol: (0, -)
-Out: (+, +)",
-		tooltip="derivatives:
-- Vol will go down from 0
-- In may go up from +
-- Out may go up from +
-"];
-	inflow_1_3_outflow_1_3_volume_1_1_ -> inflow_1_3_outflow_1_3_volume_0_1_	 [tooltip="continuous_valid: true
-not_equal_valid: true
-point_range_valid: true
-"];
-	inflow_1_3_outflow_1_3_volume_0_2_	 [label="State 65
-++00++
-In: (+, +)
-Vol: (0, 0)
-Out: (+, +)",
-		tooltip="derivatives:
-- Vol will stay at 0
-- In may go up from +
-- Out may go up from +
-"];
-	inflow_1_3_outflow_1_3_volume_1_1_ -> inflow_1_3_outflow_1_3_volume_0_2_	 [tooltip="continuous_valid: true
-not_equal_valid: true
-point_range_valid: true
-"];
-	inflow_1_3_outflow_1_3_volume_0_1_ -> inflow_1_3_outflow_0_2_volume_0_2_	 [tooltip="continuous_valid: true
-not_equal_valid: true
-point_range_valid: true
-"];
-	inflow_1_3_outflow_0_3_volume_0_2_	 [label="State 63
-++000+
-In: (+, +)
-Vol: (0, 0)
+Vol: (max, 0)
 Out: (0, +)",
 		tooltip="derivatives:
-- Vol will stay at 0
 - In may go up from +
+- Vol will stay at max
 - Out will go up from 0
 "];
-	inflow_1_3_outflow_1_3_volume_0_1_ -> inflow_1_3_outflow_0_3_volume_0_2_	 [tooltip="continuous_valid: true
+	inflow_1_3_outflow_0_2_volume_1_3_ -> inflow_1_3_outflow_0_3_volume_2_2_	 [tooltip="continuous_valid: true
 not_equal_valid: true
 point_range_valid: true
 "];
-	inflow_1_3_outflow_0_3_volume_0_3_	 [label="State 64
+	inflow_1_3_outflow_0_2_volume_2_2_ -> inflow_1_3_outflow_2_2_volume_2_1_	 [tooltip="continuous_valid: false
+not_equal_valid: true
+point_range_valid: true
+"];
+	inflow_1_3_outflow_0_2_volume_2_2_ -> inflow_1_3_outflow_2_2_volume_2_3_	 [tooltip="continuous_valid: false
+not_equal_valid: true
+point_range_valid: true
+"];
+	inflow_1_3_outflow_0_3_volume_2_2_ -> inflow_1_3_outflow_2_2_volume_2_2_	 [tooltip="continuous_valid: false
+not_equal_valid: true
+point_range_valid: true
+"];
+	inflow_1_3_outflow_0_3_volume_2_2_ -> inflow_1_3_outflow_2_2_volume_2_1_	 [tooltip="continuous_valid: false
+not_equal_valid: true
+point_range_valid: true
+"];
+	inflow_1_3_outflow_0_3_volume_2_2_ -> inflow_1_3_outflow_2_2_volume_2_3_	 [tooltip="continuous_valid: false
+not_equal_valid: true
+point_range_valid: true
+"];
+	inflow_1_3_outflow_2_1_volume_2_1_	 [label="State 34
+++max-max-
+In: (+, +)
+Vol: (max, -)
+Out: (max, -)",
+		tooltip="derivatives:
+- In may go up from +
+- Vol will go down from max
+- Out will go down from max
+"];
+	inflow_1_3_outflow_1_1_volume_2_2_ -> inflow_1_3_outflow_2_1_volume_2_1_	 [tooltip="continuous_valid: true
+not_equal_valid: true
+point_range_valid: true
+"];
+	inflow_1_3_outflow_2_1_volume_2_3_	 [label="State 35
+++max+max-
+In: (+, +)
+Vol: (max, +)
+Out: (max, -)",
+		tooltip="derivatives:
+- In may go up from +
+- Vol will go up from max
+- Out will go down from max
+"];
+	inflow_1_3_outflow_1_1_volume_2_2_ -> inflow_1_3_outflow_2_1_volume_2_3_	 [tooltip="continuous_valid: true
+not_equal_valid: true
+point_range_valid: true
+"];
+	inflow_1_3_outflow_2_1_volume_2_1_ -> inflow_1_3_outflow_2_1_volume_1_2_	 [tooltip="continuous_valid: true
+not_equal_valid: true
+point_range_valid: true
+"];
+	inflow_1_3_outflow_2_1_volume_2_3_ -> inflow_1_3_outflow_2_2_volume_2_2_	 [tooltip="continuous_valid: true
+not_equal_valid: true
+point_range_valid: true
+"];
+	inflow_1_3_outflow_2_1_volume_2_2_	 [label="State 36
+++max0max-
+In: (+, +)
+Vol: (max, 0)
+Out: (max, -)",
+		tooltip="derivatives:
+- In may go up from +
+- Vol will stay at max
+- Out will go down from max
+"];
+	inflow_1_3_outflow_2_1_volume_2_3_ -> inflow_1_3_outflow_2_1_volume_2_2_	 [tooltip="continuous_valid: true
+not_equal_valid: true
+point_range_valid: true
+"];
+	inflow_1_3_outflow_2_1_volume_2_2_ -> inflow_1_3_outflow_2_1_volume_2_1_	 [tooltip="continuous_valid: true
+not_equal_valid: true
+point_range_valid: true
+"];
+	inflow_1_3_outflow_2_1_volume_2_2_ -> inflow_1_3_outflow_2_1_volume_2_3_	 [tooltip="continuous_valid: true
+not_equal_valid: true
+point_range_valid: true
+"];
+	inflow_1_3_outflow_0_2_volume_1_2_ -> inflow_1_3_outflow_0_2_volume_1_3_	 [tooltip="continuous_valid: true
+not_equal_valid: true
+point_range_valid: true
+"];
+	inflow_1_3_outflow_0_2_volume_1_1_ -> inflow_1_3_outflow_0_2_volume_0_2_	 [tooltip="continuous_valid: true
+not_equal_valid: true
+point_range_valid: true
+"];
+	inflow_1_3_outflow_0_2_volume_1_1_ -> inflow_1_3_outflow_0_2_volume_1_2_	 [tooltip="continuous_valid: true
+not_equal_valid: true
+point_range_valid: true
+"];
+	inflow_1_3_outflow_0_1_volume_1_1_	 [label="State 39
++++-0-
+In: (+, +)
+Vol: (+, -)
+Out: (0, -)",
+		tooltip="derivatives:
+- In may go up from +
+- Vol may go down from +
+- Out will go down from 0
+"];
+	inflow_1_3_outflow_0_2_volume_1_1_ -> inflow_1_3_outflow_0_1_volume_1_1_	 [tooltip="continuous_valid: true
+not_equal_valid: true
+point_range_valid: true
+"];
+	inflow_1_3_outflow_0_1_volume_1_2_	 [label="State 40
++++00-
+In: (+, +)
+Vol: (+, 0)
+Out: (0, -)",
+		tooltip="derivatives:
+- In may go up from +
+- Vol will stay at +
+- Out will go down from 0
+"];
+	inflow_1_3_outflow_0_2_volume_1_1_ -> inflow_1_3_outflow_0_1_volume_1_2_	 [tooltip="continuous_valid: true
+not_equal_valid: true
+point_range_valid: true
+"];
+	inflow_1_3_outflow_0_1_volume_0_2_	 [label="State 41
+++000-
+In: (+, +)
+Vol: (0, 0)
+Out: (0, -)",
+		tooltip="derivatives:
+- In may go up from +
+- Vol will stay at 0
+- Out will go down from 0
+"];
+	inflow_1_3_outflow_0_2_volume_1_1_ -> inflow_1_3_outflow_0_1_volume_0_2_	 [tooltip="continuous_valid: true
+not_equal_valid: true
+point_range_valid: true
+"];
+	inflow_1_3_outflow_0_1_volume_1_1_ -> inflow_1_3_outflow_0_2_volume_0_2_	 [tooltip="continuous_valid: true
+not_equal_valid: true
+point_range_valid: true
+"];
+	inflow_1_3_outflow_0_1_volume_1_1_ -> inflow_1_3_outflow_0_2_volume_1_2_	 [tooltip="continuous_valid: true
+not_equal_valid: true
+point_range_valid: true
+"];
+	inflow_1_3_outflow_0_1_volume_1_1_ -> inflow_1_3_outflow_0_2_volume_1_1_	 [tooltip="continuous_valid: true
+not_equal_valid: true
+point_range_valid: true
+"];
+	inflow_1_3_outflow_0_1_volume_1_2_ -> inflow_1_3_outflow_0_2_volume_1_3_	 [tooltip="continuous_valid: true
+not_equal_valid: true
+point_range_valid: true
+"];
+	inflow_1_3_outflow_0_1_volume_1_2_ -> inflow_1_3_outflow_0_2_volume_1_2_	 [tooltip="continuous_valid: true
+not_equal_valid: true
+point_range_valid: true
+"];
+	inflow_1_3_outflow_0_1_volume_0_2_ -> inflow_1_3_outflow_0_2_volume_0_3_	 [tooltip="continuous_valid: true
+not_equal_valid: true
+point_range_valid: true
+"];
+	inflow_1_3_outflow_0_1_volume_0_2_ -> inflow_1_3_outflow_0_2_volume_0_2_	 [tooltip="continuous_valid: true
+not_equal_valid: true
+point_range_valid: true
+"];
+	inflow_1_3_outflow_1_2_volume_0_2_ -> inflow_1_3_outflow_0_2_volume_0_3_	 [tooltip="continuous_valid: true
+not_equal_valid: true
+point_range_valid: true
+"];
+	inflow_1_3_outflow_0_3_volume_0_3_	 [label="State 44
 ++0+0+
 In: (+, +)
 Vol: (0, +)
 Out: (0, +)",
 		tooltip="derivatives:
-- Vol will go up from 0
 - In may go up from +
+- Vol will go up from 0
 - Out will go up from 0
-"];
-	inflow_1_3_outflow_0_3_volume_0_2_ -> inflow_1_3_outflow_0_3_volume_0_3_	 [tooltip="continuous_valid: true
-not_equal_valid: true
-point_range_valid: true
-"];
-	inflow_1_3_outflow_0_3_volume_0_3_ -> inflow_1_3_outflow_0_3_volume_1_3_	 [tooltip="continuous_valid: true
-not_equal_valid: true
-point_range_valid: true
-"];
-	inflow_1_3_outflow_1_3_volume_0_2_ -> inflow_1_3_outflow_0_3_volume_0_2_	 [tooltip="continuous_valid: true
-not_equal_valid: true
-point_range_valid: true
 "];
 	inflow_1_3_outflow_1_3_volume_0_2_ -> inflow_1_3_outflow_0_3_volume_0_3_	 [tooltip="continuous_valid: true
-not_equal_valid: true
-point_range_valid: true
-"];
-	inflow_1_3_outflow_0_3_volume_0_1_	 [label="State 66
-++0-0+
-In: (+, +)
-Vol: (0, -)
-Out: (0, +)",
-		tooltip="derivatives:
-- Vol will go down from 0
-- In may go up from +
-- Out will go up from 0
-"];
-	inflow_1_3_outflow_1_3_volume_0_2_ -> inflow_1_3_outflow_0_3_volume_0_1_	 [tooltip="continuous_valid: true
-not_equal_valid: true
-point_range_valid: true
-"];
-	inflow_1_3_outflow_0_3_volume_0_1_ -> inflow_1_3_outflow_0_2_volume_0_2_	 [tooltip="continuous_valid: true
-not_equal_valid: true
-point_range_valid: true
-"];
-	inflow_1_3_outflow_0_3_volume_0_1_ -> inflow_1_3_outflow_0_3_volume_0_2_	 [tooltip="continuous_valid: true
 not_equal_valid: true
 point_range_valid: true
 "];

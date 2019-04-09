@@ -5,11 +5,20 @@ import itertools
 from qr_types import *
 
 def next_states(entity_state: EntityState) -> List[EntityState]:
-    a = entity_state
-    return list(filter(lambda b: check_transition(a, b), [EntityState(entity_state.entity, zip_pair(pair)) for pair in itertools.product(
-        next_magnitudes(entity_state),
-        next_derivatives(entity_state),
-    )]))
+    entity = entity_state.entity
+    state = entity_state.state
+    magnitudes = next_magnitudes(entity_state)
+    tmp_entity_states = list(map(lambda state_dict: EntityState(entity, {k: QuantityPair(magnitude, state[k].derivative) for k, magnitude in state_dict.items()}), magnitudes))
+    new_states = [b for a in tmp_entity_states for b in derivative_states(a)]
+    return new_states
+
+def derivative_states(a: EntityState) -> List[EntityState]:
+    options = []
+    for deriv_dict in next_derivatives(a):
+        b = EntityState(a.entity, {k: QuantityPair(a.state[k].magnitude, derivative) for k, derivative in deriv_dict.items()})
+        if check_transition(a, b):
+            options.append(b)
+    return options
 
 def zip_pair(tpl: Tuple[Dict[str, Enum], Dict[str, Direction]]) -> Dict[str, QuantityPair]:
     (magnitude_dict, derivative_dict) = tpl
