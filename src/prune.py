@@ -31,7 +31,7 @@ def next_derivatives(entity_state: EntityState) -> List[Dict[str, Direction]]:
     state = entity_state.state
     quantities = entity_state.entity.quantities
 
-    # Dictionary to keep track of the derivative directions of dependant quantities
+    # Dictionary to keep track of the derivative directions of dependent quantities
     effect_sets = relation_effects(state, relations)
     # Determine the overall derivative direction for the target quantities
     relation_derivatives = {k: combine_derivatives(directions) for k, directions in effect_sets.items()}
