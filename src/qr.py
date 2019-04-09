@@ -41,7 +41,7 @@ def handle_state(
         next_k = state_key(next_state)
         edges.append((k, next_k))
         if not next_k in nodes:
-            nodes.update({ next_k: state })
+            nodes.update({ next_k: next_state })
             (nodes, edges) = handle_state(next_state, nodes, edges, next_k)
     return (nodes, edges)
 
