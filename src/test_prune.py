@@ -2,7 +2,6 @@ from prune import *
 from mock import *
 
 def test_next_states():
-    print(next_states(entity_state))
     assert next_states(entity_state) == [
         EntityState(container, {
             'volume': QuantityPair(Volume.ZERO, Direction.NEUTRAL),
@@ -37,8 +36,15 @@ def test_next_magnitudes_point_interval():
 def test_zip_pair():
     assert zip_pair(({'volume': Volume.PLUS}, {'volume': Direction.POSITIVE})) == {'volume': QuantityPair(Volume.PLUS, Direction.POSITIVE)}
 
-def test_next_derivatives():
-    assert next_derivatives(entity_state) == [{
+def test_next_derivatives_direct():
+    assert next_derivatives(entity_state, True) == [{
+        'volume': Direction.NEUTRAL,
+        'inflow': Direction.POSITIVE,
+        'outflow': Direction.NEUTRAL,
+    }]
+
+def test_next_derivatives_indirect():
+    assert next_derivatives(entity_state, False) == [{
         'volume': Direction.NEUTRAL,
         'inflow': Direction.POSITIVE,
         'outflow': Direction.NEUTRAL,
@@ -51,7 +57,7 @@ def test_next_derivatives_clipping():
         'outflow': (Outflow.ZERO, Direction.NEUTRAL),
     }
     entity_state_clip = make_entity_state(container, container_state_clip)
-    assert next_derivatives(entity_state_clip) == [
+    assert next_derivatives(entity_state_clip, True) == [
         {
             'volume': Direction.NEUTRAL,
             'inflow': Direction.NEUTRAL,
@@ -80,6 +86,7 @@ def test_relation_effects():
             'volume': QuantityPair(Volume.ZERO, Direction.POSITIVE)
         },
         []
+        , False
     ) == {'volume': set()}
     assert relation_effects(
         {
@@ -89,6 +96,7 @@ def test_relation_effects():
         [
             Influence(Quantity('volume', Volume), Quantity('outflow', Outflow))
         ]
+        , False
     ) == {'volume': set(), 'outflow': {Direction.POSITIVE}}
     assert relation_effects(
         {
@@ -98,7 +106,9 @@ def test_relation_effects():
         [
             Influence(   Quantity('volume', Volume), Quantity('outflow', Outflow)),
             Proportional(Quantity('volume', Volume), Quantity('outflow', Outflow), Direction.NEGATIVE)
-        ]) == {'volume': set(), 'outflow': {Direction.POSITIVE, Direction.NEGATIVE}}
+        ]
+        , False
+        ) == {'volume': set(), 'outflow': {Direction.POSITIVE, Direction.NEGATIVE}}
 
 def test_combine_derivatives():
     assert combine_derivatives(set()) == Direction.NEUTRAL

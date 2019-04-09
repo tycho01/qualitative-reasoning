@@ -14,10 +14,15 @@ def next_states(entity_state: EntityState) -> List[EntityState]:
 
 def derivative_states(a: EntityState) -> List[EntityState]:
     options = []
-    for deriv_dict in next_derivatives(a):
-        b = EntityState(a.entity, {k: QuantityPair(a.state[k].magnitude, derivative) for k, derivative in deriv_dict.items()})
-        if check_transition(a, b):
-            options.append(b)
+    for deriv_dict_direct in next_derivatives(a, True):
+        state1 = {k: QuantityPair(a.state[k].magnitude, derivative) for k, derivative in deriv_dict_direct.items()}
+        b1 = EntityState(a.entity, state1)
+        # proportionality_effect_sets = relation_effects(state, a.entity.relations, False)
+        for deriv_dict_indirect in next_derivatives(b1, False):
+            state2 = {k: QuantityPair(a.state[k].magnitude, derivative) for k, derivative in deriv_dict_direct.items()}
+            b2 = EntityState(a.entity, state2)
+            if check_transition(a, b2):
+                options.append(b2)
     return options
 
 def zip_pair(tpl: Tuple[Dict[str, Enum], Dict[str, Direction]]) -> Dict[str, QuantityPair]:
@@ -25,20 +30,22 @@ def zip_pair(tpl: Tuple[Dict[str, Enum], Dict[str, Direction]]) -> Dict[str, Qua
     return {k: QuantityPair(magnitude, derivative_dict[k]) for k, magnitude in magnitude_dict.items()}
 
 # TODO: incorporate transformation based on check_extremes
-def next_derivatives(entity_state: EntityState) -> List[Dict[str, Direction]]:
+def next_derivatives(entity_state: EntityState, is_direct: bool) -> List[Dict[str, Direction]]:
     entity = entity_state.entity
     relations = entity.relations
     state = entity_state.state
     quantities = entity_state.entity.quantities
 
     # Dictionary to keep track of the derivative directions of dependent quantities
-    effect_sets = relation_effects(state, relations)
+    effect_sets = relation_effects(state, relations, is_direct)
     # Determine the overall derivative direction for the target quantities
     relation_derivatives = {k: combine_derivatives(directions) for k, directions in effect_sets.items()}
     # check if state2 derivatives are compatible with relation_derivatives:
-    # k, derivative = list(derivatives.items())[0]
     next_derivs = {k:
-            list(map(lambda x: (k, x), derivative_options(relation_derivatives[k], quantities[k], pair)))
+            list(map(
+                lambda x: (k, x),
+                derivative_options(relation_derivatives[k], quantities[k], pair)
+            ))
         for k, pair in state.items()}
     derivative_combinations = list(map(dict, itertools.product(*next_derivs.values())))
     return derivative_combinations
@@ -116,19 +123,20 @@ def move_magnitude(pair: QuantityPair, space: EnumMeta) -> Enum:
     new_idx = min(len(members)-1, max(0, idx + to_sign(pair.derivative)))
     return space[members[new_idx]]
 
-def relation_effects(state: Dict[str, QuantityPair], relations: List[Relation]) -> Dict[str, Set[Direction]]:
+def relation_effects(state: Dict[str, QuantityPair], relations: List[Relation], is_direct: bool) -> Dict[str, Set[Direction]]:
     '''for each quantity in a state find the effects of the relationships working on that quantity'''
     target_quantities = {k: set() for k in state}
     for relation in relations:
-        if type(relation) != ValueCorrespondence:  # skip ValueCorrespondence which are different
+        if type(relation) == (Influence if is_direct else Proportional):
             target_k = relation.b.name
             qty1 = state[relation.a.name]
             correl = relation.correlation
             # add the derivative direction
             target_quantities[target_k].add(
+                direct_influence(correl, qty1.magnitude.value)
+                if is_direct else
                 indirect_influence(correl, qty1.derivative)
-                if type(relation) == Proportional else
-                direct_influence(correl, qty1.magnitude.value))
+            )
     return target_quantities
 
 def combine_derivatives(directions_: Set[Direction]) -> Direction:
