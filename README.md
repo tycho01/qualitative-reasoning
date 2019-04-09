@@ -11,7 +11,8 @@ docker build -t qr .
 docker run -v $PWD:/app qr
 
 # or enter interactively
-docker run -it -v $PWD:/app --entrypoint /bin/sh qr
+docker run -it -v $PWD:/app qr /bin/sh
+docker run -it -v $PWD:/app qr /bin/sh -c "cd /app/src; python"
 
 # install python deps thru conda
 conda install pytest
