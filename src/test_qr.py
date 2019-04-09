@@ -27,9 +27,9 @@ def test_inter_state_trace():
     # print(inter_state_trace(entity_state, entity_state))
     assert inter_state_trace(entity_state, entity_state) == '''continuous_valid: true\nnot_equal_valid: false\npoint_range_valid: true\n'''
 
-def test_intra_state_trace():
-    # print(intra_state_trace(entity_state))
-    assert intra_state_trace(entity_state) == '''correspondence_valid: true\nderivatives:\n- Vol will stay at 0\n- In will go up from 0\n- Out will stay at 0\n'''
+# def test_intra_state_trace():
+#     # print(intra_state_trace(entity_state))
+#     assert intra_state_trace(entity_state) == '''correspondence_valid: true\nderivatives:\n- Vol will stay at 0\n- In will go up from 0\n- Out will stay at 0\n'''
 
 def test_to_pairs():
     assert to_pairs([1,2,3,4]) == [(1,2),(3,4)]
