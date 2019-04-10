@@ -3,17 +3,17 @@ from prune import *
 from mock import *
 
 def test_next_states():
-    print(next_states(entity_state))
+    # print(next_states(entity_state))
     assert next_states(entity_state) == {
         EntityState(container, {
             'volume': QuantityPair(Volume.ZERO, Direction.POSITIVE),
             'inflow': QuantityPair(Inflow.PLUS, Direction.NEUTRAL),
-            'outflow': QuantityPair(Outflow.ZERO, Direction.NEUTRAL),
+            'outflow': QuantityPair(Outflow.ZERO, Direction.POSITIVE),
         }),
         EntityState(container, {
             'volume': QuantityPair(Volume.ZERO, Direction.POSITIVE),
             'inflow': QuantityPair(Inflow.PLUS, Direction.POSITIVE),
-            'outflow': QuantityPair(Outflow.ZERO, Direction.NEUTRAL),
+            'outflow': QuantityPair(Outflow.ZERO, Direction.POSITIVE),
         }),
     }
 
@@ -28,13 +28,25 @@ def test_derivative_states():
     ) == {
         EntityState(container, {
             'volume': QuantityPair(Volume.ZERO, Direction.POSITIVE),
-            'inflow': QuantityPair(Inflow.PLUS, Direction.POSITIVE),
-            'outflow': QuantityPair(Outflow.ZERO, Direction.POSITIVE),  # fails, now Direction.NEUTRAL, go fix proportionality
+            'inflow': QuantityPair(Inflow.PLUS, Direction.NEUTRAL),
+            'outflow': QuantityPair(Outflow.ZERO, Direction.POSITIVE),
         }),
         EntityState(container, {
             'volume': QuantityPair(Volume.ZERO, Direction.POSITIVE),
+            'inflow': QuantityPair(Inflow.PLUS, Direction.POSITIVE),
+            'outflow': QuantityPair(Outflow.ZERO, Direction.POSITIVE),
+        }),
+    }
+
+    {
+        EntityState(container, {
+            'volume': QuantityPair(Volume.ZERO, Direction.POSITIVE),
             'inflow': QuantityPair(Inflow.PLUS, Direction.NEUTRAL),
-            'outflow': QuantityPair(Outflow.ZERO, Direction.POSITIVE),  # fails, now Direction.NEUTRAL, go fix proportionality
+            'outflow': QuantityPair(Outflow.ZERO, Direction.POSITIVE),
+        }), EntityState(container, {
+            'volume': QuantityPair(Volume.ZERO, Direction.POSITIVE),
+            'inflow': QuantityPair(Inflow.PLUS, Direction.POSITIVE),
+            'outflow': QuantityPair(Outflow.ZERO, Direction.POSITIVE),
         }),
     }
 
