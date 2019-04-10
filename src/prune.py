@@ -94,29 +94,30 @@ def next_magnitudes(entity_state: EntityState) -> Set[Dict[str, Enum]]:
     state = entity_state.state
     entity = entity_state.entity
 
+    magnitudes = {k:
+        list(map(lambda x: (k, x), magnitude_options(pair, entity.quantities[k].quantitySpace)))
+        for k, pair in state.items()
+    }
+    magnitude_combinations = set(map(lambda pairs: handle_correspondence(pairs, entity_state), itertools.product(*magnitudes.values())))
+    return magnitude_combinations
+
+def handle_correspondence(magnitudes: List[Tuple[str, Enum]], entity_state: EntityState) -> Dict[str, Enum]:
     # get value correspondence requirements per quantity
-    reqs = correspondence_reqs(entity_state)
+    state = {k: QuantityPair(magnitude, entity_state.state[k].derivative) for k, magnitude in magnitudes}
+    entity_state_ = EntityState(entity_state.entity, state)
+    reqs = correspondence_reqs(entity_state_)
     has_clashes = max(map(len, reqs.values())) > 1
     if has_clashes:
         return set()
-    # req_vals = {k: v for k, v in reqs.items() if v}
-    req_vals = dict(reqs)
+    # forcing approach: force the quantity to the value in spite of its derivative and point/range priorities
+    state_ = {k: list(req)[0] if req else entity_state_.state[k].magnitude for k, req in reqs.items()}
+    return FrozenDict(state_)
 
-    magnitudes = {k:
-        list(map(lambda x: (k, x), magnitude_options(req_vals[k], pair, entity.quantities[k].quantitySpace)))
-        for k, pair in state.items()
-    }
-    magnitude_combinations = set(map(FrozenDict, itertools.product(*magnitudes.values())))
-    return magnitude_combinations
-
-def magnitude_options(reqs: Dict[str, Set[Enum]], pair: QuantityPair, space: EnumMeta) -> Set[Enum]:
+def magnitude_options(pair: QuantityPair, space: EnumMeta) -> Set[Enum]:
     '''check the next possible magnitudes based on the point/interval check and current derivatives'''
     point_range = set() if is_point(pair.magnitude) else {pair.magnitude}
     rest = {move_magnitude(pair, space)}.union(point_range)
-    # filtering approach: no forcing values in a direction
-    # return rest.intersection(reqs) if reqs else rest
-    # forcing approach: force the quantity to the value in spite of its derivative and point/range priorities
-    return reqs if reqs else rest
+    return rest
 
 def correspondence_reqs(entity_state: EntityState) -> Dict[str, Set[Enum]]:
     '''get a dictionary of value correspondence requirements on quantities'''
