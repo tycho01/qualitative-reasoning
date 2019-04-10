@@ -27,15 +27,18 @@ def derivative_states(a: EntityState, entity_state: EntityState) -> Set[EntitySt
         for deriv_dict_indirect in next_derivatives(b1, proportionality_effects):
             state2 = {k: QuantityPair(a.state[k].magnitude, derivative) for k, derivative in deriv_dict_indirect.items()}
             b2 = EntityState(a.entity, state2)
-            # options based on exogenous actions
-            exogenous_effects = {k: all_directions if is_exogenous else {Direction.NEUTRAL} for k, is_exogenous in a.entity.exogenous_dict.items()}
-            for deriv_dict_exogenous in next_derivatives(b2, exogenous_effects):
-                state3 = {k: QuantityPair(a.state[k].magnitude, derivative) for k, derivative in deriv_dict_exogenous.items()}
-                b3 = EntityState(a.entity, state3)
-                if check_transition(a, b3):
-                    # TODO: somehow mark the edge as exogenously influnced?
-                    print()
-                    options.add(b3)
+
+            if check_transition(entity_state, b2):
+                options.add(b2)
+
+            # # options based on exogenous actions
+            # exogenous_effects = {k: all_directions if is_exogenous else {Direction.NEUTRAL} for k, is_exogenous in a.entity.exogenous_dict.items()}
+            # for deriv_dict_exogenous in next_derivatives(b2, exogenous_effects):
+            #     state3 = {k: QuantityPair(a.state[k].magnitude, derivative) for k, derivative in deriv_dict_exogenous.items()}
+            #     b3 = EntityState(a.entity, state3)
+            #     if check_transition(a, b3):
+            #         # TODO: somehow mark the edge as exogenously influnced?
+            #         options.add(b3)
     return options
 
 def zip_pair(tpl: Tuple[Dict[str, Enum], Dict[str, Direction]]) -> Dict[str, QuantityPair]:
