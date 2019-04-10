@@ -141,6 +141,23 @@ def test_next_derivatives_clipping():
         }),
     }
 
+def test_next_derivatives_influence():
+
+    entity_state_1 = EntityState(container, {
+        'volume': QuantityPair(Volume.ZERO, Direction.NEUTRAL),
+        'inflow': QuantityPair(Inflow.PLUS, Direction.NEUTRAL),
+        'outflow': QuantityPair(Outflow.ZERO, Direction.NEUTRAL),
+    })
+
+    effects = relation_effects(entity_state_1.state, container.relations, True)
+    assert next_derivatives(entity_state_1, effects) == {
+        FrozenDict({
+            'volume': Direction.POSITIVE,
+            'inflow': Direction.NEUTRAL,
+            'outflow': Direction.NEUTRAL,
+        }),
+    }
+
 def test_derivative_options():
     relation_derivative = Direction.POSITIVE
     qty = Quantity('outflow', Outflow)
