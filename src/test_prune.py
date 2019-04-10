@@ -89,6 +89,25 @@ def test_next_derivatives_clipping():
         }),
     }
 
+def test_correspondence_reqs():
+    assert correspondence_reqs(entity_state) == {
+        'volume': set(),
+        'inflow': set(),
+        'outflow': {Outflow.ZERO},
+    }
+
+    container_state_clip = {
+        'volume': (Volume.MAX, Direction.POSITIVE),
+        'inflow': (Inflow.ZERO, Direction.NEUTRAL),
+        'outflow': (Outflow.ZERO, Direction.NEUTRAL),
+    }
+    entity_state_clip = make_entity_state(container, container_state_clip)
+    assert correspondence_reqs(entity_state_clip) == {
+        'volume': set(),
+        'inflow': set(),
+        'outflow': {Outflow.MAX},
+    }
+
 def test_move_derivative():
     assert move_derivative(Direction.POSITIVE, Direction.QUESTION) == set([Direction.POSITIVE, Direction.NEUTRAL])
 

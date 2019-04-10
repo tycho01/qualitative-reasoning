@@ -70,7 +70,6 @@ volume_outflow = Proportional(volume, outflow, Direction.POSITIVE)
 vol_out_max = ValueCorrespondence(('volume', Volume.MAX), ('outflow', Outflow.MAX))
 # There is no outflow, when there is no volume.
 vol_out_zero = ValueCorrespondence(('volume', Volume.ZERO), ('outflow', Outflow.ZERO))
-# Volume, Outflow, 
 
 relations = [
     inflow_volume,
