@@ -5,17 +5,65 @@ from mock import *
 def test_next_states():
     # print(next_states(entity_state))
     assert next_states(entity_state) == {
-        EntityState(container, {
-            'volume': QuantityPair(Volume.ZERO, Direction.POSITIVE),
-            'inflow': QuantityPair(Inflow.PLUS, Direction.NEUTRAL),
-            'outflow': QuantityPair(Outflow.ZERO, Direction.POSITIVE),
-        }),
+        # EntityState(container, {
+        #     'volume': QuantityPair(Volume.ZERO, Direction.POSITIVE),
+        #     'inflow': QuantityPair(Inflow.PLUS, Direction.NEUTRAL),
+        #     'outflow': QuantityPair(Outflow.ZERO, Direction.POSITIVE),
+        # }),
         EntityState(container, {
             'volume': QuantityPair(Volume.ZERO, Direction.POSITIVE),
             'inflow': QuantityPair(Inflow.PLUS, Direction.POSITIVE),
             'outflow': QuantityPair(Outflow.ZERO, Direction.POSITIVE),
         }),
     }
+
+def test_next_states_3():
+    es = EntityState(container, {
+        'volume': QuantityPair(Volume.ZERO, Direction.POSITIVE),
+        'inflow': QuantityPair(Inflow.PLUS, Direction.POSITIVE),
+        'outflow': QuantityPair(Outflow.ZERO, Direction.POSITIVE),
+    })
+    # print(next_states(es))
+    assert next_states(es) == {
+        EntityState(container, {
+            'volume': QuantityPair(Volume.PLUS, Direction.POSITIVE),
+            'inflow': QuantityPair(Inflow.PLUS, Direction.POSITIVE),
+            'outflow': QuantityPair(Outflow.PLUS, Direction.POSITIVE),  # fails, now says Outflow.ZERO
+        })
+    }
+    # State 3: ++++0+, should be all +
+
+def test_next_states_5():
+    es = EntityState(container, {
+        'volume': QuantityPair(Volume.PLUS, Direction.NEUTRAL),
+        'inflow': QuantityPair(Inflow.PLUS, Direction.POSITIVE),
+        'outflow': QuantityPair(Outflow.PLUS, Direction.POSITIVE),
+    })
+    print(next_states(es))
+    assert next_states(es) == {
+        EntityState(container, {
+            'volume': QuantityPair(Volume.PLUS, Direction.NEGATIVE),
+            'inflow': QuantityPair(Inflow.PLUS, Direction.POSITIVE),
+            'outflow': QuantityPair(Outflow.PLUS, Direction.NEUTRAL),
+        }),
+        EntityState(container, {
+            'volume': QuantityPair(Volume.PLUS, Direction.POSITIVE),
+            'inflow': QuantityPair(Inflow.PLUS, Direction.POSITIVE),
+            'outflow': QuantityPair(Outflow.MAX, Direction.NEUTRAL),
+            # ^ not ok, now says Direction.POSITIVE, which violates the extremity check
+        }),
+        EntityState(container, {
+            'volume': QuantityPair(Volume.PLUS, Direction.POSITIVE),
+            'inflow': QuantityPair(Inflow.PLUS, Direction.POSITIVE),
+            'outflow': QuantityPair(Outflow.PLUS, Direction.POSITIVE),
+        }),
+        EntityState(container, {
+            'volume': QuantityPair(Volume.PLUS, Direction.NEUTRAL),
+            'inflow': QuantityPair(Inflow.PLUS, Direction.POSITIVE),
+            'outflow': QuantityPair(Outflow.MAX, Direction.NEUTRAL),
+        }),
+    }
+    # State 5: ++++max+, should have last one 0
 
 def test_derivative_states():
 
