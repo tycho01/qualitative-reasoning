@@ -13,9 +13,9 @@ def next_states(entity_state: EntityState) -> Set[EntityState]:
     new_states = set([b for a in tmp_entity_states for b in derivative_states(a)])
     return new_states
 
-def derivative_states(a: EntityState) -> List[EntityState]:
+def derivative_states(a: EntityState) -> Set[EntityState]:
     all_directions = {Direction.POSITIVE, Direction.NEUTRAL, Direction.NEGATIVE}
-    options = []
+    options = set()
     relations = a.entity.relations
     # options based on influence relations
     influence_effects = relation_effects(a.state, relations, True)
@@ -35,7 +35,7 @@ def derivative_states(a: EntityState) -> List[EntityState]:
                 if check_transition(a, b3):
                     # TODO: somehow mark the edge as exogenously influnced?
                     print()
-                    options.append(b3)
+                    options.add(b3)
     return options
 
 def zip_pair(tpl: Tuple[Dict[str, Enum], Dict[str, Direction]]) -> Dict[str, QuantityPair]:
