@@ -10,10 +10,10 @@ def next_states(entity_state: EntityState) -> Set[EntityState]:
     state = entity_state.state
     magnitudes = next_magnitudes(entity_state)
     tmp_entity_states = list(map(lambda state_dict: EntityState(entity, {k: QuantityPair(magnitude, state[k].derivative) for k, magnitude in state_dict.items()}), magnitudes))
-    new_states = set([b for a in tmp_entity_states for b in derivative_states(a)])
+    new_states = set([b for a in tmp_entity_states for b in derivative_states(a, entity_state)])
     return new_states
 
-def derivative_states(a: EntityState) -> Set[EntityState]:
+def derivative_states(a: EntityState, entity_state: EntityState) -> Set[EntityState]:
     all_directions = {Direction.POSITIVE, Direction.NEUTRAL, Direction.NEGATIVE}
     options = set()
     relations = a.entity.relations
