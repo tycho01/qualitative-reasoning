@@ -38,23 +38,39 @@ def test_derivative_states():
         }),
     }
 
-    {
-        EntityState(container, {
-            'volume': QuantityPair(Volume.ZERO, Direction.POSITIVE),
-            'inflow': QuantityPair(Inflow.PLUS, Direction.NEUTRAL),
-            'outflow': QuantityPair(Outflow.ZERO, Direction.POSITIVE),
-        }), EntityState(container, {
-            'volume': QuantityPair(Volume.ZERO, Direction.POSITIVE),
-            'inflow': QuantityPair(Inflow.PLUS, Direction.POSITIVE),
-            'outflow': QuantityPair(Outflow.ZERO, Direction.POSITIVE),
-        }),
-    }
-
 def test_next_magnitudes():
     assert next_magnitudes(entity_state) == {
         FrozenDict({
             'inflow': Inflow.PLUS,
             'outflow': Outflow.ZERO,
+            'volume': Volume.ZERO,
+        }),
+    }
+
+    entity_state_1 = EntityState(container, {
+        'volume': QuantityPair(Volume.ZERO, Direction.POSITIVE),
+        'inflow': QuantityPair(Inflow.ZERO, Direction.NEUTRAL),
+        'outflow': QuantityPair(Outflow.ZERO, Direction.NEUTRAL),
+    })
+
+    assert next_magnitudes(entity_state_1) == {
+        FrozenDict({
+            'inflow': Inflow.ZERO,
+            'outflow': Outflow.ZERO,
+            'volume': Volume.PLUS,  # Volume can go up
+        }),
+    }
+
+    entity_state_2 = EntityState(container, {
+        'volume': QuantityPair(Volume.ZERO, Direction.NEUTRAL),
+        'inflow': QuantityPair(Inflow.ZERO, Direction.NEUTRAL),
+        'outflow': QuantityPair(Outflow.ZERO, Direction.POSITIVE),
+    })
+
+    assert next_magnitudes(entity_state_2) == {
+        FrozenDict({
+            'inflow': Inflow.ZERO,
+            'outflow': Outflow.ZERO,  # outflow cannot go up due to ValueCorrespondence from Volume.ZERO
             'volume': Volume.ZERO,
         }),
     }
