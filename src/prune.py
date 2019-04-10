@@ -25,7 +25,7 @@ def derivative_states(a: EntityState) -> Set[EntityState]:
         # options based on proportionality relations
         proportionality_effects = relation_effects(b1.state, relations, False)
         for deriv_dict_indirect in next_derivatives(b1, proportionality_effects):
-            state2 = {k: QuantityPair(a.state[k].magnitude, derivative) for k, derivative in deriv_dict_direct.items()}
+            state2 = {k: QuantityPair(a.state[k].magnitude, derivative) for k, derivative in deriv_dict_indirect.items()}
             b2 = EntityState(a.entity, state2)
             # options based on exogenous actions
             exogenous_effects = {k: all_directions if is_exogenous else {Direction.NEUTRAL} for k, is_exogenous in a.entity.exogenous_dict.items()}
