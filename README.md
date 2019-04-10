@@ -7,11 +7,17 @@ pip install -r requirements.txt
 python main.py
 
 # docker
+# build container
 docker build -t qr .
+# run tests
+docker run -v $PWD:/app qr pytest -vv
+# run program
 docker run -v $PWD:/app qr
 
 # or enter interactively
+# bash shell
 docker run -it -v $PWD:/app qr /bin/sh
+# python shell
 docker run -it -v $PWD:/app qr /bin/sh -c "cd /app/src; python"
 
 # install python deps thru conda
