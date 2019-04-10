@@ -50,42 +50,41 @@ def test_next_magnitudes_3():
     assert len(res) == 1
     assert list(res)[0]._d == {
         'inflow': Inflow.PLUS,
-        'outflow': Outflow.PLUS,  # fails, now says Outflow.ZERO
+        'outflow': Outflow.PLUS,
         'volume': Volume.PLUS,
     }
     # State 3: ++++0+, should be all +
 
-# def test_next_states_5():
-#     es = EntityState(container, {
-#         'volume': QuantityPair(Volume.PLUS, Direction.NEUTRAL),
-#         'inflow': QuantityPair(Inflow.PLUS, Direction.POSITIVE),
-#         'outflow': QuantityPair(Outflow.PLUS, Direction.POSITIVE),
-#     })
-#     # print(next_states(es))
-#     assert next_states(es) == {
-#         EntityState(container, {
-#             'volume': QuantityPair(Volume.PLUS, Direction.NEGATIVE),
-#             'inflow': QuantityPair(Inflow.PLUS, Direction.POSITIVE),
-#             'outflow': QuantityPair(Outflow.PLUS, Direction.NEUTRAL),
-#         }),
-#         EntityState(container, {
-#             'volume': QuantityPair(Volume.PLUS, Direction.POSITIVE),
-#             'inflow': QuantityPair(Inflow.PLUS, Direction.POSITIVE),
-#             'outflow': QuantityPair(Outflow.MAX, Direction.NEUTRAL),
-#             # ^ not ok, now says Direction.POSITIVE, which violates the extremity check
-#         }),
-#         EntityState(container, {
-#             'volume': QuantityPair(Volume.PLUS, Direction.POSITIVE),
-#             'inflow': QuantityPair(Inflow.PLUS, Direction.POSITIVE),
-#             'outflow': QuantityPair(Outflow.PLUS, Direction.POSITIVE),
-#         }),
-#         EntityState(container, {
-#             'volume': QuantityPair(Volume.PLUS, Direction.NEUTRAL),
-#             'inflow': QuantityPair(Inflow.PLUS, Direction.POSITIVE),
-#             'outflow': QuantityPair(Outflow.MAX, Direction.NEUTRAL),
-#         }),
-#     }
-#     # State 5: ++++max+, should have last one 0
+def test_next_states_5():
+    es = EntityState(container, {
+        'volume': QuantityPair(Volume.PLUS, Direction.NEUTRAL),
+        'inflow': QuantityPair(Inflow.PLUS, Direction.POSITIVE),
+        'outflow': QuantityPair(Outflow.PLUS, Direction.POSITIVE),
+    })
+    # print(next_states(es))
+    assert next_states(es) == {
+        EntityState(container, {
+            'volume': QuantityPair(Volume.PLUS, Direction.NEGATIVE),
+            'inflow': QuantityPair(Inflow.PLUS, Direction.POSITIVE),
+            'outflow': QuantityPair(Outflow.PLUS, Direction.NEUTRAL),
+        }),
+        EntityState(container, {
+            'volume': QuantityPair(Volume.PLUS, Direction.POSITIVE),
+            'inflow': QuantityPair(Inflow.PLUS, Direction.POSITIVE),
+            'outflow': QuantityPair(Outflow.MAX, Direction.NEUTRAL),
+        }),
+        EntityState(container, {
+            'volume': QuantityPair(Volume.PLUS, Direction.POSITIVE),
+            'inflow': QuantityPair(Inflow.PLUS, Direction.POSITIVE),
+            'outflow': QuantityPair(Outflow.PLUS, Direction.POSITIVE),
+        }),
+        EntityState(container, {
+            'volume': QuantityPair(Volume.PLUS, Direction.NEUTRAL),
+            'inflow': QuantityPair(Inflow.PLUS, Direction.POSITIVE),
+            'outflow': QuantityPair(Outflow.MAX, Direction.NEUTRAL),
+        }),
+    }
+    # State 5: ++++max+, should have last one 0
 
 def test_derivative_states():
 
@@ -222,11 +221,11 @@ def test_next_derivatives_influence():
         }),
     }
 
-def test_derivative_options():
-    relation_derivative = Direction.POSITIVE
+def test_clip_extremes():
     qty = Quantity('outflow', Outflow)
-    pair = QuantityPair(Outflow.ZERO, Direction.NEUTRAL)
-    assert derivative_options(relation_derivative, qty, pair) == {Direction.POSITIVE}
+    pair = QuantityPair(Outflow.MAX, Direction.POSITIVE)
+    print(clip_extremes(qty, pair))
+    assert clip_extremes(qty, pair) == Direction.NEUTRAL
 
 def test_correspondence_reqs():
     assert correspondence_reqs(entity_state) == {

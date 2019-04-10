@@ -57,13 +57,22 @@ def next_derivatives(entity_state: EntityState, effect_sets: Dict[str, Direction
     next_derivs = {k:
             list(map(
                 lambda x: (k, x),
-                derivative_options(relation_derivatives[k], quantities[k], pair)
+                move_derivative(pair.derivative, relation_derivatives[k])
             ))
         for k, pair in state.items()}
-    derivative_combinations = set(map(FrozenDict, itertools.product(*next_derivs.values())))
+    derivative_combinations = set(map(lambda pairs: handle_extremity(pairs, entity_state), itertools.product(*next_derivs.values())))
     return derivative_combinations
 
-def derivative_options(relation_derivative: Direction, qty: Quantity, pair: QuantityPair) -> Set[Direction]:
+def handle_extremity(derivatives: List[Tuple[str, Direction]], entity_state: EntityState) -> Dict[str, Direction]:
+    # get extremity requirements per quantity
+    entity = entity_state.entity
+    state = entity_state.state
+    derivative_dict = {k:
+        clip_extremes(entity.quantities[k], QuantityPair(state[k].magnitude, derivative))
+    for k, derivative in derivatives}
+    return FrozenDict(derivative_dict)
+
+def clip_extremes(qty: Quantity, pair: QuantityPair) -> Direction:
     '''check the next possible derivatives based on the extremity check and relationships'''
     magnitude = pair.magnitude
     deriv = pair.derivative
@@ -71,10 +80,10 @@ def derivative_options(relation_derivative: Direction, qty: Quantity, pair: Quan
     side = extreme_direction(magnitude, enum)
     # if the derivative would push us off the edge the derivative is now neutralized
     if deriv == side and side != Direction.NEUTRAL and is_point(magnitude):
-        return {Direction.NEUTRAL}
+        return Direction.NEUTRAL
     else:
         # otherwise return the derivative as altered by any relationships
-        return move_derivative(deriv, relation_derivative)
+        return deriv
 
 def extreme_direction(magnitude: Enum, enum: EnumMeta) -> Direction:
     '''get a direction from a magnitude based on whether it is at the
