@@ -253,3 +253,12 @@ def test_check_transition():
     entity_state_before = make_entity_state(container, container_state_before)
     entity_state_after = make_entity_state(container, container_state_after)
     assert check_transition(entity_state_before, entity_state_after) == True
+
+def test_simulate_exogeneous_behaviour():
+    container_state = {
+        'volume': (Volume.ZERO, Direction.NEUTRAL),
+        'inflow': (Inflow.ZERO, Direction.POSITIVE),
+        'outflow': (Outflow.ZERO, Direction.NEUTRAL),
+    }
+    entity_state = make_entity_state(container, container_state)
+    assert simulate_exogeneous_behaviour(entity_state) in [Direction.NEUTRAL, Direction.POSITIVE]
