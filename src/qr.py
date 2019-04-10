@@ -78,7 +78,8 @@ def pretty_print(entity_state: EntityState, idx: int) -> str:
         'pressure',
         'height',
     ]
-    # hash = f"[{''.join([f"{serialize_magnitude(state[k].magnitude)}{serialize_derivative(state[k].derivative)}" for k in keys if k in state])}]\n"
+    vals = [f"{serialize_magnitude(state[k].magnitude)}{serialize_derivative(state[k].derivative)}" for k in keys if k in state]
+    hash = f"[{''.join(vals)}]\n"
     # {hash}
     return f'State {idx}\n' + '\n'.join([f"{serialize_quantity(k)}: ({serialize_magnitude(state[k].magnitude)}, {serialize_derivative(state[k].derivative)})" for k in keys if k in state])
 

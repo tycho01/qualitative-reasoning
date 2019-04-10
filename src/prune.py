@@ -57,13 +57,22 @@ def next_derivatives(entity_state: EntityState, effect_sets: Dict[str, Direction
     next_derivs = {k:
             list(map(
                 lambda x: (k, x),
-                derivative_options(relation_derivatives[k], quantities[k], pair)
+                move_derivative(pair.derivative, relation_derivatives[k])
             ))
         for k, pair in state.items()}
-    derivative_combinations = set(map(FrozenDict, itertools.product(*next_derivs.values())))
+    derivative_combinations = set(map(lambda pairs: handle_extremity(pairs, entity_state), itertools.product(*next_derivs.values())))
     return derivative_combinations
 
-def derivative_options(relation_derivative: Direction, qty: Quantity, pair: QuantityPair) -> Set[Direction]:
+def handle_extremity(derivatives: List[Tuple[str, Direction]], entity_state: EntityState) -> Dict[str, Direction]:
+    # get extremity requirements per quantity
+    entity = entity_state.entity
+    state = entity_state.state
+    derivative_dict = {k:
+        clip_extremes(entity.quantities[k], QuantityPair(state[k].magnitude, derivative))
+    for k, derivative in derivatives}
+    return FrozenDict(derivative_dict)
+
+def clip_extremes(qty: Quantity, pair: QuantityPair) -> Direction:
     '''check the next possible derivatives based on the extremity check and relationships'''
     magnitude = pair.magnitude
     deriv = pair.derivative
@@ -71,10 +80,10 @@ def derivative_options(relation_derivative: Direction, qty: Quantity, pair: Quan
     side = extreme_direction(magnitude, enum)
     # if the derivative would push us off the edge the derivative is now neutralized
     if deriv == side and side != Direction.NEUTRAL and is_point(magnitude):
-        return {Direction.NEUTRAL}
+        return Direction.NEUTRAL
     else:
         # otherwise return the derivative as altered by any relationships
-        return move_derivative(deriv, relation_derivative)
+        return deriv
 
 def extreme_direction(magnitude: Enum, enum: EnumMeta) -> Direction:
     '''get a direction from a magnitude based on whether it is at the
@@ -94,29 +103,30 @@ def next_magnitudes(entity_state: EntityState) -> Set[Dict[str, Enum]]:
     state = entity_state.state
     entity = entity_state.entity
 
+    magnitudes = {k:
+        list(map(lambda x: (k, x), magnitude_options(pair, entity.quantities[k].quantitySpace)))
+        for k, pair in state.items()
+    }
+    magnitude_combinations = set(map(lambda pairs: handle_correspondence(pairs, entity_state), itertools.product(*magnitudes.values())))
+    return magnitude_combinations
+
+def handle_correspondence(magnitudes: List[Tuple[str, Enum]], entity_state: EntityState) -> Dict[str, Enum]:
     # get value correspondence requirements per quantity
-    reqs = correspondence_reqs(entity_state)
+    state = {k: QuantityPair(magnitude, entity_state.state[k].derivative) for k, magnitude in magnitudes}
+    entity_state_ = EntityState(entity_state.entity, state)
+    reqs = correspondence_reqs(entity_state_)
     has_clashes = max(map(len, reqs.values())) > 1
     if has_clashes:
         return set()
-    # req_vals = {k: v for k, v in reqs.items() if v}
-    req_vals = dict(reqs)
+    # forcing approach: force the quantity to the value in spite of its derivative and point/range priorities
+    state_ = {k: list(req)[0] if req else entity_state_.state[k].magnitude for k, req in reqs.items()}
+    return FrozenDict(state_)
 
-    magnitudes = {k:
-        list(map(lambda x: (k, x), magnitude_options(req_vals[k], pair, entity.quantities[k].quantitySpace)))
-        for k, pair in state.items()
-    }
-    magnitude_combinations = set(map(FrozenDict, itertools.product(*magnitudes.values())))
-    return magnitude_combinations
-
-def magnitude_options(reqs: Dict[str, Set[Enum]], pair: QuantityPair, space: EnumMeta) -> Set[Enum]:
+def magnitude_options(pair: QuantityPair, space: EnumMeta) -> Set[Enum]:
     '''check the next possible magnitudes based on the point/interval check and current derivatives'''
     point_range = set() if is_point(pair.magnitude) else {pair.magnitude}
     rest = {move_magnitude(pair, space)}.union(point_range)
-    # filtering approach: no forcing values in a direction
-    # return rest.intersection(reqs) if reqs else rest
-    # forcing approach: force the quantity to the value in spite of its derivative and point/range priorities
-    return reqs if reqs else rest
+    return rest
 
 def correspondence_reqs(entity_state: EntityState) -> Dict[str, Set[Enum]]:
     '''get a dictionary of value correspondence requirements on quantities'''
