@@ -1,4 +1,5 @@
 # Importing the Libraries
+import numpy as np
 import copy
 from typing import List, Dict, Tuple, Set
 import itertools
@@ -224,3 +225,22 @@ def check_not_equal(stateA: EntityState, stateB: EntityState) -> bool:
 def check_transition(a: EntityState, b: EntityState) -> bool:
     '''confirm a source state can transition into a target state'''
     return check_continuous(a, b) and check_point_range(a, b) and check_not_equal(a, b)
+
+def simulate_exogeneous_behaviour(a : EntityState) -> Direction:
+    # Output
+    exogenous_inflow_derivative = None
+
+    # Extracting the Inflow Quantity
+    a_inflow_derivative = a.state['inflow'].derivative
+    
+    # Simulating the random exogenous behaviour satisfying the continuity constraint
+    if a_inflow_derivative == Direction.NEGATIVE:
+        exogenous_inflow_derivative = np.random.choice([Direction.NEGATIVE, Direction.NEUTRAL])
+    elif a_inflow_derivative == Direction.NEUTRAL:
+        exogenous_inflow_derivative = np.random.choice([Direction.NEGATIVE, Direction.NEUTRAL, Direction.POSITIVE])
+    elif a_inflow_derivative == Direction.POSITIVE:
+        exogenous_inflow_derivative = np.random.choice([Direction.POSITIVE, Direction.NEUTRAL])
+    
+    # Return the Exogenous Derivative
+    return exogenous_inflow_derivative
+
