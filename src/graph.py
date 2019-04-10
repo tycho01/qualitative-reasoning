@@ -40,6 +40,6 @@ def draw_state_graph(sg: StateGraph):
     A.draw('neato.svg', prog='neato')
     A.draw('dot.png', prog='dot')
     A.draw('neato.png', prog='neato')
-    A.draw('circo.svg', prog='circo')
-    A.draw('circo.png', prog='circo')
+    # A.draw('circo.svg', prog='circo')
+    # A.draw('circo.png', prog='circo')
     return A

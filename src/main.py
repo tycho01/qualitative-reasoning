@@ -14,8 +14,8 @@ container_state_bonus = {
   'pressure': (Pressure.ZERO, Direction.NEUTRAL),
 }
 
-entity_state = make_entity_state(container, container_state)
-# entity_state = make_entity_state(bonus_container, container_state_bonus)
+# entity_state = make_entity_state(container, container_state)
+entity_state = make_entity_state(bonus_container, container_state_bonus)
 sg = gen_state_graph(entity_state)
 
 print(f"states: {len(sg.states)}")

@@ -5,18 +5,18 @@
  -->
 <!-- Pages: 1 -->
 <svg width="1888pt" height="1727pt"
- viewBox="0.00 0.00 1887.73 1727.42" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 1723.4168)">
-<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-1723.4168 1883.7306,-1723.4168 1883.7306,4 -4,4"/>
+ viewBox="0.00 0.00 1887.75 1727.42" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 1723.4176)">
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-1723.4176 1883.751,-1723.4176 1883.751,4 -4,4"/>
 <!-- inflow_0_3_outflow_0_2_volume_0_2_ -->
 <g id="node1" class="node">
 <title>inflow_0_3_outflow_0_2_volume_0_2_</title>
 <g id="a_node1"><a xlink:title="correspondence_valid: true&#10;derivatives:&#10;&#45; In will go up from 0&#10;&#45; Vol will stay at 0&#10;&#45; Out will stay at 0&#10;extreme_valid: true&#10;valid: true&#10;">
-<ellipse fill="none" stroke="#000000" cx="145.7612" cy="-1623.5517" rx="54.3945" ry="54.3945"/>
-<text text-anchor="middle" x="145.7612" y="-1642.3517" font-family="Times,serif" font-size="14.00" fill="#000000">State 1</text>
-<text text-anchor="middle" x="145.7612" y="-1627.3517" font-family="Times,serif" font-size="14.00" fill="#000000">In: (0, +)</text>
-<text text-anchor="middle" x="145.7612" y="-1612.3517" font-family="Times,serif" font-size="14.00" fill="#000000">Vol: (0, 0)</text>
-<text text-anchor="middle" x="145.7612" y="-1597.3517" font-family="Times,serif" font-size="14.00" fill="#000000">Out: (0, 0)</text>
+<ellipse fill="none" stroke="#000000" cx="145.7612" cy="-1623.5525" rx="54.3945" ry="54.3945"/>
+<text text-anchor="middle" x="145.7612" y="-1642.3525" font-family="Times,serif" font-size="14.00" fill="#000000">State 1</text>
+<text text-anchor="middle" x="145.7612" y="-1627.3525" font-family="Times,serif" font-size="14.00" fill="#000000">In: (0, +)</text>
+<text text-anchor="middle" x="145.7612" y="-1612.3525" font-family="Times,serif" font-size="14.00" fill="#000000">Vol: (0, 0)</text>
+<text text-anchor="middle" x="145.7612" y="-1597.3525" font-family="Times,serif" font-size="14.00" fill="#000000">Out: (0, 0)</text>
 </a>
 </g>
 </g>
@@ -24,11 +24,11 @@
 <g id="node2" class="node">
 <title>inflow_1_3_outflow_0_3_volume_0_3_</title>
 <g id="a_node2"><a xlink:title="correspondence_valid: true&#10;derivatives:&#10;&#45; In may go up from +&#10;&#45; Vol will go up from 0&#10;&#45; Out will go up from 0&#10;extreme_valid: true&#10;valid: true&#10;">
-<ellipse fill="none" stroke="#000000" cx="1248.6002" cy="-1201.9716" rx="54.3945" ry="54.3945"/>
-<text text-anchor="middle" x="1248.6002" y="-1220.7716" font-family="Times,serif" font-size="14.00" fill="#000000">State 2</text>
-<text text-anchor="middle" x="1248.6002" y="-1205.7716" font-family="Times,serif" font-size="14.00" fill="#000000">In: (+, +)</text>
-<text text-anchor="middle" x="1248.6002" y="-1190.7716" font-family="Times,serif" font-size="14.00" fill="#000000">Vol: (0, +)</text>
-<text text-anchor="middle" x="1248.6002" y="-1175.7716" font-family="Times,serif" font-size="14.00" fill="#000000">Out: (0, +)</text>
+<ellipse fill="none" stroke="#000000" cx="1248.6002" cy="-1201.9724" rx="54.3945" ry="54.3945"/>
+<text text-anchor="middle" x="1248.6002" y="-1220.7724" font-family="Times,serif" font-size="14.00" fill="#000000">State 2</text>
+<text text-anchor="middle" x="1248.6002" y="-1205.7724" font-family="Times,serif" font-size="14.00" fill="#000000">In: (+, +)</text>
+<text text-anchor="middle" x="1248.6002" y="-1190.7724" font-family="Times,serif" font-size="14.00" fill="#000000">Vol: (0, +)</text>
+<text text-anchor="middle" x="1248.6002" y="-1175.7724" font-family="Times,serif" font-size="14.00" fill="#000000">Out: (0, +)</text>
 </a>
 </g>
 </g>
@@ -36,8 +36,8 @@
 <g id="edge1" class="edge">
 <title>inflow_0_3_outflow_0_2_volume_0_2_&#45;&gt;inflow_1_3_outflow_0_3_volume_0_3_</title>
 <g id="a_edge1"><a xlink:title="continuous_valid: true&#10;derivative_valid: false&#10;magnitude_valid: true&#10;not_equal_valid: true&#10;point_range_valid: true&#10;transition_valid: true&#10;">
-<path fill="none" stroke="#000000" d="M193.061,-1595.9942C257.6618,-1558.8241 377.5748,-1491.4835 483.506,-1441.126 516.2911,-1425.5406 523.891,-1419.2067 558.979,-1409.9009 714.5836,-1368.6321 762.5279,-1404.8913 918.3123,-1364.3065 953.4408,-1355.1548 961.0694,-1348.8982 994.0568,-1333.7457 1063.3767,-1301.904 1140.9506,-1260.9457 1192.0368,-1233.2067"/>
-<polygon fill="#000000" stroke="#000000" points="1193.8348,-1236.213 1200.9447,-1228.358 1190.4882,-1230.0647 1193.8348,-1236.213"/>
+<path fill="none" stroke="#000000" d="M193.061,-1595.9951C257.6618,-1558.8249 377.5748,-1491.4843 483.506,-1441.1268 516.2911,-1425.5415 523.891,-1419.2076 558.979,-1409.9017 714.5836,-1368.6329 762.5279,-1404.8921 918.3123,-1364.3073 953.4408,-1355.1557 961.0694,-1348.899 994.0568,-1333.7465 1063.3767,-1301.9048 1140.9506,-1260.9465 1192.0368,-1233.2075"/>
+<polygon fill="#000000" stroke="#000000" points="1193.8348,-1236.2138 1200.9447,-1228.3588 1190.4882,-1230.0656 1193.8348,-1236.2138"/>
 </a>
 </g>
 </g>
@@ -45,11 +45,11 @@
 <g id="node3" class="node">
 <title>inflow_1_3_outflow_0_3_volume_1_3_</title>
 <g id="a_node3"><a xlink:title="correspondence_valid: false&#10;derivatives:&#10;&#45; In may go up from +&#10;&#45; Vol may go up from +&#10;&#45; Out will go up from 0&#10;extreme_valid: true&#10;valid: false&#10;">
-<ellipse fill="none" stroke="#000000" cx="558.9346" cy="-1516.6174" rx="54.3945" ry="54.3945"/>
-<text text-anchor="middle" x="558.9346" y="-1535.4174" font-family="Times,serif" font-size="14.00" fill="#000000">State 3</text>
-<text text-anchor="middle" x="558.9346" y="-1520.4174" font-family="Times,serif" font-size="14.00" fill="#000000">In: (+, +)</text>
-<text text-anchor="middle" x="558.9346" y="-1505.4174" font-family="Times,serif" font-size="14.00" fill="#000000">Vol: (+, +)</text>
-<text text-anchor="middle" x="558.9346" y="-1490.4174" font-family="Times,serif" font-size="14.00" fill="#000000">Out: (0, +)</text>
+<ellipse fill="none" stroke="#000000" cx="558.9346" cy="-1516.6182" rx="54.3945" ry="54.3945"/>
+<text text-anchor="middle" x="558.9346" y="-1535.4182" font-family="Times,serif" font-size="14.00" fill="#000000">State 3</text>
+<text text-anchor="middle" x="558.9346" y="-1520.4182" font-family="Times,serif" font-size="14.00" fill="#000000">In: (+, +)</text>
+<text text-anchor="middle" x="558.9346" y="-1505.4182" font-family="Times,serif" font-size="14.00" fill="#000000">Vol: (+, +)</text>
+<text text-anchor="middle" x="558.9346" y="-1490.4182" font-family="Times,serif" font-size="14.00" fill="#000000">Out: (0, +)</text>
 </a>
 </g>
 </g>
@@ -57,8 +57,8 @@
 <g id="edge2" class="edge">
 <title>inflow_1_3_outflow_0_3_volume_0_3_&#45;&gt;inflow_1_3_outflow_0_3_volume_1_3_</title>
 <g id="a_edge2"><a xlink:title="continuous_valid: true&#10;derivative_valid: true&#10;magnitude_valid: false&#10;not_equal_valid: true&#10;point_range_valid: true&#10;transition_valid: true&#10;">
-<path fill="none" stroke="#000000" d="M1200.8469,-1228.1471C1150.1171,-1255.6095 1067.2944,-1299.4652 994.0568,-1333.7457 862.2115,-1395.4587 703.8112,-1459.5862 619.2057,-1493.0575"/>
-<polygon fill="#000000" stroke="#000000" points="617.7734,-1489.86 609.7583,-1496.7889 620.3449,-1496.3706 617.7734,-1489.86"/>
+<path fill="none" stroke="#000000" d="M1200.8469,-1228.1479C1150.1171,-1255.6103 1067.2944,-1299.466 994.0568,-1333.7465 862.2115,-1395.4595 703.8112,-1459.587 619.2057,-1493.0583"/>
+<polygon fill="#000000" stroke="#000000" points="617.7734,-1489.8608 609.7583,-1496.7897 620.3449,-1496.3714 617.7734,-1489.8608"/>
 </a>
 </g>
 </g>
@@ -66,11 +66,11 @@
 <g id="node4" class="node">
 <title>inflow_1_3_outflow_1_3_volume_1_3_</title>
 <g id="a_node4"><a xlink:title="correspondence_valid: true&#10;derivatives:&#10;&#45; In may go up from +&#10;&#45; Vol may go up from +&#10;&#45; Out may go up from +&#10;extreme_valid: true&#10;valid: true&#10;">
-<ellipse fill="none" stroke="#000000" cx="1723.36" cy="-100.4734" rx="55.3091" ry="55.3091"/>
-<text text-anchor="middle" x="1723.36" y="-119.2734" font-family="Times,serif" font-size="14.00" fill="#000000">State 4</text>
-<text text-anchor="middle" x="1723.36" y="-104.2734" font-family="Times,serif" font-size="14.00" fill="#000000">In: (+, +)</text>
-<text text-anchor="middle" x="1723.36" y="-89.2734" font-family="Times,serif" font-size="14.00" fill="#000000">Vol: (+, +)</text>
-<text text-anchor="middle" x="1723.36" y="-74.2734" font-family="Times,serif" font-size="14.00" fill="#000000">Out: (+, +)</text>
+<ellipse fill="none" stroke="#000000" cx="1723.36" cy="-100.4742" rx="55.3091" ry="55.3091"/>
+<text text-anchor="middle" x="1723.36" y="-119.2742" font-family="Times,serif" font-size="14.00" fill="#000000">State 4</text>
+<text text-anchor="middle" x="1723.36" y="-104.2742" font-family="Times,serif" font-size="14.00" fill="#000000">In: (+, +)</text>
+<text text-anchor="middle" x="1723.36" y="-89.2742" font-family="Times,serif" font-size="14.00" fill="#000000">Vol: (+, +)</text>
+<text text-anchor="middle" x="1723.36" y="-74.2742" font-family="Times,serif" font-size="14.00" fill="#000000">Out: (+, +)</text>
 </a>
 </g>
 </g>
@@ -78,8 +78,8 @@
 <g id="edge3" class="edge">
 <title>inflow_1_3_outflow_0_3_volume_1_3_&#45;&gt;inflow_1_3_outflow_1_3_volume_1_3_</title>
 <g id="a_edge3"><a xlink:title="continuous_valid: true&#10;derivative_valid: true&#10;magnitude_valid: true&#10;not_equal_valid: true&#10;point_range_valid: true&#10;transition_valid: true&#10;">
-<path fill="none" stroke="#000000" d="M593.7835,-1474.235C762.924,-1268.5308 1497.6292,-375.0013 1681.5154,-151.3638"/>
-<polygon fill="#000000" stroke="#000000" points="1684.4305,-153.3293 1688.0783,-143.3822 1679.0236,-148.8834 1684.4305,-153.3293"/>
+<path fill="none" stroke="#000000" d="M593.7835,-1474.2359C762.924,-1268.5316 1497.6292,-375.0022 1681.5154,-151.3646"/>
+<polygon fill="#000000" stroke="#000000" points="1684.4305,-153.3301 1688.0783,-143.383 1679.0236,-148.8842 1684.4305,-153.3301"/>
 </a>
 </g>
 </g>
@@ -87,11 +87,11 @@
 <g id="node5" class="node">
 <title>inflow_1_3_outflow_1_3_volume_1_2_</title>
 <g id="a_node5"><a xlink:title="correspondence_valid: true&#10;derivatives:&#10;&#45; In may go up from +&#10;&#45; Vol will stay at +&#10;&#45; Out may go up from +&#10;extreme_valid: true&#10;valid: true&#10;">
-<ellipse fill="none" stroke="#000000" cx="1162.5834" cy="-548.9059" rx="55.3091" ry="55.3091"/>
-<text text-anchor="middle" x="1162.5834" y="-567.7059" font-family="Times,serif" font-size="14.00" fill="#000000">State 21</text>
-<text text-anchor="middle" x="1162.5834" y="-552.7059" font-family="Times,serif" font-size="14.00" fill="#000000">In: (+, +)</text>
-<text text-anchor="middle" x="1162.5834" y="-537.7059" font-family="Times,serif" font-size="14.00" fill="#000000">Vol: (+, 0)</text>
-<text text-anchor="middle" x="1162.5834" y="-522.7059" font-family="Times,serif" font-size="14.00" fill="#000000">Out: (+, +)</text>
+<ellipse fill="none" stroke="#000000" cx="1162.5834" cy="-548.9068" rx="55.3091" ry="55.3091"/>
+<text text-anchor="middle" x="1162.5834" y="-567.7068" font-family="Times,serif" font-size="14.00" fill="#000000">State 20</text>
+<text text-anchor="middle" x="1162.5834" y="-552.7068" font-family="Times,serif" font-size="14.00" fill="#000000">In: (+, +)</text>
+<text text-anchor="middle" x="1162.5834" y="-537.7068" font-family="Times,serif" font-size="14.00" fill="#000000">Vol: (+, 0)</text>
+<text text-anchor="middle" x="1162.5834" y="-522.7068" font-family="Times,serif" font-size="14.00" fill="#000000">Out: (+, +)</text>
 </a>
 </g>
 </g>
@@ -99,38 +99,38 @@
 <g id="edge4" class="edge">
 <title>inflow_1_3_outflow_0_3_volume_1_3_&#45;&gt;inflow_1_3_outflow_1_3_volume_1_2_</title>
 <g id="a_edge4"><a xlink:title="continuous_valid: true&#10;derivative_valid: false&#10;magnitude_valid: true&#10;not_equal_valid: true&#10;point_range_valid: true&#10;transition_valid: true&#10;">
-<path fill="none" stroke="#000000" d="M591.1244,-1472.1714C659.6049,-1376.959 823.5804,-1145.4479 947.3162,-942.547 1018.2428,-826.2421 1092.7288,-685.1297 1132.8082,-607.3865"/>
-<polygon fill="#000000" stroke="#000000" points="1136.0588,-608.7188 1137.5229,-598.2256 1129.8347,-605.5156 1136.0588,-608.7188"/>
+<path fill="none" stroke="#000000" d="M591.1244,-1472.1722C659.6049,-1376.9598 823.5804,-1145.4488 947.3162,-942.5478 1018.2428,-826.2429 1092.7288,-685.1305 1132.8082,-607.3873"/>
+<polygon fill="#000000" stroke="#000000" points="1136.0588,-608.7197 1137.5229,-598.2265 1129.8347,-605.5164 1136.0588,-608.7197"/>
 </a>
 </g>
 </g>
 <!-- inflow_1_3_outflow_1_3_volume_1_3_&#45;&gt;inflow_1_3_outflow_1_3_volume_1_2_ -->
-<g id="edge9" class="edge">
+<g id="edge8" class="edge">
 <title>inflow_1_3_outflow_1_3_volume_1_3_&#45;&gt;inflow_1_3_outflow_1_3_volume_1_2_</title>
-<g id="a_edge9"><a xlink:title="continuous_valid: true&#10;derivative_valid: true&#10;magnitude_valid: true&#10;not_equal_valid: true&#10;point_range_valid: true&#10;transition_valid: true&#10;">
-<path fill="none" stroke="#000000" d="M1679.8234,-135.288C1577.644,-216.9972 1322.8679,-420.7323 1213.63,-508.0858"/>
-<polygon fill="#000000" stroke="#000000" points="1211.3312,-505.4426 1205.7071,-514.4215 1215.7029,-510.9096 1211.3312,-505.4426"/>
+<g id="a_edge8"><a xlink:title="continuous_valid: true&#10;derivative_valid: true&#10;magnitude_valid: true&#10;not_equal_valid: true&#10;point_range_valid: true&#10;transition_valid: true&#10;">
+<path fill="none" stroke="#000000" d="M1679.8234,-135.2888C1577.644,-216.998 1322.8679,-420.7331 1213.63,-508.0867"/>
+<polygon fill="#000000" stroke="#000000" points="1211.3312,-505.4435 1205.7071,-514.4223 1215.7029,-510.9105 1211.3312,-505.4435"/>
 </a>
 </g>
 </g>
-<!-- inflow_1_3_outflow_1_3_volume_2_2_ -->
+<!-- inflow_1_3_outflow_2_3_volume_1_3_ -->
 <g id="node6" class="node">
-<title>inflow_1_3_outflow_1_3_volume_2_2_</title>
-<g id="a_node6"><a xlink:title="correspondence_valid: false&#10;derivatives:&#10;&#45; In may go up from +&#10;&#45; Vol will stay at max&#10;&#45; Out may go up from +&#10;extreme_valid: true&#10;valid: false&#10;">
-<ellipse fill="none" stroke="#000000" cx="1323.7437" cy="-1609.5651" rx="65.1077" ry="65.1077"/>
-<text text-anchor="middle" x="1323.7437" y="-1628.3651" font-family="Times,serif" font-size="14.00" fill="#000000">State 5</text>
-<text text-anchor="middle" x="1323.7437" y="-1613.3651" font-family="Times,serif" font-size="14.00" fill="#000000">In: (+, +)</text>
-<text text-anchor="middle" x="1323.7437" y="-1598.3651" font-family="Times,serif" font-size="14.00" fill="#000000">Vol: (max, 0)</text>
-<text text-anchor="middle" x="1323.7437" y="-1583.3651" font-family="Times,serif" font-size="14.00" fill="#000000">Out: (+, +)</text>
+<title>inflow_1_3_outflow_2_3_volume_1_3_</title>
+<g id="a_node6"><a xlink:title="correspondence_valid: false&#10;derivatives:&#10;&#45; In may go up from +&#10;&#45; Vol may go up from +&#10;&#45; Out will go up from max&#10;extreme_valid: false&#10;valid: false&#10;">
+<ellipse fill="none" stroke="#000000" cx="1745.7256" cy="-475.7639" rx="66.4361" ry="66.4361"/>
+<text text-anchor="middle" x="1745.7256" y="-494.5639" font-family="Times,serif" font-size="14.00" fill="#000000">State 5</text>
+<text text-anchor="middle" x="1745.7256" y="-479.5639" font-family="Times,serif" font-size="14.00" fill="#000000">In: (+, +)</text>
+<text text-anchor="middle" x="1745.7256" y="-464.5639" font-family="Times,serif" font-size="14.00" fill="#000000">Vol: (+, +)</text>
+<text text-anchor="middle" x="1745.7256" y="-449.5639" font-family="Times,serif" font-size="14.00" fill="#000000">Out: (max, +)</text>
 </a>
 </g>
 </g>
-<!-- inflow_1_3_outflow_1_3_volume_1_3_&#45;&gt;inflow_1_3_outflow_1_3_volume_2_2_ -->
+<!-- inflow_1_3_outflow_1_3_volume_1_3_&#45;&gt;inflow_1_3_outflow_2_3_volume_1_3_ -->
 <g id="edge5" class="edge">
-<title>inflow_1_3_outflow_1_3_volume_1_3_&#45;&gt;inflow_1_3_outflow_1_3_volume_2_2_</title>
+<title>inflow_1_3_outflow_1_3_volume_1_3_&#45;&gt;inflow_1_3_outflow_2_3_volume_1_3_</title>
 <g id="a_edge5"><a xlink:title="continuous_valid: true&#10;derivative_valid: true&#10;magnitude_valid: true&#10;not_equal_valid: true&#10;point_range_valid: true&#10;transition_valid: true&#10;">
-<path fill="none" stroke="#000000" d="M1707.6002,-153.386C1686.143,-225.8271 1646.8179,-360.025 1615.4498,-475.1283 1506.6252,-874.4538 1386.4592,-1355.8725 1341.77,-1536.45"/>
-<polygon fill="#000000" stroke="#000000" points="1338.3208,-1535.8186 1339.3169,-1546.3665 1345.1159,-1537.4996 1338.3208,-1535.8186"/>
+<path fill="none" stroke="#000000" d="M1726.6601,-155.8495C1730.4936,-220.1745 1736.8416,-326.6924 1741.1498,-398.9836"/>
+<polygon fill="#000000" stroke="#000000" points="1737.6814,-399.618 1741.7701,-409.392 1744.669,-399.2015 1737.6814,-399.618"/>
 </a>
 </g>
 </g>
@@ -138,11 +138,11 @@
 <g id="node7" class="node">
 <title>inflow_1_3_outflow_2_2_volume_2_2_</title>
 <g id="a_node7"><a xlink:title="correspondence_valid: true&#10;derivatives:&#10;&#45; In may go up from +&#10;&#45; Vol will stay at max&#10;&#45; Out will stay at max&#10;extreme_valid: true&#10;valid: true&#10;">
-<ellipse fill="none" stroke="#000000" cx="1749.9811" cy="-1130.1193" rx="65.5227" ry="65.5227"/>
-<text text-anchor="middle" x="1749.9811" y="-1148.9193" font-family="Times,serif" font-size="14.00" fill="#000000">State 7</text>
-<text text-anchor="middle" x="1749.9811" y="-1133.9193" font-family="Times,serif" font-size="14.00" fill="#000000">In: (+, +)</text>
-<text text-anchor="middle" x="1749.9811" y="-1118.9193" font-family="Times,serif" font-size="14.00" fill="#000000">Vol: (max, 0)</text>
-<text text-anchor="middle" x="1749.9811" y="-1103.9193" font-family="Times,serif" font-size="14.00" fill="#000000">Out: (max, 0)</text>
+<ellipse fill="none" stroke="#000000" cx="1749.9811" cy="-1130.1201" rx="65.5227" ry="65.5227"/>
+<text text-anchor="middle" x="1749.9811" y="-1148.9201" font-family="Times,serif" font-size="14.00" fill="#000000">State 6</text>
+<text text-anchor="middle" x="1749.9811" y="-1133.9201" font-family="Times,serif" font-size="14.00" fill="#000000">In: (+, +)</text>
+<text text-anchor="middle" x="1749.9811" y="-1118.9201" font-family="Times,serif" font-size="14.00" fill="#000000">Vol: (max, 0)</text>
+<text text-anchor="middle" x="1749.9811" y="-1103.9201" font-family="Times,serif" font-size="14.00" fill="#000000">Out: (max, 0)</text>
 </a>
 </g>
 </g>
@@ -150,77 +150,77 @@
 <g id="edge6" class="edge">
 <title>inflow_1_3_outflow_1_3_volume_1_3_&#45;&gt;inflow_1_3_outflow_2_2_volume_2_2_</title>
 <g id="a_edge6"><a xlink:title="continuous_valid: true&#10;derivative_valid: false&#10;magnitude_valid: true&#10;not_equal_valid: true&#10;point_range_valid: true&#10;transition_valid: true&#10;">
-<path fill="none" stroke="#000000" d="M1752.8036,-147.4076C1793.5903,-216.3703 1863.6763,-350.5608 1876.0014,-476.3978 1897.0085,-690.8765 1820.5677,-939.7051 1777.4827,-1059.0768"/>
-<polygon fill="#000000" stroke="#000000" points="1774.1891,-1057.8929 1774.0583,-1068.4869 1780.7671,-1060.2867 1774.1891,-1057.8929"/>
-</a>
-</g>
-</g>
-<!-- inflow_1_3_outflow_2_3_volume_1_3_ -->
-<g id="node8" class="node">
-<title>inflow_1_3_outflow_2_3_volume_1_3_</title>
-<g id="a_node8"><a xlink:title="correspondence_valid: false&#10;derivatives:&#10;&#45; In may go up from +&#10;&#45; Vol may go up from +&#10;&#45; Out will go up from max&#10;extreme_valid: false&#10;valid: false&#10;">
-<ellipse fill="none" stroke="#000000" cx="1745.7256" cy="-475.763" rx="66.4361" ry="66.4361"/>
-<text text-anchor="middle" x="1745.7256" y="-494.563" font-family="Times,serif" font-size="14.00" fill="#000000">State 19</text>
-<text text-anchor="middle" x="1745.7256" y="-479.563" font-family="Times,serif" font-size="14.00" fill="#000000">In: (+, +)</text>
-<text text-anchor="middle" x="1745.7256" y="-464.563" font-family="Times,serif" font-size="14.00" fill="#000000">Vol: (+, +)</text>
-<text text-anchor="middle" x="1745.7256" y="-449.563" font-family="Times,serif" font-size="14.00" fill="#000000">Out: (max, +)</text>
-</a>
-</g>
-</g>
-<!-- inflow_1_3_outflow_1_3_volume_1_3_&#45;&gt;inflow_1_3_outflow_2_3_volume_1_3_ -->
-<g id="edge7" class="edge">
-<title>inflow_1_3_outflow_1_3_volume_1_3_&#45;&gt;inflow_1_3_outflow_2_3_volume_1_3_</title>
-<g id="a_edge7"><a xlink:title="continuous_valid: true&#10;derivative_valid: true&#10;magnitude_valid: true&#10;not_equal_valid: true&#10;point_range_valid: true&#10;transition_valid: true&#10;">
-<path fill="none" stroke="#000000" d="M1726.6601,-155.8487C1730.4936,-220.1737 1736.8416,-326.6916 1741.1498,-398.9828"/>
-<polygon fill="#000000" stroke="#000000" points="1737.6814,-399.6172 1741.7701,-409.3912 1744.669,-399.2007 1737.6814,-399.6172"/>
+<path fill="none" stroke="#000000" d="M1752.7972,-147.3384C1793.5762,-216.1998 1863.6529,-350.1978 1876.0029,-475.8829 1897.0933,-690.5183 1820.6136,-939.5489 1777.5014,-1059.0188"/>
+<polygon fill="#000000" stroke="#000000" points="1774.205,-1057.8426 1774.0749,-1068.4366 1780.7831,-1060.236 1774.205,-1057.8426"/>
 </a>
 </g>
 </g>
 <!-- inflow_1_3_outflow_2_2_volume_1_2_ -->
-<g id="node9" class="node">
+<g id="node8" class="node">
 <title>inflow_1_3_outflow_2_2_volume_1_2_</title>
-<g id="a_node9"><a xlink:title="correspondence_valid: false&#10;derivatives:&#10;&#45; In may go up from +&#10;&#45; Vol will stay at +&#10;&#45; Out will stay at max&#10;extreme_valid: true&#10;valid: false&#10;">
-<ellipse fill="none" stroke="#000000" cx="1233.4232" cy="-129.6853" rx="65.5227" ry="65.5227"/>
-<text text-anchor="middle" x="1233.4232" y="-148.4853" font-family="Times,serif" font-size="14.00" fill="#000000">State 20</text>
-<text text-anchor="middle" x="1233.4232" y="-133.4853" font-family="Times,serif" font-size="14.00" fill="#000000">In: (+, +)</text>
-<text text-anchor="middle" x="1233.4232" y="-118.4853" font-family="Times,serif" font-size="14.00" fill="#000000">Vol: (+, 0)</text>
-<text text-anchor="middle" x="1233.4232" y="-103.4853" font-family="Times,serif" font-size="14.00" fill="#000000">Out: (max, 0)</text>
+<g id="a_node8"><a xlink:title="correspondence_valid: false&#10;derivatives:&#10;&#45; In may go up from +&#10;&#45; Vol will stay at +&#10;&#45; Out will stay at max&#10;extreme_valid: true&#10;valid: false&#10;">
+<ellipse fill="none" stroke="#000000" cx="1233.4232" cy="-129.6861" rx="65.5227" ry="65.5227"/>
+<text text-anchor="middle" x="1233.4232" y="-148.4861" font-family="Times,serif" font-size="14.00" fill="#000000">State 19</text>
+<text text-anchor="middle" x="1233.4232" y="-133.4861" font-family="Times,serif" font-size="14.00" fill="#000000">In: (+, +)</text>
+<text text-anchor="middle" x="1233.4232" y="-118.4861" font-family="Times,serif" font-size="14.00" fill="#000000">Vol: (+, 0)</text>
+<text text-anchor="middle" x="1233.4232" y="-103.4861" font-family="Times,serif" font-size="14.00" fill="#000000">Out: (max, 0)</text>
 </a>
 </g>
 </g>
 <!-- inflow_1_3_outflow_1_3_volume_1_3_&#45;&gt;inflow_1_3_outflow_2_2_volume_1_2_ -->
-<g id="edge8" class="edge">
+<g id="edge7" class="edge">
 <title>inflow_1_3_outflow_1_3_volume_1_3_&#45;&gt;inflow_1_3_outflow_2_2_volume_1_2_</title>
-<g id="a_edge8"><a xlink:title="continuous_valid: true&#10;derivative_valid: false&#10;magnitude_valid: true&#10;not_equal_valid: true&#10;point_range_valid: true&#10;transition_valid: true&#10;">
-<path fill="none" stroke="#000000" d="M1668.1104,-103.7676C1580.3726,-108.9989 1408.9738,-119.2183 1309.627,-125.1417"/>
-<polygon fill="#000000" stroke="#000000" points="1309.1311,-121.665 1299.3572,-125.7541 1309.5478,-128.6526 1309.1311,-121.665"/>
+<g id="a_edge7"><a xlink:title="continuous_valid: true&#10;derivative_valid: false&#10;magnitude_valid: true&#10;not_equal_valid: true&#10;point_range_valid: true&#10;transition_valid: true&#10;">
+<path fill="none" stroke="#000000" d="M1668.1104,-103.7684C1580.3726,-108.9997 1408.9738,-119.2191 1309.627,-125.1426"/>
+<polygon fill="#000000" stroke="#000000" points="1309.1311,-121.6658 1299.3572,-125.7549 1309.5478,-128.6534 1309.1311,-121.6658"/>
+</a>
+</g>
+</g>
+<!-- inflow_1_3_outflow_1_3_volume_2_2_ -->
+<g id="node9" class="node">
+<title>inflow_1_3_outflow_1_3_volume_2_2_</title>
+<g id="a_node9"><a xlink:title="correspondence_valid: false&#10;derivatives:&#10;&#45; In may go up from +&#10;&#45; Vol will stay at max&#10;&#45; Out may go up from +&#10;extreme_valid: true&#10;valid: false&#10;">
+<ellipse fill="none" stroke="#000000" cx="1323.7437" cy="-1609.5659" rx="65.1077" ry="65.1077"/>
+<text text-anchor="middle" x="1323.7437" y="-1628.3659" font-family="Times,serif" font-size="14.00" fill="#000000">State 23</text>
+<text text-anchor="middle" x="1323.7437" y="-1613.3659" font-family="Times,serif" font-size="14.00" fill="#000000">In: (+, +)</text>
+<text text-anchor="middle" x="1323.7437" y="-1598.3659" font-family="Times,serif" font-size="14.00" fill="#000000">Vol: (max, 0)</text>
+<text text-anchor="middle" x="1323.7437" y="-1583.3659" font-family="Times,serif" font-size="14.00" fill="#000000">Out: (+, +)</text>
+</a>
+</g>
+</g>
+<!-- inflow_1_3_outflow_1_3_volume_1_3_&#45;&gt;inflow_1_3_outflow_1_3_volume_2_2_ -->
+<g id="edge9" class="edge">
+<title>inflow_1_3_outflow_1_3_volume_1_3_&#45;&gt;inflow_1_3_outflow_1_3_volume_2_2_</title>
+<g id="a_edge9"><a xlink:title="continuous_valid: true&#10;derivative_valid: true&#10;magnitude_valid: true&#10;not_equal_valid: true&#10;point_range_valid: true&#10;transition_valid: true&#10;">
+<path fill="none" stroke="#000000" d="M1707.6073,-153.462C1686.158,-226.0055 1646.8417,-360.3912 1615.4483,-475.6449 1506.7208,-874.8137 1386.4984,-1355.9989 1341.7821,-1536.4872"/>
+<polygon fill="#000000" stroke="#000000" points="1338.334,-1535.8507 1339.3275,-1546.3988 1345.1288,-1537.5334 1338.334,-1535.8507"/>
 </a>
 </g>
 </g>
 <!-- inflow_1_3_outflow_1_3_volume_1_2_&#45;&gt;inflow_1_3_outflow_1_3_volume_1_3_ -->
-<g id="edge42" class="edge">
+<g id="edge40" class="edge">
 <title>inflow_1_3_outflow_1_3_volume_1_2_&#45;&gt;inflow_1_3_outflow_1_3_volume_1_3_</title>
-<g id="a_edge42"><a xlink:title="continuous_valid: true&#10;derivative_valid: true&#10;magnitude_valid: true&#10;not_equal_valid: true&#10;point_range_valid: true&#10;transition_valid: true&#10;">
-<path fill="none" stroke="#000000" d="M1206.12,-514.0913C1308.2994,-432.3822 1563.0755,-228.647 1672.3134,-141.2935"/>
-<polygon fill="#000000" stroke="#000000" points="1674.6122,-143.9367 1680.2363,-134.9578 1670.2405,-138.4697 1674.6122,-143.9367"/>
+<g id="a_edge40"><a xlink:title="continuous_valid: true&#10;derivative_valid: true&#10;magnitude_valid: true&#10;not_equal_valid: true&#10;point_range_valid: true&#10;transition_valid: true&#10;">
+<path fill="none" stroke="#000000" d="M1206.12,-514.0922C1308.2994,-432.383 1563.0755,-228.6478 1672.3134,-141.2943"/>
+<polygon fill="#000000" stroke="#000000" points="1674.6122,-143.9375 1680.2363,-134.9587 1670.2405,-138.4705 1674.6122,-143.9375"/>
 </a>
 </g>
 </g>
 <!-- inflow_1_3_outflow_1_3_volume_1_2_&#45;&gt;inflow_1_3_outflow_2_3_volume_1_3_ -->
-<g id="edge43" class="edge">
+<g id="edge41" class="edge">
 <title>inflow_1_3_outflow_1_3_volume_1_2_&#45;&gt;inflow_1_3_outflow_2_3_volume_1_3_</title>
-<g id="a_edge43"><a xlink:title="continuous_valid: true&#10;derivative_valid: true&#10;magnitude_valid: true&#10;not_equal_valid: true&#10;point_range_valid: true&#10;transition_valid: true&#10;">
-<path fill="none" stroke="#000000" d="M1217.444,-542.0248C1321.9948,-528.9111 1549.9748,-500.3159 1669.3595,-485.3416"/>
-<polygon fill="#000000" stroke="#000000" points="1670.0291,-488.7851 1679.5157,-484.0677 1669.1578,-481.8395 1670.0291,-488.7851"/>
+<g id="a_edge41"><a xlink:title="continuous_valid: true&#10;derivative_valid: true&#10;magnitude_valid: true&#10;not_equal_valid: true&#10;point_range_valid: true&#10;transition_valid: true&#10;">
+<path fill="none" stroke="#000000" d="M1217.444,-542.0257C1321.9948,-528.912 1549.9748,-500.3167 1669.3595,-485.3424"/>
+<polygon fill="#000000" stroke="#000000" points="1670.0291,-488.7859 1679.5157,-484.0685 1669.1578,-481.8403 1670.0291,-488.7859"/>
 </a>
 </g>
 </g>
 <!-- inflow_1_3_outflow_1_3_volume_1_2_&#45;&gt;inflow_1_3_outflow_2_2_volume_1_2_ -->
-<g id="edge44" class="edge">
+<g id="edge42" class="edge">
 <title>inflow_1_3_outflow_1_3_volume_1_2_&#45;&gt;inflow_1_3_outflow_2_2_volume_1_2_</title>
-<g id="a_edge44"><a xlink:title="continuous_valid: true&#10;derivative_valid: false&#10;magnitude_valid: true&#10;not_equal_valid: true&#10;point_range_valid: true&#10;transition_valid: true&#10;">
-<path fill="none" stroke="#000000" d="M1171.8445,-494.1002C1184.35,-420.0944 1206.6848,-287.9197 1220.742,-204.7312"/>
-<polygon fill="#000000" stroke="#000000" points="1224.1989,-205.2797 1222.414,-194.8362 1217.2967,-204.1133 1224.1989,-205.2797"/>
+<g id="a_edge42"><a xlink:title="continuous_valid: true&#10;derivative_valid: false&#10;magnitude_valid: true&#10;not_equal_valid: true&#10;point_range_valid: true&#10;transition_valid: true&#10;">
+<path fill="none" stroke="#000000" d="M1171.8445,-494.101C1184.35,-420.0952 1206.6848,-287.9205 1220.742,-204.732"/>
+<polygon fill="#000000" stroke="#000000" points="1224.1989,-205.2805 1222.414,-194.8371 1217.2967,-204.1141 1224.1989,-205.2805"/>
 </a>
 </g>
 </g>
@@ -228,29 +228,38 @@
 <g id="node22" class="node">
 <title>inflow_1_3_outflow_1_2_volume_1_1_</title>
 <g id="a_node22"><a xlink:title="correspondence_valid: true&#10;derivatives:&#10;&#45; In may go up from +&#10;&#45; Vol may go down from +&#10;&#45; Out will stay at +&#10;extreme_valid: true&#10;valid: true&#10;">
-<ellipse fill="none" stroke="#000000" cx="201.1742" cy="-1232.0256" rx="54.3945" ry="54.3945"/>
-<text text-anchor="middle" x="201.1742" y="-1250.8256" font-family="Times,serif" font-size="14.00" fill="#000000">State 22</text>
-<text text-anchor="middle" x="201.1742" y="-1235.8256" font-family="Times,serif" font-size="14.00" fill="#000000">In: (+, +)</text>
-<text text-anchor="middle" x="201.1742" y="-1220.8256" font-family="Times,serif" font-size="14.00" fill="#000000">Vol: (+, &#45;)</text>
-<text text-anchor="middle" x="201.1742" y="-1205.8256" font-family="Times,serif" font-size="14.00" fill="#000000">Out: (+, 0)</text>
+<ellipse fill="none" stroke="#000000" cx="201.1742" cy="-1232.0265" rx="54.3945" ry="54.3945"/>
+<text text-anchor="middle" x="201.1742" y="-1250.8265" font-family="Times,serif" font-size="14.00" fill="#000000">State 21</text>
+<text text-anchor="middle" x="201.1742" y="-1235.8265" font-family="Times,serif" font-size="14.00" fill="#000000">In: (+, +)</text>
+<text text-anchor="middle" x="201.1742" y="-1220.8265" font-family="Times,serif" font-size="14.00" fill="#000000">Vol: (+, &#45;)</text>
+<text text-anchor="middle" x="201.1742" y="-1205.8265" font-family="Times,serif" font-size="14.00" fill="#000000">Out: (+, 0)</text>
 </a>
 </g>
 </g>
 <!-- inflow_1_3_outflow_1_3_volume_1_2_&#45;&gt;inflow_1_3_outflow_1_2_volume_1_1_ -->
-<g id="edge45" class="edge">
+<g id="edge43" class="edge">
 <title>inflow_1_3_outflow_1_3_volume_1_2_&#45;&gt;inflow_1_3_outflow_1_2_volume_1_1_</title>
-<g id="a_edge45"><a xlink:title="continuous_valid: true&#10;derivative_valid: false&#10;magnitude_valid: true&#10;not_equal_valid: true&#10;point_range_valid: true&#10;transition_valid: true&#10;">
-<path fill="none" stroke="#000000" d="M1116.5634,-579.5473C1007.8617,-652.1534 727.1232,-841.0138 498.1399,-1006.647 410.7396,-1069.8672 311.2759,-1146.2938 252.4985,-1191.937"/>
-<polygon fill="#000000" stroke="#000000" points="250.2283,-1189.2686 244.4802,-1198.1686 254.5238,-1194.7957 250.2283,-1189.2686"/>
+<g id="a_edge43"><a xlink:title="continuous_valid: true&#10;derivative_valid: false&#10;magnitude_valid: true&#10;not_equal_valid: true&#10;point_range_valid: true&#10;transition_valid: true&#10;">
+<path fill="none" stroke="#000000" d="M1116.5507,-579.565C1007.8184,-652.2105 726.9987,-841.1696 497.9288,-1006.8582 410.5965,-1070.0266 311.2017,-1146.3796 252.4641,-1191.9779"/>
+<polygon fill="#000000" stroke="#000000" points="250.2007,-1189.3041 244.4513,-1198.2033 254.4954,-1194.8319 250.2007,-1189.3041"/>
 </a>
 </g>
 </g>
-<!-- inflow_1_3_outflow_1_3_volume_2_2_&#45;&gt;inflow_1_3_outflow_2_2_volume_2_2_ -->
+<!-- inflow_1_3_outflow_2_3_volume_1_3_&#45;&gt;inflow_1_3_outflow_2_2_volume_2_2_ -->
+<g id="edge10" class="edge">
+<title>inflow_1_3_outflow_2_3_volume_1_3_&#45;&gt;inflow_1_3_outflow_2_2_volume_2_2_</title>
+<g id="a_edge10"><a xlink:title="continuous_valid: true&#10;derivative_valid: false&#10;magnitude_valid: false&#10;not_equal_valid: true&#10;point_range_valid: true&#10;transition_valid: true&#10;">
+<path fill="none" stroke="#000000" d="M1769.8764,-537.8619C1790.3491,-595.7121 1816.7794,-684.8714 1819.2372,-765.1906 1822.3832,-867.9974 1794.7253,-984.3565 1773.4264,-1057.4732"/>
+<polygon fill="#000000" stroke="#000000" points="1769.9418,-1056.9156 1770.4671,-1067.4974 1776.6553,-1058.8976 1769.9418,-1056.9156"/>
+</a>
+</g>
+</g>
+<!-- inflow_1_3_outflow_2_3_volume_1_3_&#45;&gt;inflow_1_3_outflow_2_2_volume_1_2_ -->
 <g id="edge11" class="edge">
-<title>inflow_1_3_outflow_1_3_volume_2_2_&#45;&gt;inflow_1_3_outflow_2_2_volume_2_2_</title>
-<g id="a_edge11"><a xlink:title="continuous_valid: true&#10;derivative_valid: false&#10;magnitude_valid: true&#10;not_equal_valid: true&#10;point_range_valid: true&#10;transition_valid: true&#10;">
-<path fill="none" stroke="#000000" d="M1367.3554,-1560.5091C1446.8889,-1471.0472 1615.056,-1281.8874 1699.4441,-1186.9649"/>
-<polygon fill="#000000" stroke="#000000" points="1702.0839,-1189.2634 1706.1124,-1179.4643 1696.8524,-1184.6124 1702.0839,-1189.2634"/>
+<title>inflow_1_3_outflow_2_3_volume_1_3_&#45;&gt;inflow_1_3_outflow_2_2_volume_1_2_</title>
+<g id="a_edge11"><a xlink:title="continuous_valid: true&#10;derivative_valid: false&#10;magnitude_valid: false&#10;not_equal_valid: true&#10;point_range_valid: true&#10;transition_valid: true&#10;">
+<path fill="none" stroke="#000000" d="M1690.4135,-438.3987C1594.4067,-373.5428 1397.5253,-240.5426 1296.4133,-172.238"/>
+<polygon fill="#000000" stroke="#000000" points="1298.3629,-169.3313 1288.1172,-166.6338 1294.4444,-175.1318 1298.3629,-169.3313"/>
 </a>
 </g>
 </g>
@@ -258,29 +267,20 @@
 <g id="node10" class="node">
 <title>inflow_1_3_outflow_2_3_volume_2_2_</title>
 <g id="a_node10"><a xlink:title="correspondence_valid: true&#10;derivatives:&#10;&#45; In may go up from +&#10;&#45; Vol will stay at max&#10;&#45; Out will go up from max&#10;extreme_valid: false&#10;valid: false&#10;">
-<ellipse fill="none" stroke="#000000" cx="1766.6893" cy="-1587.4288" rx="66.4361" ry="66.4361"/>
-<text text-anchor="middle" x="1766.6893" y="-1606.2288" font-family="Times,serif" font-size="14.00" fill="#000000">State 6</text>
-<text text-anchor="middle" x="1766.6893" y="-1591.2288" font-family="Times,serif" font-size="14.00" fill="#000000">In: (+, +)</text>
-<text text-anchor="middle" x="1766.6893" y="-1576.2288" font-family="Times,serif" font-size="14.00" fill="#000000">Vol: (max, 0)</text>
-<text text-anchor="middle" x="1766.6893" y="-1561.2288" font-family="Times,serif" font-size="14.00" fill="#000000">Out: (max, +)</text>
-</a>
-</g>
-</g>
-<!-- inflow_1_3_outflow_1_3_volume_2_2_&#45;&gt;inflow_1_3_outflow_2_3_volume_2_2_ -->
-<g id="edge10" class="edge">
-<title>inflow_1_3_outflow_1_3_volume_2_2_&#45;&gt;inflow_1_3_outflow_2_3_volume_2_2_</title>
-<g id="a_edge10"><a xlink:title="continuous_valid: true&#10;derivative_valid: true&#10;magnitude_valid: true&#10;not_equal_valid: true&#10;point_range_valid: true&#10;transition_valid: true&#10;">
-<path fill="none" stroke="#000000" d="M1389.1018,-1606.2988C1469.2298,-1602.2944 1604.8286,-1595.5178 1689.8628,-1591.2682"/>
-<polygon fill="#000000" stroke="#000000" points="1690.1623,-1594.7577 1699.9751,-1590.7629 1689.8128,-1587.7665 1690.1623,-1594.7577"/>
+<ellipse fill="none" stroke="#000000" cx="1766.6893" cy="-1587.4297" rx="66.4361" ry="66.4361"/>
+<text text-anchor="middle" x="1766.6893" y="-1606.2297" font-family="Times,serif" font-size="14.00" fill="#000000">State 7</text>
+<text text-anchor="middle" x="1766.6893" y="-1591.2297" font-family="Times,serif" font-size="14.00" fill="#000000">In: (+, +)</text>
+<text text-anchor="middle" x="1766.6893" y="-1576.2297" font-family="Times,serif" font-size="14.00" fill="#000000">Vol: (max, 0)</text>
+<text text-anchor="middle" x="1766.6893" y="-1561.2297" font-family="Times,serif" font-size="14.00" fill="#000000">Out: (max, +)</text>
 </a>
 </g>
 </g>
 <!-- inflow_1_3_outflow_2_2_volume_2_2_&#45;&gt;inflow_1_3_outflow_2_3_volume_2_2_ -->
-<g id="edge13" class="edge">
+<g id="edge12" class="edge">
 <title>inflow_1_3_outflow_2_2_volume_2_2_&#45;&gt;inflow_1_3_outflow_2_3_volume_2_2_</title>
-<g id="a_edge13"><a xlink:title="continuous_valid: true&#10;derivative_valid: false&#10;magnitude_valid: true&#10;not_equal_valid: true&#10;point_range_valid: true&#10;transition_valid: true&#10;">
-<path fill="none" stroke="#000000" d="M1752.3928,-1196.1276C1755.4353,-1279.4028 1760.6581,-1422.3534 1763.8784,-1510.4925"/>
-<polygon fill="#000000" stroke="#000000" points="1760.3883,-1510.8314 1764.2512,-1520.697 1767.3837,-1510.5758 1760.3883,-1510.8314"/>
+<g id="a_edge12"><a xlink:title="continuous_valid: true&#10;derivative_valid: false&#10;magnitude_valid: true&#10;not_equal_valid: true&#10;point_range_valid: true&#10;transition_valid: true&#10;">
+<path fill="none" stroke="#000000" d="M1752.3928,-1196.1284C1755.4353,-1279.4037 1760.6581,-1422.3543 1763.8784,-1510.4934"/>
+<polygon fill="#000000" stroke="#000000" points="1760.3883,-1510.8323 1764.2512,-1520.6978 1767.3837,-1510.5766 1760.3883,-1510.8323"/>
 </a>
 </g>
 </g>
@@ -288,47 +288,29 @@
 <g id="node11" class="node">
 <title>inflow_1_3_outflow_2_1_volume_2_1_</title>
 <g id="a_node11"><a xlink:title="correspondence_valid: true&#10;derivatives:&#10;&#45; In may go up from +&#10;&#45; Vol will go down from max&#10;&#45; Out will go down from max&#10;extreme_valid: true&#10;valid: true&#10;">
-<ellipse fill="none" stroke="#000000" cx="1694.5039" cy="-764.899" rx="63.7795" ry="63.7795"/>
-<text text-anchor="middle" x="1694.5039" y="-783.699" font-family="Times,serif" font-size="14.00" fill="#000000">State 8</text>
-<text text-anchor="middle" x="1694.5039" y="-768.699" font-family="Times,serif" font-size="14.00" fill="#000000">In: (+, +)</text>
-<text text-anchor="middle" x="1694.5039" y="-753.699" font-family="Times,serif" font-size="14.00" fill="#000000">Vol: (max, &#45;)</text>
-<text text-anchor="middle" x="1694.5039" y="-738.699" font-family="Times,serif" font-size="14.00" fill="#000000">Out: (max, &#45;)</text>
+<ellipse fill="none" stroke="#000000" cx="1694.5039" cy="-764.8998" rx="63.7795" ry="63.7795"/>
+<text text-anchor="middle" x="1694.5039" y="-783.6998" font-family="Times,serif" font-size="14.00" fill="#000000">State 8</text>
+<text text-anchor="middle" x="1694.5039" y="-768.6998" font-family="Times,serif" font-size="14.00" fill="#000000">In: (+, +)</text>
+<text text-anchor="middle" x="1694.5039" y="-753.6998" font-family="Times,serif" font-size="14.00" fill="#000000">Vol: (max, &#45;)</text>
+<text text-anchor="middle" x="1694.5039" y="-738.6998" font-family="Times,serif" font-size="14.00" fill="#000000">Out: (max, &#45;)</text>
 </a>
 </g>
 </g>
 <!-- inflow_1_3_outflow_2_2_volume_2_2_&#45;&gt;inflow_1_3_outflow_2_1_volume_2_1_ -->
-<g id="edge14" class="edge">
+<g id="edge13" class="edge">
 <title>inflow_1_3_outflow_2_2_volume_2_2_&#45;&gt;inflow_1_3_outflow_2_1_volume_2_1_</title>
-<g id="a_edge14"><a xlink:title="continuous_valid: true&#10;derivative_valid: false&#10;magnitude_valid: true&#10;not_equal_valid: true&#10;point_range_valid: true&#10;transition_valid: true&#10;">
-<path fill="none" stroke="#000000" d="M1740.0629,-1064.8252C1730.3839,-1001.1061 1715.6849,-904.3391 1705.6168,-838.0581"/>
-<polygon fill="#000000" stroke="#000000" points="1709.0664,-837.4611 1704.1042,-828.1002 1702.1458,-838.5124 1709.0664,-837.4611"/>
-</a>
-</g>
-</g>
-<!-- inflow_1_3_outflow_2_3_volume_1_3_&#45;&gt;inflow_1_3_outflow_2_2_volume_2_2_ -->
-<g id="edge38" class="edge">
-<title>inflow_1_3_outflow_2_3_volume_1_3_&#45;&gt;inflow_1_3_outflow_2_2_volume_2_2_</title>
-<g id="a_edge38"><a xlink:title="continuous_valid: true&#10;derivative_valid: false&#10;magnitude_valid: false&#10;not_equal_valid: true&#10;point_range_valid: true&#10;transition_valid: true&#10;">
-<path fill="none" stroke="#000000" d="M1769.8764,-537.8611C1790.3491,-595.7112 1816.7794,-684.8705 1819.2372,-765.1898 1822.3832,-867.9966 1794.7253,-984.3556 1773.4264,-1057.4724"/>
-<polygon fill="#000000" stroke="#000000" points="1769.9418,-1056.9148 1770.4671,-1067.4966 1776.6553,-1058.8968 1769.9418,-1056.9148"/>
-</a>
-</g>
-</g>
-<!-- inflow_1_3_outflow_2_3_volume_1_3_&#45;&gt;inflow_1_3_outflow_2_2_volume_1_2_ -->
-<g id="edge39" class="edge">
-<title>inflow_1_3_outflow_2_3_volume_1_3_&#45;&gt;inflow_1_3_outflow_2_2_volume_1_2_</title>
-<g id="a_edge39"><a xlink:title="continuous_valid: true&#10;derivative_valid: false&#10;magnitude_valid: false&#10;not_equal_valid: true&#10;point_range_valid: true&#10;transition_valid: true&#10;">
-<path fill="none" stroke="#000000" d="M1690.4135,-438.3978C1594.4067,-373.542 1397.5253,-240.5418 1296.4133,-172.2372"/>
-<polygon fill="#000000" stroke="#000000" points="1298.3629,-169.3305 1288.1172,-166.6329 1294.4444,-175.131 1298.3629,-169.3305"/>
+<g id="a_edge13"><a xlink:title="continuous_valid: true&#10;derivative_valid: false&#10;magnitude_valid: true&#10;not_equal_valid: true&#10;point_range_valid: true&#10;transition_valid: true&#10;">
+<path fill="none" stroke="#000000" d="M1740.0629,-1064.826C1730.3839,-1001.1069 1715.6849,-904.3399 1705.6168,-838.0589"/>
+<polygon fill="#000000" stroke="#000000" points="1709.0664,-837.4619 1704.1042,-828.101 1702.1458,-838.5132 1709.0664,-837.4619"/>
 </a>
 </g>
 </g>
 <!-- inflow_1_3_outflow_2_2_volume_1_2_&#45;&gt;inflow_1_3_outflow_2_3_volume_1_3_ -->
-<g id="edge41" class="edge">
+<g id="edge38" class="edge">
 <title>inflow_1_3_outflow_2_2_volume_1_2_&#45;&gt;inflow_1_3_outflow_2_3_volume_1_3_</title>
-<g id="a_edge41"><a xlink:title="continuous_valid: true&#10;derivative_valid: false&#10;magnitude_valid: true&#10;not_equal_valid: true&#10;point_range_valid: true&#10;transition_valid: true&#10;">
-<path fill="none" stroke="#000000" d="M1288.2486,-166.7217C1383.9051,-231.3409 1580.752,-364.3177 1682.1953,-432.8461"/>
-<polygon fill="#000000" stroke="#000000" points="1680.2745,-435.7723 1690.5202,-438.4699 1684.1929,-429.9718 1680.2745,-435.7723"/>
+<g id="a_edge38"><a xlink:title="continuous_valid: true&#10;derivative_valid: false&#10;magnitude_valid: true&#10;not_equal_valid: true&#10;point_range_valid: true&#10;transition_valid: true&#10;">
+<path fill="none" stroke="#000000" d="M1288.2486,-166.7225C1383.9051,-231.3417 1580.752,-364.3185 1682.1953,-432.8469"/>
+<polygon fill="#000000" stroke="#000000" points="1680.2745,-435.7731 1690.5202,-438.4707 1684.1929,-429.9726 1680.2745,-435.7731"/>
 </a>
 </g>
 </g>
@@ -336,29 +318,47 @@
 <g id="node12" class="node">
 <title>inflow_1_3_outflow_2_1_volume_1_1_</title>
 <g id="a_node12"><a xlink:title="correspondence_valid: false&#10;derivatives:&#10;&#45; In may go up from +&#10;&#45; Vol may go down from +&#10;&#45; Out will go down from max&#10;extreme_valid: true&#10;valid: false&#10;">
-<ellipse fill="none" stroke="#000000" cx="682.2718" cy="-536.254" rx="63.7795" ry="63.7795"/>
-<text text-anchor="middle" x="682.2718" y="-555.054" font-family="Times,serif" font-size="14.00" fill="#000000">State 9</text>
-<text text-anchor="middle" x="682.2718" y="-540.054" font-family="Times,serif" font-size="14.00" fill="#000000">In: (+, +)</text>
-<text text-anchor="middle" x="682.2718" y="-525.054" font-family="Times,serif" font-size="14.00" fill="#000000">Vol: (+, &#45;)</text>
-<text text-anchor="middle" x="682.2718" y="-510.054" font-family="Times,serif" font-size="14.00" fill="#000000">Out: (max, &#45;)</text>
+<ellipse fill="none" stroke="#000000" cx="682.2718" cy="-536.2548" rx="63.7795" ry="63.7795"/>
+<text text-anchor="middle" x="682.2718" y="-555.0548" font-family="Times,serif" font-size="14.00" fill="#000000">State 9</text>
+<text text-anchor="middle" x="682.2718" y="-540.0548" font-family="Times,serif" font-size="14.00" fill="#000000">In: (+, +)</text>
+<text text-anchor="middle" x="682.2718" y="-525.0548" font-family="Times,serif" font-size="14.00" fill="#000000">Vol: (+, &#45;)</text>
+<text text-anchor="middle" x="682.2718" y="-510.0548" font-family="Times,serif" font-size="14.00" fill="#000000">Out: (max, &#45;)</text>
 </a>
 </g>
 </g>
 <!-- inflow_1_3_outflow_2_2_volume_1_2_&#45;&gt;inflow_1_3_outflow_2_1_volume_1_1_ -->
-<g id="edge40" class="edge">
+<g id="edge39" class="edge">
 <title>inflow_1_3_outflow_2_2_volume_1_2_&#45;&gt;inflow_1_3_outflow_2_1_volume_1_1_</title>
-<g id="a_edge40"><a xlink:title="continuous_valid: true&#10;derivative_valid: false&#10;magnitude_valid: true&#10;not_equal_valid: true&#10;point_range_valid: true&#10;transition_valid: true&#10;">
-<path fill="none" stroke="#000000" d="M1180.3264,-168.8533C1077.1216,-244.9846 850.1121,-412.443 741.9064,-492.2633"/>
-<polygon fill="#000000" stroke="#000000" points="739.6653,-489.5672 733.6956,-498.3201 743.8208,-495.2003 739.6653,-489.5672"/>
+<g id="a_edge39"><a xlink:title="continuous_valid: true&#10;derivative_valid: false&#10;magnitude_valid: true&#10;not_equal_valid: true&#10;point_range_valid: true&#10;transition_valid: true&#10;">
+<path fill="none" stroke="#000000" d="M1180.3264,-168.8542C1077.1216,-244.9854 850.1121,-412.4438 741.9064,-492.2641"/>
+<polygon fill="#000000" stroke="#000000" points="739.6653,-489.568 733.6956,-498.3209 743.8208,-495.2012 739.6653,-489.568"/>
+</a>
+</g>
+</g>
+<!-- inflow_1_3_outflow_1_3_volume_2_2_&#45;&gt;inflow_1_3_outflow_2_2_volume_2_2_ -->
+<g id="edge48" class="edge">
+<title>inflow_1_3_outflow_1_3_volume_2_2_&#45;&gt;inflow_1_3_outflow_2_2_volume_2_2_</title>
+<g id="a_edge48"><a xlink:title="continuous_valid: true&#10;derivative_valid: false&#10;magnitude_valid: true&#10;not_equal_valid: true&#10;point_range_valid: true&#10;transition_valid: true&#10;">
+<path fill="none" stroke="#000000" d="M1367.3554,-1560.5099C1446.8889,-1471.048 1615.056,-1281.8882 1699.4441,-1186.9657"/>
+<polygon fill="#000000" stroke="#000000" points="1702.0839,-1189.2642 1706.1124,-1179.4651 1696.8524,-1184.6132 1702.0839,-1189.2642"/>
+</a>
+</g>
+</g>
+<!-- inflow_1_3_outflow_1_3_volume_2_2_&#45;&gt;inflow_1_3_outflow_2_3_volume_2_2_ -->
+<g id="edge49" class="edge">
+<title>inflow_1_3_outflow_1_3_volume_2_2_&#45;&gt;inflow_1_3_outflow_2_3_volume_2_2_</title>
+<g id="a_edge49"><a xlink:title="continuous_valid: true&#10;derivative_valid: true&#10;magnitude_valid: true&#10;not_equal_valid: true&#10;point_range_valid: true&#10;transition_valid: true&#10;">
+<path fill="none" stroke="#000000" d="M1389.1018,-1606.2996C1469.2298,-1602.2952 1604.8286,-1595.5187 1689.8628,-1591.2691"/>
+<polygon fill="#000000" stroke="#000000" points="1690.1623,-1594.7586 1699.9751,-1590.7637 1689.8128,-1587.7673 1690.1623,-1594.7586"/>
 </a>
 </g>
 </g>
 <!-- inflow_1_3_outflow_2_3_volume_2_2_&#45;&gt;inflow_1_3_outflow_2_2_volume_2_2_ -->
-<g id="edge12" class="edge">
+<g id="edge14" class="edge">
 <title>inflow_1_3_outflow_2_3_volume_2_2_&#45;&gt;inflow_1_3_outflow_2_2_volume_2_2_</title>
-<g id="a_edge12"><a xlink:title="continuous_valid: true&#10;derivative_valid: false&#10;magnitude_valid: false&#10;not_equal_valid: true&#10;point_range_valid: true&#10;transition_valid: true&#10;">
-<path fill="none" stroke="#000000" d="M1764.2598,-1520.9321C1761.204,-1437.2932 1755.9692,-1294.0157 1752.7581,-1206.1264"/>
-<polygon fill="#000000" stroke="#000000" points="1756.2493,-1205.8198 1752.3864,-1195.9543 1749.254,-1206.0755 1756.2493,-1205.8198"/>
+<g id="a_edge14"><a xlink:title="continuous_valid: true&#10;derivative_valid: false&#10;magnitude_valid: false&#10;not_equal_valid: true&#10;point_range_valid: true&#10;transition_valid: true&#10;">
+<path fill="none" stroke="#000000" d="M1764.2598,-1520.9329C1761.204,-1437.2941 1755.9692,-1294.0165 1752.7581,-1206.1272"/>
+<polygon fill="#000000" stroke="#000000" points="1756.2493,-1205.8207 1752.3864,-1195.9552 1749.254,-1206.0763 1756.2493,-1205.8207"/>
 </a>
 </g>
 </g>
@@ -366,8 +366,8 @@
 <g id="edge15" class="edge">
 <title>inflow_1_3_outflow_2_1_volume_2_1_&#45;&gt;inflow_1_3_outflow_2_1_volume_1_1_</title>
 <g id="a_edge15"><a xlink:title="continuous_valid: true&#10;derivative_valid: true&#10;magnitude_valid: false&#10;not_equal_valid: true&#10;point_range_valid: true&#10;transition_valid: true&#10;">
-<path fill="none" stroke="#000000" d="M1631.6128,-753.1346C1531.8113,-734.2449 1331.1567,-695.3665 1162.1892,-657.0077 1016.4778,-623.9284 847.2554,-580.0643 753.7142,-555.3353"/>
-<polygon fill="#000000" stroke="#000000" points="754.3579,-551.8852 743.7952,-552.7098 752.5667,-558.6522 754.3579,-551.8852"/>
+<path fill="none" stroke="#000000" d="M1631.6128,-753.1354C1531.8113,-734.2457 1331.1567,-695.3674 1162.1892,-657.0085 1016.4778,-623.9292 847.2554,-580.0652 753.7142,-555.3361"/>
+<polygon fill="#000000" stroke="#000000" points="754.3579,-551.886 743.7952,-552.7106 752.5667,-558.653 754.3579,-551.886"/>
 </a>
 </g>
 </g>
@@ -375,11 +375,11 @@
 <g id="node13" class="node">
 <title>inflow_1_3_outflow_2_1_volume_1_2_</title>
 <g id="a_node13"><a xlink:title="correspondence_valid: false&#10;derivatives:&#10;&#45; In may go up from +&#10;&#45; Vol will stay at +&#10;&#45; Out will go down from max&#10;extreme_valid: true&#10;valid: false&#10;">
-<ellipse fill="none" stroke="#000000" cx="103.3398" cy="-454.4691" rx="63.7795" ry="63.7795"/>
-<text text-anchor="middle" x="103.3398" y="-473.2691" font-family="Times,serif" font-size="14.00" fill="#000000">State 18</text>
-<text text-anchor="middle" x="103.3398" y="-458.2691" font-family="Times,serif" font-size="14.00" fill="#000000">In: (+, +)</text>
-<text text-anchor="middle" x="103.3398" y="-443.2691" font-family="Times,serif" font-size="14.00" fill="#000000">Vol: (+, 0)</text>
-<text text-anchor="middle" x="103.3398" y="-428.2691" font-family="Times,serif" font-size="14.00" fill="#000000">Out: (max, &#45;)</text>
+<ellipse fill="none" stroke="#000000" cx="103.3398" cy="-454.4699" rx="63.7795" ry="63.7795"/>
+<text text-anchor="middle" x="103.3398" y="-473.2699" font-family="Times,serif" font-size="14.00" fill="#000000">State 18</text>
+<text text-anchor="middle" x="103.3398" y="-458.2699" font-family="Times,serif" font-size="14.00" fill="#000000">In: (+, +)</text>
+<text text-anchor="middle" x="103.3398" y="-443.2699" font-family="Times,serif" font-size="14.00" fill="#000000">Vol: (+, 0)</text>
+<text text-anchor="middle" x="103.3398" y="-428.2699" font-family="Times,serif" font-size="14.00" fill="#000000">Out: (max, &#45;)</text>
 </a>
 </g>
 </g>
@@ -387,8 +387,8 @@
 <g id="edge16" class="edge">
 <title>inflow_1_3_outflow_2_1_volume_2_1_&#45;&gt;inflow_1_3_outflow_2_1_volume_1_2_</title>
 <g id="a_edge16"><a xlink:title="continuous_valid: true&#10;derivative_valid: true&#10;magnitude_valid: false&#10;not_equal_valid: true&#10;point_range_valid: true&#10;transition_valid: true&#10;">
-<path fill="none" stroke="#000000" d="M1630.8031,-763.672C1469.7358,-759.4312 1033.9364,-740.8567 681.2349,-660.9833 490.848,-617.868 276.9659,-530.6851 170.7422,-484.5983"/>
-<polygon fill="#000000" stroke="#000000" points="171.988,-481.3234 161.4221,-480.5401 169.1934,-487.7414 171.988,-481.3234"/>
+<path fill="none" stroke="#000000" d="M1630.8031,-763.6729C1469.7358,-759.432 1033.9364,-740.8575 681.2349,-660.9842 490.848,-617.8688 276.9659,-530.6859 170.7422,-484.5991"/>
+<polygon fill="#000000" stroke="#000000" points="171.988,-481.3242 161.4221,-480.5409 169.1934,-487.7422 171.988,-481.3242"/>
 </a>
 </g>
 </g>
@@ -396,11 +396,11 @@
 <g id="node14" class="node">
 <title>inflow_1_3_outflow_1_1_volume_1_2_</title>
 <g id="a_node14"><a xlink:title="correspondence_valid: true&#10;derivatives:&#10;&#45; In may go up from +&#10;&#45; Vol will stay at +&#10;&#45; Out may go down from +&#10;extreme_valid: true&#10;valid: true&#10;">
-<ellipse fill="none" stroke="#000000" cx="234.8648" cy="-89.891" rx="53.9813" ry="53.9813"/>
-<text text-anchor="middle" x="234.8648" y="-108.691" font-family="Times,serif" font-size="14.00" fill="#000000">State 10</text>
-<text text-anchor="middle" x="234.8648" y="-93.691" font-family="Times,serif" font-size="14.00" fill="#000000">In: (+, +)</text>
-<text text-anchor="middle" x="234.8648" y="-78.691" font-family="Times,serif" font-size="14.00" fill="#000000">Vol: (+, 0)</text>
-<text text-anchor="middle" x="234.8648" y="-63.691" font-family="Times,serif" font-size="14.00" fill="#000000">Out: (+, &#45;)</text>
+<ellipse fill="none" stroke="#000000" cx="234.8648" cy="-89.8918" rx="53.9813" ry="53.9813"/>
+<text text-anchor="middle" x="234.8648" y="-108.6918" font-family="Times,serif" font-size="14.00" fill="#000000">State 10</text>
+<text text-anchor="middle" x="234.8648" y="-93.6918" font-family="Times,serif" font-size="14.00" fill="#000000">In: (+, +)</text>
+<text text-anchor="middle" x="234.8648" y="-78.6918" font-family="Times,serif" font-size="14.00" fill="#000000">Vol: (+, 0)</text>
+<text text-anchor="middle" x="234.8648" y="-63.6918" font-family="Times,serif" font-size="14.00" fill="#000000">Out: (+, &#45;)</text>
 </a>
 </g>
 </g>
@@ -408,8 +408,8 @@
 <g id="edge17" class="edge">
 <title>inflow_1_3_outflow_2_1_volume_1_1_&#45;&gt;inflow_1_3_outflow_1_1_volume_1_2_</title>
 <g id="a_edge17"><a xlink:title="continuous_valid: true&#10;derivative_valid: true&#10;magnitude_valid: true&#10;not_equal_valid: true&#10;point_range_valid: true&#10;transition_valid: true&#10;">
-<path fill="none" stroke="#000000" d="M636.9099,-490.9979C551.1038,-405.3921 365.9589,-220.6792 280.185,-135.1055"/>
-<polygon fill="#000000" stroke="#000000" points="282.4946,-132.4657 272.9433,-127.8807 277.5507,-137.4213 282.4946,-132.4657"/>
+<path fill="none" stroke="#000000" d="M636.9099,-490.9988C551.1038,-405.3929 365.9589,-220.68 280.185,-135.1063"/>
+<polygon fill="#000000" stroke="#000000" points="282.4946,-132.4666 272.9433,-127.8815 277.5507,-137.4221 282.4946,-132.4666"/>
 </a>
 </g>
 </g>
@@ -417,11 +417,11 @@
 <g id="node15" class="node">
 <title>inflow_1_3_outflow_1_1_volume_1_1_</title>
 <g id="a_node15"><a xlink:title="correspondence_valid: true&#10;derivatives:&#10;&#45; In may go up from +&#10;&#45; Vol may go down from +&#10;&#45; Out may go down from +&#10;extreme_valid: true&#10;valid: true&#10;">
-<ellipse fill="none" stroke="#000000" cx="875.2006" cy="-869.6248" rx="52.1524" ry="52.1524"/>
-<text text-anchor="middle" x="875.2006" y="-888.4248" font-family="Times,serif" font-size="14.00" fill="#000000">State 13</text>
-<text text-anchor="middle" x="875.2006" y="-873.4248" font-family="Times,serif" font-size="14.00" fill="#000000">In: (+, +)</text>
-<text text-anchor="middle" x="875.2006" y="-858.4248" font-family="Times,serif" font-size="14.00" fill="#000000">Vol: (+, &#45;)</text>
-<text text-anchor="middle" x="875.2006" y="-843.4248" font-family="Times,serif" font-size="14.00" fill="#000000">Out: (+, &#45;)</text>
+<ellipse fill="none" stroke="#000000" cx="875.2006" cy="-869.6257" rx="52.1524" ry="52.1524"/>
+<text text-anchor="middle" x="875.2006" y="-888.4257" font-family="Times,serif" font-size="14.00" fill="#000000">State 11</text>
+<text text-anchor="middle" x="875.2006" y="-873.4257" font-family="Times,serif" font-size="14.00" fill="#000000">In: (+, +)</text>
+<text text-anchor="middle" x="875.2006" y="-858.4257" font-family="Times,serif" font-size="14.00" fill="#000000">Vol: (+, &#45;)</text>
+<text text-anchor="middle" x="875.2006" y="-843.4257" font-family="Times,serif" font-size="14.00" fill="#000000">Out: (+, &#45;)</text>
 </a>
 </g>
 </g>
@@ -429,8 +429,8 @@
 <g id="edge18" class="edge">
 <title>inflow_1_3_outflow_2_1_volume_1_1_&#45;&gt;inflow_1_3_outflow_1_1_volume_1_1_</title>
 <g id="a_edge18"><a xlink:title="continuous_valid: true&#10;derivative_valid: true&#10;magnitude_valid: true&#10;not_equal_valid: true&#10;point_range_valid: true&#10;transition_valid: true&#10;">
-<path fill="none" stroke="#000000" d="M714.3466,-591.6777C750.295,-653.7945 808.1993,-753.8502 843.8497,-815.4522"/>
-<polygon fill="#000000" stroke="#000000" points="840.9046,-817.3509 848.9428,-824.2529 846.9632,-813.8446 840.9046,-817.3509"/>
+<path fill="none" stroke="#000000" d="M714.3466,-591.6785C750.295,-653.7954 808.1993,-753.851 843.8497,-815.453"/>
+<polygon fill="#000000" stroke="#000000" points="840.9046,-817.3517 848.9428,-824.2537 846.9632,-813.8454 840.9046,-817.3517"/>
 </a>
 </g>
 </g>
@@ -438,17 +438,17 @@
 <g id="edge35" class="edge">
 <title>inflow_1_3_outflow_2_1_volume_1_2_&#45;&gt;inflow_1_3_outflow_1_1_volume_1_2_</title>
 <g id="a_edge35"><a xlink:title="continuous_valid: true&#10;derivative_valid: true&#10;magnitude_valid: true&#10;not_equal_valid: true&#10;point_range_valid: true&#10;transition_valid: true&#10;">
-<path fill="none" stroke="#000000" d="M125.0585,-394.2665C149.4331,-326.7018 188.7477,-217.7242 213.1292,-150.1404"/>
-<polygon fill="#000000" stroke="#000000" points="216.5133,-151.0736 216.6146,-140.4793 209.9287,-148.6981 216.5133,-151.0736"/>
+<path fill="none" stroke="#000000" d="M125.0585,-394.2673C149.4331,-326.7026 188.7477,-217.725 213.1292,-150.1413"/>
+<polygon fill="#000000" stroke="#000000" points="216.5133,-151.0744 216.6146,-140.4801 209.9287,-148.6989 216.5133,-151.0744"/>
 </a>
 </g>
 </g>
 <!-- inflow_1_3_outflow_2_1_volume_1_2_&#45;&gt;inflow_1_3_outflow_1_1_volume_1_1_ -->
-<g id="edge37" class="edge">
+<g id="edge36" class="edge">
 <title>inflow_1_3_outflow_2_1_volume_1_2_&#45;&gt;inflow_1_3_outflow_1_1_volume_1_1_</title>
-<g id="a_edge37"><a xlink:title="continuous_valid: true&#10;derivative_valid: true&#10;magnitude_valid: true&#10;not_equal_valid: true&#10;point_range_valid: true&#10;transition_valid: true&#10;">
-<path fill="none" stroke="#000000" d="M159.4719,-484.6605C302.2139,-561.4362 677.7774,-763.4381 819.762,-839.8065"/>
-<polygon fill="#000000" stroke="#000000" points="818.3067,-842.9978 828.7716,-844.6524 821.6226,-836.833 818.3067,-842.9978"/>
+<g id="a_edge36"><a xlink:title="continuous_valid: true&#10;derivative_valid: true&#10;magnitude_valid: true&#10;not_equal_valid: true&#10;point_range_valid: true&#10;transition_valid: true&#10;">
+<path fill="none" stroke="#000000" d="M159.4719,-484.6613C302.2139,-561.437 677.7774,-763.4389 819.762,-839.8073"/>
+<polygon fill="#000000" stroke="#000000" points="818.3067,-842.9987 828.7716,-844.6532 821.6226,-836.8338 818.3067,-842.9987"/>
 </a>
 </g>
 </g>
@@ -456,242 +456,242 @@
 <g id="node16" class="node">
 <title>inflow_1_3_outflow_1_2_volume_1_3_</title>
 <g id="a_node16"><a xlink:title="correspondence_valid: true&#10;derivatives:&#10;&#45; In may go up from +&#10;&#45; Vol may go up from +&#10;&#45; Out will stay at +&#10;extreme_valid: true&#10;valid: true&#10;">
-<ellipse fill="none" stroke="#000000" cx="769.3542" cy="-135.5895" rx="54.3945" ry="54.3945"/>
-<text text-anchor="middle" x="769.3542" y="-154.3895" font-family="Times,serif" font-size="14.00" fill="#000000">State 11</text>
-<text text-anchor="middle" x="769.3542" y="-139.3895" font-family="Times,serif" font-size="14.00" fill="#000000">In: (+, +)</text>
-<text text-anchor="middle" x="769.3542" y="-124.3895" font-family="Times,serif" font-size="14.00" fill="#000000">Vol: (+, +)</text>
-<text text-anchor="middle" x="769.3542" y="-109.3895" font-family="Times,serif" font-size="14.00" fill="#000000">Out: (+, 0)</text>
+<ellipse fill="none" stroke="#000000" cx="769.3542" cy="-135.5904" rx="54.3945" ry="54.3945"/>
+<text text-anchor="middle" x="769.3542" y="-154.3904" font-family="Times,serif" font-size="14.00" fill="#000000">State 15</text>
+<text text-anchor="middle" x="769.3542" y="-139.3904" font-family="Times,serif" font-size="14.00" fill="#000000">In: (+, +)</text>
+<text text-anchor="middle" x="769.3542" y="-124.3904" font-family="Times,serif" font-size="14.00" fill="#000000">Vol: (+, +)</text>
+<text text-anchor="middle" x="769.3542" y="-109.3904" font-family="Times,serif" font-size="14.00" fill="#000000">Out: (+, 0)</text>
 </a>
 </g>
 </g>
 <!-- inflow_1_3_outflow_2_1_volume_1_2_&#45;&gt;inflow_1_3_outflow_1_2_volume_1_3_ -->
-<g id="edge36" class="edge">
+<g id="edge37" class="edge">
 <title>inflow_1_3_outflow_2_1_volume_1_2_&#45;&gt;inflow_1_3_outflow_1_2_volume_1_3_</title>
-<g id="a_edge36"><a xlink:title="continuous_valid: true&#10;derivative_valid: false&#10;magnitude_valid: true&#10;not_equal_valid: true&#10;point_range_valid: true&#10;transition_valid: true&#10;">
-<path fill="none" stroke="#000000" d="M160.9894,-426.8672C286.7717,-366.6442 584.6673,-224.0154 711.047,-163.5063"/>
-<polygon fill="#000000" stroke="#000000" points="712.6993,-166.5957 720.2074,-159.1204 709.6764,-160.2821 712.6993,-166.5957"/>
+<g id="a_edge37"><a xlink:title="continuous_valid: true&#10;derivative_valid: false&#10;magnitude_valid: true&#10;not_equal_valid: true&#10;point_range_valid: true&#10;transition_valid: true&#10;">
+<path fill="none" stroke="#000000" d="M160.9894,-426.868C286.7717,-366.645 584.6673,-224.0162 711.047,-163.5071"/>
+<polygon fill="#000000" stroke="#000000" points="712.6993,-166.5966 720.2074,-159.1213 709.6764,-160.2829 712.6993,-166.5966"/>
 </a>
 </g>
 </g>
 <!-- inflow_1_3_outflow_1_1_volume_1_2_&#45;&gt;inflow_1_3_outflow_1_1_volume_1_1_ -->
-<g id="edge20" class="edge">
+<g id="edge19" class="edge">
 <title>inflow_1_3_outflow_1_1_volume_1_2_&#45;&gt;inflow_1_3_outflow_1_1_volume_1_1_</title>
-<g id="a_edge20"><a xlink:title="continuous_valid: true&#10;derivative_valid: true&#10;magnitude_valid: true&#10;not_equal_valid: true&#10;point_range_valid: true&#10;transition_valid: true&#10;">
-<path fill="none" stroke="#000000" d="M260.8687,-137.0654C315.3954,-233.8507 448.6724,-459.5629 593.3416,-623.7178 665.9253,-706.0778 765.555,-786.8952 824.8606,-832.2936"/>
-<polygon fill="#000000" stroke="#000000" points="822.8789,-835.1838 832.9542,-838.4609 827.1215,-829.616 822.8789,-835.1838"/>
+<g id="a_edge19"><a xlink:title="continuous_valid: true&#10;derivative_valid: true&#10;magnitude_valid: true&#10;not_equal_valid: true&#10;point_range_valid: true&#10;transition_valid: true&#10;">
+<path fill="none" stroke="#000000" d="M260.8687,-137.0663C315.3954,-233.8515 448.6724,-459.5637 593.3416,-623.7186 665.9253,-706.0786 765.555,-786.896 824.8606,-832.2944"/>
+<polygon fill="#000000" stroke="#000000" points="822.8789,-835.1847 832.9542,-838.4617 827.1215,-829.6169 822.8789,-835.1847"/>
 </a>
 </g>
 </g>
 <!-- inflow_1_3_outflow_1_1_volume_1_2_&#45;&gt;inflow_1_3_outflow_1_2_volume_1_3_ -->
-<g id="edge19" class="edge">
+<g id="edge20" class="edge">
 <title>inflow_1_3_outflow_1_1_volume_1_2_&#45;&gt;inflow_1_3_outflow_1_2_volume_1_3_</title>
-<g id="a_edge19"><a xlink:title="continuous_valid: true&#10;derivative_valid: false&#10;magnitude_valid: true&#10;not_equal_valid: true&#10;point_range_valid: true&#10;transition_valid: true&#10;">
-<path fill="none" stroke="#000000" d="M288.5609,-94.482C387.5515,-102.9456 598.4053,-120.9735 704.9223,-130.0806"/>
-<polygon fill="#000000" stroke="#000000" points="704.6356,-133.5688 714.8975,-130.9335 705.232,-126.5943 704.6356,-133.5688"/>
+<g id="a_edge20"><a xlink:title="continuous_valid: true&#10;derivative_valid: false&#10;magnitude_valid: true&#10;not_equal_valid: true&#10;point_range_valid: true&#10;transition_valid: true&#10;">
+<path fill="none" stroke="#000000" d="M288.5609,-94.4828C387.5515,-102.9465 598.4053,-120.9743 704.9223,-130.0815"/>
+<polygon fill="#000000" stroke="#000000" points="704.6356,-133.5696 714.8975,-130.9343 705.232,-126.5951 704.6356,-133.5696"/>
 </a>
 </g>
 </g>
 <!-- inflow_1_3_outflow_1_1_volume_1_1_&#45;&gt;inflow_1_3_outflow_1_1_volume_1_2_ -->
-<g id="edge26" class="edge">
+<g id="edge21" class="edge">
 <title>inflow_1_3_outflow_1_1_volume_1_1_&#45;&gt;inflow_1_3_outflow_1_1_volume_1_2_</title>
-<g id="a_edge26"><a xlink:title="continuous_valid: true&#10;derivative_valid: true&#10;magnitude_valid: true&#10;not_equal_valid: true&#10;point_range_valid: true&#10;transition_valid: true&#10;">
-<path fill="none" stroke="#000000" d="M832.9542,-838.4609C774.987,-794.4942 669.3392,-709.9515 593.3416,-623.7178 452.9107,-464.3721 323.2143,-247.0232 265.8621,-145.8991"/>
-<polygon fill="#000000" stroke="#000000" points="268.8366,-144.0485 260.8687,-137.0654 262.7428,-147.4932 268.8366,-144.0485"/>
+<g id="a_edge21"><a xlink:title="continuous_valid: true&#10;derivative_valid: true&#10;magnitude_valid: true&#10;not_equal_valid: true&#10;point_range_valid: true&#10;transition_valid: true&#10;">
+<path fill="none" stroke="#000000" d="M832.9542,-838.4617C774.987,-794.495 669.3392,-709.9524 593.3416,-623.7186 452.9107,-464.3729 323.2143,-247.024 265.8621,-145.9"/>
+<polygon fill="#000000" stroke="#000000" points="268.8366,-144.0493 260.8687,-137.0663 262.7428,-147.494 268.8366,-144.0493"/>
 </a>
 </g>
 </g>
 <!-- inflow_1_3_outflow_0_2_volume_0_2_ -->
-<g id="node19" class="node">
+<g id="node17" class="node">
 <title>inflow_1_3_outflow_0_2_volume_0_2_</title>
-<g id="a_node19"><a xlink:title="correspondence_valid: true&#10;derivatives:&#10;&#45; In may go up from +&#10;&#45; Vol will stay at 0&#10;&#45; Out will stay at 0&#10;extreme_valid: true&#10;valid: true&#10;">
-<ellipse fill="none" stroke="#000000" cx="880.7163" cy="-1664.9695" rx="54.3945" ry="54.3945"/>
-<text text-anchor="middle" x="880.7163" y="-1683.7695" font-family="Times,serif" font-size="14.00" fill="#000000">State 14</text>
-<text text-anchor="middle" x="880.7163" y="-1668.7695" font-family="Times,serif" font-size="14.00" fill="#000000">In: (+, +)</text>
-<text text-anchor="middle" x="880.7163" y="-1653.7695" font-family="Times,serif" font-size="14.00" fill="#000000">Vol: (0, 0)</text>
-<text text-anchor="middle" x="880.7163" y="-1638.7695" font-family="Times,serif" font-size="14.00" fill="#000000">Out: (0, 0)</text>
+<g id="a_node17"><a xlink:title="correspondence_valid: true&#10;derivatives:&#10;&#45; In may go up from +&#10;&#45; Vol will stay at 0&#10;&#45; Out will stay at 0&#10;extreme_valid: true&#10;valid: true&#10;">
+<ellipse fill="none" stroke="#000000" cx="880.7163" cy="-1664.9704" rx="54.3945" ry="54.3945"/>
+<text text-anchor="middle" x="880.7163" y="-1683.7704" font-family="Times,serif" font-size="14.00" fill="#000000">State 12</text>
+<text text-anchor="middle" x="880.7163" y="-1668.7704" font-family="Times,serif" font-size="14.00" fill="#000000">In: (+, +)</text>
+<text text-anchor="middle" x="880.7163" y="-1653.7704" font-family="Times,serif" font-size="14.00" fill="#000000">Vol: (0, 0)</text>
+<text text-anchor="middle" x="880.7163" y="-1638.7704" font-family="Times,serif" font-size="14.00" fill="#000000">Out: (0, 0)</text>
 </a>
 </g>
 </g>
 <!-- inflow_1_3_outflow_1_1_volume_1_1_&#45;&gt;inflow_1_3_outflow_0_2_volume_0_2_ -->
-<g id="edge27" class="edge">
+<g id="edge22" class="edge">
 <title>inflow_1_3_outflow_1_1_volume_1_1_&#45;&gt;inflow_1_3_outflow_0_2_volume_0_2_</title>
-<g id="a_edge27"><a xlink:title="continuous_valid: true&#10;derivative_valid: false&#10;magnitude_valid: true&#10;not_equal_valid: true&#10;point_range_valid: true&#10;transition_valid: true&#10;">
-<path fill="none" stroke="#000000" d="M861.6097,-920.223C843.1029,-993.7329 812.283,-1134.6167 812.5823,-1256.6124 812.8863,-1380.5089 843.6728,-1522.703 863.7532,-1602.3788"/>
-<polygon fill="#000000" stroke="#000000" points="860.408,-1603.4256 866.2678,-1612.2525 867.1915,-1601.6981 860.408,-1603.4256"/>
+<g id="a_edge22"><a xlink:title="continuous_valid: true&#10;derivative_valid: false&#10;magnitude_valid: true&#10;not_equal_valid: true&#10;point_range_valid: true&#10;transition_valid: true&#10;">
+<path fill="none" stroke="#000000" d="M861.6097,-920.2238C843.1029,-993.7337 812.283,-1134.6175 812.5823,-1256.6132 812.8863,-1380.5098 843.6728,-1522.7039 863.7532,-1602.3796"/>
+<polygon fill="#000000" stroke="#000000" points="860.408,-1603.4265 866.2678,-1612.2534 867.1915,-1601.6989 860.408,-1603.4265"/>
 </a>
 </g>
 </g>
 <!-- inflow_1_3_outflow_0_2_volume_1_2_ -->
-<g id="node20" class="node">
+<g id="node18" class="node">
 <title>inflow_1_3_outflow_0_2_volume_1_2_</title>
-<g id="a_node20"><a xlink:title="correspondence_valid: false&#10;derivatives:&#10;&#45; In may go up from +&#10;&#45; Vol will stay at +&#10;&#45; Out will stay at 0&#10;extreme_valid: true&#10;valid: false&#10;">
-<ellipse fill="none" stroke="#000000" cx="573.3745" cy="-1082.3317" rx="54.3945" ry="54.3945"/>
-<text text-anchor="middle" x="573.3745" y="-1101.1317" font-family="Times,serif" font-size="14.00" fill="#000000">State 15</text>
-<text text-anchor="middle" x="573.3745" y="-1086.1317" font-family="Times,serif" font-size="14.00" fill="#000000">In: (+, +)</text>
-<text text-anchor="middle" x="573.3745" y="-1071.1317" font-family="Times,serif" font-size="14.00" fill="#000000">Vol: (+, 0)</text>
-<text text-anchor="middle" x="573.3745" y="-1056.1317" font-family="Times,serif" font-size="14.00" fill="#000000">Out: (0, 0)</text>
+<g id="a_node18"><a xlink:title="correspondence_valid: false&#10;derivatives:&#10;&#45; In may go up from +&#10;&#45; Vol will stay at +&#10;&#45; Out will stay at 0&#10;extreme_valid: true&#10;valid: false&#10;">
+<ellipse fill="none" stroke="#000000" cx="573.3745" cy="-1082.3325" rx="54.3945" ry="54.3945"/>
+<text text-anchor="middle" x="573.3745" y="-1101.1325" font-family="Times,serif" font-size="14.00" fill="#000000">State 13</text>
+<text text-anchor="middle" x="573.3745" y="-1086.1325" font-family="Times,serif" font-size="14.00" fill="#000000">In: (+, +)</text>
+<text text-anchor="middle" x="573.3745" y="-1071.1325" font-family="Times,serif" font-size="14.00" fill="#000000">Vol: (+, 0)</text>
+<text text-anchor="middle" x="573.3745" y="-1056.1325" font-family="Times,serif" font-size="14.00" fill="#000000">Out: (0, 0)</text>
 </a>
 </g>
 </g>
 <!-- inflow_1_3_outflow_1_1_volume_1_1_&#45;&gt;inflow_1_3_outflow_0_2_volume_1_2_ -->
-<g id="edge28" class="edge">
+<g id="edge23" class="edge">
 <title>inflow_1_3_outflow_1_1_volume_1_1_&#45;&gt;inflow_1_3_outflow_0_2_volume_1_2_</title>
-<g id="a_edge28"><a xlink:title="continuous_valid: true&#10;derivative_valid: false&#10;magnitude_valid: true&#10;not_equal_valid: true&#10;point_range_valid: true&#10;transition_valid: true&#10;">
-<path fill="none" stroke="#000000" d="M832.2768,-899.8746C778.139,-938.0273 685.0652,-1003.6196 626.4992,-1044.8929"/>
-<polygon fill="#000000" stroke="#000000" points="624.2754,-1042.1783 618.1175,-1050.7998 628.3078,-1047.9002 624.2754,-1042.1783"/>
+<g id="a_edge23"><a xlink:title="continuous_valid: true&#10;derivative_valid: false&#10;magnitude_valid: true&#10;not_equal_valid: true&#10;point_range_valid: true&#10;transition_valid: true&#10;">
+<path fill="none" stroke="#000000" d="M832.2768,-899.8755C778.139,-938.0282 685.0652,-1003.6204 626.4992,-1044.8938"/>
+<polygon fill="#000000" stroke="#000000" points="624.2754,-1042.1791 618.1175,-1050.8007 628.3078,-1047.901 624.2754,-1042.1791"/>
 </a>
 </g>
 </g>
 <!-- inflow_1_3_outflow_1_1_volume_0_2_ -->
-<g id="node21" class="node">
+<g id="node19" class="node">
 <title>inflow_1_3_outflow_1_1_volume_0_2_</title>
-<g id="a_node21"><a xlink:title="correspondence_valid: false&#10;derivatives:&#10;&#45; In may go up from +&#10;&#45; Vol will stay at 0&#10;&#45; Out may go down from +&#10;extreme_valid: true&#10;valid: false&#10;">
-<ellipse fill="none" stroke="#000000" cx="53.033" cy="-930.7374" rx="53.066" ry="53.066"/>
-<text text-anchor="middle" x="53.033" y="-949.5374" font-family="Times,serif" font-size="14.00" fill="#000000">State 16</text>
-<text text-anchor="middle" x="53.033" y="-934.5374" font-family="Times,serif" font-size="14.00" fill="#000000">In: (+, +)</text>
-<text text-anchor="middle" x="53.033" y="-919.5374" font-family="Times,serif" font-size="14.00" fill="#000000">Vol: (0, 0)</text>
-<text text-anchor="middle" x="53.033" y="-904.5374" font-family="Times,serif" font-size="14.00" fill="#000000">Out: (+, &#45;)</text>
+<g id="a_node19"><a xlink:title="correspondence_valid: false&#10;derivatives:&#10;&#45; In may go up from +&#10;&#45; Vol will stay at 0&#10;&#45; Out may go down from +&#10;extreme_valid: true&#10;valid: false&#10;">
+<ellipse fill="none" stroke="#000000" cx="53.033" cy="-930.7382" rx="53.066" ry="53.066"/>
+<text text-anchor="middle" x="53.033" y="-949.5382" font-family="Times,serif" font-size="14.00" fill="#000000">State 14</text>
+<text text-anchor="middle" x="53.033" y="-934.5382" font-family="Times,serif" font-size="14.00" fill="#000000">In: (+, +)</text>
+<text text-anchor="middle" x="53.033" y="-919.5382" font-family="Times,serif" font-size="14.00" fill="#000000">Vol: (0, 0)</text>
+<text text-anchor="middle" x="53.033" y="-904.5382" font-family="Times,serif" font-size="14.00" fill="#000000">Out: (+, &#45;)</text>
 </a>
 </g>
 </g>
 <!-- inflow_1_3_outflow_1_1_volume_1_1_&#45;&gt;inflow_1_3_outflow_1_1_volume_0_2_ -->
-<g id="edge29" class="edge">
+<g id="edge24" class="edge">
 <title>inflow_1_3_outflow_1_1_volume_1_1_&#45;&gt;inflow_1_3_outflow_1_1_volume_0_2_</title>
-<g id="a_edge29"><a xlink:title="continuous_valid: true&#10;derivative_valid: true&#10;magnitude_valid: true&#10;not_equal_valid: true&#10;point_range_valid: true&#10;transition_valid: true&#10;">
-<path fill="none" stroke="#000000" d="M822.8335,-873.5173C678.2202,-884.2666 273.6843,-914.3361 116.5627,-926.0151"/>
-<polygon fill="#000000" stroke="#000000" points="115.8432,-922.5589 106.1301,-926.7906 116.3621,-929.5396 115.8432,-922.5589"/>
+<g id="a_edge24"><a xlink:title="continuous_valid: true&#10;derivative_valid: true&#10;magnitude_valid: true&#10;not_equal_valid: true&#10;point_range_valid: true&#10;transition_valid: true&#10;">
+<path fill="none" stroke="#000000" d="M822.8335,-873.5182C678.2202,-884.2674 273.6843,-914.337 116.5627,-926.016"/>
+<polygon fill="#000000" stroke="#000000" points="115.8432,-922.5597 106.1301,-926.7914 116.3621,-929.5404 115.8432,-922.5597"/>
 </a>
 </g>
 </g>
 <!-- inflow_1_3_outflow_1_2_volume_1_3_&#45;&gt;inflow_1_3_outflow_1_3_volume_1_3_ -->
-<g id="edge21" class="edge">
+<g id="edge27" class="edge">
 <title>inflow_1_3_outflow_1_2_volume_1_3_&#45;&gt;inflow_1_3_outflow_1_3_volume_1_3_</title>
-<g id="a_edge21"><a xlink:title="continuous_valid: true&#10;derivative_valid: false&#10;magnitude_valid: true&#10;not_equal_valid: true&#10;point_range_valid: true&#10;transition_valid: true&#10;">
-<path fill="none" stroke="#000000" d="M818.9015,-112.5874C902.4423,-75.7931 1077.5519,-7.1636 1234.1022,-.7957 1390.5848,5.5696 1569.8759,-46.6945 1661.8451,-78.0052"/>
-<polygon fill="#000000" stroke="#000000" points="1660.9506,-81.3987 1671.5453,-81.3405 1663.2268,-74.779 1660.9506,-81.3987"/>
-</a>
-</g>
-</g>
-<!-- inflow_1_3_outflow_1_2_volume_1_2_ -->
-<g id="node17" class="node">
-<title>inflow_1_3_outflow_1_2_volume_1_2_</title>
-<g id="a_node17"><a xlink:title="correspondence_valid: true&#10;derivatives:&#10;&#45; In may go up from +&#10;&#45; Vol will stay at +&#10;&#45; Out will stay at +&#10;extreme_valid: true&#10;valid: true&#10;">
-<ellipse fill="none" stroke="#000000" cx="384.1793" cy="-738.7902" rx="54.3945" ry="54.3945"/>
-<text text-anchor="middle" x="384.1793" y="-757.5902" font-family="Times,serif" font-size="14.00" fill="#000000">State 12</text>
-<text text-anchor="middle" x="384.1793" y="-742.5902" font-family="Times,serif" font-size="14.00" fill="#000000">In: (+, +)</text>
-<text text-anchor="middle" x="384.1793" y="-727.5902" font-family="Times,serif" font-size="14.00" fill="#000000">Vol: (+, 0)</text>
-<text text-anchor="middle" x="384.1793" y="-712.5902" font-family="Times,serif" font-size="14.00" fill="#000000">Out: (+, 0)</text>
-</a>
-</g>
-</g>
-<!-- inflow_1_3_outflow_1_2_volume_1_3_&#45;&gt;inflow_1_3_outflow_1_2_volume_1_2_ -->
-<g id="edge22" class="edge">
-<title>inflow_1_3_outflow_1_2_volume_1_3_&#45;&gt;inflow_1_3_outflow_1_2_volume_1_2_</title>
-<g id="a_edge22"><a xlink:title="continuous_valid: true&#10;derivative_valid: true&#10;magnitude_valid: true&#10;not_equal_valid: true&#10;point_range_valid: true&#10;transition_valid: true&#10;">
-<path fill="none" stroke="#000000" d="M739.7697,-181.9201C669.7374,-291.5937 494.0747,-566.6892 419.0413,-684.1949"/>
-<polygon fill="#000000" stroke="#000000" points="416.0324,-682.4035 413.6004,-692.7155 421.9322,-686.1709 416.0324,-682.4035"/>
+<g id="a_edge27"><a xlink:title="continuous_valid: true&#10;derivative_valid: false&#10;magnitude_valid: true&#10;not_equal_valid: true&#10;point_range_valid: true&#10;transition_valid: true&#10;">
+<path fill="none" stroke="#000000" d="M818.8958,-112.5889C902.427,-75.7956 1077.5169,-7.1675 1234.0512,-.7962 1390.5494,5.5735 1569.8594,-46.6925 1661.8385,-78.0048"/>
+<polygon fill="#000000" stroke="#000000" points="1660.945,-81.3986 1671.5397,-81.3403 1663.2211,-74.779 1660.945,-81.3986"/>
 </a>
 </g>
 </g>
 <!-- inflow_1_3_outflow_1_2_volume_2_2_ -->
-<g id="node18" class="node">
+<g id="node20" class="node">
 <title>inflow_1_3_outflow_1_2_volume_2_2_</title>
-<g id="a_node18"><a xlink:title="correspondence_valid: false&#10;derivatives:&#10;&#45; In may go up from +&#10;&#45; Vol will stay at max&#10;&#45; Out will stay at +&#10;extreme_valid: true&#10;valid: false&#10;">
-<ellipse fill="none" stroke="#000000" cx="1327.0299" cy="-894.7069" rx="65.1077" ry="65.1077"/>
-<text text-anchor="middle" x="1327.0299" y="-913.5069" font-family="Times,serif" font-size="14.00" fill="#000000">State 17</text>
-<text text-anchor="middle" x="1327.0299" y="-898.5069" font-family="Times,serif" font-size="14.00" fill="#000000">In: (+, +)</text>
-<text text-anchor="middle" x="1327.0299" y="-883.5069" font-family="Times,serif" font-size="14.00" fill="#000000">Vol: (max, 0)</text>
-<text text-anchor="middle" x="1327.0299" y="-868.5069" font-family="Times,serif" font-size="14.00" fill="#000000">Out: (+, 0)</text>
+<g id="a_node20"><a xlink:title="correspondence_valid: false&#10;derivatives:&#10;&#45; In may go up from +&#10;&#45; Vol will stay at max&#10;&#45; Out will stay at +&#10;extreme_valid: true&#10;valid: false&#10;">
+<ellipse fill="none" stroke="#000000" cx="1327.0299" cy="-894.7077" rx="65.1077" ry="65.1077"/>
+<text text-anchor="middle" x="1327.0299" y="-913.5077" font-family="Times,serif" font-size="14.00" fill="#000000">State 16</text>
+<text text-anchor="middle" x="1327.0299" y="-898.5077" font-family="Times,serif" font-size="14.00" fill="#000000">In: (+, +)</text>
+<text text-anchor="middle" x="1327.0299" y="-883.5077" font-family="Times,serif" font-size="14.00" fill="#000000">Vol: (max, 0)</text>
+<text text-anchor="middle" x="1327.0299" y="-868.5077" font-family="Times,serif" font-size="14.00" fill="#000000">Out: (+, 0)</text>
 </a>
 </g>
 </g>
 <!-- inflow_1_3_outflow_1_2_volume_1_3_&#45;&gt;inflow_1_3_outflow_1_2_volume_2_2_ -->
-<g id="edge23" class="edge">
+<g id="edge28" class="edge">
 <title>inflow_1_3_outflow_1_2_volume_1_3_&#45;&gt;inflow_1_3_outflow_1_2_volume_2_2_</title>
-<g id="a_edge23"><a xlink:title="continuous_valid: true&#10;derivative_valid: true&#10;magnitude_valid: true&#10;not_equal_valid: true&#10;point_range_valid: true&#10;transition_valid: true&#10;">
-<path fill="none" stroke="#000000" d="M796.7077,-183.1092C848.8909,-272.5061 967.9915,-470.6074 1085.8652,-625.0667 1145.9081,-703.7457 1223.4148,-787.735 1274.1323,-840.6825"/>
-<polygon fill="#000000" stroke="#000000" points="1271.655,-843.1559 1281.1063,-847.9438 1276.7036,-838.307 1271.655,-843.1559"/>
+<g id="a_edge28"><a xlink:title="continuous_valid: true&#10;derivative_valid: true&#10;magnitude_valid: true&#10;not_equal_valid: true&#10;point_range_valid: true&#10;transition_valid: true&#10;">
+<path fill="none" stroke="#000000" d="M796.7077,-183.11C848.8909,-272.507 967.9915,-470.6082 1085.8652,-625.0676 1145.9081,-703.7466 1223.4148,-787.7358 1274.1323,-840.6833"/>
+<polygon fill="#000000" stroke="#000000" points="1271.655,-843.1568 1281.1063,-847.9446 1276.7036,-838.3079 1271.655,-843.1568"/>
 </a>
 </g>
 </g>
-<!-- inflow_1_3_outflow_1_2_volume_1_2_&#45;&gt;inflow_1_3_outflow_1_3_volume_1_3_ -->
-<g id="edge24" class="edge">
-<title>inflow_1_3_outflow_1_2_volume_1_2_&#45;&gt;inflow_1_3_outflow_1_3_volume_1_3_</title>
-<g id="a_edge24"><a xlink:title="continuous_valid: true&#10;derivative_valid: false&#10;magnitude_valid: true&#10;not_equal_valid: true&#10;point_range_valid: true&#10;transition_valid: true&#10;">
-<path fill="none" stroke="#000000" d="M437.3636,-727.0329C497.2709,-713.2893 597.2375,-688.8452 681.2349,-660.9833 890.5859,-591.5418 1481.9562,-244.2273 1667.1718,-134.0588"/>
-<polygon fill="#000000" stroke="#000000" points="1669.1385,-136.9613 1675.9415,-128.8391 1665.5583,-130.9462 1669.1385,-136.9613"/>
+<!-- inflow_1_3_outflow_1_2_volume_1_2_ -->
+<g id="node21" class="node">
+<title>inflow_1_3_outflow_1_2_volume_1_2_</title>
+<g id="a_node21"><a xlink:title="correspondence_valid: true&#10;derivatives:&#10;&#45; In may go up from +&#10;&#45; Vol will stay at +&#10;&#45; Out will stay at +&#10;extreme_valid: true&#10;valid: true&#10;">
+<ellipse fill="none" stroke="#000000" cx="384.1793" cy="-738.7911" rx="54.3945" ry="54.3945"/>
+<text text-anchor="middle" x="384.1793" y="-757.5911" font-family="Times,serif" font-size="14.00" fill="#000000">State 17</text>
+<text text-anchor="middle" x="384.1793" y="-742.5911" font-family="Times,serif" font-size="14.00" fill="#000000">In: (+, +)</text>
+<text text-anchor="middle" x="384.1793" y="-727.5911" font-family="Times,serif" font-size="14.00" fill="#000000">Vol: (+, 0)</text>
+<text text-anchor="middle" x="384.1793" y="-712.5911" font-family="Times,serif" font-size="14.00" fill="#000000">Out: (+, 0)</text>
 </a>
 </g>
 </g>
-<!-- inflow_1_3_outflow_1_2_volume_1_2_&#45;&gt;inflow_1_3_outflow_1_1_volume_1_1_ -->
-<g id="edge25" class="edge">
-<title>inflow_1_3_outflow_1_2_volume_1_2_&#45;&gt;inflow_1_3_outflow_1_1_volume_1_1_</title>
-<g id="a_edge25"><a xlink:title="continuous_valid: true&#10;derivative_valid: false&#10;magnitude_valid: true&#10;not_equal_valid: true&#10;point_range_valid: true&#10;transition_valid: true&#10;">
-<path fill="none" stroke="#000000" d="M437.1937,-752.9162C529.1644,-777.4221 717.7187,-827.6632 814.6756,-853.4977"/>
-<polygon fill="#000000" stroke="#000000" points="814.0527,-856.9538 824.6168,-856.1466 815.8551,-850.1898 814.0527,-856.9538"/>
-</a>
-</g>
-</g>
-<!-- inflow_1_3_outflow_1_2_volume_2_2_&#45;&gt;inflow_1_3_outflow_2_2_volume_2_2_ -->
-<g id="edge33" class="edge">
-<title>inflow_1_3_outflow_1_2_volume_2_2_&#45;&gt;inflow_1_3_outflow_2_2_volume_2_2_</title>
-<g id="a_edge33"><a xlink:title="continuous_valid: true&#10;derivative_valid: true&#10;magnitude_valid: false&#10;not_equal_valid: true&#10;point_range_valid: true&#10;transition_valid: true&#10;">
-<path fill="none" stroke="#000000" d="M1384.071,-926.4557C1461.9562,-969.8062 1601.2914,-1047.3594 1683.7154,-1093.2362"/>
-<polygon fill="#000000" stroke="#000000" points="1682.053,-1096.3165 1692.4929,-1098.1217 1685.4574,-1090.2001 1682.053,-1096.3165"/>
-</a>
-</g>
-</g>
-<!-- inflow_1_3_outflow_1_2_volume_2_2_&#45;&gt;inflow_1_3_outflow_2_3_volume_2_2_ -->
-<g id="edge32" class="edge">
-<title>inflow_1_3_outflow_1_2_volume_2_2_&#45;&gt;inflow_1_3_outflow_2_3_volume_2_2_</title>
-<g id="a_edge32"><a xlink:title="continuous_valid: true&#10;derivative_valid: false&#10;magnitude_valid: false&#10;not_equal_valid: true&#10;point_range_valid: true&#10;transition_valid: true&#10;">
-<path fill="none" stroke="#000000" d="M1361.8967,-949.6427C1442.0882,-1075.9913 1639.3214,-1386.7494 1725.3936,-1522.3638"/>
-<polygon fill="#000000" stroke="#000000" points="1722.5861,-1524.4719 1730.8998,-1531.0394 1728.4962,-1520.7208 1722.5861,-1524.4719"/>
-</a>
-</g>
-</g>
-<!-- inflow_1_3_outflow_1_2_volume_2_2_&#45;&gt;inflow_1_3_outflow_2_1_volume_2_1_ -->
-<g id="edge34" class="edge">
-<title>inflow_1_3_outflow_1_2_volume_2_2_&#45;&gt;inflow_1_3_outflow_2_1_volume_2_1_</title>
-<g id="a_edge34"><a xlink:title="continuous_valid: true&#10;derivative_valid: false&#10;magnitude_valid: false&#10;not_equal_valid: true&#10;point_range_valid: true&#10;transition_valid: true&#10;">
-<path fill="none" stroke="#000000" d="M1388.5368,-872.98C1453.6776,-849.9694 1556.3314,-813.7076 1624.5214,-789.6199"/>
-<polygon fill="#000000" stroke="#000000" points="1626.0604,-792.7882 1634.3236,-786.1573 1623.7288,-786.1879 1626.0604,-792.7882"/>
+<!-- inflow_1_3_outflow_1_2_volume_1_3_&#45;&gt;inflow_1_3_outflow_1_2_volume_1_2_ -->
+<g id="edge29" class="edge">
+<title>inflow_1_3_outflow_1_2_volume_1_3_&#45;&gt;inflow_1_3_outflow_1_2_volume_1_2_</title>
+<g id="a_edge29"><a xlink:title="continuous_valid: true&#10;derivative_valid: true&#10;magnitude_valid: true&#10;not_equal_valid: true&#10;point_range_valid: true&#10;transition_valid: true&#10;">
+<path fill="none" stroke="#000000" d="M739.7697,-181.9209C669.7374,-291.5946 494.0747,-566.6901 419.0413,-684.1957"/>
+<polygon fill="#000000" stroke="#000000" points="416.0324,-682.4043 413.6004,-692.7163 421.9322,-686.1717 416.0324,-682.4043"/>
 </a>
 </g>
 </g>
 <!-- inflow_1_3_outflow_0_2_volume_0_2_&#45;&gt;inflow_1_3_outflow_0_3_volume_0_3_ -->
-<g id="edge30" class="edge">
+<g id="edge25" class="edge">
 <title>inflow_1_3_outflow_0_2_volume_0_2_&#45;&gt;inflow_1_3_outflow_0_3_volume_0_3_</title>
-<g id="a_edge30"><a xlink:title="continuous_valid: true&#10;derivative_valid: false&#10;magnitude_valid: true&#10;not_equal_valid: true&#10;point_range_valid: true&#10;transition_valid: true&#10;">
-<path fill="none" stroke="#000000" d="M914.6665,-1622.2417C982.6103,-1536.7314 1135.0353,-1344.8979 1208.0734,-1252.9764"/>
-<polygon fill="#000000" stroke="#000000" points="1210.9843,-1254.939 1214.4651,-1244.9322 1205.5037,-1250.5842 1210.9843,-1254.939"/>
+<g id="a_edge25"><a xlink:title="continuous_valid: true&#10;derivative_valid: false&#10;magnitude_valid: true&#10;not_equal_valid: true&#10;point_range_valid: true&#10;transition_valid: true&#10;">
+<path fill="none" stroke="#000000" d="M914.6665,-1622.2425C982.6103,-1536.7323 1135.0353,-1344.8988 1208.0734,-1252.9772"/>
+<polygon fill="#000000" stroke="#000000" points="1210.9843,-1254.9398 1214.4651,-1244.933 1205.5037,-1250.5851 1210.9843,-1254.9398"/>
 </a>
 </g>
 </g>
 <!-- inflow_1_3_outflow_0_2_volume_1_2_&#45;&gt;inflow_1_3_outflow_0_3_volume_1_3_ -->
-<g id="edge31" class="edge">
+<g id="edge26" class="edge">
 <title>inflow_1_3_outflow_0_2_volume_1_2_&#45;&gt;inflow_1_3_outflow_0_3_volume_1_3_</title>
-<g id="a_edge31"><a xlink:title="continuous_valid: true&#10;derivative_valid: false&#10;magnitude_valid: true&#10;not_equal_valid: true&#10;point_range_valid: true&#10;transition_valid: true&#10;">
-<path fill="none" stroke="#000000" d="M571.5603,-1136.8945C568.8963,-1217.017 563.9346,-1366.2398 561.0889,-1451.8235"/>
-<polygon fill="#000000" stroke="#000000" points="557.587,-1451.8253 560.7527,-1461.9362 564.5832,-1452.058 557.587,-1451.8253"/>
+<g id="a_edge26"><a xlink:title="continuous_valid: true&#10;derivative_valid: false&#10;magnitude_valid: true&#10;not_equal_valid: true&#10;point_range_valid: true&#10;transition_valid: true&#10;">
+<path fill="none" stroke="#000000" d="M571.5603,-1136.8954C568.8963,-1217.0179 563.9346,-1366.2406 561.0889,-1451.8244"/>
+<polygon fill="#000000" stroke="#000000" points="557.587,-1451.8262 560.7527,-1461.937 564.5832,-1452.0589 557.587,-1451.8262"/>
+</a>
+</g>
+</g>
+<!-- inflow_1_3_outflow_1_2_volume_2_2_&#45;&gt;inflow_1_3_outflow_2_2_volume_2_2_ -->
+<g id="edge30" class="edge">
+<title>inflow_1_3_outflow_1_2_volume_2_2_&#45;&gt;inflow_1_3_outflow_2_2_volume_2_2_</title>
+<g id="a_edge30"><a xlink:title="continuous_valid: true&#10;derivative_valid: true&#10;magnitude_valid: false&#10;not_equal_valid: true&#10;point_range_valid: true&#10;transition_valid: true&#10;">
+<path fill="none" stroke="#000000" d="M1384.071,-926.4565C1461.9562,-969.807 1601.2914,-1047.3602 1683.7154,-1093.237"/>
+<polygon fill="#000000" stroke="#000000" points="1682.053,-1096.3173 1692.4929,-1098.1225 1685.4574,-1090.2009 1682.053,-1096.3173"/>
+</a>
+</g>
+</g>
+<!-- inflow_1_3_outflow_1_2_volume_2_2_&#45;&gt;inflow_1_3_outflow_2_3_volume_2_2_ -->
+<g id="edge31" class="edge">
+<title>inflow_1_3_outflow_1_2_volume_2_2_&#45;&gt;inflow_1_3_outflow_2_3_volume_2_2_</title>
+<g id="a_edge31"><a xlink:title="continuous_valid: true&#10;derivative_valid: false&#10;magnitude_valid: false&#10;not_equal_valid: true&#10;point_range_valid: true&#10;transition_valid: true&#10;">
+<path fill="none" stroke="#000000" d="M1361.8967,-949.6435C1442.0882,-1075.9921 1639.3214,-1386.7502 1725.3936,-1522.3646"/>
+<polygon fill="#000000" stroke="#000000" points="1722.5861,-1524.4727 1730.8998,-1531.0402 1728.4962,-1520.7216 1722.5861,-1524.4727"/>
+</a>
+</g>
+</g>
+<!-- inflow_1_3_outflow_1_2_volume_2_2_&#45;&gt;inflow_1_3_outflow_2_1_volume_2_1_ -->
+<g id="edge32" class="edge">
+<title>inflow_1_3_outflow_1_2_volume_2_2_&#45;&gt;inflow_1_3_outflow_2_1_volume_2_1_</title>
+<g id="a_edge32"><a xlink:title="continuous_valid: true&#10;derivative_valid: false&#10;magnitude_valid: false&#10;not_equal_valid: true&#10;point_range_valid: true&#10;transition_valid: true&#10;">
+<path fill="none" stroke="#000000" d="M1388.5368,-872.9808C1453.6776,-849.9702 1556.3314,-813.7084 1624.5214,-789.6207"/>
+<polygon fill="#000000" stroke="#000000" points="1626.0604,-792.7891 1634.3236,-786.1581 1623.7288,-786.1888 1626.0604,-792.7891"/>
+</a>
+</g>
+</g>
+<!-- inflow_1_3_outflow_1_2_volume_1_2_&#45;&gt;inflow_1_3_outflow_1_3_volume_1_3_ -->
+<g id="edge33" class="edge">
+<title>inflow_1_3_outflow_1_2_volume_1_2_&#45;&gt;inflow_1_3_outflow_1_3_volume_1_3_</title>
+<g id="a_edge33"><a xlink:title="continuous_valid: true&#10;derivative_valid: false&#10;magnitude_valid: true&#10;not_equal_valid: true&#10;point_range_valid: true&#10;transition_valid: true&#10;">
+<path fill="none" stroke="#000000" d="M437.3636,-727.0337C497.2709,-713.2901 597.2375,-688.8461 681.2349,-660.9842 890.5859,-591.5426 1481.9562,-244.2281 1667.1718,-134.0596"/>
+<polygon fill="#000000" stroke="#000000" points="1669.1385,-136.9621 1675.9415,-128.8399 1665.5583,-130.947 1669.1385,-136.9621"/>
+</a>
+</g>
+</g>
+<!-- inflow_1_3_outflow_1_2_volume_1_2_&#45;&gt;inflow_1_3_outflow_1_1_volume_1_1_ -->
+<g id="edge34" class="edge">
+<title>inflow_1_3_outflow_1_2_volume_1_2_&#45;&gt;inflow_1_3_outflow_1_1_volume_1_1_</title>
+<g id="a_edge34"><a xlink:title="continuous_valid: true&#10;derivative_valid: false&#10;magnitude_valid: true&#10;not_equal_valid: true&#10;point_range_valid: true&#10;transition_valid: true&#10;">
+<path fill="none" stroke="#000000" d="M437.1937,-752.917C529.1644,-777.4229 717.7187,-827.664 814.6756,-853.4985"/>
+<polygon fill="#000000" stroke="#000000" points="814.0527,-856.9546 824.6168,-856.1474 815.8551,-850.1906 814.0527,-856.9546"/>
 </a>
 </g>
 </g>
 <!-- inflow_1_3_outflow_1_2_volume_1_1_&#45;&gt;inflow_1_3_outflow_1_1_volume_1_1_ -->
-<g id="edge47" class="edge">
+<g id="edge44" class="edge">
 <title>inflow_1_3_outflow_1_2_volume_1_1_&#45;&gt;inflow_1_3_outflow_1_1_volume_1_1_</title>
-<g id="a_edge47"><a xlink:title="continuous_valid: true&#10;derivative_valid: false&#10;magnitude_valid: true&#10;not_equal_valid: true&#10;point_range_valid: true&#10;transition_valid: true&#10;">
-<path fill="none" stroke="#000000" d="M242.0203,-1195.5009C297.1467,-1147.5471 399.8153,-1062.8731 498.1399,-1006.647 529.6524,-988.6268 539.7686,-988.5352 573.6928,-975.6156 657.0703,-943.8622 754.6606,-910.1818 815.7139,-889.5229"/>
-<polygon fill="#000000" stroke="#000000" points="817.208,-892.7125 825.562,-886.1962 814.9678,-886.0807 817.208,-892.7125"/>
+<g id="a_edge44"><a xlink:title="continuous_valid: true&#10;derivative_valid: false&#10;magnitude_valid: true&#10;not_equal_valid: true&#10;point_range_valid: true&#10;transition_valid: true&#10;">
+<path fill="none" stroke="#000000" d="M242.0163,-1195.5778C297.1313,-1147.7153 399.7576,-1063.1716 497.9288,-1006.8582 529.4171,-988.7958 539.4866,-988.5777 573.3947,-975.616 656.9781,-943.6653 754.9083,-909.9458 816.0126,-889.3416"/>
+<polygon fill="#000000" stroke="#000000" points="817.1345,-892.657 825.4955,-886.1497 814.9014,-886.0228 817.1345,-892.657"/>
 </a>
 </g>
 </g>
 <!-- inflow_1_3_outflow_1_2_volume_1_1_&#45;&gt;inflow_1_3_outflow_1_2_volume_1_2_ -->
-<g id="edge46" class="edge">
+<g id="edge45" class="edge">
 <title>inflow_1_3_outflow_1_2_volume_1_1_&#45;&gt;inflow_1_3_outflow_1_2_volume_1_2_</title>
-<g id="a_edge46"><a xlink:title="continuous_valid: true&#10;derivative_valid: true&#10;magnitude_valid: true&#10;not_equal_valid: true&#10;point_range_valid: true&#10;transition_valid: true&#10;">
-<path fill="none" stroke="#000000" d="M220.2411,-1180.6366C254.2623,-1088.9426 325.2637,-897.5795 361.6393,-799.5401"/>
-<polygon fill="#000000" stroke="#000000" points="364.9581,-800.6566 365.1553,-790.0636 358.3953,-798.2216 364.9581,-800.6566"/>
+<g id="a_edge45"><a xlink:title="continuous_valid: true&#10;derivative_valid: true&#10;magnitude_valid: true&#10;not_equal_valid: true&#10;point_range_valid: true&#10;transition_valid: true&#10;">
+<path fill="none" stroke="#000000" d="M220.2411,-1180.6375C254.2623,-1088.9435 325.2637,-897.5804 361.6393,-799.5409"/>
+<polygon fill="#000000" stroke="#000000" points="364.9581,-800.6574 365.1553,-790.0644 358.3953,-798.2224 364.9581,-800.6574"/>
 </a>
 </g>
 </g>
@@ -699,29 +699,29 @@
 <g id="node23" class="node">
 <title>inflow_1_3_outflow_1_2_volume_0_2_</title>
 <g id="a_node23"><a xlink:title="correspondence_valid: false&#10;derivatives:&#10;&#45; In may go up from +&#10;&#45; Vol will stay at 0&#10;&#45; Out will stay at +&#10;extreme_valid: true&#10;valid: false&#10;">
-<ellipse fill="none" stroke="#000000" cx="919.2944" cy="-1257.5944" rx="54.3945" ry="54.3945"/>
-<text text-anchor="middle" x="919.2944" y="-1276.3944" font-family="Times,serif" font-size="14.00" fill="#000000">State 23</text>
-<text text-anchor="middle" x="919.2944" y="-1261.3944" font-family="Times,serif" font-size="14.00" fill="#000000">In: (+, +)</text>
-<text text-anchor="middle" x="919.2944" y="-1246.3944" font-family="Times,serif" font-size="14.00" fill="#000000">Vol: (0, 0)</text>
-<text text-anchor="middle" x="919.2944" y="-1231.3944" font-family="Times,serif" font-size="14.00" fill="#000000">Out: (+, 0)</text>
+<ellipse fill="none" stroke="#000000" cx="919.2944" cy="-1257.5953" rx="54.3945" ry="54.3945"/>
+<text text-anchor="middle" x="919.2944" y="-1276.3953" font-family="Times,serif" font-size="14.00" fill="#000000">State 22</text>
+<text text-anchor="middle" x="919.2944" y="-1261.3953" font-family="Times,serif" font-size="14.00" fill="#000000">In: (+, +)</text>
+<text text-anchor="middle" x="919.2944" y="-1246.3953" font-family="Times,serif" font-size="14.00" fill="#000000">Vol: (0, 0)</text>
+<text text-anchor="middle" x="919.2944" y="-1231.3953" font-family="Times,serif" font-size="14.00" fill="#000000">Out: (+, 0)</text>
 </a>
 </g>
 </g>
 <!-- inflow_1_3_outflow_1_2_volume_1_1_&#45;&gt;inflow_1_3_outflow_1_2_volume_0_2_ -->
-<g id="edge48" class="edge">
+<g id="edge46" class="edge">
 <title>inflow_1_3_outflow_1_2_volume_1_1_&#45;&gt;inflow_1_3_outflow_1_2_volume_0_2_</title>
-<g id="a_edge48"><a xlink:title="continuous_valid: true&#10;derivative_valid: true&#10;magnitude_valid: true&#10;not_equal_valid: true&#10;point_range_valid: true&#10;transition_valid: true&#10;">
-<path fill="none" stroke="#000000" d="M255.7394,-1233.9684C386.0225,-1238.6072 714.7769,-1250.3126 854.6706,-1255.2935"/>
-<polygon fill="#000000" stroke="#000000" points="854.6941,-1258.7965 864.8123,-1255.6546 854.9432,-1251.8009 854.6941,-1258.7965"/>
+<g id="a_edge46"><a xlink:title="continuous_valid: true&#10;derivative_valid: true&#10;magnitude_valid: true&#10;not_equal_valid: true&#10;point_range_valid: true&#10;transition_valid: true&#10;">
+<path fill="none" stroke="#000000" d="M255.7394,-1233.9693C386.0225,-1238.608 714.7769,-1250.3134 854.6706,-1255.2943"/>
+<polygon fill="#000000" stroke="#000000" points="854.6941,-1258.7973 864.8123,-1255.6554 854.9432,-1251.8017 854.6941,-1258.7973"/>
 </a>
 </g>
 </g>
 <!-- inflow_1_3_outflow_1_2_volume_0_2_&#45;&gt;inflow_1_3_outflow_0_3_volume_0_3_ -->
-<g id="edge49" class="edge">
+<g id="edge47" class="edge">
 <title>inflow_1_3_outflow_1_2_volume_0_2_&#45;&gt;inflow_1_3_outflow_0_3_volume_0_3_</title>
-<g id="a_edge49"><a xlink:title="continuous_valid: true&#10;derivative_valid: false&#10;magnitude_valid: false&#10;not_equal_valid: true&#10;point_range_valid: true&#10;transition_valid: true&#10;">
-<path fill="none" stroke="#000000" d="M973.3038,-1248.4717C1031.2932,-1238.6768 1123.3617,-1223.1256 1184.8594,-1212.738"/>
-<polygon fill="#000000" stroke="#000000" points="1185.5574,-1216.1698 1194.8348,-1211.0531 1184.3915,-1209.2676 1185.5574,-1216.1698"/>
+<g id="a_edge47"><a xlink:title="continuous_valid: true&#10;derivative_valid: false&#10;magnitude_valid: false&#10;not_equal_valid: true&#10;point_range_valid: true&#10;transition_valid: true&#10;">
+<path fill="none" stroke="#000000" d="M973.3038,-1248.4726C1031.2932,-1238.6776 1123.3617,-1223.1264 1184.8594,-1212.7388"/>
+<polygon fill="#000000" stroke="#000000" points="1185.5574,-1216.1706 1194.8348,-1211.0539 1184.3915,-1209.2684 1185.5574,-1216.1706"/>
 </a>
 </g>
 </g>
