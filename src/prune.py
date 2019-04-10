@@ -34,10 +34,10 @@ def zip_pair(tpl: Tuple[Dict[str, Enum], Dict[str, Direction]]) -> Dict[str, Qua
 
 # TODO: incorporate transformation based on check_extremes
 def next_derivatives(entity_state: EntityState, is_direct: bool) -> Set[Dict[str, Direction]]:
-    entity = entity_state.entity
+    state =     entity_state.state
+    entity =    entity_state.entity
     relations = entity.relations
-    state = entity_state.state
-    quantities = entity_state.entity.quantities
+    quantities = entity.quantities
 
     # Dictionary to keep track of the derivative directions of dependent quantities
     effect_sets = relation_effects(state, relations, is_direct)
@@ -64,7 +64,7 @@ def derivative_options(relation_derivative: Direction, qty: Quantity, pair: Quan
         return {Direction.NEUTRAL}
     else:
         # otherwise return the derivative as altered by any relationships
-        return {deriv}.union(move_derivative(deriv, relation_derivative))
+        return move_derivative(deriv, relation_derivative)
 
 def extreme_direction(magnitude: Enum, enum: EnumMeta) -> Direction:
     '''get a direction from a magnitude based on whether it is at the

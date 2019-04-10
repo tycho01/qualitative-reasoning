@@ -75,12 +75,6 @@ def test_next_derivatives_clipping():
     }
 
     assert next_derivatives(entity_state_clip, False) == {
-        # not ok, this implies that the relation from volume to outflow is only optionally applied
-        FrozenDict({
-            'volume': Direction.NEUTRAL,
-            'inflow': Direction.NEUTRAL,
-            'outflow': Direction.NEUTRAL,
-        }),
         FrozenDict({
             # volume direction forced to neutral by the extremity check
             'volume': Direction.NEUTRAL,
@@ -88,6 +82,12 @@ def test_next_derivatives_clipping():
             'outflow': Direction.POSITIVE,
         }),
     }
+
+def test_derivative_options():
+    relation_derivative = Direction.POSITIVE
+    qty = Quantity('outflow', Outflow)
+    pair = QuantityPair(Outflow.ZERO, Direction.NEUTRAL)
+    assert derivative_options(relation_derivative, qty, pair) == {Direction.POSITIVE}
 
 def test_correspondence_reqs():
     assert correspondence_reqs(entity_state) == {
@@ -261,4 +261,4 @@ def test_simulate_exogeneous_behaviour():
         'outflow': (Outflow.ZERO, Direction.NEUTRAL),
     }
     entity_state = make_entity_state(container, container_state)
-    assert simulate_exogeneous_behaviour(entity_state) in [Direction.NEUTRAL, Direction.POSITIVE]
+    assert simulate_exogeneous_behaviour(entity_state) == {Direction.NEGATIVE, Direction.NEUTRAL, Direction.POSITIVE}
