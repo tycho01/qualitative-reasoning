@@ -15,8 +15,9 @@ container_state_bonus = {
 }
 
 entity_state = make_entity_state(container, container_state)
+# entity_state = make_entity_state(bonus_container, container_state_bonus)
 sg = gen_state_graph(entity_state)
-# sg = gen_state_graph(bonus_container)
+
 print(f"states: {len(sg.states)}")
 print(f"edges: {len(sg.edges)}")
 draw_state_graph(sg)
