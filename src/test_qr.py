@@ -25,7 +25,7 @@ def test_state_key():
 
 def test_inter_state_trace():
     # print(inter_state_trace(entity_state, entity_state))
-    assert inter_state_trace(entity_state, entity_state) == '''continuous_valid: true\nnot_equal_valid: false\npoint_range_valid: true\n'''
+    assert inter_state_trace(entity_state, entity_state) == '''continuous_valid: true\nderivative_valid: true\nmagnitude_valid: false\nnot_equal_valid: false\npoint_range_valid: true\ntransition_valid: false\n'''
 
 # def test_intra_state_trace():
 #     # print(intra_state_trace(entity_state))

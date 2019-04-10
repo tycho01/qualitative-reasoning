@@ -227,6 +227,85 @@ def is_point(magnitude: Enum) -> bool:
     '''check if a magnitude is a point value. presumes point values are encoded as even, ranges as odd numbers.'''
     return magnitude.value % 2 == 0
 
+def check_value_correspondence(entity_state: EntityState) -> bool:
+    '''check if a state is deemed valid by its value correspondence rules'''
+    state = entity_state.state
+    entity = entity_state.entity
+    for relation in entity.relations:
+        if type(relation) == ValueCorrespondence:
+            if not qty_matches(state, relation.a) == qty_matches(state, relation.b):
+                return False
+    return True
+
+def compare_derivatives(old: Direction, new: Direction) -> Direction:
+    '''return a relative Direction between Directions. if equal yields Neutral (rather than Question).'''
+    return Direction.NEUTRAL if old == new else Direction.POSITIVE if new.value > old.value else Direction.NEGATIVE
+
+def check_extremes(entity_state: EntityState) -> bool:
+    '''ensure derivatives are clipped when the magnitudes are at an extreme point'''
+    state = entity_state.state
+    quantities = entity_state.entity.quantities
+    for k, pair in state.items():
+        mag = pair.magnitude
+        der = pair.derivative
+        enum = quantities[k].quantitySpace
+        side = extreme_direction(mag, enum)
+        if is_point(mag) and der == side and der != Direction.NEUTRAL:
+            return False
+    return True
+
+def derivatives_match(a: EntityState, b: EntityState) -> bool:
+    '''check derivative changes given the quantity relationships.'''
+    # state1: Dict[str, QuantityPair], state2: Dict[str, QuantityPair], relations: List[Relation]
+    state1 = a.state
+    state2 = b.state
+    relations = a.entity.relations
+    derivatives1 = state_derivatives(state1)
+    derivatives2 = state_derivatives(state2)
+    # Dictionary to keep track of the derivative directions of dependant quantities
+    effect_sets = relation_effects(state1, relations, True)  # TODO: add False
+    # Determine the overall derivative direction for the target quantities
+    relation_derivatives = {k: combine_derivatives(directions) for k, directions in effect_sets.items()}
+    # check if state2 derivatives are compatible with relation_derivatives:
+    # filter out QUESTIONs
+    known = [k for k, v in relation_derivatives.items() if v != Direction.QUESTION]
+
+    # check other vals add up, i.e. as close to the combined effect in state2 
+    # as in state1. note that while this may not filter out jumps from negative
+    # to positive, these will be caught in the continuous check instead.
+    for k in known:
+        effect = relation_derivatives[k]
+        change = compare_derivatives(derivatives1[k], derivatives2[k])
+        if not change in {Direction.NEUTRAL, effect}:
+            return False
+    return True
+
+def magnitudes_match(a: EntityState, b: EntityState) -> bool:
+    '''check magnitude changes from state1 to state2 match the state2 derivatives'''
+    change_derivatives = check_magnitude_changes(a.state, b.state)
+    for k in a.state:
+        pair1 = a.state[k]
+        mag1 = pair1.magnitude
+        der1 = pair1.derivative
+        change = change_derivatives[k]
+        if is_point(mag1):
+            # point magnitudes *must* change a step according to the derivative (diff == derivative)
+            if change != der1:
+                return False
+        else:
+            # range magnitudes *might* change a step according to the derivative.
+            if not change in {Direction.NEUTRAL, der1}:
+                return False
+    return True
+
+def state_derivatives(state: Dict[str, QuantityPair]) -> Dict[str, Direction]:
+    '''return the derivatives of a state'''
+    return {k: qty.derivative for k, qty in state.items()}
+
+def state_valid(entity_state: EntityState) -> bool:
+    '''confirm a state is valid based on value correspondence and extremity checks'''
+    return check_value_correspondence(entity_state) and check_extremes(entity_state)
+
 def check_not_equal(stateA: EntityState, stateB: EntityState) -> bool:
     '''confirm two states are distinct'''
     return stateA != stateB

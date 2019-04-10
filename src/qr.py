@@ -83,18 +83,20 @@ def pretty_print(entity_state: EntityState, idx: int) -> str:
 
 def inter_state_trace(a: EntityState, b: EntityState) -> str:
     '''inter-state trace, showing states and transition validity by the various rules'''
+    magnitude = magnitudes_match(a, b)
+    derivative = derivatives_match(a, b)
     # potential improvement: show why stuff changed
     continuous = check_continuous(a, b)
     point_range = check_point_range(a, b)
     not_equal = check_not_equal(a, b)
-    # valid = check_transition(a, b)
+    valid = check_transition(a, b)
     return yaml.dump({
-        # 'magnitude_valid': magnitude,
-        # 'derivative_valid': derivative,
+        'magnitude_valid': magnitude,
+        'derivative_valid': derivative,
         'continuous_valid': continuous,
         'point_range_valid': point_range,
         'not_equal_valid': not_equal,
-        # 'transition_valid': valid,
+        'transition_valid': valid,
         # 'a': intra_state_trace(a),
         # 'b': intra_state_trace(b),
     })
@@ -111,10 +113,16 @@ def intra_state_trace(entity_state: EntityState) -> str:
     '''intra-state trace, showing type, validity, and state'''
     # potential improvement: show how things will change (i.e. after adding in question marks?)
     # state = {k: (pair.magnitude.name, pair.derivative.name) for k, pair in entity_state.state.items()}
+    correspondence_valid = check_value_correspondence(entity_state)
+    extreme_valid = check_extremes(entity_state)
+    valid = state_valid(entity_state)
     derivatives = [f"{serialize_quantity(k)} {'will' if is_point(pair.magnitude) or pair.derivative == Direction.NEUTRAL else 'may'} {serialize_change(pair.derivative)} {serialize_magnitude(pair.magnitude)}" for k, pair in entity_state.state.items()]
     return yaml.dump({
         # 'type': entity_state.entity.name,
         'derivatives': derivatives,
+        'correspondence_valid': correspondence_valid,
+        'extreme_valid': extreme_valid,
+        'valid': valid,
         # 'state': state,
     })
 
