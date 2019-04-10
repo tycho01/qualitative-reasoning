@@ -79,7 +79,7 @@ def pretty_print(entity_state: EntityState, idx: int) -> str:
         'height',
     ]
     hash = ''.join([f"{serialize_magnitude(state[k].magnitude)}{serialize_derivative(state[k].derivative)}" for k in keys if k in state])
-    return f'State {idx}\n{hash}\n' + '\n'.join([f"{serialize_quantity(k)}: ({serialize_magnitude(state[k].magnitude)}, {serialize_derivative(state[k].derivative)})" for k in keys if k in state])
+    return f'State {idx}\n[{hash}]\n' + '\n'.join([f"{serialize_quantity(k)}: ({serialize_magnitude(state[k].magnitude)}, {serialize_derivative(state[k].derivative)})" for k in keys if k in state])
 
 def inter_state_trace(a: EntityState, b: EntityState) -> str:
     '''inter-state trace, showing states and transition validity by the various rules'''
