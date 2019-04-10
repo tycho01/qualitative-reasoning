@@ -19,18 +19,12 @@ def test_next_states():
 
 def test_derivative_states():
 
-    assert derivative_states(
-        EntityState(container, {
-            'volume': QuantityPair(Volume.ZERO, Direction.NEUTRAL),
-            'inflow': QuantityPair(Inflow.PLUS, Direction.POSITIVE),
-            'outflow': QuantityPair(Outflow.ZERO, Direction.NEUTRAL),
-        })
-    ) == {
-        EntityState(container, {
-            'volume': QuantityPair(Volume.ZERO, Direction.POSITIVE),
-            'inflow': QuantityPair(Inflow.PLUS, Direction.NEUTRAL),
-            'outflow': QuantityPair(Outflow.ZERO, Direction.POSITIVE),
-        }),
+    es = EntityState(container, {
+        'volume': QuantityPair(Volume.ZERO, Direction.NEUTRAL),
+        'inflow': QuantityPair(Inflow.PLUS, Direction.POSITIVE),
+        'outflow': QuantityPair(Outflow.ZERO, Direction.NEUTRAL),
+    })
+    assert derivative_states(es, es) == {
         EntityState(container, {
             'volume': QuantityPair(Volume.ZERO, Direction.POSITIVE),
             'inflow': QuantityPair(Inflow.PLUS, Direction.POSITIVE),
