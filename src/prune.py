@@ -124,9 +124,13 @@ def correspondence_reqs(entity_state: EntityState) -> Dict[str, Set[Enum]]:
     state = entity_state.state
     reqs = {k: set() for k in state}
     for relation in entity.relations:
-        if type(relation) == ValueCorrespondence and qty_matches(state, relation.a):
-            (k, magnitude) = relation.b
-            reqs[k].add(magnitude)
+        if type(relation) == ValueCorrespondence:
+            if qty_matches(state, relation.a):
+                (k, magnitude) = relation.b
+                reqs[k].add(magnitude)
+            if qty_matches(state, relation.b):
+                (k, magnitude) = relation.a
+                reqs[k].add(magnitude)
     return reqs
 
 def move_magnitude(pair: QuantityPair, space: EnumMeta) -> Enum:
