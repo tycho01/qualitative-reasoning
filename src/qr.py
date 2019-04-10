@@ -4,7 +4,6 @@ from enum import Enum, EnumMeta
 from typing import List, Dict, Tuple
 from qr_types import *
 
-import re
 import yaml
 import itertools
 from prune import *
@@ -45,10 +44,6 @@ def handle_state(
             (nodes, edges) = handle_state(next_state, nodes, edges, next_k)
     return (nodes, edges)
 
-def serialize_state(state: EntityState) -> str:
-    '''simple serialization method for EntityState'''
-    return yaml.dump({k: f"({pair.magnitude.value}, {pair.derivative.value})" for k, pair in state.state.items()})
-
 def serialize_derivative(derivative: Direction) -> str:
     return {
         Direction.POSITIVE: '+',
@@ -85,10 +80,6 @@ def pretty_print(entity_state: EntityState, idx: int) -> str:
     ]
     hash = ''.join([f"{serialize_magnitude(state[k].magnitude)}{serialize_derivative(state[k].derivative)}" for k in keys if k in state])
     return f'State {idx}\n{hash}\n' + '\n'.join([f"{serialize_quantity(k)}: ({serialize_magnitude(state[k].magnitude)}, {serialize_derivative(state[k].derivative)})" for k in keys if k in state])
-
-def state_key(state: EntityState) -> str:
-    '''serialize state for graph key purposes'''
-    return re.sub(r"[^\w]+", '_', serialize_state(state))
 
 def inter_state_trace(a: EntityState, b: EntityState) -> str:
     '''inter-state trace, showing states and transition validity by the various rules'''

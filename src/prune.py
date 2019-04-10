@@ -2,22 +2,24 @@
 import copy
 from typing import List, Dict, Tuple, Set
 import itertools
+from frozen import FrozenDict
 from qr_types import *
 
-def next_states(entity_state: EntityState) -> List[EntityState]:
+def next_states(entity_state: EntityState) -> Set[EntityState]:
     entity = entity_state.entity
     state = entity_state.state
     magnitudes = next_magnitudes(entity_state)
     tmp_entity_states = list(map(lambda state_dict: EntityState(entity, {k: QuantityPair(magnitude, state[k].derivative) for k, magnitude in state_dict.items()}), magnitudes))
-    new_states = [b for a in tmp_entity_states for b in derivative_states(a)]
+    new_states = set([b for a in tmp_entity_states for b in derivative_states(a)])
     return new_states
 
 def derivative_states(a: EntityState) -> List[EntityState]:
     options = []
+    # options based on influence relations
     for deriv_dict_direct in next_derivatives(a, True):
         state1 = {k: QuantityPair(a.state[k].magnitude, derivative) for k, derivative in deriv_dict_direct.items()}
         b1 = EntityState(a.entity, state1)
-        # proportionality_effect_sets = relation_effects(state, a.entity.relations, False)
+        # options based on proportionality relations
         for deriv_dict_indirect in next_derivatives(b1, False):
             state2 = {k: QuantityPair(a.state[k].magnitude, derivative) for k, derivative in deriv_dict_direct.items()}
             b2 = EntityState(a.entity, state2)
@@ -30,7 +32,7 @@ def zip_pair(tpl: Tuple[Dict[str, Enum], Dict[str, Direction]]) -> Dict[str, Qua
     return {k: QuantityPair(magnitude, derivative_dict[k]) for k, magnitude in magnitude_dict.items()}
 
 # TODO: incorporate transformation based on check_extremes
-def next_derivatives(entity_state: EntityState, is_direct: bool) -> List[Dict[str, Direction]]:
+def next_derivatives(entity_state: EntityState, is_direct: bool) -> Set[Dict[str, Direction]]:
     entity = entity_state.entity
     relations = entity.relations
     state = entity_state.state
@@ -47,7 +49,7 @@ def next_derivatives(entity_state: EntityState, is_direct: bool) -> List[Dict[st
                 derivative_options(relation_derivatives[k], quantities[k], pair)
             ))
         for k, pair in state.items()}
-    derivative_combinations = list(map(dict, itertools.product(*next_derivs.values())))
+    derivative_combinations = set(map(FrozenDict, itertools.product(*next_derivs.values())))
     return derivative_combinations
 
 def derivative_options(relation_derivative: Direction, qty: Quantity, pair: QuantityPair) -> Set[Direction]:
@@ -77,7 +79,7 @@ def move_derivative(derivative: Direction, effect: Direction) -> Set[Direction]:
         set([derivative]).union(move_derivative(derivative, Direction.POSITIVE)).union(move_derivative(derivative, Direction.NEGATIVE)) if effect == Direction.QUESTION else \
         {effect} if derivative == Direction.NEUTRAL else {derivative}
 
-def next_magnitudes(entity_state: EntityState) -> List[Dict[str, Enum]]:
+def next_magnitudes(entity_state: EntityState) -> Set[Dict[str, Enum]]:
     state = entity_state.state
     entity = entity_state.entity
 
@@ -93,7 +95,7 @@ def next_magnitudes(entity_state: EntityState) -> List[Dict[str, Enum]]:
         list(map(lambda x: (k, x), magnitude_options(req_vals[k], pair, entity.quantities[k].quantitySpace)))
         for k, pair in state.items()
     }
-    magnitude_combinations = list(map(dict, itertools.product(*magnitudes.values())))
+    magnitude_combinations = set(map(FrozenDict, itertools.product(*magnitudes.values())))
     return magnitude_combinations
 
 def magnitude_options(reqs: Dict[str, Set[Enum]], pair: QuantityPair, space: EnumMeta) -> Set[Enum]:

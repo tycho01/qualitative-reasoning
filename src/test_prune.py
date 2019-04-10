@@ -1,21 +1,25 @@
+from frozen import FrozenDict
 from prune import *
 from mock import *
 
 def test_next_states():
-    assert next_states(entity_state) == [
+    print(next_states(entity_state))
+    assert next_states(entity_state) == {
         EntityState(container, {
-            'volume': QuantityPair(Volume.ZERO, Direction.NEUTRAL),
+            'volume': QuantityPair(Volume.ZERO, Direction.POSITIVE),
             'inflow': QuantityPair(Inflow.PLUS, Direction.POSITIVE),
             'outflow': QuantityPair(Outflow.ZERO, Direction.NEUTRAL)
-        })
-    ]
+        }),
+    }
 
 def test_next_magnitudes():
-    assert next_magnitudes(entity_state) == [{
-        'inflow': Inflow.PLUS,
-        'outflow': Outflow.ZERO,
-        'volume': Volume.ZERO,
-    }]
+    assert next_magnitudes(entity_state) == {
+        FrozenDict({
+            'inflow': Inflow.PLUS,
+            'outflow': Outflow.ZERO,
+            'volume': Volume.ZERO,
+        }),
+    }
 
 def test_next_magnitudes_point_interval():
     container_state_point = {
@@ -24,31 +28,35 @@ def test_next_magnitudes_point_interval():
         'outflow': (Outflow.ZERO, Direction.NEUTRAL),
     }
     entity_state_point = make_entity_state(container, container_state_point)
-    assert next_magnitudes(entity_state_point) == [
+    assert next_magnitudes(entity_state_point) == {
         # points move before ranges
-        {
+        FrozenDict({
             'volume': Volume.PLUS,
             'inflow': Inflow.PLUS,
             'outflow': Outflow.ZERO,
-        }
-    ]
+        }),
+    }
 
 def test_zip_pair():
     assert zip_pair(({'volume': Volume.PLUS}, {'volume': Direction.POSITIVE})) == {'volume': QuantityPair(Volume.PLUS, Direction.POSITIVE)}
 
 def test_next_derivatives_direct():
-    assert next_derivatives(entity_state, True) == [{
-        'volume': Direction.NEUTRAL,
-        'inflow': Direction.POSITIVE,
-        'outflow': Direction.NEUTRAL,
-    }]
+    assert next_derivatives(entity_state, True) == {
+        FrozenDict({
+            'volume': Direction.NEUTRAL,
+            'inflow': Direction.POSITIVE,
+            'outflow': Direction.NEUTRAL,
+        }),
+    }
 
 def test_next_derivatives_indirect():
-    assert next_derivatives(entity_state, False) == [{
-        'volume': Direction.NEUTRAL,
-        'inflow': Direction.POSITIVE,
-        'outflow': Direction.NEUTRAL,
-    }]
+    assert next_derivatives(entity_state, False) == {
+        FrozenDict({
+            'volume': Direction.NEUTRAL,
+            'inflow': Direction.POSITIVE,
+            'outflow': Direction.NEUTRAL,
+        }),
+    }
 
 def test_next_derivatives_clipping():
     container_state_clip = {
@@ -57,19 +65,29 @@ def test_next_derivatives_clipping():
         'outflow': (Outflow.ZERO, Direction.NEUTRAL),
     }
     entity_state_clip = make_entity_state(container, container_state_clip)
-    assert next_derivatives(entity_state_clip, True) == [
-        {
+
+    assert next_derivatives(entity_state_clip, True) == {
+        FrozenDict({
             'volume': Direction.NEUTRAL,
             'inflow': Direction.NEUTRAL,
             'outflow': Direction.NEUTRAL,
-        },
-        {
+        }),
+    }
+
+    assert next_derivatives(entity_state_clip, False) == {
+        # not ok, this implies that the relation from volume to outflow is only optionally applied
+        FrozenDict({
+            'volume': Direction.NEUTRAL,
+            'inflow': Direction.NEUTRAL,
+            'outflow': Direction.NEUTRAL,
+        }),
+        FrozenDict({
             # volume direction forced to neutral by the extremity check
             'volume': Direction.NEUTRAL,
             'inflow': Direction.NEUTRAL,
             'outflow': Direction.POSITIVE,
-        }
-    ]
+        }),
+    }
 
 def test_move_derivative():
     assert move_derivative(Direction.POSITIVE, Direction.QUESTION) == set([Direction.POSITIVE, Direction.NEUTRAL])
@@ -88,6 +106,7 @@ def test_relation_effects():
         []
         , False
     ) == {'volume': set()}
+
     assert relation_effects(
         {
             'volume': QuantityPair(Volume.PLUS, Direction.POSITIVE),
@@ -96,19 +115,19 @@ def test_relation_effects():
         [
             Influence(Quantity('volume', Volume), Quantity('outflow', Outflow))
         ]
-        , False
+        , True
     ) == {'volume': set(), 'outflow': {Direction.POSITIVE}}
-    assert relation_effects(
-        {
-            'volume': QuantityPair(Volume.PLUS, Direction.POSITIVE),
-            'outflow': QuantityPair(Outflow.PLUS, Direction.POSITIVE)
-        },
-        [
-            Influence(   Quantity('volume', Volume), Quantity('outflow', Outflow)),
-            Proportional(Quantity('volume', Volume), Quantity('outflow', Outflow), Direction.NEGATIVE)
-        ]
-        , False
-        ) == {'volume': set(), 'outflow': {Direction.POSITIVE, Direction.NEGATIVE}}
+
+    state = {
+        'volume': QuantityPair(Volume.PLUS, Direction.POSITIVE),
+        'outflow': QuantityPair(Outflow.PLUS, Direction.POSITIVE)
+    }
+    relations = [
+        Influence(   Quantity('volume', Volume), Quantity('outflow', Outflow)),
+        Proportional(Quantity('volume', Volume), Quantity('outflow', Outflow), Direction.NEGATIVE)
+    ]
+    assert relation_effects(state, relations, False) == {'volume': set(), 'outflow': {Direction.NEGATIVE}}
+    assert relation_effects(state, relations, True) == {'volume': set(), 'outflow': {Direction.POSITIVE}}
 
 def test_combine_derivatives():
     assert combine_derivatives(set()) == Direction.NEUTRAL
