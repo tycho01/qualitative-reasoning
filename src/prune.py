@@ -1,5 +1,4 @@
 # Importing the Libraries
-import numpy as np
 import copy
 from typing import List, Dict, Tuple, Set
 import itertools
@@ -15,17 +14,28 @@ def next_states(entity_state: EntityState) -> Set[EntityState]:
     return new_states
 
 def derivative_states(a: EntityState) -> List[EntityState]:
+    all_directions = {Direction.POSITIVE, Direction.NEUTRAL, Direction.NEGATIVE}
     options = []
+    relations = a.entity.relations
     # options based on influence relations
-    for deriv_dict_direct in next_derivatives(a, True):
+    influence_effects = relation_effects(a.state, relations, True)
+    for deriv_dict_direct in next_derivatives(a, influence_effects):
         state1 = {k: QuantityPair(a.state[k].magnitude, derivative) for k, derivative in deriv_dict_direct.items()}
         b1 = EntityState(a.entity, state1)
         # options based on proportionality relations
-        for deriv_dict_indirect in next_derivatives(b1, False):
+        proportionality_effects = relation_effects(b1.state, relations, False)
+        for deriv_dict_indirect in next_derivatives(b1, proportionality_effects):
             state2 = {k: QuantityPair(a.state[k].magnitude, derivative) for k, derivative in deriv_dict_direct.items()}
             b2 = EntityState(a.entity, state2)
-            if check_transition(a, b2):
-                options.append(b2)
+            # options based on exogenous actions
+            exogenous_effects = {k: all_directions if is_exogenous else {Direction.NEUTRAL} for k, is_exogenous in a.entity.exogenous_dict.items()}
+            for deriv_dict_exogenous in next_derivatives(b2, exogenous_effects):
+                state3 = {k: QuantityPair(a.state[k].magnitude, derivative) for k, derivative in deriv_dict_exogenous.items()}
+                b3 = EntityState(a.entity, state3)
+                if check_transition(a, b3):
+                    # TODO: somehow mark the edge as exogenously influnced?
+                    print()
+                    options.append(b3)
     return options
 
 def zip_pair(tpl: Tuple[Dict[str, Enum], Dict[str, Direction]]) -> Dict[str, QuantityPair]:
@@ -33,14 +43,11 @@ def zip_pair(tpl: Tuple[Dict[str, Enum], Dict[str, Direction]]) -> Dict[str, Qua
     return {k: QuantityPair(magnitude, derivative_dict[k]) for k, magnitude in magnitude_dict.items()}
 
 # TODO: incorporate transformation based on check_extremes
-def next_derivatives(entity_state: EntityState, is_direct: bool) -> Set[Dict[str, Direction]]:
+def next_derivatives(entity_state: EntityState, effect_sets: Dict[str, Direction]) -> Set[Dict[str, Direction]]:
     state =     entity_state.state
     entity =    entity_state.entity
-    relations = entity.relations
     quantities = entity.quantities
 
-    # Dictionary to keep track of the derivative directions of dependent quantities
-    effect_sets = relation_effects(state, relations, is_direct)
     # Determine the overall derivative direction for the target quantities
     relation_derivatives = {k: combine_derivatives(directions) for k, directions in effect_sets.items()}
     # check if state2 derivatives are compatible with relation_derivatives:
@@ -227,22 +234,3 @@ def check_not_equal(stateA: EntityState, stateB: EntityState) -> bool:
 def check_transition(a: EntityState, b: EntityState) -> bool:
     '''confirm a source state can transition into a target state'''
     return check_continuous(a, b) and check_point_range(a, b) and check_not_equal(a, b)
-
-def simulate_exogeneous_behaviour(a : EntityState) -> Direction:
-    # Output
-    exogenous_inflow_derivative = None
-
-    # Extracting the Inflow Quantity
-    a_inflow_derivative = a.state['inflow'].derivative
-    
-    # Simulating the random exogenous behaviour satisfying the continuity constraint
-    if a_inflow_derivative == Direction.NEGATIVE:
-        exogenous_inflow_derivative = np.random.choice([Direction.NEGATIVE, Direction.NEUTRAL])
-    elif a_inflow_derivative == Direction.NEUTRAL:
-        exogenous_inflow_derivative = np.random.choice([Direction.NEGATIVE, Direction.NEUTRAL, Direction.POSITIVE])
-    elif a_inflow_derivative == Direction.POSITIVE:
-        exogenous_inflow_derivative = np.random.choice([Direction.POSITIVE, Direction.NEUTRAL])
-    
-    # Return the Exogenous Derivative
-    return exogenous_inflow_derivative
-

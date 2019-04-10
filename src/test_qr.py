@@ -4,7 +4,7 @@ from mock import *
 from graph import *
 
 def test_make_entity():
-    entity = make_entity('container', quantities, relations)
+    entity = make_entity('container', quantities, relations, {})
     assert entity.quantities['volume'] == Quantity('volume', Volume)
 
 def test_make_entity_state():

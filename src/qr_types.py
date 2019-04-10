@@ -55,6 +55,7 @@ class Entity:
     quantities: Dict[str, Quantity]
     relations: List[Relation]
     # ^ out of scope: cross-entity relations
+    exogenous_dict: Dict[str, bool]
 
 @dataclass(frozen=True)
 class QuantityPair:

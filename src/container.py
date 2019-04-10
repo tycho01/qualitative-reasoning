@@ -117,5 +117,10 @@ all_relations = [
 
 # entities
 
-container = make_entity('container', quantities, relations)
-bonus_container = make_entity('container', all_quantities, all_relations)
+exogenous = {
+    'inflow': True,
+    'volume': False,
+    'outflow': False,
+}
+container = make_entity('container', quantities, relations, exogenous)
+bonus_container = make_entity('container', all_quantities, all_relations, exogenous)

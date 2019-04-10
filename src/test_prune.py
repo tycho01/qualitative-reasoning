@@ -7,8 +7,13 @@ def test_next_states():
     assert next_states(entity_state) == {
         EntityState(container, {
             'volume': QuantityPair(Volume.ZERO, Direction.POSITIVE),
+            'inflow': QuantityPair(Inflow.PLUS, Direction.NEUTRAL),
+            'outflow': QuantityPair(Outflow.ZERO, Direction.NEUTRAL),
+        }),
+        EntityState(container, {
+            'volume': QuantityPair(Volume.ZERO, Direction.POSITIVE),
             'inflow': QuantityPair(Inflow.PLUS, Direction.POSITIVE),
-            'outflow': QuantityPair(Outflow.ZERO, Direction.NEUTRAL)
+            'outflow': QuantityPair(Outflow.ZERO, Direction.NEUTRAL),
         }),
     }
 
@@ -41,7 +46,8 @@ def test_zip_pair():
     assert zip_pair(({'volume': Volume.PLUS}, {'volume': Direction.POSITIVE})) == {'volume': QuantityPair(Volume.PLUS, Direction.POSITIVE)}
 
 def test_next_derivatives_direct():
-    assert next_derivatives(entity_state, True) == {
+    effects = relation_effects(entity_state.state, container.relations, True)
+    assert next_derivatives(entity_state, effects) == {
         FrozenDict({
             'volume': Direction.NEUTRAL,
             'inflow': Direction.POSITIVE,
@@ -50,7 +56,8 @@ def test_next_derivatives_direct():
     }
 
 def test_next_derivatives_indirect():
-    assert next_derivatives(entity_state, False) == {
+    effects = relation_effects(entity_state.state, container.relations, False)
+    assert next_derivatives(entity_state, effects) == {
         FrozenDict({
             'volume': Direction.NEUTRAL,
             'inflow': Direction.POSITIVE,
@@ -66,7 +73,8 @@ def test_next_derivatives_clipping():
     }
     entity_state_clip = make_entity_state(container, container_state_clip)
 
-    assert next_derivatives(entity_state_clip, True) == {
+    effects = relation_effects(entity_state_clip.state, container.relations, True)
+    assert next_derivatives(entity_state_clip, effects) == {
         FrozenDict({
             'volume': Direction.NEUTRAL,
             'inflow': Direction.NEUTRAL,
@@ -74,7 +82,8 @@ def test_next_derivatives_clipping():
         }),
     }
 
-    assert next_derivatives(entity_state_clip, False) == {
+    effects = relation_effects(entity_state_clip.state, container.relations, False)
+    assert next_derivatives(entity_state_clip, effects) == {
         FrozenDict({
             # volume direction forced to neutral by the extremity check
             'volume': Direction.NEUTRAL,
@@ -253,12 +262,3 @@ def test_check_transition():
     entity_state_before = make_entity_state(container, container_state_before)
     entity_state_after = make_entity_state(container, container_state_after)
     assert check_transition(entity_state_before, entity_state_after) == True
-
-def test_simulate_exogeneous_behaviour():
-    container_state = {
-        'volume': (Volume.ZERO, Direction.NEUTRAL),
-        'inflow': (Inflow.ZERO, Direction.POSITIVE),
-        'outflow': (Outflow.ZERO, Direction.NEUTRAL),
-    }
-    entity_state = make_entity_state(container, container_state)
-    assert simulate_exogeneous_behaviour(entity_state) == {Direction.NEGATIVE, Direction.NEUTRAL, Direction.POSITIVE}

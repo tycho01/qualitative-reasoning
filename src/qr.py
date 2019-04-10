@@ -8,10 +8,10 @@ import yaml
 import itertools
 from prune import *
 
-def make_entity(name: str, quantities: List[Quantity], relations: List[Relationship]) -> Entity:
+def make_entity(name: str, quantities: List[Quantity], relations: List[Relationship], exogenous_dict: Dict[str, bool]) -> Entity:
     '''wrap the entity ctor to handle Quantity dict creation'''
     qty_dict = {qty.name: qty for qty in quantities}
-    return Entity(name, qty_dict, relations)
+    return Entity(name, qty_dict, relations, exogenous_dict)
 
 def make_entity_state(entity: Entity, state_dict: Dict[str, Tuple[Enum, Direction]]) -> EntityState:
     '''wrap the EntityState ctor to handle state dict creation'''
