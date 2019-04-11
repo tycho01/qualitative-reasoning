@@ -93,14 +93,16 @@ def inter_state_trace(a: EntityState, b: EntityState) -> str:
     not_equal = check_not_equal(a, b)
     valid = check_transition(a, b)
     return yaml.dump({
-        'magnitude_valid': magnitude,
-        'derivative_valid': derivative,
-        'continuous_valid': continuous,
-        'point_range_valid': point_range,
-        'not_equal_valid': not_equal,
-        'transition_valid': valid,
-        # 'a': intra_state_trace(a),
-        # 'b': intra_state_trace(b),
+        'debugging_trace': {
+            'magnitude_valid': magnitude,
+            'derivative_valid': derivative,
+            'continuous_valid': continuous,
+            'point_range_valid': point_range,
+            'not_equal_valid': not_equal,
+            'transition_valid': valid,
+        },
+        'a': intra_state_trace_helper(a),
+        'b': intra_state_trace_helper(b),
     })
 
 def serialize_change(derivative: Direction) -> str:
@@ -111,22 +113,28 @@ def serialize_change(derivative: Direction) -> str:
         Direction.QUESTION: 'go any way from',
     }[derivative]
 
-def intra_state_trace(entity_state: EntityState) -> str:
+def intra_state_trace_helper(entity_state: EntityState) -> Dict[str, str]:
     '''intra-state trace, showing type, validity, and state'''
     # potential improvement: show how things will change (i.e. after adding in question marks?)
-    # state = {k: (pair.magnitude.name, pair.derivative.name) for k, pair in entity_state.state.items()}
+    state = {k: {'magnitude': pair.magnitude.name, 'derivative': pair.derivative.name} for k, pair in entity_state.state.items()}
     correspondence_valid = check_value_correspondence(entity_state)
     extreme_valid = check_extremes(entity_state)
     valid = state_valid(entity_state)
     derivatives = [f"{serialize_quantity(k)} {'will' if is_point(pair.magnitude) or pair.derivative == Direction.NEUTRAL else 'may'} {serialize_change(pair.derivative)} {serialize_magnitude(pair.magnitude)}" for k, pair in entity_state.state.items()]
-    return yaml.dump({
-        # 'type': entity_state.entity.name,
+    return {
+        'type': entity_state.entity.name,
+        'state': state,
         'derivatives': derivatives,
-        'correspondence_valid': correspondence_valid,
-        'extreme_valid': extreme_valid,
-        'valid': valid,
-        # 'state': state,
-    })
+        'debugging_trace': {
+            'correspondence_valid': correspondence_valid,
+            'extreme_valid': extreme_valid,
+            'valid': valid,
+        }
+    }
+
+def intra_state_trace(entity_state: EntityState) -> str:
+    '''intra-state trace, showing type, validity, and state'''
+    return yaml.dump(intra_state_trace_helper(entity_state))
 
 def to_pairs(lst):
     return list(zip(*[lst[x::2] for x in (0, 1)]))
