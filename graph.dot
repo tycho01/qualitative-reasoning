@@ -12,517 +12,2477 @@ strict digraph "" {
 In: (0, +)
 Vol: (0, 0)
 Out: (0, 0)",
-		tooltip="correspondence_valid: true
+		tooltip="debugging_trace:
+  correspondence_valid: true
+  extreme_valid: true
+  valid: true
 derivatives:
 - In will go up from 0
-- Vol will stay at 0
+- Vol will \
+stay at 0
 - Out will stay at 0
-extreme_valid: true
-valid: \
-true
+state:
+  inflow:
+    derivative: POSITIVE
+    magnitude: ZERO
+  outflow:
+    derivative: NEUTRAL
+    \
+magnitude: ZERO
+  volume:
+    derivative: NEUTRAL
+    magnitude: ZERO
+type: container
 "];
 	inflow_1_3_outflow_0_3_volume_0_3_	 [label="State 2
 In: (+, +)
 Vol: (0, +)
 Out: (0, +)",
-		tooltip="correspondence_valid: true
+		tooltip="debugging_trace:
+  correspondence_valid: true
+  extreme_valid: true
+  valid: true
 derivatives:
 - In may go up from +
-- Vol will go up from 0
+- Vol will \
+go up from 0
 - Out will go up from 0
-extreme_valid: true
-\
+state:
+  inflow:
+    derivative: POSITIVE
+    magnitude: PLUS
+  outflow:
+    derivative: POSITIVE
+    \
+magnitude: ZERO
+  volume:
+    derivative: POSITIVE
+    magnitude: ZERO
+type: container
+"];
+	inflow_0_3_outflow_0_2_volume_0_2_ -> inflow_1_3_outflow_0_3_volume_0_3_	 [tooltip="a:
+  debugging_trace:
+    correspondence_valid: true
+    extreme_valid: true
+    valid: true
+  derivatives:
+  - In will go up from \
+0
+  - Vol will stay at 0
+  - Out will stay at 0
+  state:
+    inflow:
+      derivative: POSITIVE
+      magnitude: ZERO
+    outflow:
+      \
+derivative: NEUTRAL
+      magnitude: ZERO
+    volume:
+      derivative: NEUTRAL
+      magnitude: ZERO
+  type: container
+b:
+  debugging_\
+trace:
+    correspondence_valid: true
+    extreme_valid: true
+    valid: true
+  derivatives:
+  - In may go up from +
+  - Vol will \
+go up from 0
+  - Out will go up from 0
+  state:
+    inflow:
+      derivative: POSITIVE
+      magnitude: PLUS
+    outflow:
+      \
+derivative: POSITIVE
+      magnitude: ZERO
+    volume:
+      derivative: POSITIVE
+      magnitude: ZERO
+  type: container
+debugging_\
+trace:
+  continuous_valid: true
+  derivative_valid: false
+  magnitude_valid: true
+  not_equal_valid: true
+  point_range_valid: true
+  \
+transition_valid: true
+"];
+	inflow_1_3_outflow_1_3_volume_1_2_	 [label="State 3
+In: (+, +)
+Vol: (+, 0)
+Out: (+, +)",
+		tooltip="debugging_trace:
+  correspondence_valid: true
+  extreme_valid: true
+  valid: true
+derivatives:
+- In may go up from +
+- Vol will \
+stay at +
+- Out may go up from +
+state:
+  inflow:
+    derivative: POSITIVE
+    magnitude: PLUS
+  outflow:
+    derivative: POSITIVE
+    \
+magnitude: PLUS
+  volume:
+    derivative: NEUTRAL
+    magnitude: PLUS
+type: container
+"];
+	inflow_1_3_outflow_0_3_volume_0_3_ -> inflow_1_3_outflow_1_3_volume_1_2_	 [tooltip="a:
+  debugging_trace:
+    correspondence_valid: true
+    extreme_valid: true
+    valid: true
+  derivatives:
+  - In may go up from +
+  \
+- Vol will go up from 0
+  - Out will go up from 0
+  state:
+    inflow:
+      derivative: POSITIVE
+      magnitude: PLUS
+    outflow:
+      \
+derivative: POSITIVE
+      magnitude: ZERO
+    volume:
+      derivative: POSITIVE
+      magnitude: ZERO
+  type: container
+b:
+  debugging_\
+trace:
+    correspondence_valid: true
+    extreme_valid: true
+    valid: true
+  derivatives:
+  - In may go up from +
+  - Vol will \
+stay at +
+  - Out may go up from +
+  state:
+    inflow:
+      derivative: POSITIVE
+      magnitude: PLUS
+    outflow:
+      derivative: \
+POSITIVE
+      magnitude: PLUS
+    volume:
+      derivative: NEUTRAL
+      magnitude: PLUS
+  type: container
+debugging_trace:
+  \
+continuous_valid: true
+  derivative_valid: false
+  magnitude_valid: true
+  not_equal_valid: true
+  point_range_valid: true
+  transition_\
 valid: true
 "];
-	inflow_0_3_outflow_0_2_volume_0_2_ -> inflow_1_3_outflow_0_3_volume_0_3_	 [tooltip="continuous_valid: true
-derivative_valid: false
-magnitude_valid: true
-not_equal_valid: true
-point_range_valid: true
-transition_valid: \
-true
-"];
-	inflow_1_3_outflow_1_3_volume_1_3_	 [label="State 3
+	inflow_1_3_outflow_1_3_volume_1_3_	 [label="State 9
 In: (+, +)
 Vol: (+, +)
 Out: (+, +)",
-		tooltip="correspondence_valid: true
+		tooltip="debugging_trace:
+  correspondence_valid: true
+  extreme_valid: true
+  valid: true
 derivatives:
 - In may go up from +
-- Vol may go up from +
+- Vol may go \
+up from +
 - Out may go up from +
-extreme_valid: true
-\
+state:
+  inflow:
+    derivative: POSITIVE
+    magnitude: PLUS
+  outflow:
+    derivative: POSITIVE
+    \
+magnitude: PLUS
+  volume:
+    derivative: POSITIVE
+    magnitude: PLUS
+type: container
+"];
+	inflow_1_3_outflow_0_3_volume_0_3_ -> inflow_1_3_outflow_1_3_volume_1_3_	 [tooltip="a:
+  debugging_trace:
+    correspondence_valid: true
+    extreme_valid: true
+    valid: true
+  derivatives:
+  - In may go up from +
+  \
+- Vol will go up from 0
+  - Out will go up from 0
+  state:
+    inflow:
+      derivative: POSITIVE
+      magnitude: PLUS
+    outflow:
+      \
+derivative: POSITIVE
+      magnitude: ZERO
+    volume:
+      derivative: POSITIVE
+      magnitude: ZERO
+  type: container
+b:
+  debugging_\
+trace:
+    correspondence_valid: true
+    extreme_valid: true
+    valid: true
+  derivatives:
+  - In may go up from +
+  - Vol may \
+go up from +
+  - Out may go up from +
+  state:
+    inflow:
+      derivative: POSITIVE
+      magnitude: PLUS
+    outflow:
+      derivative: \
+POSITIVE
+      magnitude: PLUS
+    volume:
+      derivative: POSITIVE
+      magnitude: PLUS
+  type: container
+debugging_trace:
+  \
+continuous_valid: true
+  derivative_valid: true
+  magnitude_valid: true
+  not_equal_valid: true
+  point_range_valid: true
+  transition_\
 valid: true
 "];
-	inflow_1_3_outflow_0_3_volume_0_3_ -> inflow_1_3_outflow_1_3_volume_1_3_	 [tooltip="continuous_valid: true
-derivative_valid: true
-magnitude_valid: true
-not_equal_valid: true
-point_range_valid: true
-transition_valid: \
-true
-"];
-	inflow_1_3_outflow_1_3_volume_1_2_	 [label="State 12
-In: (+, +)
-Vol: (+, 0)
-Out: (+, +)",
-		tooltip="correspondence_valid: true
-derivatives:
-- In may go up from +
-- Vol will stay at +
-- Out may go up from +
-extreme_valid: true
-valid: \
-true
-"];
-	inflow_1_3_outflow_0_3_volume_0_3_ -> inflow_1_3_outflow_1_3_volume_1_2_	 [tooltip="continuous_valid: true
-derivative_valid: false
-magnitude_valid: true
-not_equal_valid: true
-point_range_valid: true
-transition_valid: \
-true
-"];
-	inflow_1_3_outflow_2_2_volume_2_2_	 [label="State 4
-In: (+, +)
-Vol: (max, 0)
-Out: (max, 0)",
-		tooltip="correspondence_valid: true
-derivatives:
-- In may go up from +
-- Vol will stay at max
-- Out will stay at max
-extreme_valid: true
-\
-valid: true
-"];
-	inflow_1_3_outflow_1_3_volume_1_3_ -> inflow_1_3_outflow_2_2_volume_2_2_	 [tooltip="continuous_valid: true
-derivative_valid: false
-magnitude_valid: true
-not_equal_valid: true
-point_range_valid: true
-transition_valid: \
-true
-"];
-	inflow_1_3_outflow_1_3_volume_1_3_ -> inflow_1_3_outflow_1_3_volume_1_2_	 [tooltip="continuous_valid: true
-derivative_valid: true
-magnitude_valid: true
-not_equal_valid: true
-point_range_valid: true
-transition_valid: \
-true
-"];
-	inflow_1_3_outflow_2_2_volume_1_2_	 [label="State 13
-In: (+, +)
-Vol: (+, 0)
-Out: (max, 0)",
-		tooltip="correspondence_valid: false
-derivatives:
-- In may go up from +
-- Vol will stay at +
-- Out will stay at max
-extreme_valid: true
-valid: \
-false
-"];
-	inflow_1_3_outflow_1_3_volume_1_3_ -> inflow_1_3_outflow_2_2_volume_1_2_	 [tooltip="continuous_valid: true
-derivative_valid: false
-magnitude_valid: true
-not_equal_valid: true
-point_range_valid: true
-transition_valid: \
-true
-"];
-	inflow_1_3_outflow_2_2_volume_1_3_	 [label="State 15
-In: (+, +)
-Vol: (+, +)
-Out: (max, 0)",
-		tooltip="correspondence_valid: false
-derivatives:
-- In may go up from +
-- Vol may go up from +
-- Out will stay at max
-extreme_valid: true
-\
-valid: false
-"];
-	inflow_1_3_outflow_1_3_volume_1_3_ -> inflow_1_3_outflow_2_2_volume_1_3_	 [tooltip="continuous_valid: true
-derivative_valid: false
-magnitude_valid: true
-not_equal_valid: true
-point_range_valid: true
-transition_valid: \
-true
-"];
-	inflow_1_3_outflow_2_1_volume_2_1_	 [label="State 5
-In: (+, +)
-Vol: (max, -)
-Out: (max, -)",
-		tooltip="correspondence_valid: true
-derivatives:
-- In may go up from +
-- Vol will go down from max
-- Out will go down from max
-extreme_valid: \
-true
-valid: true
-"];
-	inflow_1_3_outflow_2_2_volume_2_2_ -> inflow_1_3_outflow_2_1_volume_2_1_	 [tooltip="continuous_valid: true
-derivative_valid: false
-magnitude_valid: true
-not_equal_valid: true
-point_range_valid: true
-transition_valid: \
-true
-"];
-	inflow_1_3_outflow_1_1_volume_1_2_	 [label="State 6
-In: (+, +)
-Vol: (+, 0)
-Out: (+, -)",
-		tooltip="correspondence_valid: true
-derivatives:
-- In may go up from +
-- Vol will stay at +
-- Out may go down from +
-extreme_valid: true
-\
-valid: true
-"];
-	inflow_1_3_outflow_2_1_volume_2_1_ -> inflow_1_3_outflow_1_1_volume_1_2_	 [tooltip="continuous_valid: true
-derivative_valid: true
-magnitude_valid: true
-not_equal_valid: true
-point_range_valid: true
-transition_valid: \
-true
-"];
-	inflow_1_3_outflow_1_1_volume_1_1_	 [label="State 9
+	inflow_1_3_outflow_1_2_volume_1_1_	 [label="State 4
 In: (+, +)
 Vol: (+, -)
-Out: (+, -)",
-		tooltip="correspondence_valid: true
+Out: (+, 0)",
+		tooltip="debugging_trace:
+  correspondence_valid: true
+  extreme_valid: true
+  valid: true
 derivatives:
 - In may go up from +
-- Vol may go down from +
-- Out may go down from +
-extreme_valid: true
-\
+- Vol may go \
+down from +
+- Out will stay at +
+state:
+  inflow:
+    derivative: POSITIVE
+    magnitude: PLUS
+  outflow:
+    derivative: NEUTRAL
+    \
+magnitude: PLUS
+  volume:
+    derivative: NEGATIVE
+    magnitude: PLUS
+type: container
+"];
+	inflow_1_3_outflow_1_3_volume_1_2_ -> inflow_1_3_outflow_1_2_volume_1_1_	 [tooltip="a:
+  debugging_trace:
+    correspondence_valid: true
+    extreme_valid: true
+    valid: true
+  derivatives:
+  - In may go up from +
+  \
+- Vol will stay at +
+  - Out may go up from +
+  state:
+    inflow:
+      derivative: POSITIVE
+      magnitude: PLUS
+    outflow:
+      \
+derivative: POSITIVE
+      magnitude: PLUS
+    volume:
+      derivative: NEUTRAL
+      magnitude: PLUS
+  type: container
+b:
+  debugging_\
+trace:
+    correspondence_valid: true
+    extreme_valid: true
+    valid: true
+  derivatives:
+  - In may go up from +
+  - Vol may \
+go down from +
+  - Out will stay at +
+  state:
+    inflow:
+      derivative: POSITIVE
+      magnitude: PLUS
+    outflow:
+      derivative: \
+NEUTRAL
+      magnitude: PLUS
+    volume:
+      derivative: NEGATIVE
+      magnitude: PLUS
+  type: container
+debugging_trace:
+  \
+continuous_valid: true
+  derivative_valid: false
+  magnitude_valid: true
+  not_equal_valid: true
+  point_range_valid: true
+  transition_\
 valid: true
 "];
-	inflow_1_3_outflow_2_1_volume_2_1_ -> inflow_1_3_outflow_1_1_volume_1_1_	 [tooltip="continuous_valid: true
-derivative_valid: true
-magnitude_valid: true
-not_equal_valid: true
-point_range_valid: true
-transition_valid: \
-true
+	inflow_1_3_outflow_1_3_volume_1_2_ -> inflow_1_3_outflow_1_3_volume_1_3_	 [tooltip="a:
+  debugging_trace:
+    correspondence_valid: true
+    extreme_valid: true
+    valid: true
+  derivatives:
+  - In may go up from +
+  \
+- Vol will stay at +
+  - Out may go up from +
+  state:
+    inflow:
+      derivative: POSITIVE
+      magnitude: PLUS
+    outflow:
+      \
+derivative: POSITIVE
+      magnitude: PLUS
+    volume:
+      derivative: NEUTRAL
+      magnitude: PLUS
+  type: container
+b:
+  debugging_\
+trace:
+    correspondence_valid: true
+    extreme_valid: true
+    valid: true
+  derivatives:
+  - In may go up from +
+  - Vol may \
+go up from +
+  - Out may go up from +
+  state:
+    inflow:
+      derivative: POSITIVE
+      magnitude: PLUS
+    outflow:
+      derivative: \
+POSITIVE
+      magnitude: PLUS
+    volume:
+      derivative: POSITIVE
+      magnitude: PLUS
+  type: container
+debugging_trace:
+  \
+continuous_valid: true
+  derivative_valid: true
+  magnitude_valid: true
+  not_equal_valid: true
+  point_range_valid: true
+  transition_\
+valid: true
 "];
-	inflow_1_3_outflow_1_2_volume_1_3_	 [label="State 7
+	inflow_1_3_outflow_2_2_volume_1_3_	 [label="State 10
 In: (+, +)
 Vol: (+, +)
-Out: (+, 0)",
-		tooltip="correspondence_valid: true
+Out: (max, 0)",
+		tooltip="debugging_trace:
+  correspondence_valid: false
+  extreme_valid: true
+  valid: false
 derivatives:
 - In may go up from +
-- Vol may go up from +
-- Out will stay at +
-extreme_valid: true
-valid: \
+- Vol may \
+go up from +
+- Out will stay at max
+state:
+  inflow:
+    derivative: POSITIVE
+    magnitude: PLUS
+  outflow:
+    derivative: NEUTRAL
+    \
+magnitude: MAX
+  volume:
+    derivative: POSITIVE
+    magnitude: PLUS
+type: container
+"];
+	inflow_1_3_outflow_1_3_volume_1_2_ -> inflow_1_3_outflow_2_2_volume_1_3_	 [tooltip="a:
+  debugging_trace:
+    correspondence_valid: true
+    extreme_valid: true
+    valid: true
+  derivatives:
+  - In may go up from +
+  \
+- Vol will stay at +
+  - Out may go up from +
+  state:
+    inflow:
+      derivative: POSITIVE
+      magnitude: PLUS
+    outflow:
+      \
+derivative: POSITIVE
+      magnitude: PLUS
+    volume:
+      derivative: NEUTRAL
+      magnitude: PLUS
+  type: container
+b:
+  debugging_\
+trace:
+    correspondence_valid: false
+    extreme_valid: true
+    valid: false
+  derivatives:
+  - In may go up from +
+  - Vol may \
+go up from +
+  - Out will stay at max
+  state:
+    inflow:
+      derivative: POSITIVE
+      magnitude: PLUS
+    outflow:
+      derivative: \
+NEUTRAL
+      magnitude: MAX
+    volume:
+      derivative: POSITIVE
+      magnitude: PLUS
+  type: container
+debugging_trace:
+  continuous_\
+valid: true
+  derivative_valid: false
+  magnitude_valid: true
+  not_equal_valid: true
+  point_range_valid: true
+  transition_valid: \
 true
 "];
-	inflow_1_3_outflow_1_1_volume_1_2_ -> inflow_1_3_outflow_1_2_volume_1_3_	 [tooltip="continuous_valid: true
-derivative_valid: false
-magnitude_valid: true
-not_equal_valid: true
-point_range_valid: true
-transition_valid: \
-true
-"];
-	inflow_1_3_outflow_1_1_volume_1_2_ -> inflow_1_3_outflow_1_1_volume_1_1_	 [tooltip="continuous_valid: true
-derivative_valid: true
-magnitude_valid: true
-not_equal_valid: true
-point_range_valid: true
-transition_valid: \
-true
-"];
-	inflow_1_3_outflow_1_2_volume_1_3_ -> inflow_1_3_outflow_1_3_volume_1_3_	 [tooltip="continuous_valid: true
-derivative_valid: false
-magnitude_valid: true
-not_equal_valid: true
-point_range_valid: true
-transition_valid: \
-true
-"];
-	inflow_1_3_outflow_1_2_volume_1_3_ -> inflow_1_3_outflow_2_2_volume_2_2_	 [tooltip="continuous_valid: true
-derivative_valid: true
-magnitude_valid: false
-not_equal_valid: true
-point_range_valid: true
-transition_valid: \
-true
-"];
-	inflow_1_3_outflow_1_2_volume_1_2_	 [label="State 8
+	inflow_1_3_outflow_2_2_volume_1_2_	 [label="State 11
 In: (+, +)
 Vol: (+, 0)
-Out: (+, 0)",
-		tooltip="correspondence_valid: true
+Out: (max, 0)",
+		tooltip="debugging_trace:
+  correspondence_valid: false
+  extreme_valid: true
+  valid: false
 derivatives:
 - In may go up from +
+- Vol will \
+stay at +
+- Out will stay at max
+state:
+  inflow:
+    derivative: POSITIVE
+    magnitude: PLUS
+  outflow:
+    derivative: NEUTRAL
+    \
+magnitude: MAX
+  volume:
+    derivative: NEUTRAL
+    magnitude: PLUS
+type: container
+"];
+	inflow_1_3_outflow_1_3_volume_1_2_ -> inflow_1_3_outflow_2_2_volume_1_2_	 [tooltip="a:
+  debugging_trace:
+    correspondence_valid: true
+    extreme_valid: true
+    valid: true
+  derivatives:
+  - In may go up from +
+  \
 - Vol will stay at +
-- Out will stay at +
-extreme_valid: true
-valid: \
+  - Out may go up from +
+  state:
+    inflow:
+      derivative: POSITIVE
+      magnitude: PLUS
+    outflow:
+      \
+derivative: POSITIVE
+      magnitude: PLUS
+    volume:
+      derivative: NEUTRAL
+      magnitude: PLUS
+  type: container
+b:
+  debugging_\
+trace:
+    correspondence_valid: false
+    extreme_valid: true
+    valid: false
+  derivatives:
+  - In may go up from +
+  - Vol will \
+stay at +
+  - Out will stay at max
+  state:
+    inflow:
+      derivative: POSITIVE
+      magnitude: PLUS
+    outflow:
+      derivative: \
+NEUTRAL
+      magnitude: MAX
+    volume:
+      derivative: NEUTRAL
+      magnitude: PLUS
+  type: container
+debugging_trace:
+  continuous_\
+valid: true
+  derivative_valid: false
+  magnitude_valid: true
+  not_equal_valid: true
+  point_range_valid: true
+  transition_valid: \
 true
 "];
-	inflow_1_3_outflow_1_2_volume_1_3_ -> inflow_1_3_outflow_1_2_volume_1_2_	 [tooltip="continuous_valid: true
-derivative_valid: true
-magnitude_valid: true
-not_equal_valid: true
-point_range_valid: true
-transition_valid: \
-true
-"];
-	inflow_1_3_outflow_1_2_volume_1_2_ -> inflow_1_3_outflow_1_3_volume_1_3_	 [tooltip="continuous_valid: true
-derivative_valid: false
-magnitude_valid: true
-not_equal_valid: true
-point_range_valid: true
-transition_valid: \
-true
-"];
-	inflow_1_3_outflow_1_2_volume_1_2_ -> inflow_1_3_outflow_1_1_volume_1_1_	 [tooltip="continuous_valid: true
-derivative_valid: false
-magnitude_valid: true
-not_equal_valid: true
-point_range_valid: true
-transition_valid: \
-true
-"];
-	inflow_1_3_outflow_1_1_volume_1_1_ -> inflow_1_3_outflow_1_1_volume_1_2_	 [tooltip="continuous_valid: true
-derivative_valid: true
-magnitude_valid: true
-not_equal_valid: true
-point_range_valid: true
-transition_valid: \
-true
-"];
-	inflow_1_3_outflow_0_2_volume_1_2_	 [label="State 10
-In: (+, +)
-Vol: (+, 0)
-Out: (0, 0)",
-		tooltip="correspondence_valid: false
-derivatives:
-- In may go up from +
-- Vol will stay at +
-- Out will stay at 0
-extreme_valid: true
-valid: \
-false
-"];
-	inflow_1_3_outflow_1_1_volume_1_1_ -> inflow_1_3_outflow_0_2_volume_1_2_	 [tooltip="continuous_valid: true
-derivative_valid: false
-magnitude_valid: true
-not_equal_valid: true
-point_range_valid: true
-transition_valid: \
-true
-"];
-	inflow_1_3_outflow_0_2_volume_0_2_	 [label="State 17
+	inflow_1_3_outflow_0_2_volume_0_2_	 [label="State 5
 In: (+, +)
 Vol: (0, 0)
 Out: (0, 0)",
-		tooltip="correspondence_valid: true
+		tooltip="debugging_trace:
+  correspondence_valid: true
+  extreme_valid: true
+  valid: true
 derivatives:
 - In may go up from +
-- Vol will stay at 0
+- Vol will \
+stay at 0
 - Out will stay at 0
-extreme_valid: true
-valid: \
+state:
+  inflow:
+    derivative: POSITIVE
+    magnitude: PLUS
+  outflow:
+    derivative: NEUTRAL
+    \
+magnitude: ZERO
+  volume:
+    derivative: NEUTRAL
+    magnitude: ZERO
+type: container
+"];
+	inflow_1_3_outflow_1_2_volume_1_1_ -> inflow_1_3_outflow_0_2_volume_0_2_	 [tooltip="a:
+  debugging_trace:
+    correspondence_valid: true
+    extreme_valid: true
+    valid: true
+  derivatives:
+  - In may go up from +
+  \
+- Vol may go down from +
+  - Out will stay at +
+  state:
+    inflow:
+      derivative: POSITIVE
+      magnitude: PLUS
+    outflow:
+      \
+derivative: NEUTRAL
+      magnitude: PLUS
+    volume:
+      derivative: NEGATIVE
+      magnitude: PLUS
+  type: container
+b:
+  debugging_\
+trace:
+    correspondence_valid: true
+    extreme_valid: true
+    valid: true
+  derivatives:
+  - In may go up from +
+  - Vol will \
+stay at 0
+  - Out will stay at 0
+  state:
+    inflow:
+      derivative: POSITIVE
+      magnitude: PLUS
+    outflow:
+      derivative: \
+NEUTRAL
+      magnitude: ZERO
+    volume:
+      derivative: NEUTRAL
+      magnitude: ZERO
+  type: container
+debugging_trace:
+  continuous_\
+valid: true
+  derivative_valid: true
+  magnitude_valid: false
+  not_equal_valid: true
+  point_range_valid: true
+  transition_valid: \
 true
 "];
-	inflow_1_3_outflow_1_1_volume_1_1_ -> inflow_1_3_outflow_0_2_volume_0_2_	 [tooltip="continuous_valid: true
-derivative_valid: false
-magnitude_valid: true
-not_equal_valid: true
-point_range_valid: true
-transition_valid: \
+	inflow_1_3_outflow_1_1_volume_1_1_	 [label="State 6
+In: (+, +)
+Vol: (+, -)
+Out: (+, -)",
+		tooltip="debugging_trace:
+  correspondence_valid: true
+  extreme_valid: true
+  valid: true
+derivatives:
+- In may go up from +
+- Vol may go \
+down from +
+- Out may go down from +
+state:
+  inflow:
+    derivative: POSITIVE
+    magnitude: PLUS
+  outflow:
+    derivative: NEGATIVE
+    \
+magnitude: PLUS
+  volume:
+    derivative: NEGATIVE
+    magnitude: PLUS
+type: container
+"];
+	inflow_1_3_outflow_1_2_volume_1_1_ -> inflow_1_3_outflow_1_1_volume_1_1_	 [tooltip="a:
+  debugging_trace:
+    correspondence_valid: true
+    extreme_valid: true
+    valid: true
+  derivatives:
+  - In may go up from +
+  \
+- Vol may go down from +
+  - Out will stay at +
+  state:
+    inflow:
+      derivative: POSITIVE
+      magnitude: PLUS
+    outflow:
+      \
+derivative: NEUTRAL
+      magnitude: PLUS
+    volume:
+      derivative: NEGATIVE
+      magnitude: PLUS
+  type: container
+b:
+  debugging_\
+trace:
+    correspondence_valid: true
+    extreme_valid: true
+    valid: true
+  derivatives:
+  - In may go up from +
+  - Vol may \
+go down from +
+  - Out may go down from +
+  state:
+    inflow:
+      derivative: POSITIVE
+      magnitude: PLUS
+    outflow:
+      \
+derivative: NEGATIVE
+      magnitude: PLUS
+    volume:
+      derivative: NEGATIVE
+      magnitude: PLUS
+  type: container
+debugging_\
+trace:
+  continuous_valid: true
+  derivative_valid: false
+  magnitude_valid: true
+  not_equal_valid: true
+  point_range_valid: true
+  \
+transition_valid: true
+"];
+	inflow_1_3_outflow_1_2_volume_1_2_	 [label="State 15
+In: (+, +)
+Vol: (+, 0)
+Out: (+, 0)",
+		tooltip="debugging_trace:
+  correspondence_valid: true
+  extreme_valid: true
+  valid: true
+derivatives:
+- In may go up from +
+- Vol will \
+stay at +
+- Out will stay at +
+state:
+  inflow:
+    derivative: POSITIVE
+    magnitude: PLUS
+  outflow:
+    derivative: NEUTRAL
+    \
+magnitude: PLUS
+  volume:
+    derivative: NEUTRAL
+    magnitude: PLUS
+type: container
+"];
+	inflow_1_3_outflow_1_2_volume_1_1_ -> inflow_1_3_outflow_1_2_volume_1_2_	 [tooltip="a:
+  debugging_trace:
+    correspondence_valid: true
+    extreme_valid: true
+    valid: true
+  derivatives:
+  - In may go up from +
+  \
+- Vol may go down from +
+  - Out will stay at +
+  state:
+    inflow:
+      derivative: POSITIVE
+      magnitude: PLUS
+    outflow:
+      \
+derivative: NEUTRAL
+      magnitude: PLUS
+    volume:
+      derivative: NEGATIVE
+      magnitude: PLUS
+  type: container
+b:
+  debugging_\
+trace:
+    correspondence_valid: true
+    extreme_valid: true
+    valid: true
+  derivatives:
+  - In may go up from +
+  - Vol will \
+stay at +
+  - Out will stay at +
+  state:
+    inflow:
+      derivative: POSITIVE
+      magnitude: PLUS
+    outflow:
+      derivative: \
+NEUTRAL
+      magnitude: PLUS
+    volume:
+      derivative: NEUTRAL
+      magnitude: PLUS
+  type: container
+debugging_trace:
+  continuous_\
+valid: true
+  derivative_valid: true
+  magnitude_valid: true
+  not_equal_valid: true
+  point_range_valid: true
+  transition_valid: \
 true
 "];
-	inflow_1_3_outflow_0_3_volume_1_3_	 [label="State 11
+	inflow_1_3_outflow_0_2_volume_0_2_ -> inflow_1_3_outflow_0_3_volume_0_3_	 [tooltip="a:
+  debugging_trace:
+    correspondence_valid: true
+    extreme_valid: true
+    valid: true
+  derivatives:
+  - In may go up from +
+  \
+- Vol will stay at 0
+  - Out will stay at 0
+  state:
+    inflow:
+      derivative: POSITIVE
+      magnitude: PLUS
+    outflow:
+      \
+derivative: NEUTRAL
+      magnitude: ZERO
+    volume:
+      derivative: NEUTRAL
+      magnitude: ZERO
+  type: container
+b:
+  debugging_\
+trace:
+    correspondence_valid: true
+    extreme_valid: true
+    valid: true
+  derivatives:
+  - In may go up from +
+  - Vol will \
+go up from 0
+  - Out will go up from 0
+  state:
+    inflow:
+      derivative: POSITIVE
+      magnitude: PLUS
+    outflow:
+      \
+derivative: POSITIVE
+      magnitude: ZERO
+    volume:
+      derivative: POSITIVE
+      magnitude: ZERO
+  type: container
+debugging_\
+trace:
+  continuous_valid: true
+  derivative_valid: false
+  magnitude_valid: true
+  not_equal_valid: true
+  point_range_valid: true
+  \
+transition_valid: true
+"];
+	inflow_1_3_outflow_1_1_volume_1_1_ -> inflow_1_3_outflow_0_2_volume_0_2_	 [tooltip="a:
+  debugging_trace:
+    correspondence_valid: true
+    extreme_valid: true
+    valid: true
+  derivatives:
+  - In may go up from +
+  \
+- Vol may go down from +
+  - Out may go down from +
+  state:
+    inflow:
+      derivative: POSITIVE
+      magnitude: PLUS
+    outflow:
+      \
+derivative: NEGATIVE
+      magnitude: PLUS
+    volume:
+      derivative: NEGATIVE
+      magnitude: PLUS
+  type: container
+b:
+  debugging_\
+trace:
+    correspondence_valid: true
+    extreme_valid: true
+    valid: true
+  derivatives:
+  - In may go up from +
+  - Vol will \
+stay at 0
+  - Out will stay at 0
+  state:
+    inflow:
+      derivative: POSITIVE
+      magnitude: PLUS
+    outflow:
+      derivative: \
+NEUTRAL
+      magnitude: ZERO
+    volume:
+      derivative: NEUTRAL
+      magnitude: ZERO
+  type: container
+debugging_trace:
+  continuous_\
+valid: true
+  derivative_valid: false
+  magnitude_valid: true
+  not_equal_valid: true
+  point_range_valid: true
+  transition_valid: \
+true
+"];
+	inflow_1_3_outflow_0_2_volume_1_2_	 [label="State 7
+In: (+, +)
+Vol: (+, 0)
+Out: (0, 0)",
+		tooltip="debugging_trace:
+  correspondence_valid: false
+  extreme_valid: true
+  valid: false
+derivatives:
+- In may go up from +
+- Vol will \
+stay at +
+- Out will stay at 0
+state:
+  inflow:
+    derivative: POSITIVE
+    magnitude: PLUS
+  outflow:
+    derivative: NEUTRAL
+    \
+magnitude: ZERO
+  volume:
+    derivative: NEUTRAL
+    magnitude: PLUS
+type: container
+"];
+	inflow_1_3_outflow_1_1_volume_1_1_ -> inflow_1_3_outflow_0_2_volume_1_2_	 [tooltip="a:
+  debugging_trace:
+    correspondence_valid: true
+    extreme_valid: true
+    valid: true
+  derivatives:
+  - In may go up from +
+  \
+- Vol may go down from +
+  - Out may go down from +
+  state:
+    inflow:
+      derivative: POSITIVE
+      magnitude: PLUS
+    outflow:
+      \
+derivative: NEGATIVE
+      magnitude: PLUS
+    volume:
+      derivative: NEGATIVE
+      magnitude: PLUS
+  type: container
+b:
+  debugging_\
+trace:
+    correspondence_valid: false
+    extreme_valid: true
+    valid: false
+  derivatives:
+  - In may go up from +
+  - Vol will \
+stay at +
+  - Out will stay at 0
+  state:
+    inflow:
+      derivative: POSITIVE
+      magnitude: PLUS
+    outflow:
+      derivative: \
+NEUTRAL
+      magnitude: ZERO
+    volume:
+      derivative: NEUTRAL
+      magnitude: PLUS
+  type: container
+debugging_trace:
+  continuous_\
+valid: true
+  derivative_valid: false
+  magnitude_valid: true
+  not_equal_valid: true
+  point_range_valid: true
+  transition_valid: \
+true
+"];
+	inflow_1_3_outflow_1_1_volume_1_2_	 [label="State 13
+In: (+, +)
+Vol: (+, 0)
+Out: (+, -)",
+		tooltip="debugging_trace:
+  correspondence_valid: true
+  extreme_valid: true
+  valid: true
+derivatives:
+- In may go up from +
+- Vol will \
+stay at +
+- Out may go down from +
+state:
+  inflow:
+    derivative: POSITIVE
+    magnitude: PLUS
+  outflow:
+    derivative: NEGATIVE
+    \
+magnitude: PLUS
+  volume:
+    derivative: NEUTRAL
+    magnitude: PLUS
+type: container
+"];
+	inflow_1_3_outflow_1_1_volume_1_1_ -> inflow_1_3_outflow_1_1_volume_1_2_	 [tooltip="a:
+  debugging_trace:
+    correspondence_valid: true
+    extreme_valid: true
+    valid: true
+  derivatives:
+  - In may go up from +
+  \
+- Vol may go down from +
+  - Out may go down from +
+  state:
+    inflow:
+      derivative: POSITIVE
+      magnitude: PLUS
+    outflow:
+      \
+derivative: NEGATIVE
+      magnitude: PLUS
+    volume:
+      derivative: NEGATIVE
+      magnitude: PLUS
+  type: container
+b:
+  debugging_\
+trace:
+    correspondence_valid: true
+    extreme_valid: true
+    valid: true
+  derivatives:
+  - In may go up from +
+  - Vol will \
+stay at +
+  - Out may go down from +
+  state:
+    inflow:
+      derivative: POSITIVE
+      magnitude: PLUS
+    outflow:
+      derivative: \
+NEGATIVE
+      magnitude: PLUS
+    volume:
+      derivative: NEUTRAL
+      magnitude: PLUS
+  type: container
+debugging_trace:
+  \
+continuous_valid: true
+  derivative_valid: true
+  magnitude_valid: true
+  not_equal_valid: true
+  point_range_valid: true
+  transition_\
+valid: true
+"];
+	inflow_1_3_outflow_0_3_volume_1_3_	 [label="State 8
 In: (+, +)
 Vol: (+, +)
 Out: (0, +)",
-		tooltip="correspondence_valid: false
+		tooltip="debugging_trace:
+  correspondence_valid: false
+  extreme_valid: true
+  valid: false
 derivatives:
 - In may go up from +
-- Vol may go up from +
+- Vol may \
+go up from +
 - Out will go up from 0
-extreme_valid: true
-\
-valid: false
+state:
+  inflow:
+    derivative: POSITIVE
+    magnitude: PLUS
+  outflow:
+    derivative: POSITIVE
+    \
+magnitude: ZERO
+  volume:
+    derivative: POSITIVE
+    magnitude: PLUS
+type: container
 "];
-	inflow_1_3_outflow_0_2_volume_1_2_ -> inflow_1_3_outflow_0_3_volume_1_3_	 [tooltip="continuous_valid: true
-derivative_valid: false
-magnitude_valid: true
-not_equal_valid: true
-point_range_valid: true
-transition_valid: \
-true
+	inflow_1_3_outflow_0_2_volume_1_2_ -> inflow_1_3_outflow_0_3_volume_1_3_	 [tooltip="a:
+  debugging_trace:
+    correspondence_valid: false
+    extreme_valid: true
+    valid: false
+  derivatives:
+  - In may go up from +
+  \
+- Vol will stay at +
+  - Out will stay at 0
+  state:
+    inflow:
+      derivative: POSITIVE
+      magnitude: PLUS
+    outflow:
+      \
+derivative: NEUTRAL
+      magnitude: ZERO
+    volume:
+      derivative: NEUTRAL
+      magnitude: PLUS
+  type: container
+b:
+  debugging_\
+trace:
+    correspondence_valid: false
+    extreme_valid: true
+    valid: false
+  derivatives:
+  - In may go up from +
+  - Vol may \
+go up from +
+  - Out will go up from 0
+  state:
+    inflow:
+      derivative: POSITIVE
+      magnitude: PLUS
+    outflow:
+      \
+derivative: POSITIVE
+      magnitude: ZERO
+    volume:
+      derivative: POSITIVE
+      magnitude: PLUS
+  type: container
+debugging_\
+trace:
+  continuous_valid: true
+  derivative_valid: false
+  magnitude_valid: true
+  not_equal_valid: true
+  point_range_valid: true
+  \
+transition_valid: true
 "];
-	inflow_1_3_outflow_0_3_volume_1_3_ -> inflow_1_3_outflow_1_3_volume_1_3_	 [tooltip="continuous_valid: true
-derivative_valid: true
-magnitude_valid: true
-not_equal_valid: true
-point_range_valid: true
-transition_valid: \
-true
-"];
-	inflow_1_3_outflow_0_3_volume_1_3_ -> inflow_1_3_outflow_1_3_volume_1_2_	 [tooltip="continuous_valid: true
-derivative_valid: false
-magnitude_valid: true
-not_equal_valid: true
-point_range_valid: true
-transition_valid: \
-true
-"];
-	inflow_1_3_outflow_1_3_volume_1_2_ -> inflow_1_3_outflow_1_3_volume_1_3_	 [tooltip="continuous_valid: true
-derivative_valid: true
-magnitude_valid: true
-not_equal_valid: true
-point_range_valid: true
-transition_valid: \
-true
-"];
-	inflow_1_3_outflow_1_3_volume_1_2_ -> inflow_1_3_outflow_2_2_volume_1_2_	 [tooltip="continuous_valid: true
-derivative_valid: false
-magnitude_valid: true
-not_equal_valid: true
-point_range_valid: true
-transition_valid: \
-true
-"];
-	inflow_1_3_outflow_1_3_volume_1_2_ -> inflow_1_3_outflow_2_2_volume_1_3_	 [tooltip="continuous_valid: true
-derivative_valid: false
-magnitude_valid: true
-not_equal_valid: true
-point_range_valid: true
-transition_valid: \
-true
-"];
-	inflow_1_3_outflow_1_2_volume_1_1_	 [label="State 16
-In: (+, +)
-Vol: (+, -)
-Out: (+, 0)",
-		tooltip="correspondence_valid: true
-derivatives:
-- In may go up from +
-- Vol may go down from +
-- Out will stay at +
-extreme_valid: true
-\
+	inflow_1_3_outflow_0_3_volume_1_3_ -> inflow_1_3_outflow_1_3_volume_1_2_	 [tooltip="a:
+  debugging_trace:
+    correspondence_valid: false
+    extreme_valid: true
+    valid: false
+  derivatives:
+  - In may go up from +
+  \
+- Vol may go up from +
+  - Out will go up from 0
+  state:
+    inflow:
+      derivative: POSITIVE
+      magnitude: PLUS
+    outflow:
+      \
+derivative: POSITIVE
+      magnitude: ZERO
+    volume:
+      derivative: POSITIVE
+      magnitude: PLUS
+  type: container
+b:
+  debugging_\
+trace:
+    correspondence_valid: true
+    extreme_valid: true
+    valid: true
+  derivatives:
+  - In may go up from +
+  - Vol will \
+stay at +
+  - Out may go up from +
+  state:
+    inflow:
+      derivative: POSITIVE
+      magnitude: PLUS
+    outflow:
+      derivative: \
+POSITIVE
+      magnitude: PLUS
+    volume:
+      derivative: NEUTRAL
+      magnitude: PLUS
+  type: container
+debugging_trace:
+  \
+continuous_valid: true
+  derivative_valid: false
+  magnitude_valid: true
+  not_equal_valid: true
+  point_range_valid: true
+  transition_\
 valid: true
 "];
-	inflow_1_3_outflow_1_3_volume_1_2_ -> inflow_1_3_outflow_1_2_volume_1_1_	 [tooltip="continuous_valid: true
-derivative_valid: false
-magnitude_valid: true
-not_equal_valid: true
-point_range_valid: true
-transition_valid: \
+	inflow_1_3_outflow_0_3_volume_1_3_ -> inflow_1_3_outflow_1_3_volume_1_3_	 [tooltip="a:
+  debugging_trace:
+    correspondence_valid: false
+    extreme_valid: true
+    valid: false
+  derivatives:
+  - In may go up from +
+  \
+- Vol may go up from +
+  - Out will go up from 0
+  state:
+    inflow:
+      derivative: POSITIVE
+      magnitude: PLUS
+    outflow:
+      \
+derivative: POSITIVE
+      magnitude: ZERO
+    volume:
+      derivative: POSITIVE
+      magnitude: PLUS
+  type: container
+b:
+  debugging_\
+trace:
+    correspondence_valid: true
+    extreme_valid: true
+    valid: true
+  derivatives:
+  - In may go up from +
+  - Vol may \
+go up from +
+  - Out may go up from +
+  state:
+    inflow:
+      derivative: POSITIVE
+      magnitude: PLUS
+    outflow:
+      derivative: \
+POSITIVE
+      magnitude: PLUS
+    volume:
+      derivative: POSITIVE
+      magnitude: PLUS
+  type: container
+debugging_trace:
+  \
+continuous_valid: true
+  derivative_valid: true
+  magnitude_valid: true
+  not_equal_valid: true
+  point_range_valid: true
+  transition_\
+valid: true
+"];
+	inflow_1_3_outflow_1_3_volume_1_3_ -> inflow_1_3_outflow_1_3_volume_1_2_	 [tooltip="a:
+  debugging_trace:
+    correspondence_valid: true
+    extreme_valid: true
+    valid: true
+  derivatives:
+  - In may go up from +
+  \
+- Vol may go up from +
+  - Out may go up from +
+  state:
+    inflow:
+      derivative: POSITIVE
+      magnitude: PLUS
+    outflow:
+      \
+derivative: POSITIVE
+      magnitude: PLUS
+    volume:
+      derivative: POSITIVE
+      magnitude: PLUS
+  type: container
+b:
+  debugging_\
+trace:
+    correspondence_valid: true
+    extreme_valid: true
+    valid: true
+  derivatives:
+  - In may go up from +
+  - Vol will \
+stay at +
+  - Out may go up from +
+  state:
+    inflow:
+      derivative: POSITIVE
+      magnitude: PLUS
+    outflow:
+      derivative: \
+POSITIVE
+      magnitude: PLUS
+    volume:
+      derivative: NEUTRAL
+      magnitude: PLUS
+  type: container
+debugging_trace:
+  \
+continuous_valid: true
+  derivative_valid: true
+  magnitude_valid: true
+  not_equal_valid: true
+  point_range_valid: true
+  transition_\
+valid: true
+"];
+	inflow_1_3_outflow_1_3_volume_1_3_ -> inflow_1_3_outflow_2_2_volume_1_3_	 [tooltip="a:
+  debugging_trace:
+    correspondence_valid: true
+    extreme_valid: true
+    valid: true
+  derivatives:
+  - In may go up from +
+  \
+- Vol may go up from +
+  - Out may go up from +
+  state:
+    inflow:
+      derivative: POSITIVE
+      magnitude: PLUS
+    outflow:
+      \
+derivative: POSITIVE
+      magnitude: PLUS
+    volume:
+      derivative: POSITIVE
+      magnitude: PLUS
+  type: container
+b:
+  debugging_\
+trace:
+    correspondence_valid: false
+    extreme_valid: true
+    valid: false
+  derivatives:
+  - In may go up from +
+  - Vol may \
+go up from +
+  - Out will stay at max
+  state:
+    inflow:
+      derivative: POSITIVE
+      magnitude: PLUS
+    outflow:
+      derivative: \
+NEUTRAL
+      magnitude: MAX
+    volume:
+      derivative: POSITIVE
+      magnitude: PLUS
+  type: container
+debugging_trace:
+  continuous_\
+valid: true
+  derivative_valid: false
+  magnitude_valid: true
+  not_equal_valid: true
+  point_range_valid: true
+  transition_valid: \
 true
 "];
-	inflow_1_3_outflow_2_1_volume_1_1_	 [label="State 14
+	inflow_1_3_outflow_1_3_volume_1_3_ -> inflow_1_3_outflow_2_2_volume_1_2_	 [tooltip="a:
+  debugging_trace:
+    correspondence_valid: true
+    extreme_valid: true
+    valid: true
+  derivatives:
+  - In may go up from +
+  \
+- Vol may go up from +
+  - Out may go up from +
+  state:
+    inflow:
+      derivative: POSITIVE
+      magnitude: PLUS
+    outflow:
+      \
+derivative: POSITIVE
+      magnitude: PLUS
+    volume:
+      derivative: POSITIVE
+      magnitude: PLUS
+  type: container
+b:
+  debugging_\
+trace:
+    correspondence_valid: false
+    extreme_valid: true
+    valid: false
+  derivatives:
+  - In may go up from +
+  - Vol will \
+stay at +
+  - Out will stay at max
+  state:
+    inflow:
+      derivative: POSITIVE
+      magnitude: PLUS
+    outflow:
+      derivative: \
+NEUTRAL
+      magnitude: MAX
+    volume:
+      derivative: NEUTRAL
+      magnitude: PLUS
+  type: container
+debugging_trace:
+  continuous_\
+valid: true
+  derivative_valid: false
+  magnitude_valid: true
+  not_equal_valid: true
+  point_range_valid: true
+  transition_valid: \
+true
+"];
+	inflow_1_3_outflow_2_2_volume_2_2_	 [label="State 16
+In: (+, +)
+Vol: (max, 0)
+Out: (max, 0)",
+		tooltip="debugging_trace:
+  correspondence_valid: true
+  extreme_valid: true
+  valid: true
+derivatives:
+- In may go up from +
+- Vol will \
+stay at max
+- Out will stay at max
+state:
+  inflow:
+    derivative: POSITIVE
+    magnitude: PLUS
+  outflow:
+    derivative: NEUTRAL
+    \
+magnitude: MAX
+  volume:
+    derivative: NEUTRAL
+    magnitude: MAX
+type: container
+"];
+	inflow_1_3_outflow_1_3_volume_1_3_ -> inflow_1_3_outflow_2_2_volume_2_2_	 [tooltip="a:
+  debugging_trace:
+    correspondence_valid: true
+    extreme_valid: true
+    valid: true
+  derivatives:
+  - In may go up from +
+  \
+- Vol may go up from +
+  - Out may go up from +
+  state:
+    inflow:
+      derivative: POSITIVE
+      magnitude: PLUS
+    outflow:
+      \
+derivative: POSITIVE
+      magnitude: PLUS
+    volume:
+      derivative: POSITIVE
+      magnitude: PLUS
+  type: container
+b:
+  debugging_\
+trace:
+    correspondence_valid: true
+    extreme_valid: true
+    valid: true
+  derivatives:
+  - In may go up from +
+  - Vol will \
+stay at max
+  - Out will stay at max
+  state:
+    inflow:
+      derivative: POSITIVE
+      magnitude: PLUS
+    outflow:
+      derivative: \
+NEUTRAL
+      magnitude: MAX
+    volume:
+      derivative: NEUTRAL
+      magnitude: MAX
+  type: container
+debugging_trace:
+  continuous_\
+valid: true
+  derivative_valid: false
+  magnitude_valid: true
+  not_equal_valid: true
+  point_range_valid: true
+  transition_valid: \
+true
+"];
+	inflow_1_3_outflow_2_2_volume_1_3_ -> inflow_1_3_outflow_2_2_volume_1_2_	 [tooltip="a:
+  debugging_trace:
+    correspondence_valid: false
+    extreme_valid: true
+    valid: false
+  derivatives:
+  - In may go up from +
+  \
+- Vol may go up from +
+  - Out will stay at max
+  state:
+    inflow:
+      derivative: POSITIVE
+      magnitude: PLUS
+    outflow:
+      \
+derivative: NEUTRAL
+      magnitude: MAX
+    volume:
+      derivative: POSITIVE
+      magnitude: PLUS
+  type: container
+b:
+  debugging_\
+trace:
+    correspondence_valid: false
+    extreme_valid: true
+    valid: false
+  derivatives:
+  - In may go up from +
+  - Vol will \
+stay at +
+  - Out will stay at max
+  state:
+    inflow:
+      derivative: POSITIVE
+      magnitude: PLUS
+    outflow:
+      derivative: \
+NEUTRAL
+      magnitude: MAX
+    volume:
+      derivative: NEUTRAL
+      magnitude: PLUS
+  type: container
+debugging_trace:
+  continuous_\
+valid: true
+  derivative_valid: true
+  magnitude_valid: true
+  not_equal_valid: true
+  point_range_valid: true
+  transition_valid: \
+true
+"];
+	inflow_1_3_outflow_2_2_volume_1_3_ -> inflow_1_3_outflow_2_2_volume_2_2_	 [tooltip="a:
+  debugging_trace:
+    correspondence_valid: false
+    extreme_valid: true
+    valid: false
+  derivatives:
+  - In may go up from +
+  \
+- Vol may go up from +
+  - Out will stay at max
+  state:
+    inflow:
+      derivative: POSITIVE
+      magnitude: PLUS
+    outflow:
+      \
+derivative: NEUTRAL
+      magnitude: MAX
+    volume:
+      derivative: POSITIVE
+      magnitude: PLUS
+  type: container
+b:
+  debugging_\
+trace:
+    correspondence_valid: true
+    extreme_valid: true
+    valid: true
+  derivatives:
+  - In may go up from +
+  - Vol will \
+stay at max
+  - Out will stay at max
+  state:
+    inflow:
+      derivative: POSITIVE
+      magnitude: PLUS
+    outflow:
+      derivative: \
+NEUTRAL
+      magnitude: MAX
+    volume:
+      derivative: NEUTRAL
+      magnitude: MAX
+  type: container
+debugging_trace:
+  continuous_\
+valid: true
+  derivative_valid: true
+  magnitude_valid: true
+  not_equal_valid: true
+  point_range_valid: true
+  transition_valid: \
+true
+"];
+	inflow_1_3_outflow_2_2_volume_1_2_ -> inflow_1_3_outflow_2_2_volume_1_3_	 [tooltip="a:
+  debugging_trace:
+    correspondence_valid: false
+    extreme_valid: true
+    valid: false
+  derivatives:
+  - In may go up from +
+  \
+- Vol will stay at +
+  - Out will stay at max
+  state:
+    inflow:
+      derivative: POSITIVE
+      magnitude: PLUS
+    outflow:
+      \
+derivative: NEUTRAL
+      magnitude: MAX
+    volume:
+      derivative: NEUTRAL
+      magnitude: PLUS
+  type: container
+b:
+  debugging_\
+trace:
+    correspondence_valid: false
+    extreme_valid: true
+    valid: false
+  derivatives:
+  - In may go up from +
+  - Vol may \
+go up from +
+  - Out will stay at max
+  state:
+    inflow:
+      derivative: POSITIVE
+      magnitude: PLUS
+    outflow:
+      derivative: \
+NEUTRAL
+      magnitude: MAX
+    volume:
+      derivative: POSITIVE
+      magnitude: PLUS
+  type: container
+debugging_trace:
+  continuous_\
+valid: true
+  derivative_valid: true
+  magnitude_valid: true
+  not_equal_valid: true
+  point_range_valid: true
+  transition_valid: \
+true
+"];
+	inflow_1_3_outflow_2_1_volume_1_1_	 [label="State 12
 In: (+, +)
 Vol: (+, -)
 Out: (max, -)",
-		tooltip="correspondence_valid: false
+		tooltip="debugging_trace:
+  correspondence_valid: false
+  extreme_valid: true
+  valid: false
 derivatives:
 - In may go up from +
-- Vol may go down from +
+- Vol may \
+go down from +
 - Out will go down from max
-extreme_valid: \
-true
-valid: false
+state:
+  inflow:
+    derivative: POSITIVE
+    magnitude: PLUS
+  outflow:
+    derivative: \
+NEGATIVE
+    magnitude: MAX
+  volume:
+    derivative: NEGATIVE
+    magnitude: PLUS
+type: container
 "];
-	inflow_1_3_outflow_2_2_volume_1_2_ -> inflow_1_3_outflow_2_1_volume_1_1_	 [tooltip="continuous_valid: true
-derivative_valid: false
-magnitude_valid: true
-not_equal_valid: true
-point_range_valid: true
-transition_valid: \
+	inflow_1_3_outflow_2_2_volume_1_2_ -> inflow_1_3_outflow_2_1_volume_1_1_	 [tooltip="a:
+  debugging_trace:
+    correspondence_valid: false
+    extreme_valid: true
+    valid: false
+  derivatives:
+  - In may go up from +
+  \
+- Vol will stay at +
+  - Out will stay at max
+  state:
+    inflow:
+      derivative: POSITIVE
+      magnitude: PLUS
+    outflow:
+      \
+derivative: NEUTRAL
+      magnitude: MAX
+    volume:
+      derivative: NEUTRAL
+      magnitude: PLUS
+  type: container
+b:
+  debugging_\
+trace:
+    correspondence_valid: false
+    extreme_valid: true
+    valid: false
+  derivatives:
+  - In may go up from +
+  - Vol may \
+go down from +
+  - Out will go down from max
+  state:
+    inflow:
+      derivative: POSITIVE
+      magnitude: PLUS
+    outflow:
+      \
+derivative: NEGATIVE
+      magnitude: MAX
+    volume:
+      derivative: NEGATIVE
+      magnitude: PLUS
+  type: container
+debugging_\
+trace:
+  continuous_valid: true
+  derivative_valid: false
+  magnitude_valid: true
+  not_equal_valid: true
+  point_range_valid: true
+  \
+transition_valid: true
+"];
+	inflow_1_3_outflow_2_1_volume_1_1_ -> inflow_1_3_outflow_1_1_volume_1_1_	 [tooltip="a:
+  debugging_trace:
+    correspondence_valid: false
+    extreme_valid: true
+    valid: false
+  derivatives:
+  - In may go up from +
+  \
+- Vol may go down from +
+  - Out will go down from max
+  state:
+    inflow:
+      derivative: POSITIVE
+      magnitude: PLUS
+    \
+outflow:
+      derivative: NEGATIVE
+      magnitude: MAX
+    volume:
+      derivative: NEGATIVE
+      magnitude: PLUS
+  type: container
+\
+b:
+  debugging_trace:
+    correspondence_valid: true
+    extreme_valid: true
+    valid: true
+  derivatives:
+  - In may go up from +
+  \
+- Vol may go down from +
+  - Out may go down from +
+  state:
+    inflow:
+      derivative: POSITIVE
+      magnitude: PLUS
+    outflow:
+      \
+derivative: NEGATIVE
+      magnitude: PLUS
+    volume:
+      derivative: NEGATIVE
+      magnitude: PLUS
+  type: container
+debugging_\
+trace:
+  continuous_valid: true
+  derivative_valid: true
+  magnitude_valid: true
+  not_equal_valid: true
+  point_range_valid: true
+  \
+transition_valid: true
+"];
+	inflow_1_3_outflow_2_1_volume_1_1_ -> inflow_1_3_outflow_1_1_volume_1_2_	 [tooltip="a:
+  debugging_trace:
+    correspondence_valid: false
+    extreme_valid: true
+    valid: false
+  derivatives:
+  - In may go up from +
+  \
+- Vol may go down from +
+  - Out will go down from max
+  state:
+    inflow:
+      derivative: POSITIVE
+      magnitude: PLUS
+    \
+outflow:
+      derivative: NEGATIVE
+      magnitude: MAX
+    volume:
+      derivative: NEGATIVE
+      magnitude: PLUS
+  type: container
+\
+b:
+  debugging_trace:
+    correspondence_valid: true
+    extreme_valid: true
+    valid: true
+  derivatives:
+  - In may go up from +
+  \
+- Vol will stay at +
+  - Out may go down from +
+  state:
+    inflow:
+      derivative: POSITIVE
+      magnitude: PLUS
+    outflow:
+      \
+derivative: NEGATIVE
+      magnitude: PLUS
+    volume:
+      derivative: NEUTRAL
+      magnitude: PLUS
+  type: container
+debugging_\
+trace:
+  continuous_valid: true
+  derivative_valid: true
+  magnitude_valid: true
+  not_equal_valid: true
+  point_range_valid: true
+  \
+transition_valid: true
+"];
+	inflow_1_3_outflow_1_1_volume_1_2_ -> inflow_1_3_outflow_1_1_volume_1_1_	 [tooltip="a:
+  debugging_trace:
+    correspondence_valid: true
+    extreme_valid: true
+    valid: true
+  derivatives:
+  - In may go up from +
+  \
+- Vol will stay at +
+  - Out may go down from +
+  state:
+    inflow:
+      derivative: POSITIVE
+      magnitude: PLUS
+    outflow:
+      \
+derivative: NEGATIVE
+      magnitude: PLUS
+    volume:
+      derivative: NEUTRAL
+      magnitude: PLUS
+  type: container
+b:
+  debugging_\
+trace:
+    correspondence_valid: true
+    extreme_valid: true
+    valid: true
+  derivatives:
+  - In may go up from +
+  - Vol may \
+go down from +
+  - Out may go down from +
+  state:
+    inflow:
+      derivative: POSITIVE
+      magnitude: PLUS
+    outflow:
+      \
+derivative: NEGATIVE
+      magnitude: PLUS
+    volume:
+      derivative: NEGATIVE
+      magnitude: PLUS
+  type: container
+debugging_\
+trace:
+  continuous_valid: true
+  derivative_valid: true
+  magnitude_valid: true
+  not_equal_valid: true
+  point_range_valid: true
+  \
+transition_valid: true
+"];
+	inflow_1_3_outflow_1_2_volume_1_3_	 [label="State 14
+In: (+, +)
+Vol: (+, +)
+Out: (+, 0)",
+		tooltip="debugging_trace:
+  correspondence_valid: true
+  extreme_valid: true
+  valid: true
+derivatives:
+- In may go up from +
+- Vol may go \
+up from +
+- Out will stay at +
+state:
+  inflow:
+    derivative: POSITIVE
+    magnitude: PLUS
+  outflow:
+    derivative: NEUTRAL
+    \
+magnitude: PLUS
+  volume:
+    derivative: POSITIVE
+    magnitude: PLUS
+type: container
+"];
+	inflow_1_3_outflow_1_1_volume_1_2_ -> inflow_1_3_outflow_1_2_volume_1_3_	 [tooltip="a:
+  debugging_trace:
+    correspondence_valid: true
+    extreme_valid: true
+    valid: true
+  derivatives:
+  - In may go up from +
+  \
+- Vol will stay at +
+  - Out may go down from +
+  state:
+    inflow:
+      derivative: POSITIVE
+      magnitude: PLUS
+    outflow:
+      \
+derivative: NEGATIVE
+      magnitude: PLUS
+    volume:
+      derivative: NEUTRAL
+      magnitude: PLUS
+  type: container
+b:
+  debugging_\
+trace:
+    correspondence_valid: true
+    extreme_valid: true
+    valid: true
+  derivatives:
+  - In may go up from +
+  - Vol may \
+go up from +
+  - Out will stay at +
+  state:
+    inflow:
+      derivative: POSITIVE
+      magnitude: PLUS
+    outflow:
+      derivative: \
+NEUTRAL
+      magnitude: PLUS
+    volume:
+      derivative: POSITIVE
+      magnitude: PLUS
+  type: container
+debugging_trace:
+  \
+continuous_valid: true
+  derivative_valid: false
+  magnitude_valid: true
+  not_equal_valid: true
+  point_range_valid: true
+  transition_\
+valid: true
+"];
+	inflow_1_3_outflow_1_2_volume_1_3_ -> inflow_1_3_outflow_1_3_volume_1_3_	 [tooltip="a:
+  debugging_trace:
+    correspondence_valid: true
+    extreme_valid: true
+    valid: true
+  derivatives:
+  - In may go up from +
+  \
+- Vol may go up from +
+  - Out will stay at +
+  state:
+    inflow:
+      derivative: POSITIVE
+      magnitude: PLUS
+    outflow:
+      \
+derivative: NEUTRAL
+      magnitude: PLUS
+    volume:
+      derivative: POSITIVE
+      magnitude: PLUS
+  type: container
+b:
+  debugging_\
+trace:
+    correspondence_valid: true
+    extreme_valid: true
+    valid: true
+  derivatives:
+  - In may go up from +
+  - Vol may \
+go up from +
+  - Out may go up from +
+  state:
+    inflow:
+      derivative: POSITIVE
+      magnitude: PLUS
+    outflow:
+      derivative: \
+POSITIVE
+      magnitude: PLUS
+    volume:
+      derivative: POSITIVE
+      magnitude: PLUS
+  type: container
+debugging_trace:
+  \
+continuous_valid: true
+  derivative_valid: false
+  magnitude_valid: true
+  not_equal_valid: true
+  point_range_valid: true
+  transition_\
+valid: true
+"];
+	inflow_1_3_outflow_1_2_volume_1_3_ -> inflow_1_3_outflow_1_2_volume_1_2_	 [tooltip="a:
+  debugging_trace:
+    correspondence_valid: true
+    extreme_valid: true
+    valid: true
+  derivatives:
+  - In may go up from +
+  \
+- Vol may go up from +
+  - Out will stay at +
+  state:
+    inflow:
+      derivative: POSITIVE
+      magnitude: PLUS
+    outflow:
+      \
+derivative: NEUTRAL
+      magnitude: PLUS
+    volume:
+      derivative: POSITIVE
+      magnitude: PLUS
+  type: container
+b:
+  debugging_\
+trace:
+    correspondence_valid: true
+    extreme_valid: true
+    valid: true
+  derivatives:
+  - In may go up from +
+  - Vol will \
+stay at +
+  - Out will stay at +
+  state:
+    inflow:
+      derivative: POSITIVE
+      magnitude: PLUS
+    outflow:
+      derivative: \
+NEUTRAL
+      magnitude: PLUS
+    volume:
+      derivative: NEUTRAL
+      magnitude: PLUS
+  type: container
+debugging_trace:
+  continuous_\
+valid: true
+  derivative_valid: true
+  magnitude_valid: true
+  not_equal_valid: true
+  point_range_valid: true
+  transition_valid: \
 true
 "];
-	inflow_1_3_outflow_2_2_volume_1_2_ -> inflow_1_3_outflow_2_2_volume_1_3_	 [tooltip="continuous_valid: true
-derivative_valid: true
-magnitude_valid: true
-not_equal_valid: true
-point_range_valid: true
-transition_valid: \
+	inflow_1_3_outflow_1_2_volume_1_3_ -> inflow_1_3_outflow_2_2_volume_2_2_	 [tooltip="a:
+  debugging_trace:
+    correspondence_valid: true
+    extreme_valid: true
+    valid: true
+  derivatives:
+  - In may go up from +
+  \
+- Vol may go up from +
+  - Out will stay at +
+  state:
+    inflow:
+      derivative: POSITIVE
+      magnitude: PLUS
+    outflow:
+      \
+derivative: NEUTRAL
+      magnitude: PLUS
+    volume:
+      derivative: POSITIVE
+      magnitude: PLUS
+  type: container
+b:
+  debugging_\
+trace:
+    correspondence_valid: true
+    extreme_valid: true
+    valid: true
+  derivatives:
+  - In may go up from +
+  - Vol will \
+stay at max
+  - Out will stay at max
+  state:
+    inflow:
+      derivative: POSITIVE
+      magnitude: PLUS
+    outflow:
+      derivative: \
+NEUTRAL
+      magnitude: MAX
+    volume:
+      derivative: NEUTRAL
+      magnitude: MAX
+  type: container
+debugging_trace:
+  continuous_\
+valid: true
+  derivative_valid: true
+  magnitude_valid: false
+  not_equal_valid: true
+  point_range_valid: true
+  transition_valid: \
 true
 "];
-	inflow_1_3_outflow_2_1_volume_1_1_ -> inflow_1_3_outflow_1_1_volume_1_2_	 [tooltip="continuous_valid: true
-derivative_valid: true
-magnitude_valid: true
-not_equal_valid: true
-point_range_valid: true
-transition_valid: \
-true
+	inflow_1_3_outflow_1_2_volume_1_2_ -> inflow_1_3_outflow_1_1_volume_1_1_	 [tooltip="a:
+  debugging_trace:
+    correspondence_valid: true
+    extreme_valid: true
+    valid: true
+  derivatives:
+  - In may go up from +
+  \
+- Vol will stay at +
+  - Out will stay at +
+  state:
+    inflow:
+      derivative: POSITIVE
+      magnitude: PLUS
+    outflow:
+      \
+derivative: NEUTRAL
+      magnitude: PLUS
+    volume:
+      derivative: NEUTRAL
+      magnitude: PLUS
+  type: container
+b:
+  debugging_\
+trace:
+    correspondence_valid: true
+    extreme_valid: true
+    valid: true
+  derivatives:
+  - In may go up from +
+  - Vol may \
+go down from +
+  - Out may go down from +
+  state:
+    inflow:
+      derivative: POSITIVE
+      magnitude: PLUS
+    outflow:
+      \
+derivative: NEGATIVE
+      magnitude: PLUS
+    volume:
+      derivative: NEGATIVE
+      magnitude: PLUS
+  type: container
+debugging_\
+trace:
+  continuous_valid: true
+  derivative_valid: false
+  magnitude_valid: true
+  not_equal_valid: true
+  point_range_valid: true
+  \
+transition_valid: true
 "];
-	inflow_1_3_outflow_2_1_volume_1_1_ -> inflow_1_3_outflow_1_1_volume_1_1_	 [tooltip="continuous_valid: true
-derivative_valid: true
-magnitude_valid: true
-not_equal_valid: true
-point_range_valid: true
-transition_valid: \
-true
+	inflow_1_3_outflow_1_2_volume_1_2_ -> inflow_1_3_outflow_1_3_volume_1_3_	 [tooltip="a:
+  debugging_trace:
+    correspondence_valid: true
+    extreme_valid: true
+    valid: true
+  derivatives:
+  - In may go up from +
+  \
+- Vol will stay at +
+  - Out will stay at +
+  state:
+    inflow:
+      derivative: POSITIVE
+      magnitude: PLUS
+    outflow:
+      \
+derivative: NEUTRAL
+      magnitude: PLUS
+    volume:
+      derivative: NEUTRAL
+      magnitude: PLUS
+  type: container
+b:
+  debugging_\
+trace:
+    correspondence_valid: true
+    extreme_valid: true
+    valid: true
+  derivatives:
+  - In may go up from +
+  - Vol may \
+go up from +
+  - Out may go up from +
+  state:
+    inflow:
+      derivative: POSITIVE
+      magnitude: PLUS
+    outflow:
+      derivative: \
+POSITIVE
+      magnitude: PLUS
+    volume:
+      derivative: POSITIVE
+      magnitude: PLUS
+  type: container
+debugging_trace:
+  \
+continuous_valid: true
+  derivative_valid: false
+  magnitude_valid: true
+  not_equal_valid: true
+  point_range_valid: true
+  transition_\
+valid: true
 "];
-	inflow_1_3_outflow_2_2_volume_1_3_ -> inflow_1_3_outflow_2_2_volume_2_2_	 [tooltip="continuous_valid: true
-derivative_valid: true
-magnitude_valid: true
-not_equal_valid: true
-point_range_valid: true
-transition_valid: \
-true
+	inflow_1_3_outflow_2_1_volume_2_1_	 [label="State 17
+In: (+, +)
+Vol: (max, -)
+Out: (max, -)",
+		tooltip="debugging_trace:
+  correspondence_valid: true
+  extreme_valid: true
+  valid: true
+derivatives:
+- In may go up from +
+- Vol will \
+go down from max
+- Out will go down from max
+state:
+  inflow:
+    derivative: POSITIVE
+    magnitude: PLUS
+  outflow:
+    derivative: \
+NEGATIVE
+    magnitude: MAX
+  volume:
+    derivative: NEGATIVE
+    magnitude: MAX
+type: container
 "];
-	inflow_1_3_outflow_2_2_volume_1_3_ -> inflow_1_3_outflow_2_2_volume_1_2_	 [tooltip="continuous_valid: true
-derivative_valid: true
-magnitude_valid: true
-not_equal_valid: true
-point_range_valid: true
-transition_valid: \
-true
+	inflow_1_3_outflow_2_2_volume_2_2_ -> inflow_1_3_outflow_2_1_volume_2_1_	 [tooltip="a:
+  debugging_trace:
+    correspondence_valid: true
+    extreme_valid: true
+    valid: true
+  derivatives:
+  - In may go up from +
+  \
+- Vol will stay at max
+  - Out will stay at max
+  state:
+    inflow:
+      derivative: POSITIVE
+      magnitude: PLUS
+    outflow:
+      \
+derivative: NEUTRAL
+      magnitude: MAX
+    volume:
+      derivative: NEUTRAL
+      magnitude: MAX
+  type: container
+b:
+  debugging_\
+trace:
+    correspondence_valid: true
+    extreme_valid: true
+    valid: true
+  derivatives:
+  - In may go up from +
+  - Vol will \
+go down from max
+  - Out will go down from max
+  state:
+    inflow:
+      derivative: POSITIVE
+      magnitude: PLUS
+    outflow:
+      \
+derivative: NEGATIVE
+      magnitude: MAX
+    volume:
+      derivative: NEGATIVE
+      magnitude: MAX
+  type: container
+debugging_\
+trace:
+  continuous_valid: true
+  derivative_valid: false
+  magnitude_valid: true
+  not_equal_valid: true
+  point_range_valid: true
+  \
+transition_valid: true
 "];
-	inflow_1_3_outflow_1_2_volume_1_1_ -> inflow_1_3_outflow_1_2_volume_1_2_	 [tooltip="continuous_valid: true
-derivative_valid: true
-magnitude_valid: true
-not_equal_valid: true
-point_range_valid: true
-transition_valid: \
-true
+	inflow_1_3_outflow_2_1_volume_2_1_ -> inflow_1_3_outflow_1_1_volume_1_1_	 [tooltip="a:
+  debugging_trace:
+    correspondence_valid: true
+    extreme_valid: true
+    valid: true
+  derivatives:
+  - In may go up from +
+  \
+- Vol will go down from max
+  - Out will go down from max
+  state:
+    inflow:
+      derivative: POSITIVE
+      magnitude: PLUS
+    \
+outflow:
+      derivative: NEGATIVE
+      magnitude: MAX
+    volume:
+      derivative: NEGATIVE
+      magnitude: MAX
+  type: container
+\
+b:
+  debugging_trace:
+    correspondence_valid: true
+    extreme_valid: true
+    valid: true
+  derivatives:
+  - In may go up from +
+  \
+- Vol may go down from +
+  - Out may go down from +
+  state:
+    inflow:
+      derivative: POSITIVE
+      magnitude: PLUS
+    outflow:
+      \
+derivative: NEGATIVE
+      magnitude: PLUS
+    volume:
+      derivative: NEGATIVE
+      magnitude: PLUS
+  type: container
+debugging_\
+trace:
+  continuous_valid: true
+  derivative_valid: true
+  magnitude_valid: true
+  not_equal_valid: true
+  point_range_valid: true
+  \
+transition_valid: true
 "];
-	inflow_1_3_outflow_1_2_volume_1_1_ -> inflow_1_3_outflow_1_1_volume_1_1_	 [tooltip="continuous_valid: true
-derivative_valid: false
-magnitude_valid: true
-not_equal_valid: true
-point_range_valid: true
-transition_valid: \
-true
-"];
-	inflow_1_3_outflow_1_2_volume_1_1_ -> inflow_1_3_outflow_0_2_volume_0_2_	 [tooltip="continuous_valid: true
-derivative_valid: true
-magnitude_valid: false
-not_equal_valid: true
-point_range_valid: true
-transition_valid: \
-true
-"];
-	inflow_1_3_outflow_0_2_volume_0_2_ -> inflow_1_3_outflow_0_3_volume_0_3_	 [tooltip="continuous_valid: true
-derivative_valid: false
-magnitude_valid: true
-not_equal_valid: true
-point_range_valid: true
-transition_valid: \
-true
+	inflow_1_3_outflow_2_1_volume_2_1_ -> inflow_1_3_outflow_1_1_volume_1_2_	 [tooltip="a:
+  debugging_trace:
+    correspondence_valid: true
+    extreme_valid: true
+    valid: true
+  derivatives:
+  - In may go up from +
+  \
+- Vol will go down from max
+  - Out will go down from max
+  state:
+    inflow:
+      derivative: POSITIVE
+      magnitude: PLUS
+    \
+outflow:
+      derivative: NEGATIVE
+      magnitude: MAX
+    volume:
+      derivative: NEGATIVE
+      magnitude: MAX
+  type: container
+\
+b:
+  debugging_trace:
+    correspondence_valid: true
+    extreme_valid: true
+    valid: true
+  derivatives:
+  - In may go up from +
+  \
+- Vol will stay at +
+  - Out may go down from +
+  state:
+    inflow:
+      derivative: POSITIVE
+      magnitude: PLUS
+    outflow:
+      \
+derivative: NEGATIVE
+      magnitude: PLUS
+    volume:
+      derivative: NEUTRAL
+      magnitude: PLUS
+  type: container
+debugging_\
+trace:
+  continuous_valid: true
+  derivative_valid: true
+  magnitude_valid: true
+  not_equal_valid: true
+  point_range_valid: true
+  \
+transition_valid: true
 "];
 }
