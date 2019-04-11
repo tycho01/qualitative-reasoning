@@ -45,6 +45,8 @@ digraph SINK
         Inflow -> Volume [label="I+"];
         Outflow -> Volume [label="I-"];
         Volume -> Outflow [label="P+"];
+        mag_v : f0 -> mag_o : f0 [label="V"]
+        mag_v : f2 -> mag_o : f2 [label="V"]
         // Volume -> Height [label="P+"];
         // Height -> Pressure [label="P+"];
         // Pressure -> Outflow [label="P+"];
